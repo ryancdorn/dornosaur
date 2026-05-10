@@ -23,3 +23,6 @@ scripts/logs/
 
 # jetbrains setting folder
 .idea/
+
+# Claude Code per-project tooling (preview launch config etc.)
+.claude/

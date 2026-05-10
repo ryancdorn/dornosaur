@@ -141,6 +141,14 @@ Each genre has a **tinted dark banner** (subtle gradient + accent eyebrow + big 
 
 Each genre exposes `--series-color` and `--btitle-color` CSS vars so the accent runs through series headers and book titles consistently.
 
+### Sticky genre nav
+A horizontal nav bar sits sticky at `top: 62px` (directly under the global header) listing every genre with its book count, color-coded per genre (`.genre-link.fantasy` etc.). Clicking a link smooth-scrolls to the matching `<section id={genre.key}>`; each section uses `scroll-margin-top: 110px` so the title lands below the header + nav stack rather than behind them. The currently-visible genre is highlighted via `IntersectionObserver` (`rootMargin: '-110px 0px -60% 0px'`) toggling `.is-current` on the matching link — accent color underline + colored count.
+
+### Status filter pills (per-genre)
+The Read / Reading / Unread pills at the top of each genre's shelf are interactive `<button>` toggles, not just labels. All start `.is-active` (everything visible). Clicking toggles a pill on/off — books with that status get `.is-hidden`, and any series group whose books are now all hidden also gets `.is-hidden` (handled in JS by counting `.book:not(.is-hidden)` per group). A `.gs-empty` paragraph appears when all three filters are off.
+
+Active state colors map to status badges: read = green `#6FCB89`, reading = amber `#ECB242`, unread = slate-blue `#9FBDD8` (a distinct hue, not gray, so off vs on is unambiguous). Inactive = `opacity: 0.32` + line-through. Pills are independent per section — there is no global filter state shared across genres.
+
 ## Vinyl Page
 
 Data source: `src/data/vinyl.json` — auto-refreshed daily from the Discogs API (username: `Dornosaur`) via GitHub Actions cron. Token in `DISCOGS_TOKEN` repo secret. **The `genre` and `pressing` fields ARE preserved across refreshes** (matched by lowercased `artist+title`); all other fields (cover, label, format, year, pressYear) are always overwritten with API values. So manual curation of those two fields is safe.
