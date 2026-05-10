@@ -12,7 +12,7 @@ const genres = [
 <Layout title="Vinyl" fullWidth={true}>
 <div class="vinyl-page">
 
-  <!-- Wood header -->
+  <!-- Wood panel header -->
   <div class="wood-header">
     <div class="header-inner">
       <p class="eyebrow">Record Collection</p>
@@ -48,8 +48,6 @@ const genres = [
     if (genreRecords.length === 0) return null;
     return (
       <section class:list={['gs', genre.key]}>
-
-        <!-- Banner -->
         <div class="gs-banner">
           <div class="gs-banner-inner">
             <p class="gs-eyebrow">{genre.key.toUpperCase()} · {genreRecords.length} RECORDS</p>
@@ -57,8 +55,6 @@ const genres = [
             <p class="gs-desc">{genre.desc}</p>
           </div>
         </div>
-
-        <!-- Records -->
         <div class="gs-shelf">
           <div class="gs-shelf-inner">
             <div class="record-grid">
@@ -66,18 +62,21 @@ const genres = [
                 <div class="record-card">
                   <div class="cover-wrap">
                     <img src={record.cover} alt={`${record.title} by ${record.artist}`} loading="lazy" />
-                    <span class="format-badge">{record.format}</span>
+                    <div class="cover-overlay">
+                      <span class="overlay-format">{record.format}</span>
+                    </div>
                   </div>
-                  <p class="rtitle">{record.title}</p>
-                  <p class="rartist">{record.artist}</p>
-                  <p class="rmeta">{record.year}{record.pressing ? ` · ${record.pressing}` : ''}</p>
+                  <div class="record-info">
+                    <p class="rtitle">{record.title}</p>
+                    <p class="rartist">{record.artist}</p>
+                    <p class="rmeta">{record.year}{record.pressing ? ` · ${record.pressing}` : ''}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
           <div class="shelf-ledge"></div>
         </div>
-
       </section>
     );
   })}
@@ -90,89 +89,79 @@ const genres = [
 <style>
   .vinyl-page { display: flex; flex-direction: column; min-height: calc(100vh - 62px); }
 
-  /* ── Wood paneling ───────────────────────────────────────── */
+  /* ─────────────────────────────────────────────────────────
+     WOOD PANEL HEADER
+     Uses SVG feTurbulence for organic grain (not gradients),
+     overlaid with CSS repeating-gradient for V-groove panel lines.
+  ───────────────────────────────────────────────────────── */
   .wood-header {
-    background-color: #5C3018;
-    background-image:
-      /* Vertical panel grooves — a dark shadow line + faint highlight on the right */
-      repeating-linear-gradient(
-        90deg,
-        transparent 0px, transparent 154px,
-        rgba(15,5,1,0.9)  154px, rgba(10,3,0,1)    156px,
-        rgba(15,5,1,0.9)  158px, rgba(90,55,20,0.3) 160px,
-        rgba(90,55,20,0.1) 162px, transparent        164px,
-        transparent 318px
-      ),
-      /* Panel center highlight — lighter in the middle, darker near the groove */
-      repeating-linear-gradient(
-        90deg,
-        rgba(255,255,255,0.055) 0px,   rgba(255,255,255,0.03) 60px,
-        rgba(255,255,255,0.01) 110px,  rgba(0,0,0,0.04)       150px,
-        rgba(0,0,0,0.0)        164px,
-        rgba(255,255,255,0.055) 164px, rgba(255,255,255,0.03) 224px,
-        rgba(255,255,255,0.01) 274px,  rgba(0,0,0,0.04)       314px,
-        rgba(0,0,0,0.0)        328px
-      ),
-      /* Horizontal wood grain — fine lines at a very slight angle */
-      repeating-linear-gradient(
-        180.6deg,
-        transparent 0px, transparent 5px,
-        rgba(0,0,0,0.032) 5px,          rgba(0,0,0,0.032) 6px,
-        transparent 6px,  transparent 12px,
-        rgba(255,255,255,0.014) 12px,   rgba(255,255,255,0.014) 13px,
-        transparent 13px, transparent 20px,
-        rgba(0,0,0,0.018) 20px,         rgba(0,0,0,0.018) 21px
-      ),
-      /* Broader grain sweeps */
-      repeating-linear-gradient(
-        179.2deg,
-        transparent 0px,         transparent 38px,
-        rgba(0,0,0,0.04) 38px,   rgba(0,0,0,0.04) 42px,
-        transparent 42px,        transparent 90px,
-        rgba(255,255,255,0.02) 90px, rgba(255,255,255,0.02) 95px
-      ),
-      /* Overall warmth variation top-to-bottom */
-      linear-gradient(180deg, #6A3C22 0%, #5C3018 30%, #673820 60%, #5C3018 100%);
-
-    padding: 5rem 0 4rem;
     position: relative;
-    box-shadow: 0 6px 40px rgba(0,0,0,0.7);
+    padding: 5rem 0 4rem;
+    box-shadow: 0 8px 48px rgba(0,0,0,0.75);
+
+    /*
+      Layer 1 (top): V-groove panel dividers every ~180px
+      Layer 2: SVG feTurbulence — organic walnut grain
+    */
+    background-color: #6B3D1E;
+    background-image:
+      repeating-linear-gradient(
+        90deg,
+        transparent                   0px,
+        transparent                   176px,
+        rgba(0,0,0,0.0)               176px,
+        rgba(0,0,0,0.55)              178px,
+        rgba(0,0,0,0.85)              180px,
+        rgba(0,0,0,0.55)              182px,
+        rgba(255,210,140,0.12)        183px,
+        rgba(255,210,140,0.05)        185px,
+        transparent                   187px,
+        transparent                   364px
+      ),
+      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='500'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.012 0.38' numOctaves='6' seed='9'/><feColorMatrix values='0.32 0 0 0 0.34  0.18 0 0 0 0.20  0.08 0 0 0 0.09  0 0 0 1 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+    background-size: auto, cover;
   }
 
-  /* Top molding rail */
+  /* Top cap / crown molding */
   .wood-header::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 14px;
+    height: 16px;
     background: linear-gradient(180deg,
-      #A87035 0%, #8B5C28 30%, #6A4018 65%, #3E2008 100%);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.6);
+      #C08040 0%, #A06828 18%,
+      #7A4E1C 45%, #4A2C0A 78%, #2E1A05 100%);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    z-index: 2;
   }
 
-  /* Bottom molding rail */
+  /* Bottom base molding */
   .wood-header::after {
     content: '';
     position: absolute;
     bottom: 0; left: 0; right: 0;
-    height: 14px;
+    height: 16px;
     background: linear-gradient(180deg,
-      #3E2008 0%, #6A4018 35%, #8B5C28 70%, #A87035 100%);
-    box-shadow: 0 -3px 10px rgba(0,0,0,0.6) inset;
+      #2E1A05 0%, #4A2C0A 22%,
+      #7A4E1C 55%, #A06828 82%, #C08040 100%);
+    box-shadow: inset 0 -4px 12px rgba(0,0,0,0.5);
+    z-index: 2;
   }
 
   .header-inner {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 2.5rem;
+    position: relative;
+    z-index: 1;
   }
 
   .eyebrow {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 600;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: rgba(220,185,130,0.7);
+    color: rgba(230,190,120,0.55);
     margin-bottom: 1rem;
   }
 
@@ -181,18 +170,22 @@ const genres = [
     font-size: clamp(3.5rem, 7vw, 6rem);
     font-weight: 700;
     font-style: italic;
-    color: #F0E0C8;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.8), 0 1px 2px rgba(0,0,0,0.9);
-    margin-bottom: 0.75rem;
+    color: #EDD9B0;
+    /* engraved look: dark shadow below, faint light above */
+    text-shadow:
+      0 1px 0 rgba(255,220,150,0.15),
+      0 2px 4px rgba(0,0,0,0.7),
+      0 4px 16px rgba(0,0,0,0.5);
     letter-spacing: -0.02em;
     line-height: 1;
+    margin-bottom: 0.75rem;
   }
 
   .sub {
-    color: rgba(200,160,100,0.65);
     font-family: 'Lora', serif;
     font-style: italic;
     font-size: 1rem;
+    color: rgba(200,155,85,0.6);
     margin-bottom: 2.5rem;
   }
 
@@ -200,24 +193,24 @@ const genres = [
   .stats-row { display: flex; align-items: center; gap: 1.5rem; }
   .stat { display: flex; flex-direction: column; gap: 0.2rem; }
   .stat-num {
+    font-family: 'Playfair Display', serif;
     font-size: 2rem;
     font-weight: 700;
-    font-family: 'Playfair Display', serif;
-    color: #F0E0C8;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+    color: #EDD9B0;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
     letter-spacing: -0.03em;
     line-height: 1;
   }
   .stat-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(200,160,100,0.55);
+    color: rgba(190,140,70,0.5);
   }
-  .stat-div { width: 1px; height: 2.5rem; background: rgba(180,130,70,0.25); }
+  .stat-div { width: 1px; height: 2rem; background: rgba(190,140,70,0.2); }
 
   /* ── Genre sections ──────────────────────────────────────── */
-  .gs { border-top: 1px solid rgba(255,255,255,0.05); }
+  .gs { border-top: 1px solid rgba(255,255,255,0.04); }
 
   .gs-banner { padding: 3.5rem 0 3rem; }
   .gs-banner-inner {
@@ -231,7 +224,7 @@ const genres = [
     letter-spacing: 0.2em;
     text-transform: uppercase;
     margin-bottom: 0.75rem;
-    opacity: 0.5;
+    opacity: 0.45;
   }
   .gs-title {
     font-family: 'Playfair Display', serif;
@@ -245,132 +238,136 @@ const genres = [
     font-family: 'Lora', serif;
     font-size: 1rem;
     font-style: italic;
-    opacity: 0.55;
+    opacity: 0.5;
   }
 
-  .gs-shelf { position: relative; padding-bottom: 0; }
+  .gs-shelf { position: relative; }
   .gs-shelf-inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 2.5rem 2.5rem 3rem;
+    padding: 2rem 2.5rem 3.5rem;
   }
 
-  /* Record grid */
+  /* ── Record grid ─────────────────────────────────────────── */
   .record-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 1.75rem;
   }
 
-  .record-card { display: flex; flex-direction: column; gap: 0.45rem; }
+  .record-card { display: flex; flex-direction: column; gap: 0.65rem; cursor: default; }
 
   .cover-wrap {
     position: relative;
-    border-radius: 3px;
+    border-radius: 2px;
     overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
-    transition: transform 0.2s, box-shadow 0.2s;
     aspect-ratio: 1;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.55), 0 2px 6px rgba(0,0,0,0.4);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
-  .cover-wrap:hover { transform: translateY(-5px); box-shadow: 0 16px 36px rgba(0,0,0,0.7); }
-  .cover-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .record-card:hover .cover-wrap {
+    transform: translateY(-6px) scale(1.02);
+  }
+  .cover-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+  }
 
-  .format-badge {
+  /* Format badge — revealed on hover */
+  .cover-overlay {
     position: absolute;
-    bottom: 6px; right: 6px;
-    background: rgba(0,0,0,0.82);
-    color: rgba(255,255,255,0.75);
-    font-size: 0.55rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    padding: 0.2rem 0.45rem;
-    border-radius: 3px;
+    inset: 0;
+    background: rgba(0,0,0,0);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 8px;
+    transition: background 0.2s;
   }
+  .record-card:hover .cover-overlay { background: rgba(0,0,0,0.35); }
+  .overlay-format {
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    background: rgba(0,0,0,0.8);
+    color: rgba(255,255,255,0.8);
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .record-card:hover .overlay-format { opacity: 1; transform: translateY(0); }
 
-  .rtitle  { font-size: 0.75rem; font-weight: 700; line-height: 1.3; color: inherit; margin: 0; }
-  .rartist { font-size: 0.68rem; opacity: 0.5; margin: 0; }
-  .rmeta   { font-size: 0.6rem; opacity: 0.35; margin: 0; line-height: 1.4; }
+  .record-info { padding: 0 2px; }
+  .rtitle  { font-size: 0.78rem; font-weight: 700; line-height: 1.3; margin: 0 0 0.2rem; }
+  .rartist { font-size: 0.7rem;  opacity: 0.45; margin: 0 0 0.2rem; }
+  .rmeta   { font-size: 0.6rem;  opacity: 0.3;  margin: 0; line-height: 1.5; }
 
   /* Shelf ledge */
   .shelf-ledge {
-    background: linear-gradient(180deg, #4A2810, #2E1808);
-    height: 22px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.7);
-    border-top: 2px solid #7A5018;
+    height: 20px;
+    border-top: 2px solid rgba(255,255,255,0.06);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
   }
 
   /* ══════════════════════════════════════════════════════════
-     HIP HOP  —  near black · gold
+     HIP HOP
   ══════════════════════════════════════════════════════════ */
-  .hiphop .gs-banner {
-    background: linear-gradient(135deg, #080604 0%, #0E0A04 100%);
-    border-bottom: 1px solid rgba(212,160,23,0.2);
-  }
-  .hiphop .gs-eyebrow { color: rgba(212,160,23,0.55); }
-  .hiphop .gs-title   { color: #E8B830; text-shadow: 0 0 40px rgba(212,160,23,0.3); }
-  .hiphop .gs-desc    { color: #7A6020; }
-  .hiphop .gs-shelf   {
-    background: linear-gradient(180deg, #0C0804 0%, #100C06 100%);
-  }
-  .hiphop .rtitle     { color: #D4B870; }
+  .hiphop .gs-banner { background: #080604; border-bottom: 1px solid rgba(200,150,20,0.15); }
+  .hiphop .gs-eyebrow { color: rgba(200,150,20,0.6); }
+  .hiphop .gs-title   { color: #D4A820; text-shadow: 0 0 60px rgba(200,150,20,0.2); }
+  .hiphop .gs-desc    { color: rgba(180,130,40,0.55); }
+  .hiphop .gs-shelf   { background: #0A0806; }
+  .hiphop .rtitle     { color: #C8A860; }
   .hiphop .rartist    { color: #8A7040; }
-  .hiphop .cover-wrap { box-shadow: 0 6px 20px rgba(200,150,10,0.15); border: 1px solid rgba(200,150,10,0.08); }
-  .hiphop .cover-wrap:hover { box-shadow: 0 16px 36px rgba(200,150,10,0.3); border-color: rgba(200,150,10,0.25); }
+  .hiphop .cover-wrap { box-shadow: 0 8px 24px rgba(180,130,10,0.12), 0 2px 6px rgba(0,0,0,0.5); }
+  .hiphop .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(180,130,10,0.25), 0 4px 12px rgba(0,0,0,0.5); }
+  .hiphop .shelf-ledge { background: rgba(180,130,10,0.06); }
 
   /* ══════════════════════════════════════════════════════════
-     ROCK  —  near black · electric red-orange
+     ROCK
   ══════════════════════════════════════════════════════════ */
-  .rock .gs-banner {
-    background: linear-gradient(135deg, #080608 0%, #0C0810 100%);
-    border-bottom: 1px solid rgba(200,60,40,0.2);
-  }
-  .rock .gs-eyebrow { color: rgba(220,80,50,0.55); }
-  .rock .gs-title   { color: #E05545; text-shadow: 0 0 40px rgba(200,60,40,0.3); }
-  .rock .gs-desc    { color: #7A3028; }
-  .rock .gs-shelf   {
-    background: linear-gradient(180deg, #080608 0%, #0C080C 100%);
-  }
-  .rock .rtitle     { color: #D4A0A0; }
-  .rock .rartist    { color: #7A4040; }
-  .rock .cover-wrap { box-shadow: 0 6px 20px rgba(200,60,40,0.12); border: 1px solid rgba(200,60,40,0.07); }
-  .rock .cover-wrap:hover { box-shadow: 0 16px 36px rgba(200,60,40,0.28); border-color: rgba(200,60,40,0.22); }
+  .rock .gs-banner { background: #070608; border-bottom: 1px solid rgba(180,50,40,0.15); }
+  .rock .gs-eyebrow { color: rgba(200,70,50,0.6); }
+  .rock .gs-title   { color: #C84838; text-shadow: 0 0 60px rgba(180,50,40,0.2); }
+  .rock .gs-desc    { color: rgba(180,70,50,0.5); }
+  .rock .gs-shelf   { background: #080608; }
+  .rock .rtitle     { color: #D0A8A8; }
+  .rock .rartist    { color: #784040; }
+  .rock .cover-wrap { box-shadow: 0 8px 24px rgba(160,40,30,0.12), 0 2px 6px rgba(0,0,0,0.5); }
+  .rock .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(160,40,30,0.28), 0 4px 12px rgba(0,0,0,0.5); }
+  .rock .shelf-ledge { background: rgba(160,40,30,0.06); }
 
   /* ══════════════════════════════════════════════════════════
-     POP & SOUL  —  near black · warm purple
+     POP & SOUL
   ══════════════════════════════════════════════════════════ */
-  .soul .gs-banner {
-    background: linear-gradient(135deg, #070608 0%, #0A0810 100%);
-    border-bottom: 1px solid rgba(155,100,220,0.2);
-  }
-  .soul .gs-eyebrow { color: rgba(155,100,220,0.55); }
-  .soul .gs-title   { color: #B088E8; text-shadow: 0 0 40px rgba(155,100,220,0.3); }
-  .soul .gs-desc    { color: #6A4890; }
-  .soul .gs-shelf   {
-    background: linear-gradient(180deg, #070608 0%, #0A080E 100%);
-  }
+  .soul .gs-banner { background: #060608; border-bottom: 1px solid rgba(140,90,200,0.15); }
+  .soul .gs-eyebrow { color: rgba(150,100,210,0.6); }
+  .soul .gs-title   { color: #A878DC; text-shadow: 0 0 60px rgba(140,90,200,0.2); }
+  .soul .gs-desc    { color: rgba(140,90,180,0.5); }
+  .soul .gs-shelf   { background: #070608; }
   .soul .rtitle     { color: #C0A8E0; }
-  .soul .rartist    { color: #6A4880; }
-  .soul .cover-wrap { box-shadow: 0 6px 20px rgba(155,100,220,0.12); border: 1px solid rgba(155,100,220,0.07); }
-  .soul .cover-wrap:hover { box-shadow: 0 16px 36px rgba(155,100,220,0.28); border-color: rgba(155,100,220,0.22); }
+  .soul .rartist    { color: #6A4890; }
+  .soul .cover-wrap { box-shadow: 0 8px 24px rgba(120,70,180,0.12), 0 2px 6px rgba(0,0,0,0.5); }
+  .soul .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(120,70,180,0.28), 0 4px 12px rgba(0,0,0,0.5); }
+  .soul .shelf-ledge { background: rgba(120,70,180,0.06); }
 
   /* ── Footer wood panel ───────────────────────────────────── */
   .wood-footer {
-    height: 60px;
-    background-color: #5C3018;
+    height: 56px;
+    background-color: #6B3D1E;
     background-image:
       repeating-linear-gradient(
         90deg,
-        transparent 0px, transparent 154px,
-        rgba(10,3,0,1) 156px, rgba(90,55,20,0.25) 160px,
-        transparent 164px, transparent 318px
+        transparent 0px, transparent 176px,
+        rgba(0,0,0,0.85) 180px,
+        rgba(255,210,140,0.08) 183px,
+        transparent 187px, transparent 364px
       ),
-      repeating-linear-gradient(
-        180.6deg,
-        transparent 0px, transparent 5px,
-        rgba(0,0,0,0.03) 5px, rgba(0,0,0,0.03) 6px
-      ),
-      linear-gradient(180deg, #6A3C22 0%, #5C3018 100%);
-    border-top: 14px solid transparent;
-    border-image: linear-gradient(180deg, #3E2008 0%, #6A4018 35%, #8B5C28 70%, #A87035 100%) 1;
+      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='56'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.012 0.38' numOctaves='6' seed='9'/><feColorMatrix values='0.32 0 0 0 0.34  0.18 0 0 0 0.20  0.08 0 0 0 0.09  0 0 0 1 0'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+    background-size: auto, cover;
+    border-top: 16px solid transparent;
+    border-image: linear-gradient(180deg, #2E1A05 0%, #4A2C0A 22%, #7A4E1C 55%, #A06828 82%, #C08040 100%) 1;
   }
 </style>
