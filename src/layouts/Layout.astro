@@ -2,11 +2,12 @@
 interface Props {
   title: string;
   fullWidth?: boolean;
+  pageTint?: 'books' | 'vinyl' | 'hobbies' | 'neutral';
 }
-const { title, fullWidth = false } = Astro.props;
+const { title, fullWidth = false, pageTint = 'neutral' } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" data-theme="dark" data-tint={pageTint}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -14,7 +15,18 @@ const { title, fullWidth = false } = Astro.props;
     <title>{title} — dornosaur.com</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script is:inline>
+      // Set theme before paint to prevent flash
+      (function() {
+        try {
+          const saved = localStorage.getItem('dorno-theme');
+          if (saved === 'light' || saved === 'dark') {
+            document.documentElement.setAttribute('data-theme', saved);
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <header>
@@ -26,6 +38,10 @@ const { title, fullWidth = false } = Astro.props;
         <a href="/books">Books</a>
         <a href="/vinyl">Vinyl</a>
         <a href="/hobbies">Hobbies</a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-icon dark-icon">◐</span>
+          <span class="theme-icon light-icon">◑</span>
+        </button>
       </nav>
     </header>
     <main class:list={{ 'full-width': fullWidth }}>
@@ -36,22 +52,58 @@ const { title, fullWidth = false } = Astro.props;
       <span class="footer-sep">·</span>
       <span>made with curiosity</span>
     </footer>
+    <script is:inline>
+      const btn = document.getElementById('theme-toggle');
+      btn?.addEventListener('click', () => {
+        const cur = document.documentElement.getAttribute('data-theme') || 'dark';
+        const next = cur === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        try { localStorage.setItem('dorno-theme', next); } catch (e) {}
+      });
+    </script>
   </body>
 </html>
 
 <style is:global>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --bg:          #0C0C10;
-    --surface:     #14141A;
-    --surface-2:   #1C1C24;
-    --text:        #EDEAE5;
-    --text-muted:  #6A6A7E;
-    --accent:      #FF6B2B;
-    --accent-dim:  rgba(255, 107, 43, 0.12);
-    --border:      #272733;
+  /* ── DARK (default) ──────────────────────────────────────── */
+  :root, [data-theme="dark"] {
+    --bg:           #0E0E12;
+    --surface:      #16161D;
+    --surface-2:    #1E1E26;
+    --text:         #EDEAE5;
+    --text-muted:   #7A7A8E;
+    --text-dim:     #4A4A58;
+    --border:       #28282F;
+    --border-soft:  #1F1F26;
+    --brand:        #E8743C;
+    --brand-soft:   rgba(232, 116, 60, 0.14);
+    --header-bg:    #08080C;
+    --hero-bg:      #0A0A10;
   }
+
+  /* ── LIGHT ───────────────────────────────────────────────── */
+  [data-theme="light"] {
+    --bg:           #F6F2E8;
+    --surface:      #FFFFFF;
+    --surface-2:    #EDE7DA;
+    --text:         #1A1A20;
+    --text-muted:   #6A6055;
+    --text-dim:     #B0A89B;
+    --border:       #DDD5C5;
+    --border-soft:  #E8E1D0;
+    --brand:        #C95A22;
+    --brand-soft:   rgba(201, 90, 34, 0.10);
+    --header-bg:    #FFFCF4;
+    --hero-bg:      #F0EBDD;
+  }
+
+  /* ── Page-tint overlays (subtle hue per section) ─────────── */
+  [data-tint="books"]   { --tint: 215; --tint-sat: 18%; }
+  [data-tint="vinyl"]   { --tint: 350; --tint-sat: 24%; }
+  [data-tint="hobbies"] { --tint: 150; --tint-sat: 12%; }
+  [data-tint="neutral"] { --tint: 240; --tint-sat: 4%;  }
 
   html { scroll-behavior: smooth; }
 
@@ -63,20 +115,17 @@ const { title, fullWidth = false } = Astro.props;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    transition: background 0.25s ease, color 0.25s ease;
   }
 
-  h1, h2, h3, h4 {
-    font-family: 'Playfair Display', Georgia, serif;
-    line-height: 1.1;
-  }
-
-  a { color: var(--accent); text-decoration: none; }
+  h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.1; }
+  a { color: var(--brand); text-decoration: none; }
   a:hover { text-decoration: underline; }
   img { display: block; max-width: 100%; }
 
-  /* ── Navigation ──────────────────────────────────────────── */
+  /* ── Header ──────────────────────────────────────────────── */
   header {
-    background: #08080C;
+    background: var(--header-bg);
     border-bottom: 1px solid var(--border);
     padding: 0 2.5rem;
     height: 62px;
@@ -86,22 +135,19 @@ const { title, fullWidth = false } = Astro.props;
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: background 0.25s ease, border-color 0.25s ease;
   }
-
   .brand { display: flex; align-items: baseline; gap: 1rem; }
-
   .wordmark {
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
     font-weight: 700;
-    font-style: normal;
-    color: var(--accent);
+    color: var(--brand);
     letter-spacing: -0.01em;
-    transition: opacity 0.15s;
     white-space: nowrap;
+    transition: opacity 0.15s;
   }
   .wordmark:hover { text-decoration: none; opacity: 0.75; }
-
   .tagline {
     font-family: 'Lora', serif;
     font-style: italic;
@@ -127,12 +173,31 @@ const { title, fullWidth = false } = Astro.props;
     position: absolute;
     bottom: -2px; left: 0; right: 0;
     height: 1px;
-    background: var(--accent);
+    background: var(--brand);
     transform: scaleX(0);
     transition: transform 0.2s;
   }
   nav a:hover { color: var(--text); text-decoration: none; }
   nav a:hover::after { transform: scaleX(1); }
+
+  .theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+    transition: all 0.2s ease;
+  }
+  .theme-toggle:hover { color: var(--brand); border-color: var(--brand); }
+  .theme-icon { display: none; }
+  [data-theme="dark"] .light-icon { display: inline; }
+  [data-theme="light"] .dark-icon  { display: inline; }
 
   /* ── Main ────────────────────────────────────────────────── */
   main {
@@ -142,14 +207,11 @@ const { title, fullWidth = false } = Astro.props;
     margin: 0 auto;
     padding: 3rem 2rem;
   }
-  main.full-width {
-    max-width: 100%;
-    padding: 0;
-  }
+  main.full-width { max-width: 100%; padding: 0; }
 
   /* ── Footer ──────────────────────────────────────────────── */
   footer {
-    background: #08080C;
+    background: var(--header-bg);
     border-top: 1px solid var(--border);
     padding: 1.25rem 2.5rem;
     display: flex;
@@ -159,6 +221,79 @@ const { title, fullWidth = false } = Astro.props;
     font-size: 0.75rem;
     letter-spacing: 0.04em;
   }
-  .footer-mark { color: var(--accent); font-family: 'Playfair Display', serif; font-style: normal; }
+  .footer-mark { color: var(--brand); font-family: 'Playfair Display', serif; }
   .footer-sep { opacity: 0.4; }
+
+  /* ── Shared page-hero pattern (used by vinyl + books) ────── */
+  .page-hero {
+    position: relative;
+    padding: 5.5rem 0 4rem;
+    background: var(--hero-bg);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 20% 30%,
+      hsla(var(--tint), var(--tint-sat), 50%, 0.18) 0%,
+      transparent 60%);
+    pointer-events: none;
+  }
+  .page-hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  .page-hero .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--brand);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .page-hero .eyebrow::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--brand);
+  }
+  .page-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(4rem, 9vw, 7.5rem);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--text);
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Stat strip */
+  .stats-row { display: flex; align-items: center; gap: 1.75rem; flex-wrap: wrap; }
+  .stat { display: flex; flex-direction: column; gap: 0.3rem; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .stat-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .stat-div { width: 1px; height: 2.4rem; background: var(--border); }
 </style>

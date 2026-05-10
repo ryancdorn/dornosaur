@@ -9,15 +9,13 @@ const genres = [
 ];
 ---
 
-<Layout title="Vinyl" fullWidth={true}>
-<div class="vinyl-page">
+<Layout title="Vinyl" fullWidth={true} pageTint="vinyl">
 
-  <!-- Wood panel header -->
-  <div class="wood-header">
-    <div class="header-inner">
-      <p class="eyebrow">Record Collection</p>
-      <h1>Vinyl</h1>
-      <p class="sub">The physical kind — warping on a real turntable.</p>
+  <div class="page-hero vinyl-hero">
+    <div class="grooves" aria-hidden="true"></div>
+    <div class="page-hero-inner">
+      <p class="eyebrow">Record collection</p>
+      <h1>Vinyl.</h1>
       <div class="stats-row">
         <div class="stat">
           <span class="stat-num">{records.length}</span>
@@ -42,7 +40,6 @@ const genres = [
     </div>
   </div>
 
-  <!-- Genre sections -->
   {genres.map(genre => {
     const genreRecords = records.filter((r: any) => r.genre === genre.key);
     if (genreRecords.length === 0) return null;
@@ -61,7 +58,7 @@ const genres = [
               {genreRecords.map((record: any) => (
                 <div class="record-card">
                   <div class="cover-wrap">
-                    <img src={record.cover} alt={`${record.title} by ${record.artist}`} loading="lazy" />
+                    <img src={record.cover} alt={`${record.title} by ${record.artist}`} loading="lazy" referrerpolicy="no-referrer" />
                     <div class="cover-overlay">
                       <span class="overlay-format">{record.format}</span>
                     </div>
@@ -75,125 +72,43 @@ const genres = [
               ))}
             </div>
           </div>
-          <div class="shelf-ledge"></div>
         </div>
       </section>
     );
   })}
 
-  <div class="wood-footer"></div>
-
-</div>
 </Layout>
 
 <style>
-  .vinyl-page { display: flex; flex-direction: column; min-height: calc(100vh - 62px); }
+  .vinyl-hero { padding: 6rem 0 4.5rem; }
 
-  /* ─────────────────────────────────────────────────────────
-     WOOD PANEL HEADER — real photo, dark overlay for legibility
-  ───────────────────────────────────────────────────────── */
-  .wood-header {
-    position: relative;
-    padding: 5rem 0 4rem;
-    background-image:
-      linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.52) 0%,
-        rgba(0,0,0,0.60) 60%,
-        rgba(0,0,0,0.72) 100%
-      ),
-      url('/images/wood-panel.jpg');
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 8px 48px rgba(0,0,0,0.8);
-  }
-
-  /* Top edge — subtle shadow so header reads as a defined block */
-  .wood-header::before {
-    content: '';
+  /* Subtle vinyl-groove rings — pure CSS, decorative, low opacity */
+  .grooves {
     position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: rgba(255,210,140,0.12);
-    z-index: 2;
+    top: 50%;
+    right: -180px;
+    transform: translateY(-50%);
+    width: 720px;
+    height: 720px;
+    border-radius: 50%;
+    background:
+      repeating-radial-gradient(
+        circle at center,
+        transparent 0,
+        transparent 6px,
+        currentColor 6px,
+        currentColor 7px
+      );
+    color: var(--text);
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
   }
+  [data-theme="light"] .grooves { opacity: 0.06; }
 
-  /* Bottom edge */
-  .wood-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 1px;
-    background: rgba(255,200,100,0.1);
-    box-shadow: 0 1px 30px rgba(0,0,0,0.9);
-    z-index: 2;
-  }
-
-  .header-inner {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 2.5rem;
-    position: relative;
-    z-index: 1;
-  }
-
-  .eyebrow {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: rgba(230,190,120,0.55);
-    margin-bottom: 1rem;
-  }
-
-  .wood-header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(3.5rem, 7vw, 6rem);
-    font-weight: 700;
-    font-style: italic;
-    color: #EDD9B0;
-    /* engraved look: dark shadow below, faint light above */
-    text-shadow:
-      0 1px 0 rgba(255,220,150,0.15),
-      0 2px 4px rgba(0,0,0,0.7),
-      0 4px 16px rgba(0,0,0,0.5);
-    letter-spacing: -0.02em;
-    line-height: 1;
-    margin-bottom: 0.75rem;
-  }
-
-  .sub {
-    font-family: 'Lora', serif;
-    font-style: italic;
-    font-size: 1rem;
-    color: rgba(200,155,85,0.6);
-    margin-bottom: 2.5rem;
-  }
-
-  /* Stats */
-  .stats-row { display: flex; align-items: center; gap: 1.5rem; }
-  .stat { display: flex; flex-direction: column; gap: 0.2rem; }
-  .stat-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #EDD9B0;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-    letter-spacing: -0.03em;
-    line-height: 1;
-  }
-  .stat-label {
-    font-size: 0.68rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(190,140,70,0.5);
-  }
-  .stat-div { width: 1px; height: 2rem; background: rgba(190,140,70,0.2); }
-
-  /* ── Genre sections ──────────────────────────────────────── */
-  .gs { border-top: 1px solid rgba(255,255,255,0.04); }
-
-  .gs-banner { padding: 3.5rem 0 3rem; }
+  /* ── Genre sections (always dark/immersive) ──────────────── */
+  .gs { border-top: 1px solid #1A1A20; background: #0E0E12; color: #EDEAE5; }
+  .gs-banner { padding: 4rem 0 3rem; }
   .gs-banner-inner {
     max-width: 1280px;
     margin: 0 auto;
@@ -204,40 +119,37 @@ const genres = [
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    margin-bottom: 0.75rem;
-    opacity: 0.45;
+    margin-bottom: 0.85rem;
+    opacity: 0.55;
   }
   .gs-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(2.75rem, 5.5vw, 4.75rem);
     font-weight: 700;
+    font-style: italic;
     line-height: 1;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.85rem;
     letter-spacing: -0.02em;
   }
   .gs-desc {
     font-family: 'Lora', serif;
     font-size: 1rem;
     font-style: italic;
-    opacity: 0.5;
+    opacity: 0.55;
   }
 
-  .gs-shelf { position: relative; }
   .gs-shelf-inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 2rem 2.5rem 3.5rem;
+    padding: 1.5rem 2.5rem 4rem;
   }
 
-  /* ── Record grid ─────────────────────────────────────────── */
   .record-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 1.75rem;
   }
-
-  .record-card { display: flex; flex-direction: column; gap: 0.65rem; cursor: default; }
-
+  .record-card { display: flex; flex-direction: column; gap: 0.65rem; }
   .cover-wrap {
     position: relative;
     border-radius: 2px;
@@ -246,32 +158,26 @@ const genres = [
     box-shadow: 0 8px 24px rgba(0,0,0,0.55), 0 2px 6px rgba(0,0,0,0.4);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
-  .record-card:hover .cover-wrap {
-    transform: translateY(-6px) scale(1.02);
-  }
-  .cover-wrap img {
-    width: 100%; height: 100%;
-    object-fit: cover; display: block;
-  }
+  .record-card:hover .cover-wrap { transform: translateY(-6px) scale(1.02); }
+  .cover-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-  /* Format badge — revealed on hover */
   .cover-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0);
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
     padding: 8px;
+    background: rgba(0,0,0,0);
     transition: background 0.2s;
   }
   .record-card:hover .cover-overlay { background: rgba(0,0,0,0.35); }
   .overlay-format {
-    font-size: 0.58rem;
+    font-size: 0.6rem;
     font-weight: 700;
     letter-spacing: 0.06em;
     background: rgba(0,0,0,0.8);
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.85);
     padding: 0.2rem 0.5rem;
     border-radius: 2px;
     opacity: 0;
@@ -280,68 +186,47 @@ const genres = [
   }
   .record-card:hover .overlay-format { opacity: 1; transform: translateY(0); }
 
-  .record-info { padding: 0 2px; }
-  .rtitle  { font-size: 0.78rem; font-weight: 700; line-height: 1.3; margin: 0 0 0.2rem; }
-  .rartist { font-size: 0.7rem;  opacity: 0.45; margin: 0 0 0.2rem; }
-  .rmeta   { font-size: 0.6rem;  opacity: 0.3;  margin: 0; line-height: 1.5; }
+  .rtitle  { font-size: 0.82rem; font-weight: 700; line-height: 1.3; margin: 0 0 0.2rem; }
+  .rartist { font-size: 0.72rem; opacity: 0.55; margin: 0 0 0.2rem; }
+  .rmeta   { font-size: 0.62rem; opacity: 0.35; margin: 0; line-height: 1.5; }
 
-  /* Shelf ledge */
-  .shelf-ledge {
-    height: 20px;
-    border-top: 2px solid rgba(255,255,255,0.06);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  /* ── Genre themes ────────────────────────────────────────── */
+  .hiphop .gs-banner {
+    background: linear-gradient(135deg, #0B0904 0%, #14100A 100%);
+    border-bottom: 1px solid rgba(212,168,32,0.25);
   }
+  .hiphop .gs-eyebrow { color: rgba(212,168,32,0.65); }
+  .hiphop .gs-title   { color: #D4A820; text-shadow: 0 0 60px rgba(212,168,32,0.18); }
+  .hiphop .gs-desc    { color: rgba(212,168,32,0.55); }
+  .hiphop .gs-shelf   { background: #0A0805; }
+  .hiphop .rtitle     { color: #D4BC78; }
+  .hiphop .rartist    { color: #8A7440; }
+  .hiphop .cover-wrap { box-shadow: 0 8px 24px rgba(180,130,10,0.14), 0 2px 6px rgba(0,0,0,0.5); }
+  .hiphop .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(180,130,10,0.28); }
 
-  /* ══════════════════════════════════════════════════════════
-     HIP HOP
-  ══════════════════════════════════════════════════════════ */
-  .hiphop .gs-banner { background: #080604; border-bottom: 1px solid rgba(200,150,20,0.15); }
-  .hiphop .gs-eyebrow { color: rgba(200,150,20,0.6); }
-  .hiphop .gs-title   { color: #D4A820; text-shadow: 0 0 60px rgba(200,150,20,0.2); }
-  .hiphop .gs-desc    { color: rgba(180,130,40,0.55); }
-  .hiphop .gs-shelf   { background: #0A0806; }
-  .hiphop .rtitle     { color: #C8A860; }
-  .hiphop .rartist    { color: #8A7040; }
-  .hiphop .cover-wrap { box-shadow: 0 8px 24px rgba(180,130,10,0.12), 0 2px 6px rgba(0,0,0,0.5); }
-  .hiphop .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(180,130,10,0.25), 0 4px 12px rgba(0,0,0,0.5); }
-  .hiphop .shelf-ledge { background: rgba(180,130,10,0.06); }
-
-  /* ══════════════════════════════════════════════════════════
-     ROCK
-  ══════════════════════════════════════════════════════════ */
-  .rock .gs-banner { background: #070608; border-bottom: 1px solid rgba(180,50,40,0.15); }
-  .rock .gs-eyebrow { color: rgba(200,70,50,0.6); }
-  .rock .gs-title   { color: #C84838; text-shadow: 0 0 60px rgba(180,50,40,0.2); }
-  .rock .gs-desc    { color: rgba(180,70,50,0.5); }
-  .rock .gs-shelf   { background: #080608; }
-  .rock .rtitle     { color: #D0A8A8; }
-  .rock .rartist    { color: #784040; }
-  .rock .cover-wrap { box-shadow: 0 8px 24px rgba(160,40,30,0.12), 0 2px 6px rgba(0,0,0,0.5); }
-  .rock .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(160,40,30,0.28), 0 4px 12px rgba(0,0,0,0.5); }
-  .rock .shelf-ledge { background: rgba(160,40,30,0.06); }
-
-  /* ══════════════════════════════════════════════════════════
-     POP & SOUL
-  ══════════════════════════════════════════════════════════ */
-  .soul .gs-banner { background: #060608; border-bottom: 1px solid rgba(140,90,200,0.15); }
-  .soul .gs-eyebrow { color: rgba(150,100,210,0.6); }
-  .soul .gs-title   { color: #A878DC; text-shadow: 0 0 60px rgba(140,90,200,0.2); }
-  .soul .gs-desc    { color: rgba(140,90,180,0.5); }
-  .soul .gs-shelf   { background: #070608; }
-  .soul .rtitle     { color: #C0A8E0; }
-  .soul .rartist    { color: #6A4890; }
-  .soul .cover-wrap { box-shadow: 0 8px 24px rgba(120,70,180,0.12), 0 2px 6px rgba(0,0,0,0.5); }
-  .soul .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(120,70,180,0.28), 0 4px 12px rgba(0,0,0,0.5); }
-  .soul .shelf-ledge { background: rgba(120,70,180,0.06); }
-
-  /* ── Footer wood panel ───────────────────────────────────── */
-  .wood-footer {
-    height: 56px;
-    background-image:
-      linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-      url('/images/wood-panel.jpg');
-    background-size: cover;
-    background-position: center bottom;
-    border-top: 1px solid rgba(255,200,100,0.08);
+  .rock .gs-banner {
+    background: linear-gradient(135deg, #0B0606 0%, #150808 100%);
+    border-bottom: 1px solid rgba(200,72,56,0.25);
   }
+  .rock .gs-eyebrow { color: rgba(200,72,56,0.65); }
+  .rock .gs-title   { color: #C84838; text-shadow: 0 0 60px rgba(200,72,56,0.2); }
+  .rock .gs-desc    { color: rgba(200,72,56,0.55); }
+  .rock .gs-shelf   { background: #0A0606; }
+  .rock .rtitle     { color: #D4B0B0; }
+  .rock .rartist    { color: #804444; }
+  .rock .cover-wrap { box-shadow: 0 8px 24px rgba(160,40,30,0.14), 0 2px 6px rgba(0,0,0,0.5); }
+  .rock .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(160,40,30,0.3); }
+
+  .soul .gs-banner {
+    background: linear-gradient(135deg, #08060B 0%, #100A18 100%);
+    border-bottom: 1px solid rgba(168,120,220,0.25);
+  }
+  .soul .gs-eyebrow { color: rgba(168,120,220,0.65); }
+  .soul .gs-title   { color: #A878DC; text-shadow: 0 0 60px rgba(168,120,220,0.22); }
+  .soul .gs-desc    { color: rgba(168,120,220,0.55); }
+  .soul .gs-shelf   { background: #07050A; }
+  .soul .rtitle     { color: #C8B0E4; }
+  .soul .rartist    { color: #6E4E94; }
+  .soul .cover-wrap { box-shadow: 0 8px 24px rgba(120,70,180,0.14), 0 2px 6px rgba(0,0,0,0.5); }
+  .soul .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(120,70,180,0.3); }
 </style>
