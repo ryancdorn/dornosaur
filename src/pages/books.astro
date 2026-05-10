@@ -119,15 +119,29 @@ function groupBySeries(genreBooks: any[]) {
         );
       })}
     </div>
+    <div class="filter-bar" role="group" aria-label="Filter by status">
+      {totalRead > 0 &&
+        <button type="button" class="pill read is-active" data-status="read" aria-pressed="true">
+          ✓ {totalRead} listened to
+        </button>}
+      {totalReading > 0 &&
+        <button type="button" class="pill reading is-active" data-status="reading" aria-pressed="true">
+          ◉ {totalReading} listening
+        </button>}
+      {totalUnread > 0 &&
+        <button type="button" class="pill unread is-active" data-status="unread" aria-pressed="true">
+          ○ {totalUnread} queued
+        </button>}
+      {totalUnpurchased > 0 &&
+        <button type="button" class="pill unpurchased" data-status="unpurchased" aria-pressed="false">
+          ＋ {totalUnpurchased} unpurchased
+        </button>}
+    </div>
   </nav>
 
   {genres.map(genre => {
     const genreBooks = books.filter((b: any) => b.genre === genre.key);
     if (genreBooks.length === 0) return null;
-    const readCount        = genreBooks.filter((b: any) => b.status === 'read').length;
-    const readingCount     = genreBooks.filter((b: any) => b.status === 'reading').length;
-    const unreadCount      = genreBooks.filter((b: any) => b.status === 'unread' && b.owned).length;
-    const unpurchasedCount = genreBooks.filter((b: any) => b.status === 'unread' && !b.owned).length;
     const seriesGroups = groupBySeries(genreBooks);
     return (
       <section id={genre.key} class:list={['gs', genre.key]}>
@@ -140,26 +154,6 @@ function groupBySeries(genreBooks: any[]) {
         </div>
         <div class="gs-shelf">
           <div class="gs-shelf-inner">
-            <div class="gs-pills" role="group" aria-label="Filter by status">
-              {readCount > 0 &&
-                <button type="button" class="pill read is-active" data-status="read" aria-pressed="true">
-                  ✓ {readCount} listened to
-                </button>}
-              {readingCount > 0 &&
-                <button type="button" class="pill reading is-active" data-status="reading" aria-pressed="true">
-                  ◉ {readingCount} listening
-                </button>}
-              {unreadCount > 0 &&
-                <button type="button" class="pill unread is-active" data-status="unread" aria-pressed="true">
-                  ○ {unreadCount} queued
-                </button>}
-              {unpurchasedCount > 0 &&
-                <button type="button" class="pill unpurchased" data-status="unpurchased" aria-pressed="false">
-                  ＋ {unpurchasedCount} unpurchased
-                </button>}
-            </div>
-            <p class="gs-empty" hidden>No books match the current filters.</p>
-
             {seriesGroups.map(group => (
               <div class="series-group">
                 <button type="button" class="series-header" data-toggle-series aria-expanded="true">
@@ -238,6 +232,18 @@ function groupBySeries(genreBooks: any[]) {
     gap: 0.25rem 0.4rem;
     justify-content: center;
   }
+  .filter-bar {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.55rem 1rem 0.7rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  /* Hide the whole genre section when no books match the active filter */
+  .gs.is-hidden { display: none; }
   .genre-link {
     display: inline-flex;
     align-items: baseline;
@@ -305,7 +311,7 @@ function groupBySeries(genreBooks: any[]) {
     border-top: 1px solid #1A1A20;
     background: #0E0E12;
     color: #EDEAE5;
-    scroll-margin-top: 110px; /* header (62px) + nav (~48px) */
+    scroll-margin-top: 250px; /* header (62) + genre links row + filter pills row */
   }
   .gs-banner { padding: 4rem 0 3rem; }
   .gs-banner-inner { max-width: 1280px; margin: 0 auto; padding: 0 2.5rem; }
@@ -803,13 +809,14 @@ function groupBySeries(genreBooks: any[]) {
     });
   });
 
-  // ── Per-genre status filters (Read / Reading / Unread / Unpurchased pills) ──
-  document.querySelectorAll('.gs').forEach((section) => {
-    const pills = section.querySelectorAll('.pill');
-    const books = section.querySelectorAll('.book');
-    const groups = section.querySelectorAll('.series-group');
-    const empty = section.querySelector('.gs-empty');
-    // Initialize active set from is-active class so the JSX-declared default (Unpurchased OFF) sticks.
+  // ── Global status filters (Read / Reading / Queued / Unpurchased pills in the sticky nav) ──
+  (() => {
+    const pills = document.querySelectorAll('.filter-bar .pill');
+    if (pills.length === 0) return;
+    const books = document.querySelectorAll('.book');
+    const groups = document.querySelectorAll('.series-group');
+    const sections = document.querySelectorAll('.gs');
+    // Initialize active set from is-active class so JSX-declared defaults (Unpurchased OFF) stick.
     const active = new Set(
       Array.from(pills).filter((p) => p.classList.contains('is-active')).map((p) => p.dataset.status),
     );
@@ -822,7 +829,10 @@ function groupBySeries(genreBooks: any[]) {
         const visible = group.querySelectorAll('.book:not(.is-hidden)').length;
         group.classList.toggle('is-hidden', visible === 0);
       });
-      if (empty) empty.hidden = active.size > 0;
+      sections.forEach((section) => {
+        const visible = section.querySelectorAll('.book:not(.is-hidden)').length;
+        section.classList.toggle('is-hidden', visible === 0);
+      });
     }
 
     pills.forEach((pill) => {
@@ -841,9 +851,8 @@ function groupBySeries(genreBooks: any[]) {
       });
     });
 
-    // Initial render — collapse series groups that are empty under the default filter.
     render();
-  });
+  })();
 
   // ── Highlight active genre in the nav while scrolling ──
   const navLinks = new Map();
@@ -863,8 +872,8 @@ function groupBySeries(genreBooks: any[]) {
         link.classList.toggle('is-current', key === id);
       });
     }, {
-      // Trigger when the top of a section crosses just below the sticky nav (~110px)
-      rootMargin: '-110px 0px -60% 0px',
+      // Trigger when the top of a section crosses just below the sticky nav (~250px)
+      rootMargin: '-250px 0px -50% 0px',
       threshold: 0,
     });
     document.querySelectorAll('.gs').forEach(s => observer.observe(s));
