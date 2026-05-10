@@ -18,33 +18,6 @@
     "genre": "fantasy"
   },
   {
-    "title": "The Way of Kings",
-    "author": "Brandon Sanderson",
-    "narrator": "Kate Reading, Michael Kramer",
-    "series": "The Cosmere",
-    "cover": "https://m.media-amazon.com/images/I/51hAwcG3oNL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Well of Ascension",
-    "author": "Brandon Sanderson",
-    "narrator": "Michael Kramer",
-    "series": "The Cosmere",
-    "cover": "https://m.media-amazon.com/images/I/51dIuQBEZLL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Wind and Truth",
-    "author": "Brandon Sanderson",
-    "narrator": "Kate Reading, Michael Kramer",
-    "series": "The Cosmere",
-    "cover": "https://m.media-amazon.com/images/I/51bCtVYcLHL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
     "title": "Words of Radiance",
     "author": "Brandon Sanderson",
     "narrator": "Michael Kramer, Kate Reading",
@@ -72,11 +45,38 @@
     "genre": "fantasy"
   },
   {
+    "title": "The Well of Ascension",
+    "author": "Brandon Sanderson",
+    "narrator": "Michael Kramer",
+    "series": "The Mistborn Saga",
+    "cover": "https://m.media-amazon.com/images/I/51dIuQBEZLL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy"
+  },
+  {
     "title": "Rhythm of War",
     "author": "Brandon Sanderson",
     "narrator": "Kate Reading, Michael Kramer",
     "series": "The Stormlight Archive",
     "cover": "https://m.media-amazon.com/images/I/51+MGwgwVsL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy"
+  },
+  {
+    "title": "The Way of Kings",
+    "author": "Brandon Sanderson",
+    "narrator": "Kate Reading, Michael Kramer",
+    "series": "The Stormlight Archive",
+    "cover": "https://m.media-amazon.com/images/I/51hAwcG3oNL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Wind and Truth",
+    "author": "Brandon Sanderson",
+    "narrator": "Kate Reading, Michael Kramer",
+    "series": "The Stormlight Archive",
+    "cover": "https://m.media-amazon.com/images/I/51bCtVYcLHL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy"
   },
@@ -93,7 +93,7 @@
     "title": "The Chronicles of Narnia Complete Audio Collection",
     "author": "C. S. Lewis",
     "narrator": "Kenneth Branagh, Alex Jennings, Michael York, Lynn Redgrave, Derek Jacobi, Jeremy Northam, Patrick Stewart",
-    "series": "The Chronicles of Narnia (Author's Preferred Order)",
+    "series": "The Chronicles of Narnia (Publication Order)",
     "cover": "https://m.media-amazon.com/images/I/51K+xUkrkaL._SL500_.jpg",
     "status": "reading",
     "genre": "fantasy"
@@ -405,20 +405,29 @@
     "genre": "fantasy"
   },
   {
-    "title": "Ship of Magic",
+    "title": "Royal Assassin",
     "author": "Robin Hobb",
-    "narrator": "Anne Flosnik",
-    "series": "Liveship Traders",
-    "cover": "https://m.media-amazon.com/images/I/61xoNhjF5FL._SL500_.jpg",
-    "status": "reading",
+    "narrator": "Paul Boehmer",
+    "series": "Farseer Trilogy",
+    "cover": "https://m.media-amazon.com/images/I/6196CCbWQOL._SL500_.jpg",
+    "status": "unread",
     "genre": "fantasy"
   },
   {
-    "title": "Dragon Keeper",
+    "title": "The Farseer: Assassin's Apprentice",
+    "author": "Robin Hobb",
+    "narrator": "Paul Boehmer",
+    "series": "Farseer Trilogy",
+    "cover": "https://m.media-amazon.com/images/I/61-wM-ZrdGL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Dragon Haven",
     "author": "Robin Hobb",
     "narrator": "Anne Flosnik",
     "series": "Realms of the Elderlings",
-    "cover": "https://m.media-amazon.com/images/I/6103DDv9O0L._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/61YnSDx-2YL._SL500_.jpg",
     "status": "reading",
     "genre": "fantasy"
   },
@@ -441,38 +450,29 @@
     "genre": "fantasy"
   },
   {
+    "title": "Ship of Magic",
+    "author": "Robin Hobb",
+    "narrator": "Anne Flosnik",
+    "series": "Realms of the Elderlings",
+    "cover": "https://m.media-amazon.com/images/I/61xoNhjF5FL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
     "title": "Golden Fool",
     "author": "Robin Hobb",
     "narrator": "James Langton",
-    "series": "Realms of the Elderlings",
+    "series": "Tawny Man",
     "cover": "https://m.media-amazon.com/images/I/51r+m+0XVmL._SL500_.jpg",
     "status": "reading",
     "genre": "fantasy"
   },
   {
-    "title": "Royal Assassin",
-    "author": "Robin Hobb",
-    "narrator": "Paul Boehmer",
-    "series": "Realms of the Elderlings",
-    "cover": "https://m.media-amazon.com/images/I/6196CCbWQOL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Farseer: Assassin's Apprentice",
-    "author": "Robin Hobb",
-    "narrator": "Paul Boehmer",
-    "series": "Realms of the Elderlings",
-    "cover": "https://m.media-amazon.com/images/I/61-wM-ZrdGL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Dragon Haven",
+    "title": "Dragon Keeper",
     "author": "Robin Hobb",
     "narrator": "Anne Flosnik",
     "series": "The Rain Wild Chronicles",
-    "cover": "https://m.media-amazon.com/images/I/61YnSDx-2YL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/6103DDv9O0L._SL500_.jpg",
     "status": "reading",
     "genre": "fantasy"
   },
