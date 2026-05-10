@@ -1,8 +1,94 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import books from '../data/books.json';
+
+const seriesBooks = books.filter(b => b.series);
+const standalones = books.filter(b => !b.series);
+
+// Group series books by series name (strip the #N)
+const seriesMap = new Map<string, typeof books>();
+for (const book of seriesBooks) {
+  const seriesName = book.series!.replace(/ #[\d.]+$/, '');
+  if (!seriesMap.has(seriesName)) seriesMap.set(seriesName, []);
+  seriesMap.get(seriesName)!.push(book);
+}
+const seriesList = Array.from(seriesMap.entries()).sort((a, b) => a[0].localeCompare(b[0]));
 ---
 
 <Layout title="Books">
   <h1>Books</h1>
-  <p>What I've been reading.</p>
+  <p class="subtitle">My Audible library — {books.length} books and counting.</p>
+
+  <section>
+    <h2>Series</h2>
+    <div class="series-list">
+      {seriesList.map(([seriesName, seriesBooks]) => (
+        <div class="series-group">
+          <h3>{seriesName} <span class="count">({seriesBooks.length})</span></h3>
+          <div class="book-grid">
+            {seriesBooks.map(book => (
+              <div class="book-card">
+                <img src={book.cover} alt={book.title} loading="lazy" />
+                <div class="book-info">
+                  <p class="book-title">{book.title}</p>
+                  <p class="book-author">{book.author}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <h2>Standalones</h2>
+    <div class="book-grid">
+      {standalones.map(book => (
+        <div class="book-card">
+          <img src={book.cover} alt={book.title} loading="lazy" />
+          <div class="book-info">
+            <p class="book-title">{book.title}</p>
+            <p class="book-author">{book.author}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
 </Layout>
+
+<style>
+  h1 { margin-bottom: 0.25rem; }
+  .subtitle { color: #666; margin-bottom: 2rem; }
+
+  section { margin-bottom: 3rem; }
+  h2 { border-bottom: 1px solid #eee; padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+
+  .series-group { margin-bottom: 2rem; }
+  h3 { margin-bottom: 0.75rem; font-size: 1rem; }
+  .count { font-weight: normal; color: #888; }
+
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+  }
+
+  .book-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .book-card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+
+  .book-info { font-size: 0.72rem; line-height: 1.3; }
+  .book-title { font-weight: 600; margin: 0; }
+  .book-author { color: #666; margin: 0; }
+</style>
