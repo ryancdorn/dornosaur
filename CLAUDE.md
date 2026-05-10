@@ -144,6 +144,8 @@ Each genre exposes `--series-color` and `--btitle-color` CSS vars so the accent 
 ### Sticky genre nav
 A horizontal nav bar sits sticky at `top: 62px` (directly under the global header) listing every genre with its book count, color-coded per genre (`.genre-link.fantasy` etc.). Clicking a link smooth-scrolls to the matching `<section id={genre.key}>`; each section uses `scroll-margin-top: 110px` so the title lands below the header + nav stack rather than behind them. The currently-visible genre is highlighted via `IntersectionObserver` (`rootMargin: '-110px 0px -60% 0px'`) toggling `.is-current` on the matching link — accent color underline + colored count.
 
+The nav uses **short labels** from a `nav` field on each genre (e.g. `Fantasy` instead of `Epic Fantasy`, `Sci-Fi` instead of `Science Fiction`) so all 8 genres fit on one row at 1280px without horizontal scroll. The container uses `flex-wrap: wrap` + `justify-content: center` as a safety net for narrow viewports — anything that overflows wraps cleanly to a second row rather than being hidden behind a scrollbar.
+
 ### Status filter pills (per-genre)
 The Read / Reading / Unread pills at the top of each genre's shelf are interactive `<button>` toggles, not just labels. All start `.is-active` (everything visible). Clicking toggles a pill on/off — books with that status get `.is-hidden`, and any series group whose books are now all hidden also gets `.is-hidden` (handled in JS by counting `.book:not(.is-hidden)` per group). A `.gs-empty` paragraph appears when all three filters are off.
 
@@ -180,6 +182,7 @@ Data source: `src/data/vinyl.json` — auto-refreshed daily from the Discogs API
   - Rock → red accent (`#C84838`)
   - Pop & Soul → purple accent (`#A878DC`)
 - Record cards: 180px min, format badge appears on hover
+- **Sticky genre nav**: Same pattern as the books page (sticky bar at `top: 62px`, accent-colored per-genre highlight via `IntersectionObserver`, `scroll-margin-top: 110px` on each `<section id={genre.key}>`). Vinyl has no filter pills — just the jump-to-genre nav.
 
 ## Pending / Not Built
 

@@ -40,11 +40,25 @@ const genres = [
     </div>
   </div>
 
+  <nav class="genre-nav" aria-label="Jump to genre">
+    <div class="genre-nav-inner">
+      {genres.filter(g => records.some((r: any) => r.genre === g.key)).map(g => {
+        const count = records.filter((r: any) => r.genre === g.key).length;
+        return (
+          <a href={`#${g.key}`} class:list={['genre-link', g.key]} data-target={g.key}>
+            <span class="genre-link-name">{g.label}</span>
+            <span class="genre-link-count">{count}</span>
+          </a>
+        );
+      })}
+    </div>
+  </nav>
+
   {genres.map(genre => {
     const genreRecords = records.filter((r: any) => r.genre === genre.key);
     if (genreRecords.length === 0) return null;
     return (
-      <section class:list={['gs', genre.key]}>
+      <section id={genre.key} class:list={['gs', genre.key]}>
         <div class="gs-banner">
           <div class="gs-banner-inner">
             <p class="gs-eyebrow">{genre.key.toUpperCase()} · {genreRecords.length} RECORDS</p>
@@ -106,8 +120,67 @@ const genres = [
   }
   [data-theme="light"] .grooves { opacity: 0.06; }
 
+  /* ── Sticky genre nav ─────────────────────────────────────── */
+  .genre-nav {
+    position: sticky;
+    top: 62px;
+    z-index: 50;
+    background: rgba(10, 10, 14, 0.92);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-top: 1px solid #1A1A20;
+    border-bottom: 1px solid #1A1A20;
+  }
+  .genre-nav-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.4rem;
+    justify-content: center;
+  }
+  .genre-link {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.95rem 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(237, 234, 229, 0.55);
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color 0.15s, border-color 0.15s, background 0.15s;
+  }
+  .genre-link:hover { text-decoration: none; color: #EDEAE5; background: rgba(255,255,255,0.03); }
+  .genre-link-count {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.85rem;
+    letter-spacing: 0;
+    color: rgba(237, 234, 229, 0.4);
+  }
+  .genre-link.is-current {
+    color: var(--genre-accent, #EDEAE5);
+    border-bottom-color: var(--genre-accent, #EDEAE5);
+  }
+  .genre-link.is-current .genre-link-count { color: var(--genre-accent, #EDEAE5); opacity: 0.85; }
+
+  .genre-link.hiphop { --genre-accent: #D4A820; }
+  .genre-link.rock   { --genre-accent: #C84838; }
+  .genre-link.soul   { --genre-accent: #A878DC; }
+
   /* ── Genre sections (always dark/immersive) ──────────────── */
-  .gs { border-top: 1px solid #1A1A20; background: #0E0E12; color: #EDEAE5; }
+  .gs {
+    border-top: 1px solid #1A1A20;
+    background: #0E0E12;
+    color: #EDEAE5;
+    scroll-margin-top: 110px;
+  }
   .gs-banner { padding: 4rem 0 3rem; }
   .gs-banner-inner {
     max-width: 1280px;
@@ -230,3 +303,28 @@ const genres = [
   .soul .cover-wrap { box-shadow: 0 8px 24px rgba(120,70,180,0.14), 0 2px 6px rgba(0,0,0,0.5); }
   .soul .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(120,70,180,0.3); }
 </style>
+
+<script is:inline>
+  // ── Highlight active genre in the nav while scrolling ──
+  const navLinks = new Map();
+  document.querySelectorAll('.genre-link').forEach((link) => {
+    navLinks.set(link.dataset.target, link);
+  });
+
+  if ('IntersectionObserver' in window && navLinks.size > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (visible.length === 0) return;
+      const id = visible[0].target.id;
+      navLinks.forEach((link, key) => {
+        link.classList.toggle('is-current', key === id);
+      });
+    }, {
+      rootMargin: '-110px 0px -60% 0px',
+      threshold: 0,
+    });
+    document.querySelectorAll('.gs').forEach(s => observer.observe(s));
+  }
+</script>

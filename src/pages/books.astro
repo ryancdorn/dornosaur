@@ -3,14 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import books from '../data/books.json';
 
 const genres = [
-  { key: 'fantasy', label: 'Epic Fantasy',          desc: 'Sweeping worlds, ancient magic, chosen destinies' },
-  { key: 'litrpg',  label: 'LitRPG & Progression',  desc: 'Level up or die trying' },
-  { key: 'scifi',   label: 'Science Fiction',       desc: 'The future, the void, and everything in between' },
-  { key: 'horror',  label: 'Horror & Thriller',     desc: 'Things that go bump in the night' },
-  { key: 'memoir',  label: 'Memoir & Biography',    desc: 'Real lives, real stories' },
-  { key: 'history', label: 'History & Politics',    desc: 'The past and its long shadows' },
-  { key: 'ideas',   label: 'Business & Ideas',      desc: 'How the world works' },
-  { key: 'other',   label: 'Miscellaneous',         desc: 'Everything else worth reading' },
+  { key: 'fantasy', label: 'Epic Fantasy',          nav: 'Fantasy', desc: 'Sweeping worlds, ancient magic, chosen destinies' },
+  { key: 'litrpg',  label: 'LitRPG & Progression',  nav: 'LitRPG',  desc: 'Level up or die trying' },
+  { key: 'scifi',   label: 'Science Fiction',       nav: 'Sci-Fi',  desc: 'The future, the void, and everything in between' },
+  { key: 'horror',  label: 'Horror & Thriller',     nav: 'Horror',  desc: 'Things that go bump in the night' },
+  { key: 'memoir',  label: 'Memoir & Biography',    nav: 'Memoir',  desc: 'Real lives, real stories' },
+  { key: 'history', label: 'History & Politics',    nav: 'History', desc: 'The past and its long shadows' },
+  { key: 'ideas',   label: 'Business & Ideas',      nav: 'Ideas',   desc: 'How the world works' },
+  { key: 'other',   label: 'Miscellaneous',         nav: 'Other',   desc: 'Everything else worth reading' },
 ];
 
 const totalRead    = books.filter(b => b.status === 'read').length;
@@ -77,7 +77,7 @@ function groupBySeries(genreBooks: any[]) {
         const count = books.filter((b: any) => b.genre === g.key).length;
         return (
           <a href={`#${g.key}`} class:list={['genre-link', g.key]} data-target={g.key}>
-            <span class="genre-link-name">{g.label}</span>
+            <span class="genre-link-name">{g.nav}</span>
             <span class="genre-link-count">{count}</span>
           </a>
         );
@@ -186,13 +186,12 @@ function groupBySeries(genreBooks: any[]) {
   .genre-nav-inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 2.5rem;
+    padding: 0 1rem;
     display: flex;
-    gap: 0.25rem;
-    overflow-x: auto;
-    scrollbar-width: none;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.4rem;
+    justify-content: center;
   }
-  .genre-nav-inner::-webkit-scrollbar { display: none; }
   .genre-link {
     display: inline-flex;
     align-items: baseline;
