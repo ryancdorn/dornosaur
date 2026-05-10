@@ -1,5 +1,14 @@
 [
   {
+    "title": "Arcanum Unbounded: The Cosmere Collection",
+    "author": "Brandon Sanderson",
+    "narrator": "Michael Kramer, Kate Reading",
+    "series": "The Cosmere",
+    "cover": "https://m.media-amazon.com/images/I/51CMXJmtxqL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
     "title": "Oathbringer",
     "author": "Brandon Sanderson",
     "narrator": "Kate Reading, Michael Kramer",
@@ -9,12 +18,12 @@
     "genre": "fantasy"
   },
   {
-    "title": "The Hero of Ages",
+    "title": "Rhythm of War",
     "author": "Brandon Sanderson",
-    "narrator": "Michael Kramer",
+    "narrator": "Kate Reading, Michael Kramer",
     "series": "The Cosmere",
-    "cover": "https://m.media-amazon.com/images/I/51-nnxwOinL._SL500_.jpg",
-    "status": "reading",
+    "cover": "https://m.media-amazon.com/images/I/51+MGwgwVsL._SL500_.jpg",
+    "status": "unread",
     "genre": "fantasy"
   },
   {
@@ -23,15 +32,6 @@
     "narrator": "Michael Kramer, Kate Reading",
     "series": "The Cosmere",
     "cover": "https://m.media-amazon.com/images/I/51DZfSH5qQL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Arcanum Unbounded: The Cosmere Collection",
-    "author": "Brandon Sanderson",
-    "narrator": "Michael Kramer, Kate Reading",
-    "series": "The Mistborn Saga",
-    "cover": "https://m.media-amazon.com/images/I/51CMXJmtxqL._SL500_.jpg",
     "status": "reading",
     "genre": "fantasy"
   },
@@ -45,20 +45,20 @@
     "genre": "fantasy"
   },
   {
+    "title": "The Hero of Ages",
+    "author": "Brandon Sanderson",
+    "narrator": "Michael Kramer",
+    "series": "The Mistborn Saga",
+    "cover": "https://m.media-amazon.com/images/I/51-nnxwOinL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
     "title": "The Well of Ascension",
     "author": "Brandon Sanderson",
     "narrator": "Michael Kramer",
     "series": "The Mistborn Saga",
     "cover": "https://m.media-amazon.com/images/I/51dIuQBEZLL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Rhythm of War",
-    "author": "Brandon Sanderson",
-    "narrator": "Kate Reading, Michael Kramer",
-    "series": "The Stormlight Archive",
-    "cover": "https://m.media-amazon.com/images/I/51+MGwgwVsL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy"
   },
@@ -93,7 +93,7 @@
     "title": "The Chronicles of Narnia Complete Audio Collection",
     "author": "C. S. Lewis",
     "narrator": "Kenneth Branagh, Alex Jennings, Michael York, Lynn Redgrave, Derek Jacobi, Jeremy Northam, Patrick Stewart",
-    "series": "The Chronicles of Narnia (Publication Order)",
+    "series": "The Chronicles of Narnia (Author's Preferred Order)",
     "cover": "https://m.media-amazon.com/images/I/51K+xUkrkaL._SL500_.jpg",
     "status": "reading",
     "genre": "fantasy"
@@ -306,21 +306,21 @@
     "genre": "fantasy"
   },
   {
+    "title": "The Amber Spyglass",
+    "author": "Philip Pullman",
+    "narrator": "Philip Pullman, Full Cast",
+    "series": "His Dark Materials",
+    "cover": "https://m.media-amazon.com/images/I/51xT1DYUXlL._SL500_.jpg",
+    "status": "read",
+    "genre": "fantasy"
+  },
+  {
     "title": "The Golden Compass",
     "author": "Philip Pullman",
     "narrator": "Philip Pullman, Joanna Wyatt, Rupert Degas, Alison Dowling, Douglas Blackwell, Jill Shilling, Stephen Thorne, Sean Barrett, Garrick Hagon, John O'Connor, Susan Sheridan, Full Cast",
     "series": "His Dark Materials",
     "cover": "https://m.media-amazon.com/images/I/51i0iVxL0LL._SL500_.jpg",
     "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Amber Spyglass",
-    "author": "Philip Pullman",
-    "narrator": "Philip Pullman, Full Cast",
-    "series": "His Dark Materialsik",
-    "cover": "https://m.media-amazon.com/images/I/51xT1DYUXlL._SL500_.jpg",
-    "status": "read",
     "genre": "fantasy"
   },
   {
