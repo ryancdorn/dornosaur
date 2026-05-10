@@ -33,12 +33,19 @@ src/
     vinyl.astro           # Vinyl page — typographic header + genre sections from vinyl.json
     hobbies.astro         # STUB — just a placeholder, needs building out
   data/
-    books.json            # 145 Audible books with genre + series + status
-    vinyl.json            # 16 Discogs records
+    books.json            # Audible books with genre + series + status — AUTO-REFRESHED DAILY
+    vinyl.json            # Discogs records — AUTO-REFRESHED DAILY
 public/
   CNAME                   # dornosaur.com
 scripts/
-  update-books.cjs        # Node CommonJS script — re-run to refresh books.json from Audible MCP
+  update-books.cjs        # Legacy — depended on dumped MCP tool-results; superseded by update-books-fresh.mjs
+  update-books-fresh.mjs  # Self-contained Audible refresh — uses audible-mcp's bundled API client, refreshes auth in place
+  update-books-task.ps1   # Wrapper invoked by Windows Task Scheduler: pull → refresh → commit → push
+  update-vinyl.cjs        # Self-contained Discogs refresh — preserves manual genre + pressing fields per record
+  logs/                   # Local PS task logs (gitignored)
+.github/workflows/
+  deploy.yml              # GitHub Pages deploy on push to main
+  update-vinyl.yml        # Daily Discogs cron at 11:00 UTC (4 AM PT)
 ```
 
 ## Design System
@@ -97,7 +104,7 @@ The palette flips with `[data-theme]`. Tokens read by every page; only the brand
 
 ## Books Page
 
-Data source: `src/data/books.json` — populated via Audible MCP (`audible-mcp` by tannerwj).
+Data source: `src/data/books.json` — auto-refreshed daily from the Audible API. The script uses `audible-mcp`'s bundled API client (no MCP server required at runtime — it's pulled in as a devDep just for the `AudibleApi` class). Auth lives in `C:\Users\ryanc\audible-auth.json` and gets rotated in place by the script. **Direct edits to books.json get clobbered next morning** — change genre rules in `scripts/update-books-fresh.mjs` instead.
 
 ### Book schema
 ```json
@@ -112,14 +119,10 @@ Data source: `src/data/books.json` — populated via Audible MCP (`audible-mcp` 
 }
 ```
 
-### Status logic (in update-books.cjs)
+### Status logic (in update-books-fresh.mjs)
 - `read` — ≥95% complete in Audible
 - `reading` — on in-progress list, <95% complete
 - `unread` — not on in-progress list
-
-### Current counts
-- Total: 145 books | Read: 20 | Reading: 82 | Unread: 43
-- By genre: fantasy 65, litrpg 47, scifi 16, ideas 12, history 10, memoir 10, horror 4, other 11
 
 ### Genre section design pattern
 Each genre has a **tinted dark banner** (subtle gradient + accent eyebrow + big Playfair title in the genre's accent color) above a **dark shelf area** with the same accent threaded through series headers and book titles. Books are grouped by series within each genre — series with the most books first, "Standalone" at the end. Cover art has a small circular status badge (✓ green / ◉ amber / ○ gray).
@@ -140,7 +143,7 @@ Each genre exposes `--series-color` and `--btitle-color` CSS vars so the accent 
 
 ## Vinyl Page
 
-Data source: `src/data/vinyl.json` — populated from Discogs MCP (username: `Dornosaur`).
+Data source: `src/data/vinyl.json` — auto-refreshed daily from the Discogs API (username: `Dornosaur`) via GitHub Actions cron. Token in `DISCOGS_TOKEN` repo secret. **The `genre` and `pressing` fields ARE preserved across refreshes** (matched by lowercased `artist+title`); all other fields (cover, label, format, year, pressYear) are always overwritten with API values. So manual curation of those two fields is safe.
 
 ### Record schema
 ```json
@@ -173,16 +176,40 @@ Data source: `src/data/vinyl.json` — populated from Discogs MCP (username: `Do
 ## Pending / Not Built
 
 - **Hobbies page** — currently a bare stub (`<h1>Hobbies</h1>`), needs full design + content
-- **Discogs refresh script** — no equivalent of `update-books.cjs` for vinyl yet; update vinyl.json manually for now
 - **Mobile responsive** — no media queries yet, could break on small screens
 
-## MCP Servers
+## Automation
 
-Configured in `C:\Users\ryanc\.claude\settings.json`:
+Both data files refresh daily without manual intervention:
+
+| Source | When | How | Auth |
+|---|---|---|---|
+| Discogs → vinyl.json | 11:00 UTC daily (4 AM PT) | GitHub Actions: `.github/workflows/update-vinyl.yml` runs `scripts/update-vinyl.cjs`, commits if changed | `DISCOGS_TOKEN` repo secret |
+| Audible → books.json | 4:00 AM local daily (wakes the PC) | Windows Scheduled Task `DornosaurBooksRefresh` runs `scripts/update-books-task.ps1` → `scripts/update-books-fresh.mjs` → commits + pushes if changed | `C:\Users\ryanc\audible-auth.json` (rotated in place) |
+
+**Triggering manually:**
+- Vinyl: `gh workflow run update-vinyl.yml -R ryancdorn/dornosaur`
+- Books: `Start-ScheduledTask -TaskName 'DornosaurBooksRefresh'` (or run `node scripts/update-books-fresh.mjs` directly for dry-run)
+
+**Logs:**
+- Vinyl: GitHub Actions run history
+- Books: `scripts/logs/update-books-YYYY-MM-DD.log` (gitignored)
+
+**Re-registering the books task** (after machine wipe / new user):
+```powershell
+$action  = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument '-NoProfile -ExecutionPolicy Bypass -File "C:\code\dornosaur\scripts\update-books-task.ps1"'
+$trigger = New-ScheduledTaskTrigger -Daily -At 4am
+$settings = New-ScheduledTaskSettingsSet -WakeToRun -StartWhenAvailable -DontStopIfGoingOnBatteries -AllowStartIfOnBatteries -ExecutionTimeLimit (New-TimeSpan -Minutes 10)
+Register-ScheduledTask -TaskName 'DornosaurBooksRefresh' -Action $action -Trigger $trigger -Settings $settings -User $env:USERNAME -RunLevel Limited
+```
+Run from an elevated PowerShell; prompts for the user's Windows password (required for the task to fire while logged out).
+
+## MCP Servers (interactive only)
+
+Configured in `C:\Users\ryanc\.claude\settings.json` for ad-hoc Audible/Discogs queries from Claude Code. The daily auto-refresh does NOT use these — it talks directly to the APIs.
+
 - **audible**: `npx -y audible-mcp serve` with `AUDIBLE_AUTH_FILE=C:\Users\ryanc\audible-auth.json`
 - **discogs**: configured separately (Dornosaur account)
-
-To refresh books data: run `node scripts/update-books.cjs` after calling Audible MCP tools to get fresh library/in-progress data.
 
 ## Known Gotchas
 
