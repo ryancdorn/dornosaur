@@ -83,7 +83,7 @@ function groupBySeries(genreBooks: any[]) {
         <div class="stat-div"></div>
         <div class="stat">
           <span class="stat-num read-num">{totalRead}</span>
-          <span class="stat-label">Read</span>
+          <span class="stat-label">Listened to</span>
         </div>
         <div class="stat-div"></div>
         <div class="stat">
@@ -93,7 +93,7 @@ function groupBySeries(genreBooks: any[]) {
         <div class="stat-div"></div>
         <div class="stat">
           <span class="stat-num">{totalUnread}</span>
-          <span class="stat-label">Unread</span>
+          <span class="stat-label">Unlistened</span>
         </div>
         <div class="stat-div"></div>
         <div class="stat">
@@ -143,15 +143,15 @@ function groupBySeries(genreBooks: any[]) {
             <div class="gs-pills" role="group" aria-label="Filter by status">
               {readCount > 0 &&
                 <button type="button" class="pill read is-active" data-status="read" aria-pressed="true">
-                  ✓ {readCount} read
+                  ✓ {readCount} listened to
                 </button>}
               {readingCount > 0 &&
                 <button type="button" class="pill reading is-active" data-status="reading" aria-pressed="true">
-                  ◉ {readingCount} reading
+                  ◉ {readingCount} listening
                 </button>}
               {unreadCount > 0 &&
                 <button type="button" class="pill unread is-active" data-status="unread" aria-pressed="true">
-                  ○ {unreadCount} unread
+                  ○ {unreadCount} unlistened
                 </button>}
               {unpurchasedCount > 0 &&
                 <button type="button" class="pill unpurchased" data-status="unpurchased" aria-pressed="false">
