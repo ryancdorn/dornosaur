@@ -164,14 +164,25 @@ The nav uses **short labels** from a `nav` field on each genre (e.g. `Fantasy` i
 
 The first item in the nav is a **`.genre-home`** link (`Books.` on books, `Vinyl.` on vinyl) — italic Playfair Display in `var(--brand)` with a thin vertical separator after it, deliberately styled differently from the Inter-caps genre chips because clicking it scrolls to the top of the page rather than jumping to a section. A `data-scroll-top` attribute drives a tiny click handler that calls `window.scrollTo({top:0, behavior:'smooth'})` and prevents default so the URL hash stays clean.
 
-### Status filter pills (per-genre)
-The Read / Reading / Unread / **Unpurchased** pills at the top of each genre's shelf are interactive `<button>` toggles. The first three start `.is-active` (everything in your library is visible). **Unpurchased starts inactive** — the page defaults to "what's actually in my library", and series fill-in books are revealed only when the user opts in. Clicking toggles a pill — books with that status get `.is-hidden`, and any series group whose books are now all hidden also gets `.is-hidden` (handled in JS by counting `.book:not(.is-hidden)` per group). A `.gs-empty` paragraph appears when all filters are off.
+### Status filter bar (global, in the sticky nav)
+The Listened to / Listening / Queued / **Unpurchased** pills live in a `.filter-bar` row inside the sticky `.genre-nav`, so they stay visible while scrolling and apply **page-wide**. The first three start `.is-active`; **Unpurchased starts inactive** — the page defaults to "what's actually in my library", and series fill-in books appear only when the user opts in.
 
-The `effectiveStatus()` helper in books.astro splits the underlying `unread` bucket into two display statuses: `unread` (owned but unstarted) vs `unpurchased` (`owned: false`). The `data-status` attribute on each `.book` card uses the effective status, so the filter logic stays a simple "is this status in the active set" check.
+Clicking a pill toggles its status in/out of the active set. The render pass adds `.is-hidden` to:
+- Each `.book` whose `data-status` isn't in the active set,
+- Each `.series-group` with no remaining visible books (`:not(.is-hidden)` count = 0),
+- Each `.gs` (genre section) with no remaining visible books — the whole section folds away.
 
-Active state colors map to status badges: read = green `#6FCB89`, reading = amber `#ECB242`, unread = slate-blue `#9FBDD8`, unpurchased = soft purple `#C9A8E8` (visually distinct so each pill reads on its own). Inactive = `opacity: 0.32` + line-through. The unpurchased badge on covers is `＋` (a fullwidth plus, conveying "add to library"). Pills are independent per section — there is no global filter state shared across genres.
+The `effectiveStatus()` helper in books.astro splits the underlying `unread` bucket into two display statuses for the UI: `unread` (owned but unstarted, shown as **Queued**) vs `unpurchased` (`owned: false`). The internal data still uses `read|reading|unread`; only the rendered `data-status` attribute uses the effective value.
 
-The hero stats now show 5 numbers: **Library** (owned count) · **Read** · **In progress** · **Unread** (owned-unstarted) · **Unpurchased** (unowned). The four right-side stats sum to the total page books shown.
+Active pill colors map to the dot on each book's cover (matching exactly): read = green `#6FCB89`, reading = amber `#ECB242`, queued = slate-blue `#9FBDD8`, unpurchased = soft purple `#C9A8E8`. Inactive pills are `opacity: 0.32` + line-through. Cover badges are clean 11px colored dots (no glyph), positioned bottom-right; hovering surfaces a `title` tooltip with the status name.
+
+The hero stats show 5 numbers: **Library** (owned count) · **Listened to** · **In progress** · **Queued** (owned-unstarted) · **Unpurchased**. The four right-side stats sum to the total books on the page.
+
+### Click-to-collapse on series headers
+Each `.series-header` is a `<button>` with `data-toggle-series` and a `▾` chevron. Clicking adds `.is-collapsed` to the `.series-group`, which hides the `.book-grid` and rotates the chevron `-90deg`. State is per-series and not persisted across reloads.
+
+### Sticky-stack heights
+The sticky stack on the books page is now: header (62px) + genre links row + filter pills row ≈ 240px on a wide viewport. `.gs` sections use `scroll-margin-top: 250px` and the genre IntersectionObserver uses `rootMargin: '-250px 0px -50% 0px'` so anchor scrolls land below the stack and the active-genre highlight tracks correctly. If the nav grows another row (e.g. by wrapping at narrow widths) those numbers may need bumping.
 
 ## Vinyl Page
 
