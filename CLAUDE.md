@@ -146,6 +146,8 @@ A horizontal nav bar sits sticky at `top: 62px` (directly under the global heade
 
 The nav uses **short labels** from a `nav` field on each genre (e.g. `Fantasy` instead of `Epic Fantasy`, `Sci-Fi` instead of `Science Fiction`) so all 8 genres fit on one row at 1280px without horizontal scroll. The container uses `flex-wrap: wrap` + `justify-content: center` as a safety net for narrow viewports — anything that overflows wraps cleanly to a second row rather than being hidden behind a scrollbar.
 
+The first item in the nav is a **`.genre-home`** link (`Books.` on books, `Vinyl.` on vinyl) — italic Playfair Display in `var(--brand)` with a thin vertical separator after it, deliberately styled differently from the Inter-caps genre chips because clicking it scrolls to the top of the page rather than jumping to a section. A `data-scroll-top` attribute drives a tiny click handler that calls `window.scrollTo({top:0, behavior:'smooth'})` and prevents default so the URL hash stays clean.
+
 ### Status filter pills (per-genre)
 The Read / Reading / Unread pills at the top of each genre's shelf are interactive `<button>` toggles, not just labels. All start `.is-active` (everything visible). Clicking toggles a pill on/off — books with that status get `.is-hidden`, and any series group whose books are now all hidden also gets `.is-hidden` (handled in JS by counting `.book:not(.is-hidden)` per group). A `.gs-empty` paragraph appears when all three filters are off.
 

@@ -42,6 +42,9 @@ const genres = [
 
   <nav class="genre-nav" aria-label="Jump to genre">
     <div class="genre-nav-inner">
+      <a href="#" class="genre-link genre-home" data-scroll-top aria-label="Back to top of Vinyl page">
+        <span class="genre-home-name">Vinyl.</span>
+      </a>
       {genres.filter(g => records.some((r: any) => r.genre === g.key)).map(g => {
         const count = records.filter((r: any) => r.genre === g.key).length;
         return (
@@ -169,6 +172,29 @@ const genres = [
     border-bottom-color: var(--genre-accent, #EDEAE5);
   }
   .genre-link.is-current .genre-link-count { color: var(--genre-accent, #EDEAE5); opacity: 0.85; }
+
+  .genre-home {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--brand);
+    text-transform: none;
+    letter-spacing: -0.01em;
+    padding-right: 1.1rem;
+    position: relative;
+  }
+  .genre-home::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 18px;
+    background: rgba(255,255,255,0.12);
+  }
+  .genre-home:hover { color: var(--brand); background: transparent; opacity: 0.8; border-bottom-color: transparent; }
 
   .genre-link.hiphop { --genre-accent: #D4A820; }
   .genre-link.rock   { --genre-accent: #C84838; }
@@ -305,6 +331,14 @@ const genres = [
 </style>
 
 <script is:inline>
+  // ── Back-to-top "Vinyl." link in the genre nav ──
+  document.querySelectorAll('[data-scroll-top]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
   // ── Highlight active genre in the nav while scrolling ──
   const navLinks = new Map();
   document.querySelectorAll('.genre-link').forEach((link) => {
