@@ -1,9 +1,117 @@
 [
   {
+    "title": "Oathbringer",
+    "author": "Brandon Sanderson",
+    "narrator": "Kate Reading, Michael Kramer",
+    "series": "The Cosmere",
+    "cover": "https://m.media-amazon.com/images/I/51+YovOwdoL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy"
+  },
+  {
+    "title": "The Hero of Ages",
+    "author": "Brandon Sanderson",
+    "narrator": "Michael Kramer",
+    "series": "The Cosmere",
+    "cover": "https://m.media-amazon.com/images/I/51-nnxwOinL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "The Way of Kings",
+    "author": "Brandon Sanderson",
+    "narrator": "Kate Reading, Michael Kramer",
+    "series": "The Cosmere",
+    "cover": "https://m.media-amazon.com/images/I/51hAwcG3oNL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy"
+  },
+  {
+    "title": "The Well of Ascension",
+    "author": "Brandon Sanderson",
+    "narrator": "Michael Kramer",
+    "series": "The Cosmere",
+    "cover": "https://m.media-amazon.com/images/I/51dIuQBEZLL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Wind and Truth",
+    "author": "Brandon Sanderson",
+    "narrator": "Kate Reading, Michael Kramer",
+    "series": "The Cosmere",
+    "cover": "https://m.media-amazon.com/images/I/51bCtVYcLHL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Words of Radiance",
+    "author": "Brandon Sanderson",
+    "narrator": "Michael Kramer, Kate Reading",
+    "series": "The Cosmere",
+    "cover": "https://m.media-amazon.com/images/I/51DZfSH5qQL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Arcanum Unbounded: The Cosmere Collection",
+    "author": "Brandon Sanderson",
+    "narrator": "Michael Kramer, Kate Reading",
+    "series": "The Mistborn Saga",
+    "cover": "https://m.media-amazon.com/images/I/51CMXJmtxqL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "The Final Empire",
+    "author": "Brandon Sanderson",
+    "narrator": "Michael Kramer",
+    "series": "The Mistborn Saga",
+    "cover": "https://m.media-amazon.com/images/I/61rYqiz8yJL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Rhythm of War",
+    "author": "Brandon Sanderson",
+    "narrator": "Kate Reading, Michael Kramer",
+    "series": "The Stormlight Archive",
+    "cover": "https://m.media-amazon.com/images/I/51+MGwgwVsL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Redwall",
+    "author": "Brian Jacques",
+    "narrator": "Brian Jacques, Full Cast",
+    "series": "Redwall",
+    "cover": "https://m.media-amazon.com/images/I/51oh9QYcEaL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "The Chronicles of Narnia Complete Audio Collection",
+    "author": "C. S. Lewis",
+    "narrator": "Kenneth Branagh, Alex Jennings, Michael York, Lynn Redgrave, Derek Jacobi, Jeremy Northam, Patrick Stewart",
+    "series": "The Chronicles of Narnia (Author's Preferred Order)",
+    "cover": "https://m.media-amazon.com/images/I/51K+xUkrkaL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Jade City",
+    "author": "Fonda Lee",
+    "narrator": "Andrew Kishino",
+    "series": "The Green Bone Saga",
+    "cover": "https://m.media-amazon.com/images/I/614lDW3OVnL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy"
+  },
+  {
     "title": "Jade Legacy",
     "author": "Fonda Lee",
     "narrator": "Andrew Kishino",
-    "series": "The Green Bone Saga #3",
+    "series": "The Green Bone Saga",
     "cover": "https://m.media-amazon.com/images/I/51fciAoeVTS._SL500_.jpg",
     "status": "reading",
     "genre": "fantasy"
@@ -12,187 +120,16 @@
     "title": "Jade War",
     "author": "Fonda Lee",
     "narrator": "Andrew Kishino",
-    "series": "The Green Bone Saga #2",
+    "series": "The Green Bone Saga",
     "cover": "https://m.media-amazon.com/images/I/5156BueVjgL._SL500_.jpg",
     "status": "reading",
     "genre": "fantasy"
   },
   {
-    "title": "Jade City",
-    "author": "Fonda Lee",
-    "narrator": "Andrew Kishino",
-    "series": "The Green Bone Saga #1",
-    "cover": "https://m.media-amazon.com/images/I/614lDW3OVnL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Fury",
-    "author": "Nicoli Gonnella",
-    "narrator": "Travis Baldree",
-    "series": "Unbound #4",
-    "cover": "https://m.media-amazon.com/images/I/51tuhBw1EIL._SL500_.jpg",
-    "status": "reading",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Hunger",
-    "author": "Nicoli Gonnella",
-    "narrator": "Travis Baldree",
-    "series": "Unbound #3",
-    "cover": "https://m.media-amazon.com/images/I/519OxBsS5WL._SL500_.jpg",
-    "status": "reading",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Silence",
-    "author": "Nicoli Gonnella",
-    "narrator": "Travis Baldree",
-    "series": "Unbound #2",
-    "cover": "https://m.media-amazon.com/images/I/51Amg+8d8ZL._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Dissonance",
-    "author": "Nicoli Gonnella",
-    "narrator": "Travis Baldree",
-    "series": "Unbound #1",
-    "cover": "https://m.media-amazon.com/images/I/516MfJkQ+NL._SL500_.jpg",
-    "status": "read",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Harry Potter and the Sorcerer's Stone (Full-Cast Edition)",
-    "author": "J.K. Rowling",
-    "narrator": "Full Cast",
-    "series": "Harry Potter #1",
-    "cover": "https://m.media-amazon.com/images/I/51ym2M+-kiL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Primal Hunter 13",
-    "author": "Zogarth",
-    "narrator": "Travis Baldree",
-    "series": "The Primal Hunter #13",
-    "cover": "https://m.media-amazon.com/images/I/51PwJ+jWgoL._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "The Primal Hunter 12",
-    "author": "Zogarth",
-    "narrator": "Travis Baldree",
-    "series": "The Primal Hunter #12",
-    "cover": "https://m.media-amazon.com/images/I/515-hGDDBDL._SL500_.jpg",
-    "status": "read",
-    "genre": "litrpg"
-  },
-  {
-    "title": "The Primal Hunter 11",
-    "author": "Zogarth",
-    "narrator": "Travis Baldree",
-    "series": "The Primal Hunter #11",
-    "cover": "https://m.media-amazon.com/images/I/51D2PXx3VwL._SL500_.jpg",
-    "status": "read",
-    "genre": "litrpg"
-  },
-  {
-    "title": "The Primal Hunter 10",
-    "author": "Zogarth",
-    "narrator": "Travis Baldree",
-    "series": "The Primal Hunter #10",
-    "cover": "https://m.media-amazon.com/images/I/41T+AA2g0TL._SL500_.jpg",
-    "status": "reading",
-    "genre": "litrpg"
-  },
-  {
-    "title": "The Primal Hunter 9",
-    "author": "Zogarth",
-    "narrator": "Travis Baldree",
-    "series": "The Primal Hunter #9",
-    "cover": "https://m.media-amazon.com/images/I/51DvpAD3CML._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "The Primal Hunter 8",
-    "author": "Zogarth",
-    "narrator": "Travis Baldree",
-    "series": "The Primal Hunter #8",
-    "cover": "https://m.media-amazon.com/images/I/5196ufGQ5kL._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "The Primal Hunter 7",
-    "author": "Zogarth",
-    "narrator": "Travis Baldree",
-    "series": "The Primal Hunter #7",
-    "cover": "https://m.media-amazon.com/images/I/51ScYLhYYRL._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "The Primal Hunter 6",
-    "author": "Zogarth",
-    "narrator": "Travis Baldree",
-    "series": "The Primal Hunter #6",
-    "cover": "https://m.media-amazon.com/images/I/51B8OG8vKKL._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "The Primal Hunter 5",
-    "author": "Zogarth",
-    "narrator": "Travis Baldree",
-    "series": "The Primal Hunter #5",
-    "cover": "https://m.media-amazon.com/images/I/513RejJ2NZL._SL500_.jpg",
-    "status": "read",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Primal Hunter 4",
-    "author": "Zogarth",
-    "narrator": "Travis Baldree",
-    "series": "The Primal Hunter #4",
-    "cover": "https://m.media-amazon.com/images/I/51r3Psi9G+L._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "The Primal Hunter 3",
-    "author": "Zogarth",
-    "narrator": "Travis Baldree",
-    "series": "The Primal Hunter #3",
-    "cover": "https://m.media-amazon.com/images/I/51ez1g95W5L._SL500_.jpg",
-    "status": "read",
-    "genre": "litrpg"
-  },
-  {
-    "title": "The Primal Hunter 2",
-    "author": "Zogarth",
-    "narrator": "Travis Baldree",
-    "series": "The Primal Hunter #2",
-    "cover": "https://m.media-amazon.com/images/I/512eaY7pU2L._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "The Primal Hunter",
-    "author": "Zogarth",
-    "narrator": "Travis Baldree",
-    "series": "The Primal Hunter #1",
-    "cover": "https://m.media-amazon.com/images/I/51QqrkspisL._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
     "title": "The Claw of the Conciliator",
     "author": "Gene Wolfe",
     "narrator": "Jonathan Davis",
-    "series": "The Book of the New Sun #2",
+    "series": "The Book of the New Sun",
     "cover": "https://m.media-amazon.com/images/I/61DtJMzeCgL._SL500_.jpg",
     "status": "reading",
     "genre": "fantasy"
@@ -201,458 +138,44 @@
     "title": "The Shadow of the Torturer",
     "author": "Gene Wolfe",
     "narrator": "Jonathan Davis",
-    "series": "The Book of the New Sun #1",
+    "series": "The Book of the New Sun",
     "cover": "https://m.media-amazon.com/images/I/6156wOmu48L._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy"
   },
   {
-    "title": "Ship of Magic",
-    "author": "Robin Hobb",
-    "narrator": "Anne Flosnik",
-    "series": "Liveship Traders #1",
-    "cover": "https://m.media-amazon.com/images/I/61xoNhjF5FL._SL500_.jpg",
+    "title": "The Black Company",
+    "author": "Glen Cook",
+    "narrator": "Marc Vietor",
+    "series": "Black Company",
+    "cover": "https://m.media-amazon.com/images/I/51DWCtXP-bL._SL500_.jpg",
     "status": "reading",
     "genre": "fantasy"
   },
   {
-    "title": "The War of the Noobs",
-    "author": "Ryan Rimmel",
-    "narrator": "Johnathan McClain",
-    "series": "Noobtown #8",
-    "cover": "https://m.media-amazon.com/images/I/51lQmSAfjYL._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Tower of the Noobs",
-    "author": "Ryan Rimmel",
-    "narrator": "Johnathan McClain",
-    "series": "Noobtown #7",
-    "cover": "https://m.media-amazon.com/images/I/51-5zoCTlsL._SL500_.jpg",
-    "status": "read",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Nautical Noobs",
-    "author": "Ryan Rimmel",
-    "narrator": "Johnathan McClain",
-    "series": "Noobtown #6",
-    "cover": "https://m.media-amazon.com/images/I/51vJVYIOM5L._SL500_.jpg",
-    "status": "read",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Noob Game Plus",
-    "author": "Ryan Rimmel",
-    "narrator": "Johnathan McClain",
-    "series": "Noobtown #5",
-    "cover": "https://m.media-amazon.com/images/I/51Tl0s-BbmL._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Dungeons and Noobs",
-    "author": "Ryan Rimmel",
-    "narrator": "Johnathan McClain",
-    "series": "Noobtown #4",
-    "cover": "https://m.media-amazon.com/images/I/51GoMsmz2DL._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Castle of the Noobs",
-    "author": "Ryan Rimmel",
-    "narrator": "Johnathan McClain",
-    "series": "Noobtown #3",
-    "cover": "https://m.media-amazon.com/images/I/51zLMJH4FKL._SL500_.jpg",
-    "status": "read",
-    "genre": "litrpg"
-  },
-  {
-    "title": "The Village of Noobtown",
-    "author": "Ryan Rimmel",
-    "narrator": "Johnathan McClain",
-    "series": "Noobtown #2",
-    "cover": "https://m.media-amazon.com/images/I/513jdRuCAeL._SL500_.jpg",
-    "status": "read",
-    "genre": "litrpg"
-  },
-  {
-    "title": "The Mayor of Noobtown",
-    "author": "Ryan Rimmel",
-    "narrator": "Johnathan McClain",
-    "series": "Noobtown #1",
-    "cover": "https://m.media-amazon.com/images/I/51PRf0biAtL._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "A Brief History of Intelligence",
-    "author": "Max S. Bennett",
-    "narrator": "George Newbern",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/51zAsHDR1KL._SL500_.jpg",
-    "status": "reading",
-    "genre": "ideas"
-  },
-  {
-    "title": "Wind and Truth",
-    "author": "Brandon Sanderson",
-    "narrator": "Kate Reading, Michael Kramer",
-    "series": "The Stormlight Archive #5",
-    "cover": "https://m.media-amazon.com/images/I/51bCtVYcLHL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "This Inevitable Ruin",
-    "author": "Matt Dinniman",
-    "narrator": "Jeff Hays, Travis Baldree",
-    "series": "Dungeon Crawler Carl #7",
-    "cover": "https://m.media-amazon.com/images/I/51rtjss07uL._SL500_.jpg",
-    "status": "read",
-    "genre": "litrpg"
-  },
-  {
-    "title": "The Eye of the Bedlam Bride",
-    "author": "Matt Dinniman",
-    "narrator": "Jeff Hays",
-    "series": "Dungeon Crawler Carl #6",
-    "cover": "https://m.media-amazon.com/images/I/51qfZAq2J4L._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "The Butcher's Masquerade",
-    "author": "Matt Dinniman",
-    "narrator": "Jeff Hays",
-    "series": "Dungeon Crawler Carl #5",
-    "cover": "https://m.media-amazon.com/images/I/51kOQeaXbAL._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "The Gate of the Feral Gods",
-    "author": "Matt Dinniman",
-    "narrator": "Jeff Hays",
-    "series": "Dungeon Crawler Carl #4",
-    "cover": "https://m.media-amazon.com/images/I/51rmyTTWPsL._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "The Dungeon Anarchist's Cookbook",
-    "author": "Matt Dinniman",
-    "narrator": "Jeff Hays",
-    "series": "Dungeon Crawler Carl #3",
-    "cover": "https://m.media-amazon.com/images/I/518nfG1FaYL._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Carl's Doomsday Scenario",
-    "author": "Matt Dinniman",
-    "narrator": "Jeff Hays",
-    "series": "Dungeon Crawler Carl #2",
-    "cover": "https://m.media-amazon.com/images/I/51e1PKKdv8L._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Dungeon Crawler Carl",
-    "author": "Matt Dinniman",
-    "narrator": "Jeff Hays",
-    "series": "Dungeon Crawler Carl #1",
-    "cover": "https://m.media-amazon.com/images/I/51HIZdnqASL._SL500_.jpg",
-    "status": "read",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Industrial Strength Magic",
-    "author": "Macronomicon",
-    "narrator": "Steve Campbell",
-    "series": "Industrial Strength Magic #1",
-    "cover": "https://m.media-amazon.com/images/I/51gH3gJTYCL._SL500_.jpg",
-    "status": "reading",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Dragon Haven",
-    "author": "Robin Hobb",
-    "narrator": "Anne Flosnik",
-    "series": "The Rain Wild Chronicles #2",
-    "cover": "https://m.media-amazon.com/images/I/61YnSDx-2YL._SL500_.jpg",
+    "title": "The Fellowship of the Ring",
+    "author": "J. R. R. Tolkien",
+    "narrator": "Rob Inglis",
+    "series": "The Lord of the Rings",
+    "cover": "https://m.media-amazon.com/images/I/51eVNlqfveL._SL500_.jpg",
     "status": "reading",
     "genre": "fantasy"
   },
   {
-    "title": "Dragon Keeper",
-    "author": "Robin Hobb",
-    "narrator": "Anne Flosnik",
-    "series": "The Rain Wild Chronicles #1",
-    "cover": "https://m.media-amazon.com/images/I/6103DDv9O0L._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Fool's Fate",
-    "author": "Robin Hobb",
-    "narrator": "James Langton",
-    "series": "Tawny Man #3",
-    "cover": "https://m.media-amazon.com/images/I/51W-EsnRgsL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Golden Fool",
-    "author": "Robin Hobb",
-    "narrator": "James Langton",
-    "series": "Tawny Man #2",
-    "cover": "https://m.media-amazon.com/images/I/51r+m+0XVmL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Fool's Errand",
-    "author": "Robin Hobb",
-    "narrator": "James Langton",
-    "series": "Tawny Man #1",
-    "cover": "https://m.media-amazon.com/images/I/519hJeBpTpL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Assassin's Quest",
-    "author": "Robin Hobb",
-    "narrator": "Paul Boehmer",
-    "series": "Farseer Trilogy #3",
-    "cover": "https://m.media-amazon.com/images/I/6114hP9sGiL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Royal Assassin",
-    "author": "Robin Hobb",
-    "narrator": "Paul Boehmer",
-    "series": "Farseer Trilogy #2",
-    "cover": "https://m.media-amazon.com/images/I/6196CCbWQOL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Farseer: Assassin's Apprentice",
-    "author": "Robin Hobb",
-    "narrator": "Paul Boehmer",
-    "series": "Farseer Trilogy #1",
-    "cover": "https://m.media-amazon.com/images/I/61-wM-ZrdGL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Knight",
-    "author": "Will Wight",
-    "narrator": "Travis Baldree",
-    "series": "The Last Horizon #3",
-    "cover": "https://m.media-amazon.com/images/I/51cMFXNFcwL._SL500_.jpg",
-    "status": "reading",
-    "genre": "litrpg"
-  },
-  {
-    "title": "The Engineer",
-    "author": "Will Wight",
-    "narrator": "Travis Baldree",
-    "series": "The Last Horizon #2",
-    "cover": "https://m.media-amazon.com/images/I/51HpfKaFhaL._SL500_.jpg",
-    "status": "read",
-    "genre": "litrpg"
-  },
-  {
-    "title": "The Captain",
-    "author": "Will Wight",
-    "narrator": "Travis Baldree",
-    "series": "The Last Horizon #1",
-    "cover": "https://m.media-amazon.com/images/I/51nZJ588vAL._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Waybound",
-    "author": "Will Wight",
-    "narrator": "Travis Baldree",
-    "series": "Cradle #12",
-    "cover": "https://m.media-amazon.com/images/I/51B6o7XqIOL._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Dreadgod",
-    "author": "Will Wight",
-    "narrator": "Travis Baldree",
-    "series": "Cradle #11",
-    "cover": "https://m.media-amazon.com/images/I/51Q-p1d8yeL._SL500_.jpg",
-    "status": "reading",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Reaper",
-    "author": "Will Wight",
-    "narrator": "Travis Baldree",
-    "series": "Cradle #10",
-    "cover": "https://m.media-amazon.com/images/I/51AW6mZSVML._SL500_.jpg",
-    "status": "reading",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Wintersteel",
-    "author": "Will Wight",
-    "narrator": "Travis Baldree",
-    "series": "Cradle #8",
-    "cover": "https://m.media-amazon.com/images/I/61eYWnuh0yL._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Uncrowned",
-    "author": "Will Wight",
-    "narrator": "Travis Baldree",
-    "series": "Cradle #7",
-    "cover": "https://m.media-amazon.com/images/I/618X15+VvAL._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Underlord",
-    "author": "Will Wight",
-    "narrator": "Travis Baldree",
-    "series": "Cradle #6",
-    "cover": "https://m.media-amazon.com/images/I/51d1tLSnW-L._SL500_.jpg",
-    "status": "reading",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Ghostwater",
-    "author": "Will Wight",
-    "narrator": "Travis Baldree",
-    "series": "Cradle #5",
-    "cover": "https://m.media-amazon.com/images/I/61NBnW0IfSL._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Skysworn",
-    "author": "Will Wight",
-    "narrator": "Travis Baldree",
-    "series": "Cradle #4",
-    "cover": "https://m.media-amazon.com/images/I/51Lhs041m5L._SL500_.jpg",
-    "status": "reading",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Blackflame",
-    "author": "Will Wight",
-    "narrator": "Travis Baldree",
-    "series": "Cradle #3",
-    "cover": "https://m.media-amazon.com/images/I/518uCBISHyL._SL500_.jpg",
-    "status": "unread",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Soulsmith",
-    "author": "Will Wight",
-    "narrator": "Travis Baldree",
-    "series": "Cradle #2",
-    "cover": "https://m.media-amazon.com/images/I/515mXs+-DPL._SL500_.jpg",
-    "status": "reading",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Unsouled",
-    "author": "Will Wight",
-    "narrator": "Travis Baldree",
-    "series": "Cradle #1",
-    "cover": "https://m.media-amazon.com/images/I/517BQpIbdcL._SL500_.jpg",
-    "status": "reading",
-    "genre": "litrpg"
-  },
-  {
-    "title": "Dark Age",
-    "author": "Pierce Brown",
-    "narrator": "Tim Gerard Reynolds",
-    "series": "Red Rising #5",
-    "cover": "https://m.media-amazon.com/images/I/51FGAP7DbxL._SL500_.jpg",
-    "status": "unread",
-    "genre": "other"
-  },
-  {
-    "title": "Light Bringer",
-    "author": "Pierce Brown",
-    "narrator": "Tim Gerard Reynolds",
-    "series": "Red Rising #6",
-    "cover": "https://m.media-amazon.com/images/I/51uxvAxiknL._SL500_.jpg",
-    "status": "unread",
-    "genre": "other"
-  },
-  {
-    "title": "Iron Gold",
-    "author": "Pierce Brown",
-    "narrator": "Tim Gerard Reynolds",
-    "series": "Red Rising #4",
-    "cover": "https://m.media-amazon.com/images/I/51oKG4sAeqL._SL500_.jpg",
-    "status": "read",
-    "genre": "other"
-  },
-  {
-    "title": "Morning Star",
-    "author": "Pierce Brown",
-    "narrator": "Tim Gerard Reynolds",
-    "series": "Red Rising #3",
-    "cover": "https://m.media-amazon.com/images/I/41uGVHtH2pL._SL500_.jpg",
-    "status": "unread",
-    "genre": "other"
-  },
-  {
-    "title": "Golden Son",
-    "author": "Pierce Brown",
-    "narrator": "Tim Gerard Reynolds",
-    "series": "Red Rising #2",
-    "cover": "https://m.media-amazon.com/images/I/514G5+-hXEL._SL500_.jpg",
-    "status": "reading",
-    "genre": "other"
-  },
-  {
-    "title": "Red Rising",
-    "author": "Pierce Brown",
-    "narrator": "Tim Gerard Reynolds",
-    "series": "Red Rising #1",
-    "cover": "https://m.media-amazon.com/images/I/51IM+e-toYL._SL500_.jpg",
-    "status": "unread",
-    "genre": "other"
-  },
-  {
-    "title": "The Stone Sky",
-    "author": "N. K. Jemisin",
-    "narrator": "Robin Miles",
-    "series": "The Broken Earth #3",
-    "cover": "https://m.media-amazon.com/images/I/61vjGN8NSeL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Obelisk Gate",
-    "author": "N. K. Jemisin",
-    "narrator": "Robin Miles",
-    "series": "The Broken Earth #2",
-    "cover": "https://m.media-amazon.com/images/I/61TYlXtEa8L._SL500_.jpg",
+    "title": "Harry Potter and the Sorcerer’s Stone (Full-Cast Edition)",
+    "author": "J.K. Rowling",
+    "narrator": "Hugh Laurie, Matthew Macfadyen, Riz Ahmed, Michelle Gomez, Cush Jumbo, Frankie Treadaway, Max Lester, Arabella Stanton, Mark Addy, Indira Varma, Sacha Dhawan, Nina Wadia, Joel Fry, Adeel Akhtar, Tracy Ann Oberman",
+    "series": "Harry Potter (Full-Cast Editions)",
+    "cover": "https://m.media-amazon.com/images/I/51ym2M+-kiL._SL500_.jpg",
     "status": "read",
     "genre": "fantasy"
   },
   {
-    "title": "The Fifth Season",
-    "author": "N. K. Jemisin",
-    "narrator": "Robin Miles",
-    "series": "The Broken Earth #1",
-    "cover": "https://m.media-amazon.com/images/I/61ghIRKXuSL._SL500_.jpg",
+    "title": "Before They Are Hanged",
+    "author": "Joe Abercrombie",
+    "narrator": "Steven Pacey",
+    "series": "The First Law Trilogy",
+    "cover": "https://m.media-amazon.com/images/I/61pbE8bm42L._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy"
   },
@@ -660,17 +183,8 @@
     "title": "Last Argument of Kings",
     "author": "Joe Abercrombie",
     "narrator": "Steven Pacey",
-    "series": "The First Law Trilogy #3",
+    "series": "The First Law Trilogy",
     "cover": "https://m.media-amazon.com/images/I/61ZENIIEhfL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Before They Are Hanged",
-    "author": "Joe Abercrombie",
-    "narrator": "Steven Pacey",
-    "series": "The First Law Trilogy #2",
-    "cover": "https://m.media-amazon.com/images/I/61pbE8bm42L._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy"
   },
@@ -678,7 +192,7 @@
     "title": "The Blade Itself",
     "author": "Joe Abercrombie",
     "narrator": "Steven Pacey",
-    "series": "The First Law Trilogy #1",
+    "series": "The First Law Trilogy",
     "cover": "https://m.media-amazon.com/images/I/61Wl40L+SXL._SL500_.jpg",
     "status": "reading",
     "genre": "fantasy"
@@ -687,377 +201,8 @@
     "title": "Malice",
     "author": "John Gwynne",
     "narrator": "Damian Lynch",
-    "series": "The Faithful and the Fallen #1",
+    "series": "The Faithful and the Fallen",
     "cover": "https://m.media-amazon.com/images/I/51h9yhyr1RL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Lies of Locke Lamora",
-    "author": "Scott Lynch",
-    "narrator": "Michael Page",
-    "series": "Gentleman Bastard Sequence #1",
-    "cover": "https://m.media-amazon.com/images/I/51SUOw0KeOL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Name of the Wind",
-    "author": "Patrick Rothfuss",
-    "narrator": "Nick Podehl",
-    "series": "Kingkiller Chronicle #1",
-    "cover": "https://m.media-amazon.com/images/I/61Csiq-T2hL._SL500_.jpg",
-    "status": "read",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Wise Man's Fear",
-    "author": "Patrick Rothfuss",
-    "narrator": "Nick Podehl",
-    "series": "Kingkiller Chronicle #2",
-    "cover": "https://m.media-amazon.com/images/I/51f2XSzLauL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Slow Regard of Silent Things",
-    "author": "Patrick Rothfuss",
-    "narrator": "Patrick Rothfuss",
-    "series": "Kingkiller Chronicle #2.5",
-    "cover": "https://m.media-amazon.com/images/I/51IMLdpQB6L._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Oathbringer",
-    "author": "Brandon Sanderson",
-    "narrator": "Kate Reading, Michael Kramer",
-    "series": "The Stormlight Archive #3",
-    "cover": "https://m.media-amazon.com/images/I/51+YovOwdoL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Rhythm of War",
-    "author": "Brandon Sanderson",
-    "narrator": "Kate Reading, Michael Kramer",
-    "series": "The Stormlight Archive #4",
-    "cover": "https://m.media-amazon.com/images/I/51+MGwgwVsL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Words of Radiance",
-    "author": "Brandon Sanderson",
-    "narrator": "Michael Kramer, Kate Reading",
-    "series": "The Stormlight Archive #2",
-    "cover": "https://m.media-amazon.com/images/I/51DZfSH5qQL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Way of Kings",
-    "author": "Brandon Sanderson",
-    "narrator": "Kate Reading, Michael Kramer",
-    "series": "The Stormlight Archive #1",
-    "cover": "https://m.media-amazon.com/images/I/51hAwcG3oNL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Hero of Ages",
-    "author": "Brandon Sanderson",
-    "narrator": "Michael Kramer",
-    "series": "The Mistborn Saga #3",
-    "cover": "https://m.media-amazon.com/images/I/51-nnxwOinL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Well of Ascension",
-    "author": "Brandon Sanderson",
-    "narrator": "Michael Kramer",
-    "series": "The Mistborn Saga #2",
-    "cover": "https://m.media-amazon.com/images/I/51dIuQBEZLL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Final Empire",
-    "author": "Brandon Sanderson",
-    "narrator": "Michael Kramer",
-    "series": "The Mistborn Saga #1",
-    "cover": "https://m.media-amazon.com/images/I/61rYqiz8yJL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Arcanum Unbounded: The Cosmere Collection",
-    "author": "Brandon Sanderson",
-    "narrator": "Michael Kramer, Kate Reading",
-    "series": "The Cosmere",
-    "cover": "https://m.media-amazon.com/images/I/51CMXJmtxqL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Memories of Ice",
-    "author": "Steven Erikson",
-    "narrator": "Ralph Lister",
-    "series": "Malazan Book of the Fallen #3",
-    "cover": "https://m.media-amazon.com/images/I/51dOCZ-cF9L._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Deadhouse Gates",
-    "author": "Steven Erikson",
-    "narrator": "Ralph Lister",
-    "series": "Malazan Book of the Fallen #2",
-    "cover": "https://m.media-amazon.com/images/I/51YxphSPrQL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Gardens of the Moon",
-    "author": "Steven Erikson",
-    "narrator": "Ralph Lister",
-    "series": "Malazan Book of the Fallen #1",
-    "cover": "https://m.media-amazon.com/images/I/51gHs8lh-eL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Willful Child",
-    "author": "Steven Erikson",
-    "narrator": "MacLeod Andrews",
-    "series": "Willful Child #1",
-    "cover": "https://m.media-amazon.com/images/I/61p8Jy+7jHL._SL500_.jpg",
-    "status": "read",
-    "genre": "scifi"
-  },
-  {
-    "title": "Lord of Chaos",
-    "author": "Robert Jordan",
-    "narrator": "Kate Reading, Michael Kramer",
-    "series": "The Wheel of Time #6",
-    "cover": "https://m.media-amazon.com/images/I/515u1LtI9uL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "A Crown of Swords",
-    "author": "Robert Jordan",
-    "narrator": "Kate Reading, Michael Kramer",
-    "series": "The Wheel of Time #7",
-    "cover": "https://m.media-amazon.com/images/I/51yTbXDiJfL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Path of Daggers",
-    "author": "Robert Jordan",
-    "narrator": "Michael Kramer, Kate Reading",
-    "series": "The Wheel of Time #8",
-    "cover": "https://m.media-amazon.com/images/I/51yCXmohJjL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Fires of Heaven",
-    "author": "Robert Jordan",
-    "narrator": "Kate Reading, Michael Kramer",
-    "series": "The Wheel of Time #5",
-    "cover": "https://m.media-amazon.com/images/I/51Sh0soMKOL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Shadow Rising",
-    "author": "Robert Jordan",
-    "narrator": "Kate Reading, Michael Kramer",
-    "series": "The Wheel of Time #4",
-    "cover": "https://m.media-amazon.com/images/I/51q3FzspIQL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Dragon Reborn",
-    "author": "Robert Jordan",
-    "narrator": "Kate Reading, Michael Kramer",
-    "series": "The Wheel of Time #3",
-    "cover": "https://m.media-amazon.com/images/I/51mcAFVS4fL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Great Hunt",
-    "author": "Robert Jordan",
-    "narrator": "Kate Reading, Michael Kramer",
-    "series": "The Wheel of Time #2",
-    "cover": "https://m.media-amazon.com/images/I/51KfIGoTucL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Eye of the World",
-    "author": "Robert Jordan",
-    "narrator": "Kate Reading, Michael Kramer",
-    "series": "The Wheel of Time #1",
-    "cover": "https://m.media-amazon.com/images/I/516PPlGGZML._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Paradise",
-    "author": "Craig Alanson",
-    "narrator": "R.C. Bray",
-    "series": "Expeditionary Force #3",
-    "cover": "https://m.media-amazon.com/images/I/51ZZZwit0GL._SL500_.jpg",
-    "status": "reading",
-    "genre": "scifi"
-  },
-  {
-    "title": "SpecOps",
-    "author": "Craig Alanson",
-    "narrator": "R.C. Bray",
-    "series": "Expeditionary Force #2",
-    "cover": "https://m.media-amazon.com/images/I/51PeF-Q1VxL._SL500_.jpg",
-    "status": "reading",
-    "genre": "scifi"
-  },
-  {
-    "title": "Columbus Day",
-    "author": "Craig Alanson",
-    "narrator": "R.C. Bray",
-    "series": "Expeditionary Force #1",
-    "cover": "https://m.media-amazon.com/images/I/51nRl-t+qdL._SL500_.jpg",
-    "status": "reading",
-    "genre": "scifi"
-  },
-  {
-    "title": "For We Are Many",
-    "author": "Dennis E. Taylor",
-    "narrator": "Ray Porter",
-    "series": "Bobiverse #2",
-    "cover": "https://m.media-amazon.com/images/I/51xcxG5pAuL._SL500_.jpg",
-    "status": "reading",
-    "genre": "scifi"
-  },
-  {
-    "title": "We Are Legion (We Are Bob)",
-    "author": "Dennis E. Taylor",
-    "narrator": "Ray Porter",
-    "series": "Bobiverse #1",
-    "cover": "https://m.media-amazon.com/images/I/51rt2pFIW7L._SL500_.jpg",
-    "status": "unread",
-    "genre": "scifi"
-  },
-  {
-    "title": "The Last Colony",
-    "author": "John Scalzi",
-    "narrator": "William Dufris",
-    "series": "Old Man's War #3",
-    "cover": "https://m.media-amazon.com/images/I/51tPK4B2wYL._SL500_.jpg",
-    "status": "reading",
-    "genre": "scifi"
-  },
-  {
-    "title": "The Ghost Brigades",
-    "author": "John Scalzi",
-    "narrator": "William Dufris",
-    "series": "Old Man's War #2",
-    "cover": "https://m.media-amazon.com/images/I/51N+wercZpL._SL500_.jpg",
-    "status": "unread",
-    "genre": "scifi"
-  },
-  {
-    "title": "Redshirts",
-    "author": "John Scalzi",
-    "narrator": "Wil Wheaton",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/51CE3t95FqL._SL500_.jpg",
-    "status": "unread",
-    "genre": "scifi"
-  },
-  {
-    "title": "Project Hail Mary",
-    "author": "Andy Weir",
-    "narrator": "Ray Porter",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/51POf8gOyLL._SL500_.jpg",
-    "status": "unread",
-    "genre": "scifi"
-  },
-  {
-    "title": "Artemis",
-    "author": "Andy Weir",
-    "narrator": "Rosario Dawson",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/51fisVXQNrL._SL500_.jpg",
-    "status": "reading",
-    "genre": "scifi"
-  },
-  {
-    "title": "The Fellowship of the Ring",
-    "author": "J. R. R. Tolkien",
-    "narrator": "Rob Inglis",
-    "series": "The Lord of the Rings #1",
-    "cover": "https://m.media-amazon.com/images/I/51eVNlqfveL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Chronicles of Narnia Complete Audio Collection",
-    "author": "C. S. Lewis",
-    "narrator": "Kenneth Branagh et al.",
-    "series": "The Chronicles of Narnia",
-    "cover": "https://m.media-amazon.com/images/I/51K+xUkrkaL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Snow Crash",
-    "author": "Neal Stephenson",
-    "narrator": "Jonathan Davis",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/51F-1GJA2ML._SL500_.jpg",
-    "status": "unread",
-    "genre": "scifi"
-  },
-  {
-    "title": "1984",
-    "author": "George Orwell",
-    "narrator": "Simon Prebble",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/612oBD9OSjL._SL500_.jpg",
-    "status": "reading",
-    "genre": "scifi"
-  },
-  {
-    "title": "The Forever War",
-    "author": "Joe Haldeman",
-    "narrator": "George Wilson",
-    "series": "The Forever War #1",
-    "cover": "https://m.media-amazon.com/images/I/519rBo3iUML._SL500_.jpg",
-    "status": "unread",
-    "genre": "scifi"
-  },
-  {
-    "title": "Norse Mythology",
-    "author": "Neil Gaiman",
-    "narrator": "Neil Gaiman",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/61D9CcNEoVL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "The Black Company",
-    "author": "Glen Cook",
-    "narrator": "Marc Vietor",
-    "series": "Black Company #1",
-    "cover": "https://m.media-amazon.com/images/I/51DWCtXP-bL._SL500_.jpg",
     "status": "reading",
     "genre": "fantasy"
   },
@@ -1065,71 +210,278 @@
     "title": "The Bear and the Nightingale",
     "author": "Katherine Arden",
     "narrator": "Kathleen Gati",
-    "series": "Winternight Trilogy #1",
+    "series": "Winternight Trilogy",
     "cover": "https://m.media-amazon.com/images/I/51WxjilZBBL._SL500_.jpg",
     "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Deryni Rising",
+    "author": "Katherine Kurtz",
+    "narrator": "Jeff Woodman",
+    "series": "The Chronicles of the Deryni",
+    "cover": "https://m.media-amazon.com/images/I/51jkYLzHFQL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "The Thief",
+    "author": "Megan Whalen Turner",
+    "narrator": "Steve West",
+    "series": "The Queen's Thief",
+    "cover": "https://m.media-amazon.com/images/I/51Oyni7LuSL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "The Fifth Season",
+    "author": "N. K. Jemisin",
+    "narrator": "Robin Miles",
+    "series": "The Broken Earth",
+    "cover": "https://m.media-amazon.com/images/I/61ghIRKXuSL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy"
+  },
+  {
+    "title": "The Obelisk Gate",
+    "author": "N. K. Jemisin",
+    "narrator": "Robin Miles",
+    "series": "The Broken Earth",
+    "cover": "https://m.media-amazon.com/images/I/61TYlXtEa8L._SL500_.jpg",
+    "status": "read",
+    "genre": "fantasy"
+  },
+  {
+    "title": "The Stone Sky",
+    "author": "N. K. Jemisin",
+    "narrator": "Robin Miles",
+    "series": "The Broken Earth",
+    "cover": "https://m.media-amazon.com/images/I/61vjGN8NSeL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Norse Mythology",
+    "author": "Neil Gaiman",
+    "narrator": "Neil Gaiman",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/61D9CcNEoVL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy"
+  },
+  {
+    "title": "The Name of the Wind",
+    "author": "Patrick Rothfuss",
+    "narrator": "Nick Podehl",
+    "series": "Kingkiller Chronicle",
+    "cover": "https://m.media-amazon.com/images/I/61Csiq-T2hL._SL500_.jpg",
+    "status": "read",
+    "genre": "fantasy"
+  },
+  {
+    "title": "The Slow Regard of Silent Things",
+    "author": "Patrick Rothfuss",
+    "narrator": "Patrick Rothfuss",
+    "series": "Kingkiller Chronicle",
+    "cover": "https://m.media-amazon.com/images/I/51IMLdpQB6L._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "The Wise Man's Fear",
+    "author": "Patrick Rothfuss",
+    "narrator": "Nick Podehl",
+    "series": "Kingkiller Chronicle",
+    "cover": "https://m.media-amazon.com/images/I/51f2XSzLauL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy"
+  },
+  {
+    "title": "His Dark Materials: The Subtle Knife (Book 2)",
+    "author": "Philip Pullman",
+    "narrator": "Philip Pullman, Full Cast",
+    "series": "His Dark Materials",
+    "cover": "https://m.media-amazon.com/images/I/518+4ft8E+L._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "The Golden Compass",
+    "author": "Philip Pullman",
+    "narrator": "Philip Pullman, Joanna Wyatt, Rupert Degas, Alison Dowling, Douglas Blackwell, Jill Shilling, Stephen Thorne, Sean Barrett, Garrick Hagon, John O'Connor, Susan Sheridan, Full Cast",
+    "series": "His Dark Materials",
+    "cover": "https://m.media-amazon.com/images/I/51i0iVxL0LL._SL500_.jpg",
+    "status": "unread",
     "genre": "fantasy"
   },
   {
     "title": "The Amber Spyglass",
     "author": "Philip Pullman",
     "narrator": "Philip Pullman, Full Cast",
-    "series": "His Dark Materials #3",
+    "series": "His Dark Materialsik",
     "cover": "https://m.media-amazon.com/images/I/51xT1DYUXlL._SL500_.jpg",
     "status": "read",
     "genre": "fantasy"
   },
   {
-    "title": "His Dark Materials: The Subtle Knife",
-    "author": "Philip Pullman",
-    "narrator": "Philip Pullman, Full Cast",
-    "series": "His Dark Materials #2",
-    "cover": "https://m.media-amazon.com/images/I/518+4ft8E+L._SL500_.jpg",
+    "title": "A Crown of Swords",
+    "author": "Robert Jordan",
+    "narrator": "Kate Reading, Michael Kramer",
+    "series": "The Wheel of Time",
+    "cover": "https://m.media-amazon.com/images/I/51yTbXDiJfL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Lord of Chaos",
+    "author": "Robert Jordan",
+    "narrator": "Kate Reading, Michael Kramer",
+    "series": "The Wheel of Time",
+    "cover": "https://m.media-amazon.com/images/I/515u1LtI9uL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Path of Daggers",
+    "author": "Robert Jordan",
+    "narrator": "Michael Kramer, Kate Reading",
+    "series": "The Wheel of Time",
+    "cover": "https://m.media-amazon.com/images/I/51yCXmohJjL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "The Dragon Reborn",
+    "author": "Robert Jordan",
+    "narrator": "Kate Reading, Michael Kramer",
+    "series": "The Wheel of Time",
+    "cover": "https://m.media-amazon.com/images/I/51mcAFVS4fL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy"
   },
   {
-    "title": "The Golden Compass",
-    "author": "Philip Pullman",
-    "narrator": "Philip Pullman, Full Cast",
-    "series": "His Dark Materials #1",
-    "cover": "https://m.media-amazon.com/images/I/51i0iVxL0LL._SL500_.jpg",
+    "title": "The Eye of the World",
+    "author": "Robert Jordan",
+    "narrator": "Kate Reading, Michael Kramer",
+    "series": "The Wheel of Time",
+    "cover": "https://m.media-amazon.com/images/I/516PPlGGZML._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy"
   },
   {
-    "title": "Redwall",
-    "author": "Brian Jacques",
-    "narrator": "Brian Jacques, Full Cast",
-    "series": "Redwall #1",
-    "cover": "https://m.media-amazon.com/images/I/51oh9QYcEaL._SL500_.jpg",
+    "title": "The Fires of Heaven",
+    "author": "Robert Jordan",
+    "narrator": "Kate Reading, Michael Kramer",
+    "series": "The Wheel of Time",
+    "cover": "https://m.media-amazon.com/images/I/51Sh0soMKOL._SL500_.jpg",
     "status": "reading",
     "genre": "fantasy"
   },
   {
-    "title": "Embassytown",
-    "author": "China Miéville",
-    "narrator": "Susan Duerden",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/51gUgu0m-pL._SL500_.jpg",
-    "status": "reading",
-    "genre": "scifi"
+    "title": "The Great Hunt",
+    "author": "Robert Jordan",
+    "narrator": "Kate Reading, Michael Kramer",
+    "series": "The Wheel of Time",
+    "cover": "https://m.media-amazon.com/images/I/51KfIGoTucL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy"
   },
   {
-    "title": "Master and Commander",
-    "author": "Patrick O'Brian",
-    "narrator": "Patrick Tull",
-    "series": "Aubrey/Maturin #1",
-    "cover": "https://m.media-amazon.com/images/I/51fn1h2mP8L._SL500_.jpg",
+    "title": "The Shadow Rising",
+    "author": "Robert Jordan",
+    "narrator": "Kate Reading, Michael Kramer",
+    "series": "The Wheel of Time",
+    "cover": "https://m.media-amazon.com/images/I/51q3FzspIQL._SL500_.jpg",
     "status": "reading",
-    "genre": "other"
+    "genre": "fantasy"
   },
   {
-    "title": "The Thief",
-    "author": "Megan Whalen Turner",
-    "narrator": "Steve West",
-    "series": "The Queen's Thief #1",
-    "cover": "https://m.media-amazon.com/images/I/51Oyni7LuSL._SL500_.jpg",
+    "title": "Assassin's Quest",
+    "author": "Robin Hobb",
+    "narrator": "Paul Boehmer",
+    "series": "Farseer Trilogy",
+    "cover": "https://m.media-amazon.com/images/I/6114hP9sGiL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Ship of Magic",
+    "author": "Robin Hobb",
+    "narrator": "Anne Flosnik",
+    "series": "Liveship Traders",
+    "cover": "https://m.media-amazon.com/images/I/61xoNhjF5FL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Dragon Keeper",
+    "author": "Robin Hobb",
+    "narrator": "Anne Flosnik",
+    "series": "Realms of the Elderlings",
+    "cover": "https://m.media-amazon.com/images/I/6103DDv9O0L._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Fool's Errand",
+    "author": "Robin Hobb",
+    "narrator": "James Langton",
+    "series": "Realms of the Elderlings",
+    "cover": "https://m.media-amazon.com/images/I/519hJeBpTpL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Fool's Fate",
+    "author": "Robin Hobb",
+    "narrator": "James Langton",
+    "series": "Realms of the Elderlings",
+    "cover": "https://m.media-amazon.com/images/I/51W-EsnRgsL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Golden Fool",
+    "author": "Robin Hobb",
+    "narrator": "James Langton",
+    "series": "Realms of the Elderlings",
+    "cover": "https://m.media-amazon.com/images/I/51r+m+0XVmL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Royal Assassin",
+    "author": "Robin Hobb",
+    "narrator": "Paul Boehmer",
+    "series": "Realms of the Elderlings",
+    "cover": "https://m.media-amazon.com/images/I/6196CCbWQOL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy"
+  },
+  {
+    "title": "The Farseer: Assassin's Apprentice",
+    "author": "Robin Hobb",
+    "narrator": "Paul Boehmer",
+    "series": "Realms of the Elderlings",
+    "cover": "https://m.media-amazon.com/images/I/61-wM-ZrdGL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Dragon Haven",
+    "author": "Robin Hobb",
+    "narrator": "Anne Flosnik",
+    "series": "The Rain Wild Chronicles",
+    "cover": "https://m.media-amazon.com/images/I/61YnSDx-2YL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "The Lies of Locke Lamora",
+    "author": "Scott Lynch",
+    "narrator": "Michael Page",
+    "series": "Gentleman Bastard Sequence",
+    "cover": "https://m.media-amazon.com/images/I/51SUOw0KeOL._SL500_.jpg",
     "status": "reading",
     "genre": "fantasy"
   },
@@ -1137,7 +489,7 @@
     "title": "Knight's Shadow",
     "author": "Sebastien de Castell",
     "narrator": "Joe Jameson",
-    "series": "The Greatcoats #2",
+    "series": "The Greatcoats",
     "cover": "https://m.media-amazon.com/images/I/61yHMPatEXL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy"
@@ -1146,116 +498,71 @@
     "title": "Traitor's Blade",
     "author": "Sebastien de Castell",
     "narrator": "Joe Jameson",
-    "series": "The Greatcoats #1",
+    "series": "The Greatcoats",
     "cover": "https://m.media-amazon.com/images/I/51JzVxHGkSL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy"
   },
   {
-    "title": "FantasticLand",
-    "author": "Mike Bockoven",
-    "narrator": "Angela Dawe, Luke Daniels",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/51dIguvgj+L._SL500_.jpg",
-    "status": "reading",
-    "genre": "horror"
-  },
-  {
-    "title": "The Final Girl Support Group",
-    "author": "Grady Hendrix",
-    "narrator": "Adrienne King",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/41YLnsCI0eS._SL500_.jpg",
-    "status": "reading",
-    "genre": "horror"
-  },
-  {
-    "title": "Billy Summers",
-    "author": "Stephen King",
-    "narrator": "Paul Sparks",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/61MkXxqcd6S._SL500_.jpg",
-    "status": "reading",
-    "genre": "horror"
-  },
-  {
-    "title": "Odd Thomas",
-    "author": "Dean Koontz",
-    "narrator": "David Aaron Baker",
-    "series": "Odd Thomas #1",
-    "cover": "https://m.media-amazon.com/images/I/418N3aa83oL._SL500_.jpg",
-    "status": "reading",
-    "genre": "horror"
-  },
-  {
-    "title": "Ready Player One",
-    "author": "Ernest Cline",
-    "narrator": "Wil Wheaton",
-    "series": "Ready Player One #1",
-    "cover": "https://m.media-amazon.com/images/I/41Eptolyo+L._SL500_.jpg",
-    "status": "unread",
-    "genre": "scifi"
-  },
-  {
-    "title": "Deryni Rising",
-    "author": "Katherine Kurtz",
-    "narrator": "Jeff Woodman",
-    "series": "The Chronicles of the Deryni #1",
-    "cover": "https://m.media-amazon.com/images/I/51jkYLzHFQL._SL500_.jpg",
+    "title": "Deadhouse Gates",
+    "author": "Steven Erikson",
+    "narrator": "Ralph Lister",
+    "series": "Malazan Book of the Fallen Series",
+    "cover": "https://m.media-amazon.com/images/I/51YxphSPrQL._SL500_.jpg",
     "status": "reading",
     "genre": "fantasy"
   },
   {
-    "title": "Code Name Verity",
-    "author": "Elizabeth Wein",
-    "narrator": "Morven Christie, Lucy Gaskell",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/61p-EKFF8DL._SL500_.jpg",
+    "title": "Gardens of the Moon",
+    "author": "Steven Erikson",
+    "narrator": "Ralph Lister",
+    "series": "Malazan Book of the Fallen Series",
+    "cover": "https://m.media-amazon.com/images/I/51gHs8lh-eL._SL500_.jpg",
     "status": "reading",
-    "genre": "other"
+    "genre": "fantasy"
   },
   {
-    "title": "Tinkers",
-    "author": "Paul Harding",
-    "narrator": "Christian Rummel",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/41052oJf6qL._SL500_.jpg",
-    "status": "unread",
-    "genre": "other"
-  },
-  {
-    "title": "Moon People",
-    "author": "Dixon Troyer",
-    "narrator": "Hayes Dunlap",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/51qAIUBbe7L._SL500_.jpg",
+    "title": "Memories of Ice",
+    "author": "Steven Erikson",
+    "narrator": "Ralph Lister",
+    "series": "Malazan Book of the Fallen Series",
+    "cover": "https://m.media-amazon.com/images/I/51dOCZ-cF9L._SL500_.jpg",
     "status": "reading",
-    "genre": "other"
+    "genre": "fantasy"
   },
   {
-    "title": "Spellmonger",
+    "title": "Court Wizard",
     "author": "Terry Mancour",
     "narrator": "John Lee",
-    "series": "Spellmonger #1",
-    "cover": "https://m.media-amazon.com/images/I/51-hqxxyWCL._SL500_.jpg",
+    "series": "Spellmonger",
+    "cover": "https://m.media-amazon.com/images/I/512jFQbt6JL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Enchanter",
+    "author": "Terry Mancour",
+    "narrator": "John Lee",
+    "series": "Spellmonger",
+    "cover": "https://m.media-amazon.com/images/I/51GBrezzTKL._SL500_.jpg",
     "status": "read",
     "genre": "fantasy"
   },
   {
-    "title": "Warmage",
+    "title": "High Mage",
     "author": "Terry Mancour",
     "narrator": "John Lee",
-    "series": "Spellmonger #2",
-    "cover": "https://m.media-amazon.com/images/I/51c5LkOgKVL._SL500_.jpg",
+    "series": "Spellmonger",
+    "cover": "https://m.media-amazon.com/images/I/51em6P-zH0L._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy"
   },
   {
-    "title": "Magelord",
+    "title": "Journeymage",
     "author": "Terry Mancour",
     "narrator": "John Lee",
-    "series": "Spellmonger #3",
-    "cover": "https://m.media-amazon.com/images/I/51Fv5bAW-dL._SL500_.jpg",
+    "series": "Spellmonger",
+    "cover": "https://m.media-amazon.com/images/I/51ww4cGoYCL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy"
   },
@@ -1263,242 +570,98 @@
     "title": "Knights Magi",
     "author": "Terry Mancour",
     "narrator": "John Lee",
-    "series": "Spellmonger #4",
+    "series": "Spellmonger",
     "cover": "https://m.media-amazon.com/images/I/51ggc4kpgVL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy"
   },
   {
-    "title": "High Mage",
+    "title": "Magelord",
     "author": "Terry Mancour",
     "narrator": "John Lee",
-    "series": "Spellmonger #5",
-    "cover": "https://m.media-amazon.com/images/I/51em6P-zH0L._SL500_.jpg",
+    "series": "Spellmonger",
+    "cover": "https://m.media-amazon.com/images/I/51Fv5bAW-dL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy"
   },
   {
-    "title": "Court Wizard",
+    "title": "Spellmonger",
     "author": "Terry Mancour",
     "narrator": "John Lee",
-    "series": "Spellmonger #8",
-    "cover": "https://m.media-amazon.com/images/I/512jFQbt6JL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy"
-  },
-  {
-    "title": "Educated",
-    "author": "Tara Westover",
-    "narrator": "Julia Whelan",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/41goWDE1PUL._SL500_.jpg",
-    "status": "reading",
-    "genre": "memoir"
-  },
-  {
-    "title": "Born a Crime",
-    "author": "Trevor Noah",
-    "narrator": "Trevor Noah",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/51Mc--F6zGL._SL500_.jpg",
-    "status": "unread",
-    "genre": "memoir"
-  },
-  {
-    "title": "Kitchen Confidential",
-    "author": "Anthony Bourdain",
-    "narrator": "Anthony Bourdain",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/41yhpgGK2OL._SL500_.jpg",
+    "series": "Spellmonger",
+    "cover": "https://m.media-amazon.com/images/I/51-hqxxyWCL._SL500_.jpg",
     "status": "read",
-    "genre": "memoir"
+    "genre": "fantasy"
   },
   {
-    "title": "A Promised Land",
-    "author": "Barack Obama",
-    "narrator": "Barack Obama",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/41CMMz4RC8L._SL500_.jpg",
+    "title": "The Spellmonger's Honeymoon: A Spellmonger Novella",
+    "author": "Terry Mancour",
+    "narrator": "John Lee",
+    "series": "Spellmonger",
+    "cover": "https://m.media-amazon.com/images/I/510euWH4LEL._SL500_.jpg",
     "status": "reading",
-    "genre": "memoir"
+    "genre": "fantasy"
+  },
+  {
+    "title": "Warmage",
+    "author": "Terry Mancour",
+    "narrator": "John Lee",
+    "series": "Spellmonger",
+    "cover": "https://m.media-amazon.com/images/I/51c5LkOgKVL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Hawkmaiden",
+    "author": "Terry Mancour",
+    "narrator": "Finty Williams",
+    "series": "Spellmonger Cadet Series",
+    "cover": "https://m.media-amazon.com/images/I/51W1UGIsGIL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Sky Rider",
+    "author": "Terry Mancour",
+    "narrator": "Finty Williams",
+    "series": "Spellmonger Cadet Series",
+    "cover": "https://m.media-amazon.com/images/I/51BlKqtIDDL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
+  },
+  {
+    "title": "Shadowblade",
+    "author": "Terry Mancour, Emily Burch Harris",
+    "narrator": "Fiona Hardingham",
+    "series": "Spellmonger: Legacy and Secrets",
+    "cover": "https://m.media-amazon.com/images/I/51gyFDV9bIL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy"
   },
   {
     "title": "Midnight in Chernobyl",
     "author": "Adam Higginbotham",
     "narrator": "Jacques Roy",
-    "series": null,
+    "series": "",
     "cover": "https://m.media-amazon.com/images/I/51ItAq-bzeL._SL500_.jpg",
     "status": "unread",
     "genre": "history"
   },
   {
-    "title": "Spearhead",
-    "author": "Adam Makos",
-    "narrator": "Johnathan McClain",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/51N8LRa14-L._SL500_.jpg",
-    "status": "reading",
-    "genre": "memoir"
-  },
-  {
-    "title": "Matterhorn",
-    "author": "Karl Marlantes",
-    "narrator": "Bronson Pinchot",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/41qjS6olCFL._SL500_.jpg",
-    "status": "unread",
-    "genre": "memoir"
-  },
-  {
-    "title": "The Sorrow of War",
-    "author": "Bao Ninh",
-    "narrator": "James Langton",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/51Im4+20ykL._SL500_.jpg",
-    "status": "unread",
-    "genre": "memoir"
-  },
-  {
-    "title": "Escape from Camp 14",
-    "author": "Blaine Harden",
-    "narrator": "Blaine Harden",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/61ZOsb5EMPL._SL500_.jpg",
-    "status": "unread",
-    "genre": "memoir"
-  },
-  {
-    "title": "ADHD 2.0",
-    "author": "Edward M. Hallowell M.D., John J. Ratey M.D.",
-    "narrator": "Fred Sanders",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/41tyZj9OhpL._SL500_.jpg",
-    "status": "reading",
-    "genre": "ideas"
-  },
-  {
-    "title": "Never Split the Difference",
-    "author": "Chris Voss, Tahl Raz",
-    "narrator": "Michael Kramer",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/51gx6VN0-UL._SL500_.jpg",
-    "status": "reading",
-    "genre": "ideas"
-  },
-  {
-    "title": "Leadership and Self-Deception",
-    "author": "The Arbinger Institute",
-    "narrator": "Steve Carlson",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/51ArvH5ypZL._SL500_.jpg",
-    "status": "unread",
-    "genre": "ideas"
-  },
-  {
-    "title": "The Manager's Path",
-    "author": "Camille Fournier",
-    "narrator": "Janet Metzger",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/61ohIdFlPsL._SL500_.jpg",
-    "status": "reading",
-    "genre": "ideas"
-  },
-  {
-    "title": "Measure What Matters",
-    "author": "John Doerr",
-    "narrator": "John Doerr",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/51HNGEmZEnL._SL500_.jpg",
-    "status": "reading",
-    "genre": "ideas"
-  },
-  {
-    "title": "The Innovator's Dilemma",
-    "author": "Clayton M. Christensen",
-    "narrator": "L.J. Ganser",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/51M168EKmQL._SL500_.jpg",
-    "status": "reading",
-    "genre": "ideas"
-  },
-  {
-    "title": "Rise of the Robots",
-    "author": "Martin Ford",
-    "narrator": "Jeff Cummings",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/51Pt2bpmbTL._SL500_.jpg",
-    "status": "reading",
-    "genre": "ideas"
-  },
-  {
-    "title": "Ghost Work",
-    "author": "Mary L. Gray, Siddharth Suri",
-    "narrator": "Will Damron",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/61bdVbx8gbL._SL500_.jpg",
-    "status": "reading",
-    "genre": "ideas"
-  },
-  {
-    "title": "The Information",
-    "author": "James Gleick",
-    "narrator": "Rob Shapiro",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/61MOwo3e9wL._SL500_.jpg",
-    "status": "reading",
-    "genre": "ideas"
-  },
-  {
-    "title": "Physics of the Impossible",
-    "author": "Michio Kaku",
-    "narrator": "Feodor Chin",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/512UWbmvQCL._SL500_.jpg",
-    "status": "unread",
-    "genre": "ideas"
-  },
-  {
-    "title": "The God Delusion",
-    "author": "Richard Dawkins",
-    "narrator": "Richard Dawkins, Lalla Ward",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/51CAlg5SRUL._SL500_.jpg",
-    "status": "reading",
-    "genre": "ideas"
-  },
-  {
-    "title": "Capital in the Twenty-First Century",
-    "author": "Thomas Piketty",
-    "narrator": "L. J. Ganser",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/41jenCaS2JL._SL500_.jpg",
+    "title": "Rage",
+    "author": "Bob Woodward",
+    "narrator": "Robert Petkoff",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51LQ-SAfXpL._SL500_.jpg",
     "status": "reading",
     "genre": "history"
   },
   {
-    "title": "The Prince",
-    "author": "Niccolo Machiavelli",
-    "narrator": "Grover Gardner",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/613LNsmkcIL._SL500_.jpg",
-    "status": "reading",
-    "genre": "other"
-  },
-  {
-    "title": "The Box",
-    "author": "Marc Levinson",
-    "narrator": "Adam Lofbomm",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/51XJQK3qlWL._SL500_.jpg",
-    "status": "unread",
-    "genre": "history"
-  },
-  {
-    "title": "Uncommon Carriers",
-    "author": "John McPhee",
-    "narrator": "John McPhee",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/41NE8tT69FL._SL500_.jpg",
+    "title": "The Nickel Boys (Winner 2020 Pulitzer Prize for Fiction)",
+    "author": "Colson Whitehead",
+    "narrator": "JD Jackson, Colson Whitehead",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/4176gFZ-FmL._SL500_.jpg",
     "status": "reading",
     "genre": "history"
   },
@@ -1506,7 +669,7 @@
     "title": "The Wright Brothers",
     "author": "David McCullough",
     "narrator": "David McCullough",
-    "series": null,
+    "series": "",
     "cover": "https://m.media-amazon.com/images/I/515EjXI21kL._SL500_.jpg",
     "status": "reading",
     "genre": "history"
@@ -1515,8 +678,53 @@
     "title": "Dark Money",
     "author": "Jane Mayer",
     "narrator": "Kirsten Potter",
-    "series": null,
+    "series": "",
     "cover": "https://m.media-amazon.com/images/I/51KYFDPUhrL._SL500_.jpg",
+    "status": "reading",
+    "genre": "history"
+  },
+  {
+    "title": "Uncommon Carriers",
+    "author": "John McPhee",
+    "narrator": "John McPhee",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/41NE8tT69FL._SL500_.jpg",
+    "status": "reading",
+    "genre": "history"
+  },
+  {
+    "title": "The Box",
+    "author": "Marc Levinson",
+    "narrator": "Adam Lofbomm",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51XJQK3qlWL._SL500_.jpg",
+    "status": "unread",
+    "genre": "history"
+  },
+  {
+    "title": "The Wilderness",
+    "author": "McKay Coppins",
+    "narrator": "John Glouchevitch",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51DcpVIe8GL._SL500_.jpg",
+    "status": "unread",
+    "genre": "history"
+  },
+  {
+    "title": "Fire and Fury",
+    "author": "Michael Wolff",
+    "narrator": "Michael Wolff, Holter Graham",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51K-y47arRL._SL500_.jpg",
+    "status": "read",
+    "genre": "history"
+  },
+  {
+    "title": "Capital in the Twenty-First Century",
+    "author": "Thomas Piketty, Arthur Goldhammer - translator",
+    "narrator": "L. J. Ganser",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/41jenCaS2JL._SL500_.jpg",
     "status": "reading",
     "genre": "history"
   },
@@ -1524,25 +732,628 @@
     "title": "Pipeline to Power",
     "author": "Vicky Ward",
     "narrator": "Vicky Ward",
-    "series": null,
+    "series": "",
     "cover": "https://m.media-amazon.com/images/I/61AnwP2j-LL._SL500_.jpg",
     "status": "reading",
     "genre": "history"
   },
   {
-    "title": "The Nickel Boys",
-    "author": "Colson Whitehead",
-    "narrator": "JD Jackson",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/4176gFZ-FmL._SL500_.jpg",
+    "title": "Odd Thomas",
+    "author": "Dean Koontz",
+    "narrator": "David Aaron Baker",
+    "series": "Odd Thomas",
+    "cover": "https://m.media-amazon.com/images/I/418N3aa83oL._SL500_.jpg",
+    "status": "reading",
+    "genre": "horror"
+  },
+  {
+    "title": "The Final Girl Support Group",
+    "author": "Grady Hendrix",
+    "narrator": "Adrienne King",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/41YLnsCI0eS._SL500_.jpg",
+    "status": "reading",
+    "genre": "horror"
+  },
+  {
+    "title": "FantasticLand",
+    "author": "Mike Bockoven",
+    "narrator": "Angela Dawe, Luke Daniels",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51dIguvgj+L._SL500_.jpg",
+    "status": "reading",
+    "genre": "horror"
+  },
+  {
+    "title": "Billy Summers",
+    "author": "Stephen King",
+    "narrator": "Paul Sparks",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/61MkXxqcd6S._SL500_.jpg",
+    "status": "reading",
+    "genre": "horror"
+  },
+  {
+    "title": "The Manager's Path",
+    "author": "Camille Fournier",
+    "narrator": "Janet Metzger",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/61ohIdFlPsL._SL500_.jpg",
+    "status": "reading",
+    "genre": "ideas"
+  },
+  {
+    "title": "Never Split the Difference",
+    "author": "Chris Voss, Tahl Raz",
+    "narrator": "Michael Kramer",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51gx6VN0-UL._SL500_.jpg",
+    "status": "reading",
+    "genre": "ideas"
+  },
+  {
+    "title": "The Innovator's Dilemma",
+    "author": "Clayton M. Christensen",
+    "narrator": "L.J. Ganser",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51M168EKmQL._SL500_.jpg",
+    "status": "reading",
+    "genre": "ideas"
+  },
+  {
+    "title": "ADHD 2.0",
+    "author": "Edward M. Hallowell M.D., John J. Ratey M.D.",
+    "narrator": "Fred Sanders",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/41tyZj9OhpL._SL500_.jpg",
+    "status": "reading",
+    "genre": "ideas"
+  },
+  {
+    "title": "The Information",
+    "author": "James Gleick",
+    "narrator": "Rob Shapiro",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/61MOwo3e9wL._SL500_.jpg",
+    "status": "reading",
+    "genre": "ideas"
+  },
+  {
+    "title": "Measure What Matters",
+    "author": "John Doerr, Larry Page - introduction",
+    "narrator": "John Doerr, William Davidow, Brett Kopf, Jini Kim, Mike Lee, Atticus Tysen, Patti Stonesifer, Susan Wojcicki, Cristos Goodrow, Julia Collins, Alex Garden, Joseph Suzuki, Various",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51HNGEmZEnL._SL500_.jpg",
+    "status": "reading",
+    "genre": "ideas"
+  },
+  {
+    "title": "Rise of the Robots",
+    "author": "Martin Ford",
+    "narrator": "Jeff Cummings",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51Pt2bpmbTL._SL500_.jpg",
+    "status": "reading",
+    "genre": "ideas"
+  },
+  {
+    "title": "Ghost Work",
+    "author": "Mary L. Gray, Siddharth Suri",
+    "narrator": "Will Damron",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/61bdVbx8gbL._SL500_.jpg",
+    "status": "reading",
+    "genre": "ideas"
+  },
+  {
+    "title": "A Brief History of Intelligence",
+    "author": "Max S. Bennett",
+    "narrator": "George Newbern",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51zAsHDR1KL._SL500_.jpg",
+    "status": "reading",
+    "genre": "ideas"
+  },
+  {
+    "title": "Physics of the Impossible",
+    "author": "Michio Kaku",
+    "narrator": "Feodor Chin",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/512UWbmvQCL._SL500_.jpg",
     "status": "unread",
-    "genre": "history"
+    "genre": "ideas"
+  },
+  {
+    "title": "The God Delusion",
+    "author": "Richard Dawkins",
+    "narrator": "Richard Dawkins, Lalla Ward",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51CAlg5SRUL._SL500_.jpg",
+    "status": "reading",
+    "genre": "ideas"
+  },
+  {
+    "title": "Leadership and Self-Deception: Getting Out of the Box",
+    "author": "The Arbinger Institute",
+    "narrator": "Steve Carlson",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51ArvH5ypZL._SL500_.jpg",
+    "status": "reading",
+    "genre": "ideas"
+  },
+  {
+    "title": "Industrial Strength Magic",
+    "author": "Macronomicon",
+    "narrator": "Steve Campbell, Jeff Hays, Annie Ellicott, Justin Thomas James",
+    "series": "Industrial Strength Magic",
+    "cover": "https://m.media-amazon.com/images/I/51gH3gJTYCL._SL500_.jpg",
+    "status": "reading",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Carl's Doomsday Scenario",
+    "author": "Matt Dinniman",
+    "narrator": "Jeff Hays",
+    "series": "Dungeon Crawler Carl",
+    "cover": "https://m.media-amazon.com/images/I/51e1PKKdv8L._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Dungeon Crawler Carl",
+    "author": "Matt Dinniman",
+    "narrator": "Jeff Hays",
+    "series": "Dungeon Crawler Carl",
+    "cover": "https://m.media-amazon.com/images/I/51HIZdnqASL._SL500_.jpg",
+    "status": "read",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The Butcher's Masquerade",
+    "author": "Matt Dinniman",
+    "narrator": "Jeff Hays",
+    "series": "Dungeon Crawler Carl",
+    "cover": "https://m.media-amazon.com/images/I/51kOQeaXbAL._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The Dungeon Anarchist's Cookbook",
+    "author": "Matt Dinniman",
+    "narrator": "Jeff Hays, The Critical Drinker",
+    "series": "Dungeon Crawler Carl",
+    "cover": "https://m.media-amazon.com/images/I/518nfG1FaYL._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The Eye of the Bedlam Bride",
+    "author": "Matt Dinniman",
+    "narrator": "Jeff Hays, Patrick Warburton, Travis Baldree, Annie Ellicott",
+    "series": "Dungeon Crawler Carl",
+    "cover": "https://m.media-amazon.com/images/I/51qfZAq2J4L._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The Gate of the Feral Gods",
+    "author": "Matt Dinniman",
+    "narrator": "Jeff Hays",
+    "series": "Dungeon Crawler Carl",
+    "cover": "https://m.media-amazon.com/images/I/51rmyTTWPsL._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "This Inevitable Ruin",
+    "author": "Matt Dinniman",
+    "narrator": "Jeff Hays, Travis Baldree",
+    "series": "Dungeon Crawler Carl",
+    "cover": "https://m.media-amazon.com/images/I/51rtjss07uL._SL500_.jpg",
+    "status": "read",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Dissonance",
+    "author": "Nicoli Gonnella",
+    "narrator": "Travis Baldree",
+    "series": "Unbound",
+    "cover": "https://m.media-amazon.com/images/I/516MfJkQ+NL._SL500_.jpg",
+    "status": "read",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Fury",
+    "author": "Nicoli Gonnella",
+    "narrator": "Travis Baldree",
+    "series": "Unbound",
+    "cover": "https://m.media-amazon.com/images/I/51tuhBw1EIL._SL500_.jpg",
+    "status": "reading",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Hunger",
+    "author": "Nicoli Gonnella",
+    "narrator": "Travis Baldree",
+    "series": "Unbound",
+    "cover": "https://m.media-amazon.com/images/I/519OxBsS5WL._SL500_.jpg",
+    "status": "reading",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Silence",
+    "author": "Nicoli Gonnella",
+    "narrator": "Travis Baldree",
+    "series": "Unbound",
+    "cover": "https://m.media-amazon.com/images/I/51Amg+8d8ZL._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Castle of the Noobs",
+    "author": "Ryan Rimmel",
+    "narrator": "Johnathan McClain",
+    "series": "Noobtown",
+    "cover": "https://m.media-amazon.com/images/I/51zLMJH4FKL._SL500_.jpg",
+    "status": "read",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Dungeons and Noobs",
+    "author": "Ryan Rimmel",
+    "narrator": "Johnathan McClain",
+    "series": "Noobtown",
+    "cover": "https://m.media-amazon.com/images/I/51GoMsmz2DL._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Nautical Noobs",
+    "author": "Ryan Rimmel",
+    "narrator": "Johnathan McClain",
+    "series": "Noobtown",
+    "cover": "https://m.media-amazon.com/images/I/51vJVYIOM5L._SL500_.jpg",
+    "status": "read",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Noob Game Plus",
+    "author": "Ryan Rimmel",
+    "narrator": "Johnathan McClain",
+    "series": "Noobtown",
+    "cover": "https://m.media-amazon.com/images/I/51Tl0s-BbmL._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The Mayor of Noobtown",
+    "author": "Ryan Rimmel",
+    "narrator": "Johnathan McClain",
+    "series": "Noobtown",
+    "cover": "https://m.media-amazon.com/images/I/51PRf0biAtL._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The Village of Noobtown",
+    "author": "Ryan Rimmel",
+    "narrator": "Johnathan McClain",
+    "series": "Noobtown",
+    "cover": "https://m.media-amazon.com/images/I/513jdRuCAeL._SL500_.jpg",
+    "status": "read",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The War of the Noobs",
+    "author": "Ryan Rimmel",
+    "narrator": "Johnathan McClain",
+    "series": "Noobtown",
+    "cover": "https://m.media-amazon.com/images/I/51lQmSAfjYL._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Tower of the Noobs",
+    "author": "Ryan Rimmel",
+    "narrator": "Johnathan McClain",
+    "series": "Noobtown",
+    "cover": "https://m.media-amazon.com/images/I/51-5zoCTlsL._SL500_.jpg",
+    "status": "read",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Blackflame",
+    "author": "Will Wight",
+    "narrator": "Travis Baldree",
+    "series": "Cradle",
+    "cover": "https://m.media-amazon.com/images/I/518uCBISHyL._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Dreadgod",
+    "author": "Will Wight",
+    "narrator": "Travis Baldree",
+    "series": "Cradle",
+    "cover": "https://m.media-amazon.com/images/I/51Q-p1d8yeL._SL500_.jpg",
+    "status": "reading",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Ghostwater",
+    "author": "Will Wight",
+    "narrator": "Travis Baldree",
+    "series": "Cradle",
+    "cover": "https://m.media-amazon.com/images/I/61NBnW0IfSL._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Reaper",
+    "author": "Will Wight",
+    "narrator": "Travis Baldree",
+    "series": "Cradle",
+    "cover": "https://m.media-amazon.com/images/I/51AW6mZSVML._SL500_.jpg",
+    "status": "reading",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Skysworn",
+    "author": "Will Wight",
+    "narrator": "Travis Baldree",
+    "series": "Cradle",
+    "cover": "https://m.media-amazon.com/images/I/51Lhs041m5L._SL500_.jpg",
+    "status": "reading",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Soulsmith",
+    "author": "Will Wight",
+    "narrator": "Travis Baldree",
+    "series": "Cradle",
+    "cover": "https://m.media-amazon.com/images/I/515mXs+-DPL._SL500_.jpg",
+    "status": "reading",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Uncrowned",
+    "author": "Will Wight",
+    "narrator": "Travis Baldree",
+    "series": "Cradle",
+    "cover": "https://m.media-amazon.com/images/I/618X15+VvAL._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Underlord",
+    "author": "Will Wight",
+    "narrator": "Travis Baldree",
+    "series": "Cradle",
+    "cover": "https://m.media-amazon.com/images/I/51d1tLSnW-L._SL500_.jpg",
+    "status": "reading",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Unsouled",
+    "author": "Will Wight",
+    "narrator": "Travis Baldree",
+    "series": "Cradle",
+    "cover": "https://m.media-amazon.com/images/I/517BQpIbdcL._SL500_.jpg",
+    "status": "reading",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Waybound",
+    "author": "Will Wight",
+    "narrator": "Travis Baldree",
+    "series": "Cradle",
+    "cover": "https://m.media-amazon.com/images/I/51B6o7XqIOL._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Wintersteel",
+    "author": "Will Wight",
+    "narrator": "Travis Baldree",
+    "series": "Cradle",
+    "cover": "https://m.media-amazon.com/images/I/61eYWnuh0yL._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The Captain",
+    "author": "Will Wight",
+    "narrator": "Travis Baldree",
+    "series": "The Last Horizon",
+    "cover": "https://m.media-amazon.com/images/I/51nZJ588vAL._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The Engineer",
+    "author": "Will Wight",
+    "narrator": "Travis Baldree",
+    "series": "The Last Horizon",
+    "cover": "https://m.media-amazon.com/images/I/51HpfKaFhaL._SL500_.jpg",
+    "status": "read",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The Knight",
+    "author": "Will Wight",
+    "narrator": "Travis Baldree",
+    "series": "The Last Horizon",
+    "cover": "https://m.media-amazon.com/images/I/51cMFXNFcwL._SL500_.jpg",
+    "status": "reading",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Primal Hunter 4",
+    "author": "Zogarth",
+    "narrator": "Travis Baldree",
+    "series": "The Primal Hunter",
+    "cover": "https://m.media-amazon.com/images/I/51r3Psi9G+L._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The Primal Hunter",
+    "author": "Zogarth",
+    "narrator": "Travis Baldree",
+    "series": "The Primal Hunter",
+    "cover": "https://m.media-amazon.com/images/I/51QqrkspisL._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The Primal Hunter 10",
+    "author": "Zogarth",
+    "narrator": "Travis Baldree",
+    "series": "The Primal Hunter",
+    "cover": "https://m.media-amazon.com/images/I/41T+AA2g0TL._SL500_.jpg",
+    "status": "reading",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The Primal Hunter 11",
+    "author": "Zogarth",
+    "narrator": "Travis Baldree",
+    "series": "The Primal Hunter",
+    "cover": "https://m.media-amazon.com/images/I/51D2PXx3VwL._SL500_.jpg",
+    "status": "read",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The Primal Hunter 12",
+    "author": "Zogarth",
+    "narrator": "Travis Baldree",
+    "series": "The Primal Hunter",
+    "cover": "https://m.media-amazon.com/images/I/515-hGDDBDL._SL500_.jpg",
+    "status": "read",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The Primal Hunter 13",
+    "author": "Zogarth",
+    "narrator": "Travis Baldree",
+    "series": "The Primal Hunter",
+    "cover": "https://m.media-amazon.com/images/I/51PwJ+jWgoL._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The Primal Hunter 2",
+    "author": "Zogarth",
+    "narrator": "Travis Baldree",
+    "series": "The Primal Hunter",
+    "cover": "https://m.media-amazon.com/images/I/512eaY7pU2L._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The Primal Hunter 3",
+    "author": "Zogarth",
+    "narrator": "Travis Baldree",
+    "series": "The Primal Hunter",
+    "cover": "https://m.media-amazon.com/images/I/51ez1g95W5L._SL500_.jpg",
+    "status": "read",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The Primal Hunter 5",
+    "author": "Zogarth",
+    "narrator": "Travis Baldree",
+    "series": "The Primal Hunter",
+    "cover": "https://m.media-amazon.com/images/I/513RejJ2NZL._SL500_.jpg",
+    "status": "read",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The Primal Hunter 6",
+    "author": "Zogarth",
+    "narrator": "Travis Baldree",
+    "series": "The Primal Hunter",
+    "cover": "https://m.media-amazon.com/images/I/51B8OG8vKKL._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The Primal Hunter 7 - A LitRPG Adventure",
+    "author": "Zogarth",
+    "narrator": "Travis Baldree",
+    "series": "The Primal Hunter",
+    "cover": "https://m.media-amazon.com/images/I/51ScYLhYYRL._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The Primal Hunter 8",
+    "author": "Zogarth",
+    "narrator": "Travis Baldree",
+    "series": "The Primal Hunter",
+    "cover": "https://m.media-amazon.com/images/I/5196ufGQ5kL._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg"
+  },
+  {
+    "title": "The Primal Hunter 9: A LitRPG Adventure",
+    "author": "Zogarth",
+    "narrator": "Travis Baldree",
+    "series": "The Primal Hunter",
+    "cover": "https://m.media-amazon.com/images/I/51DvpAD3CML._SL500_.jpg",
+    "status": "reading",
+    "genre": "litrpg"
+  },
+  {
+    "title": "Spearhead",
+    "author": "Adam Makos",
+    "narrator": "Johnathan McClain",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51N8LRa14-L._SL500_.jpg",
+    "status": "reading",
+    "genre": "memoir"
+  },
+  {
+    "title": "Kitchen Confidential",
+    "author": "Anthony Bourdain, Irvine Welsh - introduction",
+    "narrator": "Anthony Bourdain, Irvine Welsh",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/41yhpgGK2OL._SL500_.jpg",
+    "status": "read",
+    "genre": "memoir"
+  },
+  {
+    "title": "The Sorrow of War",
+    "author": "Bao Ninh",
+    "narrator": "James Langton",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51Im4+20ykL._SL500_.jpg",
+    "status": "unread",
+    "genre": "memoir"
+  },
+  {
+    "title": "A Promised Land",
+    "author": "Barack Obama",
+    "narrator": "Barack Obama",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/41CMMz4RC8L._SL500_.jpg",
+    "status": "reading",
+    "genre": "memoir"
+  },
+  {
+    "title": "Escape from Camp 14",
+    "author": "Blaine Harden",
+    "narrator": "Blaine Harden",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/61ZOsb5EMPL._SL500_.jpg",
+    "status": "unread",
+    "genre": "memoir"
   },
   {
     "title": "A Very Punchable Face",
     "author": "Colin Jost",
     "narrator": "Colin Jost",
-    "series": null,
+    "series": "",
     "cover": "https://m.media-amazon.com/images/I/41ZMF7TuhkL._SL500_.jpg",
     "status": "reading",
     "genre": "memoir"
@@ -1551,27 +1362,396 @@
     "title": "A Higher Loyalty",
     "author": "James Comey",
     "narrator": "James Comey",
-    "series": null,
+    "series": "",
     "cover": "https://m.media-amazon.com/images/I/31Cn63dhVtL._SL500_.jpg",
     "status": "reading",
     "genre": "memoir"
   },
   {
-    "title": "Fire and Fury",
-    "author": "Michael Wolff",
-    "narrator": "Michael Wolff, Holter Graham",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/51K-y47arRL._SL500_.jpg",
-    "status": "read",
-    "genre": "history"
+    "title": "Matterhorn",
+    "author": "Karl Marlantes",
+    "narrator": "Bronson Pinchot",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/41qjS6olCFL._SL500_.jpg",
+    "status": "unread",
+    "genre": "memoir"
   },
   {
-    "title": "Rage",
-    "author": "Bob Woodward",
-    "narrator": "Robert Petkoff",
-    "series": null,
-    "cover": "https://m.media-amazon.com/images/I/51LQ-SAfXpL._SL500_.jpg",
+    "title": "Educated",
+    "author": "Tara Westover",
+    "narrator": "Julia Whelan",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/41goWDE1PUL._SL500_.jpg",
     "status": "reading",
-    "genre": "history"
+    "genre": "memoir"
+  },
+  {
+    "title": "Born a Crime",
+    "author": "Trevor Noah",
+    "narrator": "Trevor Noah",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51Mc--F6zGL._SL500_.jpg",
+    "status": "unread",
+    "genre": "memoir"
+  },
+  {
+    "title": "First to Kill",
+    "author": "Andrew Peterson",
+    "narrator": "Dick Hill",
+    "series": "Nathan McBride",
+    "cover": "https://m.media-amazon.com/images/I/51uzXzGsueL._SL500_.jpg",
+    "status": "unread",
+    "genre": "other"
+  },
+  {
+    "title": "KILL TONY",
+    "author": "DEATHSQUAD.TV & Studio71",
+    "narrator": "",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/31aZwtVzyKL._SL500_.jpg",
+    "status": "reading",
+    "genre": "other"
+  },
+  {
+    "title": "Moon People",
+    "author": "Dixon Troyer",
+    "narrator": "Hayes Dunlap",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51qAIUBbe7L._SL500_.jpg",
+    "status": "reading",
+    "genre": "other"
+  },
+  {
+    "title": "Code Name Verity",
+    "author": "Elizabeth Wein",
+    "narrator": "Morven Christie, Lucy Gaskell",
+    "series": "Code Name Verity",
+    "cover": "https://m.media-amazon.com/images/I/61p-EKFF8DL._SL500_.jpg",
+    "status": "reading",
+    "genre": "other"
+  },
+  {
+    "title": "Hoh Rainforest",
+    "author": "Gordon Hempton, Audible Sleep",
+    "narrator": "",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/61rOeuyDEkL._SL500_.jpg",
+    "status": "reading",
+    "genre": "other"
+  },
+  {
+    "title": "The Prince",
+    "author": "Niccolo Machiavelli",
+    "narrator": "Grover Gardner",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/613LNsmkcIL._SL500_.jpg",
+    "status": "reading",
+    "genre": "other"
+  },
+  {
+    "title": "Year One",
+    "author": "Nora Roberts",
+    "narrator": "Julia Whelan",
+    "series": "Chronicles of The One",
+    "cover": "https://m.media-amazon.com/images/I/51QcpFHXh-L._SL500_.jpg",
+    "status": "reading",
+    "genre": "other"
+  },
+  {
+    "title": "Master and Commander",
+    "author": "Patrick O'Brian",
+    "narrator": "Patrick Tull",
+    "series": "Aubrey/Maturin",
+    "cover": "https://m.media-amazon.com/images/I/51fn1h2mP8L._SL500_.jpg",
+    "status": "reading",
+    "genre": "other"
+  },
+  {
+    "title": "Tinkers",
+    "author": "Paul Harding",
+    "narrator": "Christian Rummel",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/41052oJf6qL._SL500_.jpg",
+    "status": "unread",
+    "genre": "other"
+  },
+  {
+    "title": "Dark Age",
+    "author": "Pierce Brown",
+    "narrator": "Tim Gerard Reynolds, John Curless, Moira Quirk, James Langton, Rendah Heywood",
+    "series": "Red Rising",
+    "cover": "https://m.media-amazon.com/images/I/51FGAP7DbxL._SL500_.jpg",
+    "status": "unread",
+    "genre": "other"
+  },
+  {
+    "title": "Golden Son",
+    "author": "Pierce Brown",
+    "narrator": "Tim Gerard Reynolds",
+    "series": "Red Rising",
+    "cover": "https://m.media-amazon.com/images/I/514G5+-hXEL._SL500_.jpg",
+    "status": "reading",
+    "genre": "other"
+  },
+  {
+    "title": "Iron Gold",
+    "author": "Pierce Brown",
+    "narrator": "Tim Gerard Reynolds, John Curless, Julian Elfer, Aedin Moloney",
+    "series": "Red Rising",
+    "cover": "https://m.media-amazon.com/images/I/51oKG4sAeqL._SL500_.jpg",
+    "status": "read",
+    "genre": "other"
+  },
+  {
+    "title": "Light Bringer",
+    "author": "Pierce Brown",
+    "narrator": "Tim Gerard Reynolds",
+    "series": "Red Rising",
+    "cover": "https://m.media-amazon.com/images/I/51uxvAxiknL._SL500_.jpg",
+    "status": "unread",
+    "genre": "other"
+  },
+  {
+    "title": "Morning Star",
+    "author": "Pierce Brown",
+    "narrator": "Tim Gerard Reynolds",
+    "series": "Red Rising",
+    "cover": "https://m.media-amazon.com/images/I/41uGVHtH2pL._SL500_.jpg",
+    "status": "unread",
+    "genre": "other"
+  },
+  {
+    "title": "Red Rising",
+    "author": "Pierce Brown",
+    "narrator": "Tim Gerard Reynolds",
+    "series": "Red Rising",
+    "cover": "https://m.media-amazon.com/images/I/51IM+e-toYL._SL500_.jpg",
+    "status": "unread",
+    "genre": "other"
+  },
+  {
+    "title": "Sword of Justice",
+    "author": "Ryan Rimmel",
+    "narrator": "Robb Moreira",
+    "series": "Adventures of Squire Yorick",
+    "cover": "https://m.media-amazon.com/images/I/51Say5xjo0L._SL500_.jpg",
+    "status": "reading",
+    "genre": "other"
+  },
+  {
+    "title": "Dog on It",
+    "author": "Spencer Quinn",
+    "narrator": "Jim Frangione",
+    "series": "Chet and Bernie Mysteries",
+    "cover": "https://m.media-amazon.com/images/I/51MK91YWccL._SL500_.jpg",
+    "status": "reading",
+    "genre": "other"
+  },
+  {
+    "title": "The Warsaw Protocol",
+    "author": "Steve Berry",
+    "narrator": "Steve Berry, Scott Brick",
+    "series": "Cotton Malone",
+    "cover": "https://m.media-amazon.com/images/I/51b8gZPSxCL._SL500_.jpg",
+    "status": "reading",
+    "genre": "other"
+  },
+  {
+    "title": "The Never Hero",
+    "author": "T. Ellery Hodges",
+    "narrator": "Steven Barnett",
+    "series": "The Chronicles of Jonathan Tibbs",
+    "cover": "https://m.media-amazon.com/images/I/61u6BCAhMXL._SL500_.jpg",
+    "status": "unread",
+    "genre": "other"
+  },
+  {
+    "title": "The Never Paradox",
+    "author": "T. Ellery Hodges",
+    "narrator": "Steven Barnett",
+    "series": "The Chronicles of Jonathan Tibbs",
+    "cover": "https://m.media-amazon.com/images/I/51rRG9FEJVL._SL500_.jpg",
+    "status": "reading",
+    "genre": "other"
+  },
+  {
+    "title": "The Sword of Jupiter",
+    "author": "Travis Starnes",
+    "narrator": "Kevin Kemp",
+    "series": "Imperium",
+    "cover": "https://m.media-amazon.com/images/I/51a3NddYE2L._SL500_.jpg",
+    "status": "reading",
+    "genre": "other"
+  },
+  {
+    "title": "Artemis",
+    "author": "Andy Weir",
+    "narrator": "Rosario Dawson",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51fisVXQNrL._SL500_.jpg",
+    "status": "reading",
+    "genre": "scifi"
+  },
+  {
+    "title": "Project Hail Mary",
+    "author": "Andy Weir",
+    "narrator": "Ray Porter",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51POf8gOyLL._SL500_.jpg",
+    "status": "unread",
+    "genre": "scifi"
+  },
+  {
+    "title": "Battle Cruiser",
+    "author": "B. V. Larson",
+    "narrator": "Edoardo Ballerini",
+    "series": "Lost Colonies",
+    "cover": "https://m.media-amazon.com/images/I/51gKux4AvCL._SL500_.jpg",
+    "status": "unread",
+    "genre": "scifi"
+  },
+  {
+    "title": "Dreadnought",
+    "author": "B. V. Larson",
+    "narrator": "Edoardo Ballerini",
+    "series": "Lost Colonies",
+    "cover": "https://m.media-amazon.com/images/I/51YIhekJS6L._SL500_.jpg",
+    "status": "unread",
+    "genre": "scifi"
+  },
+  {
+    "title": "Star Carrier",
+    "author": "B. V. Larson",
+    "narrator": "Edoardo Ballerini",
+    "series": "Lost Colonies",
+    "cover": "https://m.media-amazon.com/images/I/51EGgryaCUL._SL500_.jpg",
+    "status": "reading",
+    "genre": "scifi"
+  },
+  {
+    "title": "Embassytown",
+    "author": "China Miéville",
+    "narrator": "Susan Duerden",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51gUgu0m-pL._SL500_.jpg",
+    "status": "reading",
+    "genre": "scifi"
+  },
+  {
+    "title": "Columbus Day",
+    "author": "Craig Alanson",
+    "narrator": "R.C. Bray",
+    "series": "Expeditionary Force",
+    "cover": "https://m.media-amazon.com/images/I/51nRl-t+qdL._SL500_.jpg",
+    "status": "reading",
+    "genre": "scifi"
+  },
+  {
+    "title": "Paradise",
+    "author": "Craig Alanson",
+    "narrator": "R.C. Bray",
+    "series": "Expeditionary Force",
+    "cover": "https://m.media-amazon.com/images/I/51ZZZwit0GL._SL500_.jpg",
+    "status": "reading",
+    "genre": "scifi"
+  },
+  {
+    "title": "SpecOps",
+    "author": "Craig Alanson",
+    "narrator": "R.C. Bray",
+    "series": "Expeditionary Force",
+    "cover": "https://m.media-amazon.com/images/I/51PeF-Q1VxL._SL500_.jpg",
+    "status": "reading",
+    "genre": "scifi"
+  },
+  {
+    "title": "For We Are Many",
+    "author": "Dennis E. Taylor",
+    "narrator": "Ray Porter",
+    "series": "Bobiverse",
+    "cover": "https://m.media-amazon.com/images/I/51xcxG5pAuL._SL500_.jpg",
+    "status": "reading",
+    "genre": "scifi"
+  },
+  {
+    "title": "We Are Legion (We Are Bob)",
+    "author": "Dennis E. Taylor",
+    "narrator": "Ray Porter",
+    "series": "Bobiverse",
+    "cover": "https://m.media-amazon.com/images/I/51rt2pFIW7L._SL500_.jpg",
+    "status": "unread",
+    "genre": "scifi"
+  },
+  {
+    "title": "Ready Player One",
+    "author": "Ernest Cline",
+    "narrator": "Wil Wheaton",
+    "series": "Ready Player One",
+    "cover": "https://m.media-amazon.com/images/I/41Eptolyo+L._SL500_.jpg",
+    "status": "unread",
+    "genre": "scifi"
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "narrator": "Simon Prebble",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/612oBD9OSjL._SL500_.jpg",
+    "status": "reading",
+    "genre": "scifi"
+  },
+  {
+    "title": "The Forever War",
+    "author": "Joe Haldeman",
+    "narrator": "George Wilson",
+    "series": "The Forever War",
+    "cover": "https://m.media-amazon.com/images/I/519rBo3iUML._SL500_.jpg",
+    "status": "unread",
+    "genre": "scifi"
+  },
+  {
+    "title": "Redshirts",
+    "author": "John Scalzi",
+    "narrator": "Wil Wheaton",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51CE3t95FqL._SL500_.jpg",
+    "status": "unread",
+    "genre": "scifi"
+  },
+  {
+    "title": "The Ghost Brigades",
+    "author": "John Scalzi",
+    "narrator": "William Dufris",
+    "series": "Old Man’s War",
+    "cover": "https://m.media-amazon.com/images/I/51N+wercZpL._SL500_.jpg",
+    "status": "unread",
+    "genre": "scifi"
+  },
+  {
+    "title": "The Last Colony",
+    "author": "John Scalzi",
+    "narrator": "William Dufris",
+    "series": "Old Man’s War",
+    "cover": "https://m.media-amazon.com/images/I/51tPK4B2wYL._SL500_.jpg",
+    "status": "reading",
+    "genre": "scifi"
+  },
+  {
+    "title": "Snow Crash",
+    "author": "Neal Stephenson",
+    "narrator": "Jonathan Davis",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51F-1GJA2ML._SL500_.jpg",
+    "status": "unread",
+    "genre": "scifi"
+  },
+  {
+    "title": "Willful Child",
+    "author": "Steven Erikson",
+    "narrator": "MacLeod Andrews",
+    "series": "Willful Child",
+    "cover": "https://m.media-amazon.com/images/I/61p8Jy+7jHL._SL500_.jpg",
+    "status": "read",
+    "genre": "scifi"
   }
 ]
