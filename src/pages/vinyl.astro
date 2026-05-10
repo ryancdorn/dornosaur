@@ -1,30 +1,90 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import records from '../data/vinyl.json';
+
+const genres = [
+  { key: 'hiphop', label: 'Hip Hop',    desc: 'The culture, the craft, the classics' },
+  { key: 'rock',   label: 'Rock',       desc: 'Guitar gods, prog epics, and everything loud' },
+  { key: 'soul',   label: 'Pop & Soul', desc: 'Groove, feeling, and the floor at 2am' },
+];
 ---
 
 <Layout title="Vinyl" fullWidth={true}>
+<div class="vinyl-page">
 
-  <div class="vinyl-page">
-
-    <div class="wood-header">
-      <div class="header-inner">
-        <p class="eyebrow">Record Collection</p>
-        <h1>Vinyl</h1>
-        <p class="sub">The physical kind — warping on a real turntable.</p>
+  <!-- Wood header -->
+  <div class="wood-header">
+    <div class="header-inner">
+      <p class="eyebrow">Record Collection</p>
+      <h1>Vinyl</h1>
+      <p class="sub">The physical kind — warping on a real turntable.</p>
+      <div class="stats-row">
+        <div class="stat">
+          <span class="stat-num">{records.length}</span>
+          <span class="stat-label">Records</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat">
+          <span class="stat-num">{records.filter((r: any) => r.genre === 'hiphop').length}</span>
+          <span class="stat-label">Hip Hop</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat">
+          <span class="stat-num">{records.filter((r: any) => r.genre === 'rock').length}</span>
+          <span class="stat-label">Rock</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat">
+          <span class="stat-num">{records.filter((r: any) => r.genre === 'soul').length}</span>
+          <span class="stat-label">Pop & Soul</span>
+        </div>
       </div>
     </div>
-
-    <div class="shelf-area">
-      <div class="shelf-inner">
-        <p class="coming-soon">Collection loading soon — stay tuned.</p>
-      </div>
-      <div class="shelf-ledge"></div>
-    </div>
-
-    <div class="wood-footer"></div>
-
   </div>
 
+  <!-- Genre sections -->
+  {genres.map(genre => {
+    const genreRecords = records.filter((r: any) => r.genre === genre.key);
+    if (genreRecords.length === 0) return null;
+    return (
+      <section class:list={['gs', genre.key]}>
+
+        <!-- Banner -->
+        <div class="gs-banner">
+          <div class="gs-banner-inner">
+            <p class="gs-eyebrow">{genre.key.toUpperCase()} · {genreRecords.length} RECORDS</p>
+            <h2 class="gs-title">{genre.label}</h2>
+            <p class="gs-desc">{genre.desc}</p>
+          </div>
+        </div>
+
+        <!-- Records -->
+        <div class="gs-shelf">
+          <div class="gs-shelf-inner">
+            <div class="record-grid">
+              {genreRecords.map((record: any) => (
+                <div class="record-card">
+                  <div class="cover-wrap">
+                    <img src={record.cover} alt={`${record.title} by ${record.artist}`} loading="lazy" />
+                    <span class="format-badge">{record.format}</span>
+                  </div>
+                  <p class="rtitle">{record.title}</p>
+                  <p class="rartist">{record.artist}</p>
+                  <p class="rmeta">{record.year}{record.pressing ? ` · ${record.pressing}` : ''}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="shelf-ledge"></div>
+        </div>
+
+      </section>
+    );
+  })}
+
+  <div class="wood-footer"></div>
+
+</div>
 </Layout>
 
 <style>
@@ -58,7 +118,7 @@ import Layout from '../layouts/Layout.astro';
       );
   }
 
-  /* ── Header panel ────────────────────────────────────────── */
+  /* ── Wood header ─────────────────────────────────────────── */
   .wood-header {
     border-bottom: 4px solid #7A5018;
     box-shadow: 0 4px 30px rgba(0,0,0,0.7);
@@ -87,7 +147,6 @@ import Layout from '../layouts/Layout.astro';
     text-transform: uppercase;
     color: #C4924A;
     margin-bottom: 1rem;
-    font-family: 'Inter', sans-serif;
   }
 
   .wood-header h1 {
@@ -107,28 +166,102 @@ import Layout from '../layouts/Layout.astro';
     font-family: 'Lora', serif;
     font-style: italic;
     font-size: 1rem;
+    margin-bottom: 2.5rem;
   }
 
-  /* ── Shelf area ──────────────────────────────────────────── */
-  .shelf-area {
-    flex: 1;
-    background: #0E0804;
-    position: relative;
+  /* Stats */
+  .stats-row { display: flex; align-items: center; gap: 1.5rem; }
+  .stat { display: flex; flex-direction: column; gap: 0.2rem; }
+  .stat-num {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    color: #F5D98E;
+    letter-spacing: -0.03em;
+    line-height: 1;
   }
+  .stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7A5828;
+  }
+  .stat-div { width: 1px; height: 2.5rem; background: rgba(122,88,40,0.4); }
 
-  .shelf-inner {
+  /* ── Genre sections ──────────────────────────────────────── */
+  .gs { border-top: 1px solid rgba(255,255,255,0.05); }
+
+  .gs-banner { padding: 3.5rem 0 3rem; }
+  .gs-banner-inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 3rem 2.5rem;
-    min-height: 300px;
+    padding: 0 2.5rem;
   }
-
-  .coming-soon {
-    color: #3A2808;
-    font-style: italic;
+  .gs-eyebrow {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    opacity: 0.5;
+  }
+  .gs-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+  }
+  .gs-desc {
     font-family: 'Lora', serif;
     font-size: 1rem;
+    font-style: italic;
+    opacity: 0.55;
   }
+
+  .gs-shelf { position: relative; padding-bottom: 0; }
+  .gs-shelf-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2.5rem 2.5rem 3rem;
+  }
+
+  /* Record grid */
+  .record-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .record-card { display: flex; flex-direction: column; gap: 0.45rem; }
+
+  .cover-wrap {
+    position: relative;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+    transition: transform 0.2s, box-shadow 0.2s;
+    aspect-ratio: 1;
+  }
+  .cover-wrap:hover { transform: translateY(-5px); box-shadow: 0 16px 36px rgba(0,0,0,0.7); }
+  .cover-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .format-badge {
+    position: absolute;
+    bottom: 6px; right: 6px;
+    background: rgba(0,0,0,0.82);
+    color: rgba(255,255,255,0.75);
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.45rem;
+    border-radius: 3px;
+  }
+
+  .rtitle  { font-size: 0.75rem; font-weight: 700; line-height: 1.3; color: inherit; margin: 0; }
+  .rartist { font-size: 0.68rem; opacity: 0.5; margin: 0; }
+  .rmeta   { font-size: 0.6rem; opacity: 0.35; margin: 0; line-height: 1.4; }
 
   /* Shelf ledge */
   .shelf-ledge {
@@ -137,6 +270,60 @@ import Layout from '../layouts/Layout.astro';
     box-shadow: 0 6px 20px rgba(0,0,0,0.7);
     border-top: 2px solid #7A5018;
   }
+
+  /* ══════════════════════════════════════════════════════════
+     HIP HOP  —  near black · gold
+  ══════════════════════════════════════════════════════════ */
+  .hiphop .gs-banner {
+    background: linear-gradient(135deg, #080604 0%, #0E0A04 100%);
+    border-bottom: 1px solid rgba(212,160,23,0.2);
+  }
+  .hiphop .gs-eyebrow { color: rgba(212,160,23,0.55); }
+  .hiphop .gs-title   { color: #E8B830; text-shadow: 0 0 40px rgba(212,160,23,0.3); }
+  .hiphop .gs-desc    { color: #7A6020; }
+  .hiphop .gs-shelf   {
+    background: linear-gradient(180deg, #0C0804 0%, #100C06 100%);
+  }
+  .hiphop .rtitle     { color: #D4B870; }
+  .hiphop .rartist    { color: #8A7040; }
+  .hiphop .cover-wrap { box-shadow: 0 6px 20px rgba(200,150,10,0.15); border: 1px solid rgba(200,150,10,0.08); }
+  .hiphop .cover-wrap:hover { box-shadow: 0 16px 36px rgba(200,150,10,0.3); border-color: rgba(200,150,10,0.25); }
+
+  /* ══════════════════════════════════════════════════════════
+     ROCK  —  near black · electric red-orange
+  ══════════════════════════════════════════════════════════ */
+  .rock .gs-banner {
+    background: linear-gradient(135deg, #080608 0%, #0C0810 100%);
+    border-bottom: 1px solid rgba(200,60,40,0.2);
+  }
+  .rock .gs-eyebrow { color: rgba(220,80,50,0.55); }
+  .rock .gs-title   { color: #E05545; text-shadow: 0 0 40px rgba(200,60,40,0.3); }
+  .rock .gs-desc    { color: #7A3028; }
+  .rock .gs-shelf   {
+    background: linear-gradient(180deg, #080608 0%, #0C080C 100%);
+  }
+  .rock .rtitle     { color: #D4A0A0; }
+  .rock .rartist    { color: #7A4040; }
+  .rock .cover-wrap { box-shadow: 0 6px 20px rgba(200,60,40,0.12); border: 1px solid rgba(200,60,40,0.07); }
+  .rock .cover-wrap:hover { box-shadow: 0 16px 36px rgba(200,60,40,0.28); border-color: rgba(200,60,40,0.22); }
+
+  /* ══════════════════════════════════════════════════════════
+     POP & SOUL  —  near black · warm purple
+  ══════════════════════════════════════════════════════════ */
+  .soul .gs-banner {
+    background: linear-gradient(135deg, #070608 0%, #0A0810 100%);
+    border-bottom: 1px solid rgba(155,100,220,0.2);
+  }
+  .soul .gs-eyebrow { color: rgba(155,100,220,0.55); }
+  .soul .gs-title   { color: #B088E8; text-shadow: 0 0 40px rgba(155,100,220,0.3); }
+  .soul .gs-desc    { color: #6A4890; }
+  .soul .gs-shelf   {
+    background: linear-gradient(180deg, #070608 0%, #0A080E 100%);
+  }
+  .soul .rtitle     { color: #C0A8E0; }
+  .soul .rartist    { color: #6A4880; }
+  .soul .cover-wrap { box-shadow: 0 6px 20px rgba(155,100,220,0.12); border: 1px solid rgba(155,100,220,0.07); }
+  .soul .cover-wrap:hover { box-shadow: 0 16px 36px rgba(155,100,220,0.28); border-color: rgba(155,100,220,0.22); }
 
   /* ── Footer wood panel ───────────────────────────────────── */
   .wood-footer {
