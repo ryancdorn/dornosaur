@@ -13,11 +13,13 @@ const genres = [
   { key: 'other',   label: 'Miscellaneous',         nav: 'Other',   desc: 'Everything else worth reading' },
 ];
 
-const totalRead    = books.filter(b => b.status === 'read').length;
-const totalReading = books.filter(b => b.status === 'reading').length;
-const totalUnread  = books.length - totalRead - totalReading;
+const totalOwned     = books.filter(b => b.owned).length;
+const totalRead      = books.filter(b => b.status === 'read').length;
+const totalReading   = books.filter(b => b.status === 'reading').length;
+const totalUnread    = books.length - totalRead - totalReading;
 
 // Group books in a genre by series. Standalone books bucket at the end.
+// Within each group, books are ordered by seriesNumber (asc), then owned-first, then title.
 function groupBySeries(genreBooks: any[]) {
   const map = new Map<string, any[]>();
   const STANDALONE = '__standalone__';
@@ -26,7 +28,24 @@ function groupBySeries(genreBooks: any[]) {
     if (!map.has(key)) map.set(key, []);
     map.get(key)!.push(b);
   }
-  const groups = Array.from(map.entries()).map(([name, items]) => ({ name, books: items }));
+  // Audible returns sequence=0 for companion/prequel content with no canonical position;
+  // treat it the same as missing so numbered books sort first within each series.
+  const orderKey = (b: any) =>
+    (b.seriesNumber === null || b.seriesNumber === undefined || b.seriesNumber === 0)
+      ? 9999
+      : b.seriesNumber;
+  const groups = Array.from(map.entries()).map(([name, items]) => ({
+    name,
+    books: [...items].sort((a, b) => {
+      const an = orderKey(a);
+      const bn = orderKey(b);
+      if (an !== bn) return an - bn;
+      const ao = a.owned ? 0 : 1;
+      const bo = b.owned ? 0 : 1;
+      if (ao !== bo) return ao - bo;
+      return a.title.localeCompare(b.title);
+    }),
+  }));
   groups.sort((a, b) => {
     if (a.name === STANDALONE) return 1;
     if (b.name === STANDALONE) return -1;
@@ -49,8 +68,8 @@ function groupBySeries(genreBooks: any[]) {
       <h1>Books.</h1>
       <div class="stats-row">
         <div class="stat">
-          <span class="stat-num">{books.length}</span>
-          <span class="stat-label">Total</span>
+          <span class="stat-num">{totalOwned}</span>
+          <span class="stat-label">Library</span>
         </div>
         <div class="stat-div"></div>
         <div class="stat">
@@ -550,6 +569,158 @@ function groupBySeries(genreBooks: any[]) {
   .other .gs-desc    { color: rgba(196,184,164,0.8); }
   .other .gs-shelf   { background: #0B0B0C; }
   .other .bauthor    { color: #9E988A; }
+
+  /* ── LIGHT THEME ─────────────────────────────────────────── */
+  /* Flips genre rooms from dark/immersive to light. Each genre
+     keeps its accent identity, but text inverts and banners use
+     a pastel tint of the accent. */
+
+  [data-theme="light"] .genre-nav {
+    background: rgba(255, 252, 244, 0.92);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  [data-theme="light"] .genre-link { color: rgba(26, 26, 32, 0.6); }
+  [data-theme="light"] .genre-link:hover { color: var(--text); background: rgba(0,0,0,0.04); }
+  [data-theme="light"] .genre-link-count { color: rgba(26, 26, 32, 0.55); }
+  [data-theme="light"] .genre-home::after { background: rgba(0,0,0,0.14); }
+
+  [data-theme="light"] .genre-link.fantasy { --genre-accent: #4A8A2A; }
+  [data-theme="light"] .genre-link.litrpg  { --genre-accent: #008850; }
+  [data-theme="light"] .genre-link.scifi   { --genre-accent: #1E5FAB; }
+  [data-theme="light"] .genre-link.horror  { --genre-accent: #C0392B; }
+  [data-theme="light"] .genre-link.memoir  { --genre-accent: #A66333; }
+  [data-theme="light"] .genre-link.history { --genre-accent: #8A7220; }
+  [data-theme="light"] .genre-link.ideas   { --genre-accent: #B5631A; }
+  [data-theme="light"] .genre-link.other   { --genre-accent: #6E6552; }
+
+  [data-theme="light"] .gs {
+    background: var(--bg);
+    color: var(--text);
+    border-top: 1px solid var(--border);
+  }
+  [data-theme="light"] .gs-empty { color: rgba(26,26,32,0.6); }
+  [data-theme="light"] .series-count { color: rgba(26,26,32,0.45); }
+  [data-theme="light"] .bauthor { color: rgba(26,26,32,0.55); }
+
+  [data-theme="light"] .pill {
+    color: rgba(0,0,0,0.5);
+    border-color: rgba(0,0,0,0.14);
+  }
+  [data-theme="light"] .pill:hover { color: rgba(0,0,0,0.78); border-color: rgba(0,0,0,0.28); }
+  [data-theme="light"] .pill:not(.is-active) {
+    color: rgba(0,0,0,0.45);
+    border-color: rgba(0,0,0,0.10);
+    text-decoration-color: rgba(0,0,0,0.45);
+  }
+
+  [data-theme="light"] .cover-wrap { box-shadow: 0 4px 12px rgba(0,0,0,0.10); }
+  [data-theme="light"] .cover-wrap:hover { box-shadow: 0 12px 28px rgba(0,0,0,0.16); }
+  [data-theme="light"] .badge.unread { background: rgba(220,212,200,0.95); color: #5A5A5A; }
+
+  /* FANTASY light */
+  [data-theme="light"] .fantasy { --series-color: #4A8A2A; --btitle-color: #2E4A1C; }
+  [data-theme="light"] .fantasy .gs-banner {
+    background: linear-gradient(135deg, #ECF6E0 0%, #DCEDC4 60%, #E5F2D2 100%);
+    border-bottom: 1px solid rgba(74,138,42,0.35);
+  }
+  [data-theme="light"] .fantasy .gs-eyebrow { color: rgba(74,138,42,0.9); }
+  [data-theme="light"] .fantasy .gs-title   { color: #4A8A2A; text-shadow: none; }
+  [data-theme="light"] .fantasy .gs-desc    { color: rgba(74,138,42,0.85); }
+  [data-theme="light"] .fantasy .gs-shelf   { background: #F5F8ED; }
+  [data-theme="light"] .fantasy .bauthor    { color: #5C7B40; }
+
+  /* LITRPG light */
+  [data-theme="light"] .litrpg { --series-color: #008850; --btitle-color: #1A4030; }
+  [data-theme="light"] .litrpg .gs-banner {
+    background: linear-gradient(135deg, #E0F5EC 0%, #D0EDDA 100%);
+    border-bottom: 1px solid rgba(0,136,80,0.35);
+  }
+  [data-theme="light"] .litrpg .gs-eyebrow { color: rgba(0,136,80,0.9); }
+  [data-theme="light"] .litrpg .gs-title   { color: #008850; text-shadow: none; }
+  [data-theme="light"] .litrpg .gs-desc    { color: rgba(0,136,80,0.85); }
+  [data-theme="light"] .litrpg .gs-shelf   { background: #F2F8F5; }
+  [data-theme="light"] .litrpg .bauthor    { color: #2E6E48; }
+
+  /* SCIFI light */
+  [data-theme="light"] .scifi { --series-color: #1E5FAB; --btitle-color: #1F3A5C; }
+  [data-theme="light"] .scifi .gs-banner {
+    background: radial-gradient(ellipse at 20% 50%, #E0EDF8 0%, #D0E4F4 100%);
+    border-bottom: 1px solid rgba(30,95,171,0.35);
+  }
+  [data-theme="light"] .scifi .gs-banner::before {
+    background-image: radial-gradient(circle, rgba(30,95,171,0.10) 1px, transparent 1px);
+  }
+  [data-theme="light"] .scifi .gs-eyebrow { color: rgba(30,95,171,0.9); }
+  [data-theme="light"] .scifi .gs-title   { color: #1E5FAB; }
+  [data-theme="light"] .scifi .gs-desc    { color: rgba(30,95,171,0.85); }
+  [data-theme="light"] .scifi .gs-shelf   {
+    background: radial-gradient(ellipse at 50% 0%, #EFF5FB 0%, #E5EDF7 100%);
+  }
+  [data-theme="light"] .scifi .gs-shelf::before {
+    background-image: radial-gradient(circle, rgba(30,95,171,0.07) 1px, transparent 1px);
+  }
+  [data-theme="light"] .scifi .bauthor    { color: #4D7AAA; }
+
+  /* HORROR light */
+  [data-theme="light"] .horror { --series-color: #C0392B; --btitle-color: #5A2020; }
+  [data-theme="light"] .horror .gs-banner {
+    background: linear-gradient(180deg, #F8E0E0 0%, #F2D5D5 100%);
+    border-bottom: 1px solid rgba(192,57,43,0.35);
+  }
+  [data-theme="light"] .horror .gs-eyebrow { color: rgba(192,57,43,0.9); }
+  [data-theme="light"] .horror .gs-title   { color: #C0392B; text-shadow: none; }
+  [data-theme="light"] .horror .gs-desc    { color: rgba(192,57,43,0.85); }
+  [data-theme="light"] .horror .gs-shelf   { background: #FCF4F4; }
+  [data-theme="light"] .horror .bauthor    { color: #8A4848; }
+
+  /* MEMOIR light */
+  [data-theme="light"] .memoir { --series-color: #A66333; --btitle-color: #4A2D18; }
+  [data-theme="light"] .memoir .gs-banner {
+    background: linear-gradient(135deg, #F4E8D8 0%, #ECDDC8 100%);
+    border-bottom: 1px solid rgba(166,99,51,0.35);
+  }
+  [data-theme="light"] .memoir .gs-eyebrow { color: rgba(166,99,51,0.9); }
+  [data-theme="light"] .memoir .gs-title   { color: #A66333; }
+  [data-theme="light"] .memoir .gs-desc    { color: rgba(166,99,51,0.85); }
+  [data-theme="light"] .memoir .gs-shelf   { background: #FAF4EC; }
+  [data-theme="light"] .memoir .bauthor    { color: #8A5A38; }
+
+  /* HISTORY light */
+  [data-theme="light"] .history { --series-color: #8A7220; --btitle-color: #4A3D14; }
+  [data-theme="light"] .history .gs-banner {
+    background: linear-gradient(135deg, #F2EBD0 0%, #ECE0B8 100%);
+    border-bottom: 1px solid rgba(138,114,32,0.35);
+  }
+  [data-theme="light"] .history .gs-eyebrow { color: rgba(138,114,32,0.9); }
+  [data-theme="light"] .history .gs-title   { color: #8A7220; }
+  [data-theme="light"] .history .gs-desc    { color: rgba(138,114,32,0.85); }
+  [data-theme="light"] .history .gs-shelf   { background: #FAF7E8; }
+  [data-theme="light"] .history .bauthor    { color: #756225; }
+
+  /* IDEAS light */
+  [data-theme="light"] .ideas { --series-color: #B5631A; --btitle-color: #4F2A0C; }
+  [data-theme="light"] .ideas .gs-banner {
+    background: linear-gradient(135deg, #F8E4D0 0%, #F3D5B8 100%);
+    border-bottom: 1px solid rgba(181,99,26,0.35);
+  }
+  [data-theme="light"] .ideas .gs-eyebrow { color: rgba(181,99,26,0.9); }
+  [data-theme="light"] .ideas .gs-title   { color: #B5631A; }
+  [data-theme="light"] .ideas .gs-desc    { color: rgba(181,99,26,0.85); }
+  [data-theme="light"] .ideas .gs-shelf   { background: #FCF1E4; }
+  [data-theme="light"] .ideas .bauthor    { color: #9A5818; }
+
+  /* OTHER light */
+  [data-theme="light"] .other { --series-color: #6E6552; --btitle-color: #45402F; }
+  [data-theme="light"] .other .gs-banner {
+    background: linear-gradient(135deg, #EFEAE0 0%, #E5DFD0 100%);
+    border-bottom: 1px solid rgba(110,101,82,0.35);
+  }
+  [data-theme="light"] .other .gs-eyebrow { color: rgba(110,101,82,0.9); }
+  [data-theme="light"] .other .gs-title   { color: #6E6552; }
+  [data-theme="light"] .other .gs-desc    { color: rgba(110,101,82,0.85); }
+  [data-theme="light"] .other .gs-shelf   { background: #F8F4ED; }
+  [data-theme="light"] .other .bauthor    { color: #756B58; }
 </style>
 
 <script is:inline>

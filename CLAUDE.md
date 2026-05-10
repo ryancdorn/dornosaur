@@ -106,26 +106,42 @@ The palette flips with `[data-theme]`. Tokens read by every page; only the brand
 
 Data source: `src/data/books.json` — auto-refreshed daily from the Audible API. The script uses `audible-mcp`'s bundled API client (no MCP server required at runtime — it's pulled in as a devDep just for the `AudibleApi` class). Auth lives in `C:\Users\ryanc\audible-auth.json` and gets rotated in place by the script. **Direct edits to books.json get clobbered next morning** — change genre rules in `scripts/update-books-fresh.mjs` instead.
 
+The data is the user's library **plus the rest of every series the library touches** (unowned books in those series are pulled from Audible's series catalog and shown as `unread`). Today: ~195 owned + ~350 unowned across 57 series.
+
 ### Book schema
 ```json
 {
+  "asin": "B0...",                 // Audible product asin (used for dedup; omitted if unknown)
   "title": "...",
   "author": "...",
-  "narrator": "...",
+  "narrator": "...",                // empty for unowned books that have no narrator metadata
   "series": "...",
-  "cover": "https://...",   // Audible CDN
+  "seriesNumber": 2.5,              // optional — position in series (0/null sort to end as "no canonical position")
+  "cover": "https://...",           // Audible CDN
   "status": "read|reading|unread",
-  "genre": "fantasy|litrpg|scifi|horror|memoir|history|ideas|other"
+  "genre": "fantasy|litrpg|scifi|horror|memoir|history|ideas|other",
+  "owned": true                     // false for unowned series fill-ins; both render identically today
 }
 ```
 
 ### Status logic (in update-books-fresh.mjs)
 - `read` — ≥95% complete in Audible
 - `reading` — on in-progress list, <95% complete
-- `unread` — not on in-progress list
+- `unread` — owned but not on in-progress list, OR pulled in from a series catalog (not in library)
+
+### Series enrichment (how unowned books get added)
+1. Walk the user's library, collecting every unique series ASIN seen on `item.series[]`.
+2. For each series ASIN, call `GET /1.0/catalog/products/{seriesAsin}` with `response_groups=relationships` — returns child book ASINs + `sequence` numbers.
+3. Process series **smallest-first** so the most specific series claims overlapping books before umbrella series do (e.g., "The Stormlight Archive" claims its books before "The Cosmere" sees them; "Chronicles of Narnia (Publication Order)" before "Author's Preferred Order").
+4. **Re-tag owned books** to their smallest containing series — Audible may file "Rhythm of War" under "The Cosmere" but we want it grouped with the rest of Stormlight.
+5. Batch-fetch unowned ASINs via `GET /1.0/catalog/products?asins=A1,A2,...` for title/author/cover.
+6. Dedup: by ASIN globally, AND by lowercased title within the seenTitles set (Audible publishes alternate editions of the same book under different ASINs — regular / deluxe / illustrated / dramatized — and we keep only the first).
+7. Filter out **supplemental editions** by title regex: `[Dramatized Adaptation]`, `(Part N of M)`, `(Volume Two)`, etc. — these are alternate audio formats of books already in the list.
+
+The full pipeline runs in the same daily refresh as before; the API calls are signed via `audible-mcp`'s `client.request()` (the public method on the client class — `AudibleApi.client` is private at compile time but accessible at runtime).
 
 ### Genre section design pattern
-Each genre has a **tinted dark banner** (subtle gradient + accent eyebrow + big Playfair title in the genre's accent color) above a **dark shelf area** with the same accent threaded through series headers and book titles. Books are grouped by series within each genre — series with the most books first, "Standalone" at the end. Cover art has a small circular status badge (✓ green / ◉ amber / ○ gray).
+Each genre has a **tinted dark banner** (subtle gradient + accent eyebrow + big Playfair title in the genre's accent color) above a **dark shelf area** with the same accent threaded through series headers and book titles. Books are grouped by series within each genre — series with the most books first, "Standalone" at the end. Within a series, books are sorted by `seriesNumber` ascending (sequence 0/null sort to end), then owned-first, then by title. Cover art has a small circular status badge (✓ green / ◉ amber / ○ gray).
 
 ### Genre accent colors
 | Genre   | Accent      | Notes |

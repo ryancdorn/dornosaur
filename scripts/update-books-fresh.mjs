@@ -73,6 +73,64 @@ function pickCover(productImages) {
   return productImages[String(largest)] || '';
 }
 
+function parseSequence(value) {
+  if (value === null || value === undefined) return null;
+  const n = Number(value);
+  return Number.isFinite(n) ? n : null;
+}
+
+// Audible series catalogs include many alternate formats of the same book —
+// dramatized adaptations and part-N-of-M splits — that bloat the page without
+// adding new content. The "real" book is in the same series children list with
+// a clean title, so we filter these out.
+const SUPPLEMENTAL_PATTERNS = [
+  /\bdramatized adaptation\b/i,
+  /\(\s*(part\s*)?\d+\s*of\s*\d+\s*\)/i,
+  /\b(part|volume|disc)\s+(one|two|three|four|five|1|2|3|4|5)\b/i,
+];
+function isSupplementalEdition(title) {
+  if (!title) return false;
+  return SUPPLEMENTAL_PATTERNS.some((re) => re.test(title));
+}
+
+// Two-step: ask the series asin for its relationships (child book asins + sequence numbers),
+// then batch-fetch the unowned child products to get title/author/cover.
+async function fetchSeriesChildren(api, seriesAsin) {
+  const seriesResp = await api.client.request(`/1.0/catalog/products/${seriesAsin}`, {
+    query: { response_groups: 'relationships,product_attrs' },
+  });
+  if (!seriesResp.ok) {
+    throw new Error(`series fetch HTTP ${seriesResp.status}: ${seriesResp.bodyText.slice(0, 200)}`);
+  }
+  const seriesData = JSON.parse(seriesResp.bodyText);
+  const rels = Array.isArray(seriesData.product?.relationships) ? seriesData.product.relationships : [];
+  return rels
+    .filter((r) => r.relationship_to_product === 'child' && r.relationship_type === 'series')
+    .map((r) => ({ asin: r.asin, sequence: parseSequence(r.sequence) }));
+}
+
+async function fetchProductsBatch(api, asins) {
+  if (asins.length === 0) return [];
+  const products = [];
+  // Audible accepts ~50 ASINs per call comfortably; chunk to be safe.
+  const chunkSize = 50;
+  for (let i = 0; i < asins.length; i += chunkSize) {
+    const chunk = asins.slice(i, i + chunkSize);
+    const resp = await api.client.request('/1.0/catalog/products', {
+      query: {
+        asins: chunk.join(','),
+        response_groups: 'contributors,media,product_attrs,product_desc,series',
+      },
+    });
+    if (!resp.ok) {
+      throw new Error(`batch fetch HTTP ${resp.status}: ${resp.bodyText.slice(0, 200)}`);
+    }
+    const data = JSON.parse(resp.bodyText);
+    if (Array.isArray(data.products)) products.push(...data.products);
+  }
+  return products;
+}
+
 async function fetchAllLibrary(api) {
   const items = [];
   let page = 1;
@@ -117,34 +175,171 @@ async function main() {
     if (item.title) statusMap.set(item.title.toLowerCase().trim(), status);
   }
 
-  const books = library.map((item) => {
+  // Owned books from the library
+  const libraryAsins = new Set();
+  const seriesAsinIndex = new Map(); // seriesAsin -> { name }
+
+  const owned = library.map((item) => {
     const title = item.title || '';
     const authors = Array.isArray(item.authors) ? item.authors.map((a) => a.name).filter(Boolean) : [];
     const narrators = Array.isArray(item.narrators) ? item.narrators.map((n) => n.name).filter(Boolean) : [];
     const seriesArr = Array.isArray(item.series) ? item.series : [];
-    const series = seriesArr.length > 0 ? (seriesArr[0].title || seriesArr[0].name || '') : '';
+    const seriesEntry = seriesArr.length > 0 ? seriesArr[0] : null;
+    const series = seriesEntry ? (seriesEntry.title || seriesEntry.name || '') : '';
+    const seriesNumber = parseSequence(seriesEntry?.sequence);
     const cover = pickCover(item.product_images);
     const status = statusMap.get(title.toLowerCase().trim()) || 'unread';
+
+    if (item.asin) libraryAsins.add(item.asin);
+    // Index every series asin we see so we can fan out to its catalog later
+    for (const s of seriesArr) {
+      if (s?.asin && !seriesAsinIndex.has(s.asin)) {
+        seriesAsinIndex.set(s.asin, { name: s.title || s.name || '' });
+      }
+    }
+
     const draft = {
+      asin: item.asin || '',
       title,
       author: authors.join(', '),
       narrator: narrators.join(', '),
       series,
+      seriesNumber,
       cover,
       status,
       genre: 'other',
+      owned: true,
     };
     draft.genre = getGenre(draft);
     return draft;
   });
 
-  // Sort: by genre, then author, then series, then title — stable for diffs
+  // Step 1: pull the relationships for every series so we know each child ASIN + sequence.
+  console.log(`\nResolving series relationships for ${seriesAsinIndex.size} series...`);
+  const seriesChildren = new Map(); // seriesAsin -> [{asin, sequence}]
+  const sequenceByAsin = new Map();
+  let seriesIdx = 0;
+  for (const [seriesAsin, info] of seriesAsinIndex) {
+    seriesIdx += 1;
+    try {
+      const children = await fetchSeriesChildren(api, seriesAsin);
+      seriesChildren.set(seriesAsin, children);
+      for (const c of children) {
+        if (c.sequence !== null && !sequenceByAsin.has(c.asin)) {
+          sequenceByAsin.set(c.asin, c.sequence);
+        }
+      }
+      console.log(`  [${seriesIdx}/${seriesAsinIndex.size}] ${info.name || seriesAsin}: ${children.length} books`);
+    } catch (err) {
+      console.warn(`  [${seriesIdx}/${seriesAsinIndex.size}] ${info.name || seriesAsin}: FAILED (${err.message})`);
+      seriesChildren.set(seriesAsin, []);
+    }
+  }
+
+  // Step 2: process series smallest-first so the most specific series claims overlapping books.
+  // E.g., "The Stormlight Archive" (14) claims Stormlight books before "The Cosmere" (51) sees them;
+  // Narnia "Publication Order" (40) claims its books before "Author's Preferred Order" (53) does.
+  const orderedSeries = [...seriesAsinIndex.entries()].sort(
+    (a, b) => (seriesChildren.get(a[0])?.length ?? 0) - (seriesChildren.get(b[0])?.length ?? 0),
+  );
+
+  // Step 2a: re-tag owned books to their smallest containing series (with the right sequence).
+  // Audible may tag "Rhythm of War" under "The Cosmere" but we want it grouped with "The Stormlight Archive".
+  for (const book of owned) {
+    if (!book.asin) continue;
+    for (const [seriesAsin, info] of orderedSeries) {
+      const child = seriesChildren.get(seriesAsin)?.find((c) => c.asin === book.asin);
+      if (child) {
+        book.series = info.name;
+        book.seriesNumber = child.sequence;
+        // re-derive genre because it depends on series name
+        book.genre = getGenre(book);
+        break; // smallest series wins
+      }
+    }
+  }
+  const seenAsins = new Set(libraryAsins);
+  // Title dedup: many Audible "series children" are alternate editions of the same book
+  // (regular / deluxe / illustrated / bundle), each with its own ASIN. Collapse by lowercased title.
+  const seenTitles = new Set(owned.map((b) => b.title.toLowerCase().trim()).filter(Boolean));
+  const unowned = [];
+  console.log(`\nFetching unowned book details (smallest series first)...`);
+  for (const [seriesAsin, info] of orderedSeries) {
+    const children = seriesChildren.get(seriesAsin) || [];
+    const fresh = children.filter((c) => !seenAsins.has(c.asin));
+    if (fresh.length === 0) {
+      console.log(`  ${info.name || seriesAsin}: 0 new (all overlap with earlier series or owned)`);
+      continue;
+    }
+    try {
+      const products = await fetchProductsBatch(api, fresh.map((c) => c.asin));
+      const seqMap = new Map(children.map((c) => [c.asin, c.sequence]));
+      let added = 0;
+      let skippedDup = 0;
+      for (const p of products) {
+        if (!p.asin || seenAsins.has(p.asin)) continue;
+        if (isSupplementalEdition(p.title)) {
+          seenAsins.add(p.asin);
+          skippedDup += 1;
+          continue;
+        }
+        const titleKey = (p.title || '').toLowerCase().trim();
+        if (titleKey && seenTitles.has(titleKey)) {
+          seenAsins.add(p.asin); // still track the asin so future passes don't reconsider
+          skippedDup += 1;
+          continue;
+        }
+        seenAsins.add(p.asin);
+        if (titleKey) seenTitles.add(titleKey);
+        const draft = {
+          asin: p.asin,
+          title: p.title || '',
+          author: (p.authors || []).map((a) => a.name).filter(Boolean).join(', '),
+          narrator: (p.narrators || []).map((n) => n.name).filter(Boolean).join(', '),
+          series: info.name,
+          seriesNumber: seqMap.get(p.asin) ?? null,
+          cover: pickCover(p.product_images),
+          status: 'unread',
+          genre: 'other',
+          owned: false,
+        };
+        draft.genre = getGenre(draft);
+        unowned.push(draft);
+        added += 1;
+      }
+      const dupNote = skippedDup > 0 ? ` (${skippedDup} dup editions skipped)` : '';
+      console.log(`  ${info.name || seriesAsin}: +${added} unowned${dupNote}`);
+    } catch (err) {
+      console.warn(`  ${info.name || seriesAsin}: batch FAILED (${err.message})`);
+    }
+  }
+
+  // Backfill sequenceNumber on owned books from the series-relationships data we already have.
+  for (const b of owned) {
+    if ((b.seriesNumber === null || b.seriesNumber === undefined) && b.asin && sequenceByAsin.has(b.asin)) {
+      b.seriesNumber = sequenceByAsin.get(b.asin);
+    }
+  }
+
+  const books = [...owned, ...unowned];
+
+  // Sort: genre → series → seriesNumber → owned-first → title — stable for diffs.
+  // Owned-first within the same sequence puts the user's actual book ahead of
+  // alternate-title listings (e.g., "The Final Empire" before "Mistborn" at #1).
   books.sort((a, b) => {
     return a.genre.localeCompare(b.genre) ||
       a.author.localeCompare(b.author) ||
       a.series.localeCompare(b.series) ||
+      ((a.seriesNumber ?? 9999) - (b.seriesNumber ?? 9999)) ||
+      ((b.owned ? 1 : 0) - (a.owned ? 1 : 0)) ||
       a.title.localeCompare(b.title);
   });
+
+  // Strip null seriesNumber for clean JSON output
+  for (const b of books) {
+    if (b.seriesNumber === null || b.seriesNumber === undefined) delete b.seriesNumber;
+    if (!b.asin) delete b.asin;
+  }
 
   const before = fs.existsSync(BOOKS_PATH) ? fs.readFileSync(BOOKS_PATH, 'utf8') : '';
   const after = JSON.stringify(books, null, 2) + '\n';
@@ -156,9 +351,14 @@ async function main() {
   const statuses = Object.fromEntries(
     ['read', 'reading', 'unread'].map((s) => [s, books.filter((b) => b.status === s).length])
   );
+  const ownership = {
+    owned: books.filter((b) => b.owned).length,
+    unowned: books.filter((b) => !b.owned).length,
+  };
   console.log(`\nWrote ${books.length} books to books.json`);
   console.log('By genre:', genres);
   console.log('By status:', statuses);
+  console.log('By ownership:', ownership);
   if (before === after) console.log('No changes.');
 }
 
