@@ -8,8 +8,9 @@ import Layout from '../layouts/Layout.astro';
 
     <div class="wood-header">
       <div class="header-inner">
+        <p class="eyebrow">Record Collection</p>
         <h1>Vinyl</h1>
-        <p class="sub">My record collection</p>
+        <p class="sub">The physical kind — warping on a real turntable.</p>
       </div>
     </div>
 
@@ -27,50 +28,50 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-  .vinyl-page { display: flex; flex-direction: column; min-height: calc(100vh - 130px); }
+  .vinyl-page { display: flex; flex-direction: column; min-height: calc(100vh - 62px); }
 
-  /* ── Wood grain mixin ───────────────────────────────────── */
+  /* ── Wood grain ──────────────────────────────────────────── */
   .wood-header, .wood-footer {
-    background-color: #3B1D0A;
+    background-color: #2E1608;
     background-image:
       repeating-linear-gradient(
         89deg,
-        transparent 0px, transparent 3px,
-        rgba(90,45,5,0.28) 3px, rgba(90,45,5,0.28) 4px
+        transparent 0px, transparent 2px,
+        rgba(90,40,5,0.3) 2px, rgba(90,40,5,0.3) 3px
       ),
       repeating-linear-gradient(
         91deg,
-        transparent 0px, transparent 14px,
-        rgba(15,8,0,0.12) 14px, rgba(15,8,0,0.12) 15px
+        transparent 0px, transparent 12px,
+        rgba(10,5,0,0.15) 12px, rgba(10,5,0,0.15) 13px
       ),
       repeating-linear-gradient(
-        88deg,
-        transparent 0px, transparent 40px,
-        rgba(100,50,10,0.06) 40px, rgba(100,50,10,0.06) 60px
+        88.5deg,
+        transparent 0px, transparent 50px,
+        rgba(110,55,12,0.07) 50px, rgba(110,55,12,0.07) 80px
       ),
       linear-gradient(
         180deg,
-        #4D2810 0%,  #3B1D0A 12%,
-        #5C3018 25%, #3B1D0A 38%,
-        #6B3D1F 52%, #3B1D0A 65%,
-        #502A10 78%, #3B1D0A 100%
+        #3D2208 0%,  #2E1608 15%,
+        #4A2A10 30%, #2E1608 45%,
+        #553018 58%, #2E1608 72%,
+        #3F2010 85%, #2E1608 100%
       );
   }
 
-  /* ── Header panel ───────────────────────────────────────── */
+  /* ── Header panel ────────────────────────────────────────── */
   .wood-header {
-    border-bottom: 5px solid #8B5E1A;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    padding: 3.5rem 0 3rem;
+    border-bottom: 4px solid #7A5018;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.7);
+    padding: 4rem 0 3.5rem;
     position: relative;
   }
   .wood-header::after {
     content: '';
     position: absolute;
-    bottom: -10px; left: 0; right: 0;
-    height: 5px;
-    background: linear-gradient(90deg, #6B4510, #A07030, #6B4510, #A07030, #6B4510);
-    opacity: 0.6;
+    bottom: -8px; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #5A3810, #9A6828, #5A3810, #9A6828, #5A3810);
+    opacity: 0.55;
   }
 
   .header-inner {
@@ -79,27 +80,39 @@ import Layout from '../layouts/Layout.astro';
     padding: 0 2.5rem;
   }
 
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #C4924A;
+    margin-bottom: 1rem;
+    font-family: 'Inter', sans-serif;
+  }
+
   .wood-header h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 4rem;
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-weight: 700;
     font-style: italic;
     color: #F5D98E;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.6), 0 0 40px rgba(180,120,30,0.2);
-    margin-bottom: 0.4rem;
-    letter-spacing: -0.01em;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.7), 0 0 60px rgba(180,120,30,0.15);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+    line-height: 1;
   }
 
   .sub {
-    color: #C4924A;
+    color: #A07840;
     font-family: 'Lora', serif;
     font-style: italic;
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 
-  /* ── Record shelf area ──────────────────────────────────── */
+  /* ── Shelf area ──────────────────────────────────────────── */
   .shelf-area {
     flex: 1;
-    background: #1A0E05;
+    background: #0E0804;
     position: relative;
   }
 
@@ -111,23 +124,23 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .coming-soon {
-    color: #4A2E10;
+    color: #3A2808;
     font-style: italic;
     font-family: 'Lora', serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   /* Shelf ledge */
   .shelf-ledge {
-    background: linear-gradient(180deg, #5C3015, #3D1F08);
-    height: 18px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-    border-top: 2px solid #8B5E1A;
+    background: linear-gradient(180deg, #4A2810, #2E1808);
+    height: 22px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+    border-top: 2px solid #7A5018;
   }
 
-  /* ── Footer wood panel ──────────────────────────────────── */
+  /* ── Footer wood panel ───────────────────────────────────── */
   .wood-footer {
-    height: 50px;
-    border-top: 4px solid #6B4510;
+    height: 60px;
+    border-top: 4px solid #5A3810;
   }
 </style>

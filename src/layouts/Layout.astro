@@ -14,7 +14,7 @@ const { title, fullWidth = false } = Astro.props;
     <title>{title} — dornosaur.com</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <header>
@@ -29,7 +29,9 @@ const { title, fullWidth = false } = Astro.props;
       <slot />
     </main>
     <footer>
-      <p>made with curiosity</p>
+      <span class="footer-mark">dornosaur.com</span>
+      <span class="footer-sep">·</span>
+      <span>made with curiosity</span>
     </footer>
   </body>
 </html>
@@ -38,12 +40,14 @@ const { title, fullWidth = false } = Astro.props;
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg: #F5EFE4;
-    --bg-alt: #EDE4D4;
-    --text: #2C2416;
-    --text-muted: #7A6A52;
-    --accent: #8B5E3C;
-    --border: #D4C4A8;
+    --bg:          #0C0C10;
+    --surface:     #14141A;
+    --surface-2:   #1C1C24;
+    --text:        #EDEAE5;
+    --text-muted:  #6A6A7E;
+    --accent:      #FF6B2B;
+    --accent-dim:  rgba(255, 107, 43, 0.12);
+    --border:      #272733;
   }
 
   html { scroll-behavior: smooth; }
@@ -51,8 +55,8 @@ const { title, fullWidth = false } = Astro.props;
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: 'Lora', Georgia, serif;
-    line-height: 1.7;
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -60,18 +64,19 @@ const { title, fullWidth = false } = Astro.props;
 
   h1, h2, h3, h4 {
     font-family: 'Playfair Display', Georgia, serif;
-    line-height: 1.2;
+    line-height: 1.1;
   }
 
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
   img { display: block; max-width: 100%; }
 
-  /* Header */
+  /* ── Navigation ──────────────────────────────────────────── */
   header {
-    background: var(--bg-alt);
+    background: #08080C;
     border-bottom: 1px solid var(--border);
-    padding: 1.1rem 2.5rem;
+    padding: 0 2.5rem;
+    height: 62px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -82,24 +87,40 @@ const { title, fullWidth = false } = Astro.props;
 
   .wordmark {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
-    font-style: italic;
-    color: var(--text);
+    font-style: normal;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+    transition: opacity 0.15s;
   }
-  .wordmark:hover { text-decoration: none; color: var(--accent); }
+  .wordmark:hover { text-decoration: none; opacity: 0.75; }
 
-  nav { display: flex; gap: 2rem; }
+  nav { display: flex; gap: 2.5rem; align-items: center; }
   nav a {
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    transition: color 0.2s;
+    color: var(--text-muted);
+    transition: color 0.15s;
+    position: relative;
+    padding-bottom: 2px;
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0; right: 0;
+    height: 1px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transition: transform 0.2s;
   }
   nav a:hover { color: var(--text); text-decoration: none; }
+  nav a:hover::after { transform: scaleX(1); }
 
-  /* Main */
+  /* ── Main ────────────────────────────────────────────────── */
   main {
     flex: 1;
     max-width: 1280px;
@@ -107,20 +128,23 @@ const { title, fullWidth = false } = Astro.props;
     margin: 0 auto;
     padding: 3rem 2rem;
   }
-
   main.full-width {
     max-width: 100%;
     padding: 0;
   }
 
-  /* Footer */
+  /* ── Footer ──────────────────────────────────────────────── */
   footer {
-    background: var(--bg-alt);
+    background: #08080C;
     border-top: 1px solid var(--border);
-    padding: 1.5rem 2rem;
-    text-align: center;
+    padding: 1.25rem 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     color: var(--text-muted);
-    font-size: 0.85rem;
-    font-style: italic;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
   }
+  .footer-mark { color: var(--accent); font-family: 'Playfair Display', serif; font-style: normal; }
+  .footer-sep { opacity: 0.4; }
 </style>

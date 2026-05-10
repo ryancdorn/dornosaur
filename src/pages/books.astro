@@ -3,21 +3,15 @@ import Layout from '../layouts/Layout.astro';
 import books from '../data/books.json';
 
 const genres = [
-  { key: 'fantasy',  label: 'Epic Fantasy',         emoji: '⚔️',  desc: 'Sweeping worlds, ancient magic, chosen destinies' },
-  { key: 'litrpg',   label: 'LitRPG & Progression',  emoji: '⚡',  desc: 'Level up or die trying' },
-  { key: 'scifi',    label: 'Science Fiction',        emoji: '🚀',  desc: 'The future, the void, and everything in between' },
-  { key: 'horror',   label: 'Horror & Thriller',      emoji: '🩸',  desc: 'Things that go bump in the night' },
-  { key: 'memoir',   label: 'Memoir & Biography',     emoji: '✍️',  desc: 'Real lives, real stories' },
-  { key: 'history',  label: 'History & Politics',     emoji: '📰',  desc: 'The past and its long shadows' },
-  { key: 'ideas',    label: 'Business & Ideas',       emoji: '💡',  desc: 'How the world works' },
-  { key: 'other',    label: 'Miscellaneous',          emoji: '📖',  desc: 'Everything else worth reading' },
+  { key: 'fantasy', label: 'Epic Fantasy',          emoji: '⚔️',  desc: 'Sweeping worlds, ancient magic, chosen destinies' },
+  { key: 'litrpg',  label: 'LitRPG & Progression',  emoji: '⚡',  desc: 'Level up or die trying' },
+  { key: 'scifi',   label: 'Science Fiction',         emoji: '🚀',  desc: 'The future, the void, and everything in between' },
+  { key: 'horror',  label: 'Horror & Thriller',       emoji: '🩸',  desc: 'Things that go bump in the night' },
+  { key: 'memoir',  label: 'Memoir & Biography',      emoji: '✍️',  desc: 'Real lives, real stories' },
+  { key: 'history', label: 'History & Politics',      emoji: '📰',  desc: 'The past and its long shadows' },
+  { key: 'ideas',   label: 'Business & Ideas',        emoji: '💡',  desc: 'How the world works' },
+  { key: 'other',   label: 'Miscellaneous',           emoji: '📖',  desc: 'Everything else worth reading' },
 ];
-
-const statusLabel: Record<string, string> = {
-  read: '✓ Read',
-  reading: '◉ Reading',
-  unread: '○ Unread',
-};
 
 const totalRead    = books.filter(b => b.status === 'read').length;
 const totalReading = books.filter(b => b.status === 'reading').length;
@@ -26,50 +20,81 @@ const totalUnread  = books.length - totalRead - totalReading;
 
 <Layout title="Books" fullWidth={true}>
 
+  <!-- Page hero -->
   <div class="page-hero">
-    <h1>Books</h1>
-    <p class="hero-sub">My Audible library — {books.length} books and counting</p>
-    <div class="hero-stats">
-      <span class="stat read">✓ {totalRead} read</span>
-      <span class="stat reading">◉ {totalReading} in progress</span>
-      <span class="stat unread">○ {totalUnread} unread</span>
+    <div class="page-hero-inner">
+      <p class="eyebrow">Audible Library</p>
+      <h1>Books</h1>
+      <div class="stats-row">
+        <div class="stat">
+          <span class="stat-num">{books.length}</span>
+          <span class="stat-label">Total</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat">
+          <span class="stat-num read-num">{totalRead}</span>
+          <span class="stat-label">Read</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat">
+          <span class="stat-num reading-num">{totalReading}</span>
+          <span class="stat-label">In progress</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat">
+          <span class="stat-num">{totalUnread}</span>
+          <span class="stat-label">Unread</span>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- Genre sections -->
   {genres.map(genre => {
-    const genreBooks = books.filter((b: any) => b.genre === genre.key);
+    const genreBooks   = books.filter((b: any) => b.genre === genre.key);
     if (genreBooks.length === 0) return null;
     const readCount    = genreBooks.filter((b: any) => b.status === 'read').length;
     const readingCount = genreBooks.filter((b: any) => b.status === 'reading').length;
     return (
-      <section class:list={['genre-section', genre.key]}>
-        <div class="genre-inner">
-          <div class="genre-header">
-            <div class="genre-title-row">
-              <span class="genre-emoji">{genre.emoji}</span>
-              <h2>{genre.label}</h2>
-              <div class="genre-counts">
-                {readCount > 0    && <span class="gc read">{readCount} read</span>}
-                {readingCount > 0 && <span class="gc reading">{readingCount} reading</span>}
-              </div>
-            </div>
-            <p class="genre-desc">{genre.desc}</p>
+      <section class:list={['gs', genre.key]}>
+
+        <!-- Banner -->
+        <div class="gs-banner">
+          <div class="gs-banner-inner">
+            <p class="gs-eyebrow">
+              {genre.emoji} &nbsp;{genre.key.toUpperCase()} · {genreBooks.length} BOOKS
+            </p>
+            <h2 class="gs-title">{genre.label}</h2>
+            <p class="gs-desc">{genre.desc}</p>
           </div>
-          <div class="book-grid">
-            {genreBooks.map((book: any) => (
-              <div class:list={['book-card', book.status]}>
-                <div class="cover-wrap">
-                  <img src={book.cover} alt={book.title} loading="lazy" />
-                  <span class:list={['badge', book.status]}>{statusLabel[book.status]}</span>
-                </div>
-                <div class="book-meta">
+        </div>
+
+        <!-- Books -->
+        <div class="gs-shelf">
+          <div class="gs-shelf-inner">
+            <div class="gs-pills">
+              {readCount > 0    && <span class="pill read">✓ {readCount} read</span>}
+              {readingCount > 0 && <span class="pill reading">◉ {readingCount} reading</span>}
+              {(genreBooks.length - readCount - readingCount) > 0 &&
+                <span class="pill unread">○ {genreBooks.length - readCount - readingCount} unread</span>}
+            </div>
+            <div class="book-grid">
+              {genreBooks.map((book: any) => (
+                <div class:list={['book', book.status]}>
+                  <div class="cover-wrap">
+                    <img src={book.cover} alt={book.title} loading="lazy" />
+                    <span class:list={['badge', book.status]}>
+                      {book.status === 'read' ? '✓' : book.status === 'reading' ? '◉' : '○'}
+                    </span>
+                  </div>
                   <p class="btitle">{book.title}</p>
                   <p class="bauthor">{book.author}</p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
+
       </section>
     );
   })}
@@ -77,228 +102,324 @@ const totalUnread  = books.length - totalRead - totalReading;
 </Layout>
 
 <style>
-  /* ── Page hero ─────────────────────────────────────────── */
+  /* ── Page hero ───────────────────────────────────────────── */
   .page-hero {
+    background: #08080C;
+    border-bottom: 1px solid var(--border);
+    padding: 4.5rem 0 3.5rem;
+  }
+  .page-hero-inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 3.5rem 2rem 2.5rem;
+    padding: 0 2.5rem;
+  }
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
   }
   .page-hero h1 {
-    font-size: 3.5rem;
-    font-style: italic;
-    color: #2C2416;
-    margin-bottom: 0.4rem;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-weight: 700;
+    font-style: normal;
+    color: var(--text);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 2.5rem;
   }
-  .hero-sub { color: #7A6A52; margin-bottom: 1.5rem; }
-  .hero-stats { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.88rem; }
-  .stat { padding: 0.35rem 0.9rem; border-radius: 20px; font-weight: 500; }
-  .stat.read    { background: #D4EDDA; color: #1A5C2A; }
-  .stat.reading { background: #FFF3CD; color: #7A5500; }
-  .stat.unread  { background: #E8E8E8; color: #555; }
-
-  /* ── Shared section layout ──────────────────────────────── */
-  .genre-section { padding: 4rem 0; }
-  .genre-inner   { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
-
-  .genre-header  { margin-bottom: 2rem; }
-  .genre-title-row {
+  .stats-row {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.4rem;
-    flex-wrap: wrap;
+    gap: 1.5rem;
   }
-  .genre-emoji { font-size: 1.8rem; line-height: 1; }
-  .genre-title-row h2 { font-size: 2.2rem; margin: 0; }
-  .genre-counts { display: flex; gap: 0.5rem; margin-left: auto; }
-  .gc {
-    font-family: 'Lora', serif;
-    font-size: 0.75rem;
-    padding: 0.2rem 0.6rem;
-    border-radius: 12px;
-    font-weight: 500;
+  .stat { display: flex; flex-direction: column; gap: 0.2rem; }
+  .stat-num {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    color: var(--text);
+    letter-spacing: -0.03em;
+    line-height: 1;
   }
-  .genre-desc { font-style: italic; font-size: 0.95rem; opacity: 0.75; }
+  .read-num    { color: #5DBB7A; }
+  .reading-num { color: #E0A030; }
+  .stat-label  { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+  .stat-div { width: 1px; height: 2.5rem; background: var(--border); }
 
-  /* ── Book grid ──────────────────────────────────────────── */
+  /* ── Genre section shared ────────────────────────────────── */
+  .gs { border-top: 1px solid var(--border); }
+  .gs-banner {
+    padding: 3.5rem 0 3rem;
+  }
+  .gs-banner-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+  }
+  .gs-eyebrow {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    opacity: 0.55;
+  }
+  .gs-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+  }
+  .gs-desc {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-style: italic;
+    opacity: 0.6;
+  }
+  .gs-shelf { padding: 2rem 0 3.5rem; }
+  .gs-shelf-inner { max-width: 1280px; margin: 0 auto; padding: 0 2.5rem; }
+
+  /* Status pills */
+  .gs-pills { display: flex; gap: 0.6rem; margin-bottom: 1.75rem; flex-wrap: wrap; }
+  .pill {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+  }
+  .pill.read    { background: rgba(93,187,122,0.12); color: #5DBB7A; border: 1px solid rgba(93,187,122,0.25); }
+  .pill.reading { background: rgba(224,160,48,0.12); color: #E0A030; border: 1px solid rgba(224,160,48,0.25); }
+  .pill.unread  { background: rgba(255,255,255,0.04); color: var(--text-muted); border: 1px solid var(--border); }
+
+  /* Book grid */
   .book-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 1.25rem;
   }
-  .book-card { display: flex; flex-direction: column; gap: 0.5rem; }
+  .book { display: flex; flex-direction: column; gap: 0.4rem; }
 
   .cover-wrap {
     position: relative;
-    border-radius: 4px;
+    border-radius: 3px;
     overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
     transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
   }
-  .cover-wrap:hover { transform: translateY(-4px); }
+  .cover-wrap:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.5); }
   .cover-wrap img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
 
   .badge {
     position: absolute;
-    top: 5px; right: 5px;
-    font-size: 0.52rem;
-    padding: 0.15rem 0.4rem;
-    border-radius: 10px;
+    bottom: 5px; right: 5px;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.55rem;
     font-weight: 700;
-    letter-spacing: 0.02em;
-    white-space: nowrap;
-    font-family: 'Lora', serif;
   }
-  .badge.read    { background: rgba(26,92,42,0.92);  color: #fff; }
-  .badge.reading { background: rgba(140,90,0,0.92);  color: #fff; }
-  .badge.unread  { background: rgba(60,60,60,0.75);  color: #ddd; }
+  .badge.read    { background: rgba(93,187,122,0.95);  color: #fff; }
+  .badge.reading { background: rgba(224,160,48,0.95);  color: #fff; }
+  .badge.unread  { background: rgba(30,30,40,0.85);    color: #888; }
 
-  .book-meta { font-size: 0.7rem; line-height: 1.35; }
-  .btitle { font-weight: 600; margin: 0; }
-  .bauthor { opacity: 0.6; margin: 0; }
-
-  /* ════════════════════════════════════════════════════════
-     EPIC FANTASY  —  aged parchment + forest green
-  ════════════════════════════════════════════════════════ */
-  .fantasy {
-    background: linear-gradient(160deg, #E5DAB5 0%, #F0E7CC 40%, #EAE0C0 100%);
-    border-top: 4px solid #4A7C2F;
+  .btitle {
+    font-size: 0.68rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: inherit;
+    margin: 0;
   }
-  .fantasy .genre-title-row h2 { color: #2D5016; font-style: italic; }
-  .fantasy .genre-desc  { color: #4A6B30; }
-  .fantasy .gc.read     { background: rgba(45,80,22,0.14); color: #2D5016; }
-  .fantasy .gc.reading  { background: rgba(139,105,20,0.14); color: #6B5210; }
-  .fantasy .cover-wrap  { box-shadow: 0 3px 12px rgba(45,80,22,0.25); }
-  .fantasy .cover-wrap:hover { box-shadow: 0 8px 22px rgba(45,80,22,0.35); }
-  .fantasy .book-meta   { color: #2A3B1E; }
-  .fantasy .bauthor     { color: #5B6E42; }
-
-  /* ════════════════════════════════════════════════════════
-     LITRPG  —  dark terminal + electric green
-  ════════════════════════════════════════════════════════ */
-  .litrpg {
-    background: #0D1117;
-    border-top: 4px solid #00E676;
+  .bauthor {
+    font-size: 0.62rem;
+    opacity: 0.45;
+    margin: 0;
   }
-  .litrpg .genre-title-row h2 {
+
+  /* ══════════════════════════════════════════════════════════
+     EPIC FANTASY  —  dark forest banner · parchment shelf
+  ══════════════════════════════════════════════════════════ */
+  .fantasy .gs-banner {
+    background: linear-gradient(135deg, #0A1806 0%, #111F08 60%, #0D1A06 100%);
+    border-bottom: 1px solid rgba(74,124,47,0.3);
+  }
+  .fantasy .gs-eyebrow { color: #6BA84A; }
+  .fantasy .gs-title   { color: #A8D878; font-style: italic; }
+  .fantasy .gs-desc    { color: #6BA84A; }
+  .fantasy .gs-shelf   { background: linear-gradient(160deg, #E8DEB8 0%, #F2E9D0 50%, #EDE3C5 100%); }
+  .fantasy .btitle     { color: #2A3A1A; }
+  .fantasy .bauthor    { color: #5A7040; }
+  .fantasy .cover-wrap { box-shadow: 0 4px 14px rgba(30,50,10,0.35); }
+  .fantasy .cover-wrap:hover { box-shadow: 0 12px 28px rgba(30,50,10,0.5); }
+  .fantasy .pill.read    { background: rgba(74,124,47,0.15); color: #4A7C2F; border-color: rgba(74,124,47,0.3); }
+  .fantasy .pill.reading { background: rgba(139,105,20,0.15); color: #6B5010; border-color: rgba(139,105,20,0.3); }
+  .fantasy .pill.unread  { background: rgba(42,58,26,0.15); color: #607048; border-color: rgba(74,100,40,0.25); }
+
+  /* ══════════════════════════════════════════════════════════
+     LITRPG  —  terminal black · electric green
+  ══════════════════════════════════════════════════════════ */
+  .litrpg .gs-banner {
+    background: #090E12;
+    border-bottom: 1px solid rgba(0,230,118,0.2);
+  }
+  .litrpg .gs-eyebrow { color: rgba(0,230,118,0.5); font-family: 'Courier New', monospace; }
+  .litrpg .gs-title   {
     color: #00E676;
     font-family: 'Courier New', monospace;
     font-style: normal;
-    text-shadow: 0 0 24px rgba(0,230,118,0.55);
-    letter-spacing: 0.05em;
+    text-shadow: 0 0 40px rgba(0,230,118,0.4);
+    letter-spacing: -0.01em;
   }
-  .litrpg .genre-emoji { filter: drop-shadow(0 0 6px #00E676); }
-  .litrpg .genre-desc  { color: #4FC3F7; font-style: normal; font-family: 'Courier New', monospace; font-size: 0.83rem; opacity: 1; }
-  .litrpg .gc.read     { background: rgba(0,230,118,0.12); color: #00E676; border: 1px solid rgba(0,230,118,0.3); }
-  .litrpg .gc.reading  { background: rgba(79,195,247,0.12); color: #4FC3F7; border: 1px solid rgba(79,195,247,0.3); }
-  .litrpg .cover-wrap  { box-shadow: 0 3px 16px rgba(0,230,118,0.18); border: 1px solid rgba(0,230,118,0.08); }
-  .litrpg .cover-wrap:hover { box-shadow: 0 8px 28px rgba(0,230,118,0.38); border-color: rgba(0,230,118,0.3); }
-  .litrpg .book-meta   { color: #8B949E; }
-  .litrpg .btitle      { color: #C9D1D9; }
+  .litrpg .gs-desc    { color: #4FC3F7; font-family: 'Courier New', monospace; font-style: normal; font-size: 0.85rem; }
+  .litrpg .gs-shelf   { background: #0D1117; }
+  .litrpg .btitle     { color: #C9D1D9; }
+  .litrpg .bauthor    { color: #4A6070; }
+  .litrpg .cover-wrap { box-shadow: 0 4px 16px rgba(0,230,118,0.12); border: 1px solid rgba(0,230,118,0.06); }
+  .litrpg .cover-wrap:hover { box-shadow: 0 12px 32px rgba(0,230,118,0.28); border-color: rgba(0,230,118,0.25); }
+  .litrpg .pill.read    { background: rgba(0,230,118,0.1);  color: #00E676; border-color: rgba(0,230,118,0.25); }
+  .litrpg .pill.reading { background: rgba(79,195,247,0.1); color: #4FC3F7; border-color: rgba(79,195,247,0.25); }
+  .litrpg .pill.unread  { background: rgba(255,255,255,0.03); color: #3A4A55; border-color: rgba(255,255,255,0.06); }
 
-  /* ════════════════════════════════════════════════════════
-     SCI-FI  —  deep space + cool blue
-  ════════════════════════════════════════════════════════ */
-  .scifi {
-    background: radial-gradient(ellipse at 50% 0%, #0C1830 0%, #060D1F 70%);
-    border-top: 4px solid #4FC3F7;
+  /* ══════════════════════════════════════════════════════════
+     SCI-FI  —  deep space · cold blue
+  ══════════════════════════════════════════════════════════ */
+  .scifi .gs-banner {
+    background: radial-gradient(ellipse at 20% 50%, #081028 0%, #04081A 100%);
+    border-bottom: 1px solid rgba(79,195,247,0.2);
     position: relative;
     overflow: hidden;
   }
-  .scifi::before {
+  .scifi .gs-banner::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
-    background-size: 38px 38px;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
     pointer-events: none;
   }
-  .scifi .genre-inner  { position: relative; z-index: 1; }
-  .scifi .genre-title-row h2 { color: #64B5F6; letter-spacing: 0.04em; }
-  .scifi .genre-desc   { color: #90CAF9; opacity: 1; }
-  .scifi .gc.read      { background: rgba(100,181,246,0.13); color: #64B5F6; border: 1px solid rgba(100,181,246,0.3); }
-  .scifi .gc.reading   { background: rgba(206,147,216,0.13); color: #CE93D8; border: 1px solid rgba(206,147,216,0.3); }
-  .scifi .cover-wrap   { box-shadow: 0 3px 16px rgba(79,195,247,0.15); border: 1px solid rgba(79,195,247,0.08); }
-  .scifi .cover-wrap:hover { box-shadow: 0 8px 28px rgba(79,195,247,0.32); border-color: rgba(79,195,247,0.28); }
-  .scifi .book-meta    { color: #8892A4; }
-  .scifi .btitle       { color: #CDD9E5; }
-
-  /* ════════════════════════════════════════════════════════
-     HORROR  —  near black + blood red
-  ════════════════════════════════════════════════════════ */
-  .horror {
-    background: linear-gradient(180deg, #0F0404 0%, #150808 100%);
-    border-top: 4px solid #C62828;
+  .scifi .gs-banner-inner { position: relative; z-index: 1; }
+  .scifi .gs-eyebrow { color: rgba(79,195,247,0.5); }
+  .scifi .gs-title   { color: #64B5F6; letter-spacing: 0.02em; }
+  .scifi .gs-desc    { color: #90CAF9; }
+  .scifi .gs-shelf   {
+    background: radial-gradient(ellipse at 50% 0%, #0C1830 0%, #060D1F 100%);
+    position: relative; overflow: hidden;
   }
-  .horror .genre-title-row h2 { color: #EF5350; letter-spacing: 0.02em; }
-  .horror .genre-desc  { color: #8B2020; opacity: 1; }
-  .horror .gc.read     { background: rgba(198,40,40,0.15); color: #EF5350; border: 1px solid rgba(198,40,40,0.3); }
-  .horror .gc.reading  { background: rgba(100,100,100,0.18); color: #AAA; border: 1px solid rgba(100,100,100,0.3); }
-  .horror .cover-wrap  { box-shadow: 0 3px 16px rgba(198,40,40,0.2); border: 1px solid rgba(198,40,40,0.08); }
-  .horror .cover-wrap:hover { box-shadow: 0 8px 28px rgba(198,40,40,0.4); border-color: rgba(198,40,40,0.3); }
-  .horror .book-meta   { color: #888; }
-  .horror .btitle      { color: #CCCCCC; }
-
-  /* ════════════════════════════════════════════════════════
-     MEMOIR  —  warm cream + terracotta
-  ════════════════════════════════════════════════════════ */
-  .memoir {
-    background: linear-gradient(160deg, #FEF7EE 0%, #FFF9F3 50%, #F9F1E5 100%);
-    border-top: 4px solid #B5622A;
+  .scifi .gs-shelf::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
   }
-  .memoir .genre-title-row h2 { color: #6B3520; font-style: italic; }
-  .memoir .genre-desc  { color: #8B5E3C; }
-  .memoir .gc.read     { background: rgba(107,53,32,0.12); color: #6B3520; }
-  .memoir .gc.reading  { background: rgba(181,98,42,0.14); color: #7A4515; }
-  .memoir .cover-wrap  { box-shadow: 0 3px 12px rgba(107,53,32,0.22); }
-  .memoir .cover-wrap:hover { box-shadow: 0 8px 22px rgba(107,53,32,0.35); }
-  .memoir .book-meta   { color: #3A2010; }
-  .memoir .bauthor     { color: #8B5E3C; }
+  .scifi .gs-shelf-inner { position: relative; z-index: 1; }
+  .scifi .btitle     { color: #CDD9E5; }
+  .scifi .bauthor    { color: #3A5070; }
+  .scifi .cover-wrap { box-shadow: 0 4px 16px rgba(79,195,247,0.12); border: 1px solid rgba(79,195,247,0.06); }
+  .scifi .cover-wrap:hover { box-shadow: 0 12px 32px rgba(79,195,247,0.28); border-color: rgba(79,195,247,0.25); }
+  .scifi .pill.read    { background: rgba(100,181,246,0.1); color: #64B5F6; border-color: rgba(100,181,246,0.25); }
+  .scifi .pill.reading { background: rgba(206,147,216,0.1); color: #CE93D8; border-color: rgba(206,147,216,0.25); }
+  .scifi .pill.unread  { background: rgba(255,255,255,0.03); color: #304050; border-color: rgba(255,255,255,0.06); }
 
-  /* ════════════════════════════════════════════════════════
-     HISTORY  —  aged newsprint + burgundy
-  ════════════════════════════════════════════════════════ */
-  .history {
-    background: linear-gradient(160deg, #DECA90 0%, #EBD9B0 40%, #E3D09E 100%);
-    border-top: 4px solid #722F37;
+  /* ══════════════════════════════════════════════════════════
+     HORROR  —  near black · blood red
+  ══════════════════════════════════════════════════════════ */
+  .horror .gs-banner {
+    background: linear-gradient(180deg, #0A0202 0%, #100404 100%);
+    border-bottom: 1px solid rgba(198,40,40,0.3);
   }
-  .history .genre-title-row h2 { color: #4A1520; font-weight: 700; }
-  .history .genre-desc  { color: #722F37; }
-  .history .gc.read     { background: rgba(114,47,55,0.15); color: #4A1520; }
-  .history .gc.reading  { background: rgba(139,105,20,0.15); color: #6B5210; }
-  .history .cover-wrap  { box-shadow: 0 3px 12px rgba(74,21,32,0.2); }
-  .history .cover-wrap:hover { box-shadow: 0 8px 22px rgba(74,21,32,0.35); }
-  .history .book-meta   { color: #2A1505; }
-  .history .bauthor     { color: #722F37; }
+  .horror .gs-eyebrow { color: rgba(198,40,40,0.5); }
+  .horror .gs-title   { color: #EF5350; text-shadow: 0 0 40px rgba(198,40,40,0.35); }
+  .horror .gs-desc    { color: #8B3030; }
+  .horror .gs-shelf   { background: linear-gradient(180deg, #0F0303 0%, #130606 100%); }
+  .horror .btitle     { color: #CCC; }
+  .horror .bauthor    { color: #503030; }
+  .horror .cover-wrap { box-shadow: 0 4px 16px rgba(198,40,40,0.18); border: 1px solid rgba(198,40,40,0.07); }
+  .horror .cover-wrap:hover { box-shadow: 0 12px 32px rgba(198,40,40,0.4); border-color: rgba(198,40,40,0.3); }
+  .horror .pill.read    { background: rgba(198,40,40,0.12); color: #EF5350; border-color: rgba(198,40,40,0.28); }
+  .horror .pill.reading { background: rgba(150,100,100,0.12); color: #AA8080; border-color: rgba(150,100,100,0.25); }
+  .horror .pill.unread  { background: rgba(255,255,255,0.02); color: #604040; border-color: rgba(255,255,255,0.05); }
 
-  /* ════════════════════════════════════════════════════════
-     IDEAS  —  warm off-white + amber
-  ════════════════════════════════════════════════════════ */
-  .ideas {
-    background: linear-gradient(160deg, #EDE8E0 0%, #F2EDE5 50%, #E8E2D8 100%);
-    border-top: 4px solid #B5551A;
+  /* ══════════════════════════════════════════════════════════
+     MEMOIR  —  dark warm banner · warm cream shelf
+  ══════════════════════════════════════════════════════════ */
+  .memoir .gs-banner {
+    background: linear-gradient(135deg, #120A04 0%, #1A0E06 100%);
+    border-bottom: 1px solid rgba(181,98,42,0.3);
   }
-  .ideas .genre-title-row h2 { color: #7A3010; }
-  .ideas .genre-desc  { color: #8B6040; }
-  .ideas .gc.read     { background: rgba(122,48,16,0.12); color: #7A3010; }
-  .ideas .gc.reading  { background: rgba(139,110,60,0.14); color: #6B4510; }
-  .ideas .cover-wrap  { box-shadow: 0 3px 12px rgba(122,48,16,0.15); }
-  .ideas .cover-wrap:hover { box-shadow: 0 8px 22px rgba(122,48,16,0.28); }
-  .ideas .book-meta   { color: #2C1A08; }
-  .ideas .bauthor     { color: #7A5030; }
+  .memoir .gs-eyebrow { color: rgba(181,98,42,0.6); }
+  .memoir .gs-title   { color: #D4956A; font-style: italic; }
+  .memoir .gs-desc    { color: #8B5030; }
+  .memoir .gs-shelf   { background: linear-gradient(160deg, #FEF7EE 0%, #FFF9F3 60%, #F5EDE0 100%); }
+  .memoir .btitle     { color: #3A1E0A; }
+  .memoir .bauthor    { color: #8B5E3C; }
+  .memoir .cover-wrap { box-shadow: 0 4px 14px rgba(100,50,20,0.28); }
+  .memoir .cover-wrap:hover { box-shadow: 0 12px 28px rgba(100,50,20,0.45); }
+  .memoir .pill.read    { background: rgba(107,53,32,0.12); color: #8B4520; border-color: rgba(107,53,32,0.25); }
+  .memoir .pill.reading { background: rgba(181,98,42,0.12); color: #9B5A22; border-color: rgba(181,98,42,0.25); }
+  .memoir .pill.unread  { background: rgba(60,30,10,0.08); color: #9A7060; border-color: rgba(100,60,30,0.18); }
 
-  /* ════════════════════════════════════════════════════════
-     OTHER  —  soft neutral
-  ════════════════════════════════════════════════════════ */
-  .other {
-    background: #F0ECE6;
-    border-top: 4px solid #A0927A;
+  /* ══════════════════════════════════════════════════════════
+     HISTORY  —  dark sepia banner · aged parchment shelf
+  ══════════════════════════════════════════════════════════ */
+  .history .gs-banner {
+    background: linear-gradient(135deg, #110C02 0%, #1A1204 100%);
+    border-bottom: 1px solid rgba(184,140,40,0.3);
   }
-  .other .genre-title-row h2 { color: #4A3E2E; font-style: italic; }
-  .other .genre-desc  { color: #7A6A52; }
-  .other .gc.read     { background: rgba(74,62,46,0.12); color: #4A3E2E; }
-  .other .gc.reading  { background: rgba(120,100,60,0.14); color: #5A4820; }
-  .other .cover-wrap  { box-shadow: 0 3px 10px rgba(0,0,0,0.15); }
-  .other .book-meta   { color: #3A3020; }
-  .other .bauthor     { color: #7A6A52; }
+  .history .gs-eyebrow { color: rgba(184,140,40,0.5); }
+  .history .gs-title   { color: #C9A84C; font-weight: 700; }
+  .history .gs-desc    { color: #7A6020; }
+  .history .gs-shelf   { background: linear-gradient(160deg, #E0CC8A 0%, #EDD9A8 40%, #E5D09A 100%); }
+  .history .btitle     { color: #2A1506; }
+  .history .bauthor    { color: #7A5020; }
+  .history .cover-wrap { box-shadow: 0 4px 14px rgba(80,40,10,0.3); }
+  .history .cover-wrap:hover { box-shadow: 0 12px 28px rgba(80,40,10,0.5); }
+  .history .pill.read    { background: rgba(114,47,55,0.15); color: #8B2030; border-color: rgba(114,47,55,0.28); }
+  .history .pill.reading { background: rgba(139,100,20,0.15); color: #8B6010; border-color: rgba(139,100,20,0.28); }
+  .history .pill.unread  { background: rgba(42,21,6,0.12); color: #7A6040; border-color: rgba(100,70,20,0.2); }
+
+  /* ══════════════════════════════════════════════════════════
+     IDEAS  —  dark warm banner · off-white shelf
+  ══════════════════════════════════════════════════════════ */
+  .ideas .gs-banner {
+    background: linear-gradient(135deg, #0E0A06 0%, #160E08 100%);
+    border-bottom: 1px solid rgba(181,95,30,0.3);
+  }
+  .ideas .gs-eyebrow { color: rgba(220,140,50,0.5); }
+  .ideas .gs-title   { color: #E8A055; }
+  .ideas .gs-desc    { color: #8B5C28; }
+  .ideas .gs-shelf   { background: linear-gradient(160deg, #EEEAE2 0%, #F4EFE7 60%, #EAEAE0 100%); }
+  .ideas .btitle     { color: #2C1A08; }
+  .ideas .bauthor    { color: #8B6040; }
+  .ideas .cover-wrap { box-shadow: 0 4px 14px rgba(100,60,20,0.22); }
+  .ideas .cover-wrap:hover { box-shadow: 0 12px 28px rgba(100,60,20,0.38); }
+  .ideas .pill.read    { background: rgba(122,48,16,0.12); color: #9A4010; border-color: rgba(122,48,16,0.25); }
+  .ideas .pill.reading { background: rgba(181,95,30,0.12); color: #B55A18; border-color: rgba(181,95,30,0.25); }
+  .ideas .pill.unread  { background: rgba(44,26,8,0.08); color: #8A7060; border-color: rgba(100,70,30,0.16); }
+
+  /* ══════════════════════════════════════════════════════════
+     OTHER  —  dark neutral banner · soft shelf
+  ══════════════════════════════════════════════════════════ */
+  .other .gs-banner {
+    background: linear-gradient(135deg, #0D0D0D 0%, #141414 100%);
+    border-bottom: 1px solid rgba(120,110,95,0.3);
+  }
+  .other .gs-eyebrow { color: rgba(120,110,95,0.5); }
+  .other .gs-title   { color: #A09585; font-style: italic; }
+  .other .gs-desc    { color: #6A6050; }
+  .other .gs-shelf   { background: #EEEBE4; }
+  .other .btitle     { color: #3A3020; }
+  .other .bauthor    { color: #7A6A52; }
+  .other .cover-wrap { box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+  .other .cover-wrap:hover { box-shadow: 0 12px 24px rgba(0,0,0,0.35); }
+  .other .pill.read    { background: rgba(74,62,46,0.12); color: #6A5840; border-color: rgba(74,62,46,0.22); }
+  .other .pill.reading { background: rgba(120,100,60,0.12); color: #8A7040; border-color: rgba(120,100,60,0.22); }
+  .other .pill.unread  { background: rgba(60,50,35,0.08); color: #8A8070; border-color: rgba(100,90,70,0.16); }
 </style>

@@ -2,77 +2,168 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Home">
+<Layout title="Home" fullWidth={true}>
   <div class="home">
-    <h1>Hey, I'm Ryan.</h1>
-    <p class="intro">
-      This is my corner of the internet for tracking the things I'm genuinely into —
-      books I've listened to, records I've collected, hobbies I've picked up along the way.
-    </p>
-    <nav class="home-nav">
-      <a href="/books" class="home-card books">
-        <span class="card-emoji">📚</span>
-        <span class="card-label">Books</span>
-        <span class="card-sub">Audible library</span>
-      </a>
-      <a href="/vinyl" class="home-card vinyl">
-        <span class="card-emoji">🎵</span>
-        <span class="card-label">Vinyl</span>
-        <span class="card-sub">Record collection</span>
-      </a>
-      <a href="/hobbies" class="home-card hobbies">
-        <span class="card-emoji">🎯</span>
-        <span class="card-label">Hobbies</span>
-        <span class="card-sub">What I'm into</span>
-      </a>
-    </nav>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Personal site</p>
+        <h1>Ryan<br/>Dorn.</h1>
+        <p class="hero-sub">
+          Books I've listened to. Records I've collected.<br/>
+          Things I spend my time on.
+        </p>
+      </div>
+    </section>
+
+    <section class="cards-section">
+      <div class="cards-inner">
+        <a href="/books" class="card" style="--c: #FF6B2B; --cglow: rgba(255,107,43,0.2)">
+          <div class="card-bar"></div>
+          <div class="card-icon">📚</div>
+          <h2>Books</h2>
+          <p>Audible library — 145 titles across 8 genres, ranked by what I've actually finished.</p>
+          <span class="card-link">Explore the shelf →</span>
+        </a>
+        <a href="/vinyl" class="card" style="--c: #D4A017; --cglow: rgba(212,160,23,0.2)">
+          <div class="card-bar"></div>
+          <div class="card-icon">🎵</div>
+          <h2>Vinyl</h2>
+          <p>Record collection — the physical kind, warping on a real turntable.</p>
+          <span class="card-link">Browse the crates →</span>
+        </a>
+        <a href="/hobbies" class="card" style="--c: #4ECDC4; --cglow: rgba(78,205,196,0.2)">
+          <div class="card-bar"></div>
+          <div class="card-icon">🎯</div>
+          <h2>Hobbies</h2>
+          <p>The rotating cast of things I'm currently obsessed with.</p>
+          <span class="card-link">Find out →</span>
+        </a>
+      </div>
+    </section>
+
   </div>
 </Layout>
 
 <style>
-  .home { max-width: 640px; }
-
-  h1 {
-    font-size: 3rem;
-    font-style: italic;
-    margin-bottom: 1rem;
-    color: #2C2416;
-  }
-
-  .intro {
-    font-size: 1.1rem;
-    color: #7A6A52;
-    margin-bottom: 3rem;
-    line-height: 1.8;
-  }
-
-  .home-nav {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-  }
-
-  .home-card {
+  .home {
+    min-height: calc(100vh - 62px);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 2rem 1rem;
-    border-radius: 8px;
-    border: 1px solid #D4C4A8;
-    background: #EDE4D4;
-    text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-    color: #2C2416;
-  }
-  .home-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-    background: #E4D9C4;
-    text-decoration: none;
   }
 
-  .card-emoji { font-size: 2rem; }
-  .card-label { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 600; }
-  .card-sub   { font-size: 0.78rem; color: #8B7A60; }
+  /* ── Hero ───────────────────────────────────────────────── */
+  .hero {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-inner {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 6rem 2.5rem 4rem;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(4.5rem, 10vw, 8rem);
+    font-weight: 700;
+    font-style: normal;
+    color: var(--text);
+    letter-spacing: -0.04em;
+    line-height: 0.92;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-sub {
+    font-family: 'Lora', serif;
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.9;
+    max-width: 500px;
+  }
+
+  /* ── Cards ──────────────────────────────────────────────── */
+  .cards-section {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+  }
+
+  .cards-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 3rem 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 2.25rem 2rem 2rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    text-decoration: none;
+    color: var(--text);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px var(--c);
+    border-color: var(--c);
+    text-decoration: none;
+  }
+  .card:hover .card-link { color: var(--c); }
+
+  .card-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--c);
+  }
+
+  .card-icon { font-size: 1.75rem; margin-bottom: 0.25rem; }
+
+  .card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  .card p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  .card-link {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    transition: color 0.2s;
+  }
 </style>
