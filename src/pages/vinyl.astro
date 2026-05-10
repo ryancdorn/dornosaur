@@ -2,7 +2,132 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Vinyl">
-  <h1>Vinyl</h1>
-  <p>My record collection.</p>
+<Layout title="Vinyl" fullWidth={true}>
+
+  <div class="vinyl-page">
+
+    <div class="wood-header">
+      <div class="header-inner">
+        <h1>Vinyl</h1>
+        <p class="sub">My record collection</p>
+      </div>
+    </div>
+
+    <div class="shelf-area">
+      <div class="shelf-inner">
+        <p class="coming-soon">Collection loading soon — stay tuned.</p>
+      </div>
+      <div class="shelf-ledge"></div>
+    </div>
+
+    <div class="wood-footer"></div>
+
+  </div>
+
 </Layout>
+
+<style>
+  .vinyl-page { display: flex; flex-direction: column; min-height: calc(100vh - 130px); }
+
+  /* ── Wood grain mixin ───────────────────────────────────── */
+  .wood-header, .wood-footer {
+    background-color: #3B1D0A;
+    background-image:
+      repeating-linear-gradient(
+        89deg,
+        transparent 0px, transparent 3px,
+        rgba(90,45,5,0.28) 3px, rgba(90,45,5,0.28) 4px
+      ),
+      repeating-linear-gradient(
+        91deg,
+        transparent 0px, transparent 14px,
+        rgba(15,8,0,0.12) 14px, rgba(15,8,0,0.12) 15px
+      ),
+      repeating-linear-gradient(
+        88deg,
+        transparent 0px, transparent 40px,
+        rgba(100,50,10,0.06) 40px, rgba(100,50,10,0.06) 60px
+      ),
+      linear-gradient(
+        180deg,
+        #4D2810 0%,  #3B1D0A 12%,
+        #5C3018 25%, #3B1D0A 38%,
+        #6B3D1F 52%, #3B1D0A 65%,
+        #502A10 78%, #3B1D0A 100%
+      );
+  }
+
+  /* ── Header panel ───────────────────────────────────────── */
+  .wood-header {
+    border-bottom: 5px solid #8B5E1A;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    padding: 3.5rem 0 3rem;
+    position: relative;
+  }
+  .wood-header::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #6B4510, #A07030, #6B4510, #A07030, #6B4510);
+    opacity: 0.6;
+  }
+
+  .header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+  }
+
+  .wood-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-style: italic;
+    color: #F5D98E;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6), 0 0 40px rgba(180,120,30,0.2);
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.01em;
+  }
+
+  .sub {
+    color: #C4924A;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+  }
+
+  /* ── Record shelf area ──────────────────────────────────── */
+  .shelf-area {
+    flex: 1;
+    background: #1A0E05;
+    position: relative;
+  }
+
+  .shelf-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 3rem 2.5rem;
+    min-height: 300px;
+  }
+
+  .coming-soon {
+    color: #4A2E10;
+    font-style: italic;
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+  }
+
+  /* Shelf ledge */
+  .shelf-ledge {
+    background: linear-gradient(180deg, #5C3015, #3D1F08);
+    height: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    border-top: 2px solid #8B5E1A;
+  }
+
+  /* ── Footer wood panel ──────────────────────────────────── */
+  .wood-footer {
+    height: 50px;
+    border-top: 4px solid #6B4510;
+  }
+</style>

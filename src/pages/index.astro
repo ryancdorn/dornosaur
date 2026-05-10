@@ -3,11 +3,76 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Home">
-  <h1>Hey, I'm Ryan.</h1>
-  <p>This is where I track the things I'm into — books, vinyl, hobbies, and whatever else.</p>
-  <ul>
-    <li><a href="/books">Books</a></li>
-    <li><a href="/vinyl">Vinyl</a></li>
-    <li><a href="/hobbies">Hobbies</a></li>
-  </ul>
+  <div class="home">
+    <h1>Hey, I'm Ryan.</h1>
+    <p class="intro">
+      This is my corner of the internet for tracking the things I'm genuinely into —
+      books I've listened to, records I've collected, hobbies I've picked up along the way.
+    </p>
+    <nav class="home-nav">
+      <a href="/books" class="home-card books">
+        <span class="card-emoji">📚</span>
+        <span class="card-label">Books</span>
+        <span class="card-sub">Audible library</span>
+      </a>
+      <a href="/vinyl" class="home-card vinyl">
+        <span class="card-emoji">🎵</span>
+        <span class="card-label">Vinyl</span>
+        <span class="card-sub">Record collection</span>
+      </a>
+      <a href="/hobbies" class="home-card hobbies">
+        <span class="card-emoji">🎯</span>
+        <span class="card-label">Hobbies</span>
+        <span class="card-sub">What I'm into</span>
+      </a>
+    </nav>
+  </div>
 </Layout>
+
+<style>
+  .home { max-width: 640px; }
+
+  h1 {
+    font-size: 3rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: #2C2416;
+  }
+
+  .intro {
+    font-size: 1.1rem;
+    color: #7A6A52;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .home-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .home-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #D4C4A8;
+    background: #EDE4D4;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    color: #2C2416;
+  }
+  .home-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    background: #E4D9C4;
+    text-decoration: none;
+  }
+
+  .card-emoji { font-size: 2rem; }
+  .card-label { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 600; }
+  .card-sub   { font-size: 0.78rem; color: #8B7A60; }
+</style>

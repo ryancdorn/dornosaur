@@ -1,8 +1,9 @@
 ---
 interface Props {
   title: string;
+  fullWidth?: boolean;
 }
-const { title } = Astro.props;
+const { title, fullWidth = false } = Astro.props;
 ---
 
 <html lang="en">
@@ -11,18 +12,115 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <title>{title} — dornosaur.com</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   </head>
   <body>
     <header>
-      <a href="/" class="site-name">dornosaur.com</a>
+      <a href="/" class="wordmark">dornosaur</a>
       <nav>
         <a href="/books">Books</a>
         <a href="/vinyl">Vinyl</a>
         <a href="/hobbies">Hobbies</a>
       </nav>
     </header>
-    <main>
+    <main class:list={{ 'full-width': fullWidth }}>
       <slot />
     </main>
+    <footer>
+      <p>made with curiosity</p>
+    </footer>
   </body>
 </html>
+
+<style is:global>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F5EFE4;
+    --bg-alt: #EDE4D4;
+    --text: #2C2416;
+    --text-muted: #7A6A52;
+    --accent: #8B5E3C;
+    --border: #D4C4A8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Lora', Georgia, serif;
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    line-height: 1.2;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  img { display: block; max-width: 100%; }
+
+  /* Header */
+  header {
+    background: var(--bg-alt);
+    border-bottom: 1px solid var(--border);
+    padding: 1.1rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .wordmark {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--text);
+  }
+  .wordmark:hover { text-decoration: none; color: var(--accent); }
+
+  nav { display: flex; gap: 2rem; }
+  nav a {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--text); text-decoration: none; }
+
+  /* Main */
+  main {
+    flex: 1;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  main.full-width {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--bg-alt);
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-style: italic;
+  }
+</style>

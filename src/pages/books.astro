@@ -2,93 +2,303 @@
 import Layout from '../layouts/Layout.astro';
 import books from '../data/books.json';
 
-const seriesBooks = books.filter(b => b.series);
-const standalones = books.filter(b => !b.series);
+const genres = [
+  { key: 'fantasy',  label: 'Epic Fantasy',         emoji: '⚔️',  desc: 'Sweeping worlds, ancient magic, chosen destinies' },
+  { key: 'litrpg',   label: 'LitRPG & Progression',  emoji: '⚡',  desc: 'Level up or die trying' },
+  { key: 'scifi',    label: 'Science Fiction',        emoji: '🚀',  desc: 'The future, the void, and everything in between' },
+  { key: 'horror',   label: 'Horror & Thriller',      emoji: '🩸',  desc: 'Things that go bump in the night' },
+  { key: 'memoir',   label: 'Memoir & Biography',     emoji: '✍️',  desc: 'Real lives, real stories' },
+  { key: 'history',  label: 'History & Politics',     emoji: '📰',  desc: 'The past and its long shadows' },
+  { key: 'ideas',    label: 'Business & Ideas',       emoji: '💡',  desc: 'How the world works' },
+  { key: 'other',    label: 'Miscellaneous',          emoji: '📖',  desc: 'Everything else worth reading' },
+];
 
-// Group series books by series name (strip the #N)
-const seriesMap = new Map<string, typeof books>();
-for (const book of seriesBooks) {
-  const seriesName = book.series!.replace(/ #[\d.]+$/, '');
-  if (!seriesMap.has(seriesName)) seriesMap.set(seriesName, []);
-  seriesMap.get(seriesName)!.push(book);
-}
-const seriesList = Array.from(seriesMap.entries()).sort((a, b) => a[0].localeCompare(b[0]));
+const statusLabel: Record<string, string> = {
+  read: '✓ Read',
+  reading: '◉ Reading',
+  unread: '○ Unread',
+};
+
+const totalRead    = books.filter(b => b.status === 'read').length;
+const totalReading = books.filter(b => b.status === 'reading').length;
+const totalUnread  = books.length - totalRead - totalReading;
 ---
 
-<Layout title="Books">
-  <h1>Books</h1>
-  <p class="subtitle">My Audible library — {books.length} books and counting.</p>
+<Layout title="Books" fullWidth={true}>
 
-  <section>
-    <h2>Series</h2>
-    <div class="series-list">
-      {seriesList.map(([seriesName, seriesBooks]) => (
-        <div class="series-group">
-          <h3>{seriesName} <span class="count">({seriesBooks.length})</span></h3>
+  <div class="page-hero">
+    <h1>Books</h1>
+    <p class="hero-sub">My Audible library — {books.length} books and counting</p>
+    <div class="hero-stats">
+      <span class="stat read">✓ {totalRead} read</span>
+      <span class="stat reading">◉ {totalReading} in progress</span>
+      <span class="stat unread">○ {totalUnread} unread</span>
+    </div>
+  </div>
+
+  {genres.map(genre => {
+    const genreBooks = books.filter((b: any) => b.genre === genre.key);
+    if (genreBooks.length === 0) return null;
+    const readCount    = genreBooks.filter((b: any) => b.status === 'read').length;
+    const readingCount = genreBooks.filter((b: any) => b.status === 'reading').length;
+    return (
+      <section class:list={['genre-section', genre.key]}>
+        <div class="genre-inner">
+          <div class="genre-header">
+            <div class="genre-title-row">
+              <span class="genre-emoji">{genre.emoji}</span>
+              <h2>{genre.label}</h2>
+              <div class="genre-counts">
+                {readCount > 0    && <span class="gc read">{readCount} read</span>}
+                {readingCount > 0 && <span class="gc reading">{readingCount} reading</span>}
+              </div>
+            </div>
+            <p class="genre-desc">{genre.desc}</p>
+          </div>
           <div class="book-grid">
-            {seriesBooks.map(book => (
-              <div class="book-card">
-                <img src={book.cover} alt={book.title} loading="lazy" />
-                <div class="book-info">
-                  <p class="book-title">{book.title}</p>
-                  <p class="book-author">{book.author}</p>
+            {genreBooks.map((book: any) => (
+              <div class:list={['book-card', book.status]}>
+                <div class="cover-wrap">
+                  <img src={book.cover} alt={book.title} loading="lazy" />
+                  <span class:list={['badge', book.status]}>{statusLabel[book.status]}</span>
+                </div>
+                <div class="book-meta">
+                  <p class="btitle">{book.title}</p>
+                  <p class="bauthor">{book.author}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      ))}
-    </div>
-  </section>
+      </section>
+    );
+  })}
 
-  <section>
-    <h2>Standalones</h2>
-    <div class="book-grid">
-      {standalones.map(book => (
-        <div class="book-card">
-          <img src={book.cover} alt={book.title} loading="lazy" />
-          <div class="book-info">
-            <p class="book-title">{book.title}</p>
-            <p class="book-author">{book.author}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </section>
 </Layout>
 
 <style>
-  h1 { margin-bottom: 0.25rem; }
-  .subtitle { color: #666; margin-bottom: 2rem; }
+  /* ── Page hero ─────────────────────────────────────────── */
+  .page-hero {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem 2.5rem;
+  }
+  .page-hero h1 {
+    font-size: 3.5rem;
+    font-style: italic;
+    color: #2C2416;
+    margin-bottom: 0.4rem;
+  }
+  .hero-sub { color: #7A6A52; margin-bottom: 1.5rem; }
+  .hero-stats { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.88rem; }
+  .stat { padding: 0.35rem 0.9rem; border-radius: 20px; font-weight: 500; }
+  .stat.read    { background: #D4EDDA; color: #1A5C2A; }
+  .stat.reading { background: #FFF3CD; color: #7A5500; }
+  .stat.unread  { background: #E8E8E8; color: #555; }
 
-  section { margin-bottom: 3rem; }
-  h2 { border-bottom: 1px solid #eee; padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+  /* ── Shared section layout ──────────────────────────────── */
+  .genre-section { padding: 4rem 0; }
+  .genre-inner   { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
 
-  .series-group { margin-bottom: 2rem; }
-  h3 { margin-bottom: 0.75rem; font-size: 1rem; }
-  .count { font-weight: normal; color: #888; }
+  .genre-header  { margin-bottom: 2rem; }
+  .genre-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.4rem;
+    flex-wrap: wrap;
+  }
+  .genre-emoji { font-size: 1.8rem; line-height: 1; }
+  .genre-title-row h2 { font-size: 2.2rem; margin: 0; }
+  .genre-counts { display: flex; gap: 0.5rem; margin-left: auto; }
+  .gc {
+    font-family: 'Lora', serif;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-weight: 500;
+  }
+  .genre-desc { font-style: italic; font-size: 0.95rem; opacity: 0.75; }
 
+  /* ── Book grid ──────────────────────────────────────────── */
   .book-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 1.25rem;
   }
+  .book-card { display: flex; flex-direction: column; gap: 0.5rem; }
 
-  .book-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-
-  .book-card img {
-    width: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
+  .cover-wrap {
+    position: relative;
     border-radius: 4px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
   }
+  .cover-wrap:hover { transform: translateY(-4px); }
+  .cover-wrap img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
 
-  .book-info { font-size: 0.72rem; line-height: 1.3; }
-  .book-title { font-weight: 600; margin: 0; }
-  .book-author { color: #666; margin: 0; }
+  .badge {
+    position: absolute;
+    top: 5px; right: 5px;
+    font-size: 0.52rem;
+    padding: 0.15rem 0.4rem;
+    border-radius: 10px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    font-family: 'Lora', serif;
+  }
+  .badge.read    { background: rgba(26,92,42,0.92);  color: #fff; }
+  .badge.reading { background: rgba(140,90,0,0.92);  color: #fff; }
+  .badge.unread  { background: rgba(60,60,60,0.75);  color: #ddd; }
+
+  .book-meta { font-size: 0.7rem; line-height: 1.35; }
+  .btitle { font-weight: 600; margin: 0; }
+  .bauthor { opacity: 0.6; margin: 0; }
+
+  /* ════════════════════════════════════════════════════════
+     EPIC FANTASY  —  aged parchment + forest green
+  ════════════════════════════════════════════════════════ */
+  .fantasy {
+    background: linear-gradient(160deg, #E5DAB5 0%, #F0E7CC 40%, #EAE0C0 100%);
+    border-top: 4px solid #4A7C2F;
+  }
+  .fantasy .genre-title-row h2 { color: #2D5016; font-style: italic; }
+  .fantasy .genre-desc  { color: #4A6B30; }
+  .fantasy .gc.read     { background: rgba(45,80,22,0.14); color: #2D5016; }
+  .fantasy .gc.reading  { background: rgba(139,105,20,0.14); color: #6B5210; }
+  .fantasy .cover-wrap  { box-shadow: 0 3px 12px rgba(45,80,22,0.25); }
+  .fantasy .cover-wrap:hover { box-shadow: 0 8px 22px rgba(45,80,22,0.35); }
+  .fantasy .book-meta   { color: #2A3B1E; }
+  .fantasy .bauthor     { color: #5B6E42; }
+
+  /* ════════════════════════════════════════════════════════
+     LITRPG  —  dark terminal + electric green
+  ════════════════════════════════════════════════════════ */
+  .litrpg {
+    background: #0D1117;
+    border-top: 4px solid #00E676;
+  }
+  .litrpg .genre-title-row h2 {
+    color: #00E676;
+    font-family: 'Courier New', monospace;
+    font-style: normal;
+    text-shadow: 0 0 24px rgba(0,230,118,0.55);
+    letter-spacing: 0.05em;
+  }
+  .litrpg .genre-emoji { filter: drop-shadow(0 0 6px #00E676); }
+  .litrpg .genre-desc  { color: #4FC3F7; font-style: normal; font-family: 'Courier New', monospace; font-size: 0.83rem; opacity: 1; }
+  .litrpg .gc.read     { background: rgba(0,230,118,0.12); color: #00E676; border: 1px solid rgba(0,230,118,0.3); }
+  .litrpg .gc.reading  { background: rgba(79,195,247,0.12); color: #4FC3F7; border: 1px solid rgba(79,195,247,0.3); }
+  .litrpg .cover-wrap  { box-shadow: 0 3px 16px rgba(0,230,118,0.18); border: 1px solid rgba(0,230,118,0.08); }
+  .litrpg .cover-wrap:hover { box-shadow: 0 8px 28px rgba(0,230,118,0.38); border-color: rgba(0,230,118,0.3); }
+  .litrpg .book-meta   { color: #8B949E; }
+  .litrpg .btitle      { color: #C9D1D9; }
+
+  /* ════════════════════════════════════════════════════════
+     SCI-FI  —  deep space + cool blue
+  ════════════════════════════════════════════════════════ */
+  .scifi {
+    background: radial-gradient(ellipse at 50% 0%, #0C1830 0%, #060D1F 70%);
+    border-top: 4px solid #4FC3F7;
+    position: relative;
+    overflow: hidden;
+  }
+  .scifi::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
+    background-size: 38px 38px;
+    pointer-events: none;
+  }
+  .scifi .genre-inner  { position: relative; z-index: 1; }
+  .scifi .genre-title-row h2 { color: #64B5F6; letter-spacing: 0.04em; }
+  .scifi .genre-desc   { color: #90CAF9; opacity: 1; }
+  .scifi .gc.read      { background: rgba(100,181,246,0.13); color: #64B5F6; border: 1px solid rgba(100,181,246,0.3); }
+  .scifi .gc.reading   { background: rgba(206,147,216,0.13); color: #CE93D8; border: 1px solid rgba(206,147,216,0.3); }
+  .scifi .cover-wrap   { box-shadow: 0 3px 16px rgba(79,195,247,0.15); border: 1px solid rgba(79,195,247,0.08); }
+  .scifi .cover-wrap:hover { box-shadow: 0 8px 28px rgba(79,195,247,0.32); border-color: rgba(79,195,247,0.28); }
+  .scifi .book-meta    { color: #8892A4; }
+  .scifi .btitle       { color: #CDD9E5; }
+
+  /* ════════════════════════════════════════════════════════
+     HORROR  —  near black + blood red
+  ════════════════════════════════════════════════════════ */
+  .horror {
+    background: linear-gradient(180deg, #0F0404 0%, #150808 100%);
+    border-top: 4px solid #C62828;
+  }
+  .horror .genre-title-row h2 { color: #EF5350; letter-spacing: 0.02em; }
+  .horror .genre-desc  { color: #8B2020; opacity: 1; }
+  .horror .gc.read     { background: rgba(198,40,40,0.15); color: #EF5350; border: 1px solid rgba(198,40,40,0.3); }
+  .horror .gc.reading  { background: rgba(100,100,100,0.18); color: #AAA; border: 1px solid rgba(100,100,100,0.3); }
+  .horror .cover-wrap  { box-shadow: 0 3px 16px rgba(198,40,40,0.2); border: 1px solid rgba(198,40,40,0.08); }
+  .horror .cover-wrap:hover { box-shadow: 0 8px 28px rgba(198,40,40,0.4); border-color: rgba(198,40,40,0.3); }
+  .horror .book-meta   { color: #888; }
+  .horror .btitle      { color: #CCCCCC; }
+
+  /* ════════════════════════════════════════════════════════
+     MEMOIR  —  warm cream + terracotta
+  ════════════════════════════════════════════════════════ */
+  .memoir {
+    background: linear-gradient(160deg, #FEF7EE 0%, #FFF9F3 50%, #F9F1E5 100%);
+    border-top: 4px solid #B5622A;
+  }
+  .memoir .genre-title-row h2 { color: #6B3520; font-style: italic; }
+  .memoir .genre-desc  { color: #8B5E3C; }
+  .memoir .gc.read     { background: rgba(107,53,32,0.12); color: #6B3520; }
+  .memoir .gc.reading  { background: rgba(181,98,42,0.14); color: #7A4515; }
+  .memoir .cover-wrap  { box-shadow: 0 3px 12px rgba(107,53,32,0.22); }
+  .memoir .cover-wrap:hover { box-shadow: 0 8px 22px rgba(107,53,32,0.35); }
+  .memoir .book-meta   { color: #3A2010; }
+  .memoir .bauthor     { color: #8B5E3C; }
+
+  /* ════════════════════════════════════════════════════════
+     HISTORY  —  aged newsprint + burgundy
+  ════════════════════════════════════════════════════════ */
+  .history {
+    background: linear-gradient(160deg, #DECA90 0%, #EBD9B0 40%, #E3D09E 100%);
+    border-top: 4px solid #722F37;
+  }
+  .history .genre-title-row h2 { color: #4A1520; font-weight: 700; }
+  .history .genre-desc  { color: #722F37; }
+  .history .gc.read     { background: rgba(114,47,55,0.15); color: #4A1520; }
+  .history .gc.reading  { background: rgba(139,105,20,0.15); color: #6B5210; }
+  .history .cover-wrap  { box-shadow: 0 3px 12px rgba(74,21,32,0.2); }
+  .history .cover-wrap:hover { box-shadow: 0 8px 22px rgba(74,21,32,0.35); }
+  .history .book-meta   { color: #2A1505; }
+  .history .bauthor     { color: #722F37; }
+
+  /* ════════════════════════════════════════════════════════
+     IDEAS  —  warm off-white + amber
+  ════════════════════════════════════════════════════════ */
+  .ideas {
+    background: linear-gradient(160deg, #EDE8E0 0%, #F2EDE5 50%, #E8E2D8 100%);
+    border-top: 4px solid #B5551A;
+  }
+  .ideas .genre-title-row h2 { color: #7A3010; }
+  .ideas .genre-desc  { color: #8B6040; }
+  .ideas .gc.read     { background: rgba(122,48,16,0.12); color: #7A3010; }
+  .ideas .gc.reading  { background: rgba(139,110,60,0.14); color: #6B4510; }
+  .ideas .cover-wrap  { box-shadow: 0 3px 12px rgba(122,48,16,0.15); }
+  .ideas .cover-wrap:hover { box-shadow: 0 8px 22px rgba(122,48,16,0.28); }
+  .ideas .book-meta   { color: #2C1A08; }
+  .ideas .bauthor     { color: #7A5030; }
+
+  /* ════════════════════════════════════════════════════════
+     OTHER  —  soft neutral
+  ════════════════════════════════════════════════════════ */
+  .other {
+    background: #F0ECE6;
+    border-top: 4px solid #A0927A;
+  }
+  .other .genre-title-row h2 { color: #4A3E2E; font-style: italic; }
+  .other .genre-desc  { color: #7A6A52; }
+  .other .gc.read     { background: rgba(74,62,46,0.12); color: #4A3E2E; }
+  .other .gc.reading  { background: rgba(120,100,60,0.14); color: #5A4820; }
+  .other .cover-wrap  { box-shadow: 0 3px 10px rgba(0,0,0,0.15); }
+  .other .book-meta   { color: #3A3020; }
+  .other .bauthor     { color: #7A6A52; }
 </style>
