@@ -104,21 +104,23 @@ function groupBySeries(genreBooks: any[]) {
     </div>
   </div>
 
-  <nav class="genre-nav" aria-label="Jump to genre">
-    <div class="genre-nav-inner">
-      <a href="#" class="genre-link genre-home" data-scroll-top aria-label="Back to top of Books page">
-        <span class="genre-home-name">Books.</span>
-      </a>
-      {genres.filter(g => books.some((b: any) => b.genre === g.key)).map(g => {
-        const count = books.filter((b: any) => b.genre === g.key).length;
-        return (
-          <a href={`#${g.key}`} class:list={['genre-link', g.key]} data-target={g.key}>
-            <span class="genre-link-name">{g.nav}</span>
-            <span class="genre-link-count">{count}</span>
-          </a>
-        );
-      })}
-    </div>
+  <div class="sticky-shelf">
+    <nav class="genre-nav" aria-label="Jump to genre">
+      <div class="genre-nav-inner">
+        <a href="#" class="genre-link genre-home" data-scroll-top aria-label="Back to top of Books page">
+          <span class="genre-home-name">Books.</span>
+        </a>
+        {genres.filter(g => books.some((b: any) => b.genre === g.key)).map(g => {
+          const count = books.filter((b: any) => b.genre === g.key).length;
+          return (
+            <a href={`#${g.key}`} class:list={['genre-link', g.key]} data-target={g.key}>
+              <span class="genre-link-name">{g.nav}</span>
+              <span class="genre-link-count">{count}</span>
+            </a>
+          );
+        })}
+      </div>
+    </nav>
     <div class="filter-bar" role="group" aria-label="Filter by status">
       {totalRead > 0 &&
         <button type="button" class="pill read is-active" data-status="read" aria-pressed="true">
@@ -137,7 +139,7 @@ function groupBySeries(genreBooks: any[]) {
           ＋ {totalUnpurchased} unpurchased
         </button>}
     </div>
-  </nav>
+  </div>
 
   {genres.map(genre => {
     const genreBooks = books.filter((b: any) => b.genre === genre.key);
@@ -215,8 +217,8 @@ function groupBySeries(genreBooks: any[]) {
   .reading-num     { color: #E0A030; }
   .unpurchased-num { color: #B48CDC; }
 
-  /* ── Sticky genre nav ─────────────────────────────────────── */
-  .genre-nav {
+  /* ── Sticky shelf: wraps the genre nav (matches vinyl) and filter bar below ── */
+  .sticky-shelf {
     position: sticky;
     top: 62px; /* sits below the global header */
     z-index: 50;
@@ -225,6 +227,10 @@ function groupBySeries(genreBooks: any[]) {
     -webkit-backdrop-filter: saturate(140%) blur(10px);
     border-top: 1px solid #1A1A20;
     border-bottom: 1px solid #1A1A20;
+  }
+  .genre-nav {
+    /* Plain element now — same markup/CSS as vinyl so the row reads identically */
+    background: transparent;
   }
   .genre-nav-inner {
     max-width: 1280px;
@@ -640,11 +646,12 @@ function groupBySeries(genreBooks: any[]) {
      doubled `.gs.<genre>` class chain to clear the specificity
      bump that Astro's scoped attributes add to the dark rules. */
 
-  html[data-theme="light"] .genre-nav {
+  html[data-theme="light"] .sticky-shelf {
     background: rgba(255, 252, 244, 0.92);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
   }
+  html[data-theme="light"] .filter-bar { border-top-color: rgba(0,0,0,0.06); }
   html[data-theme="light"] .genre-link { color: rgba(26, 26, 32, 0.6); }
   html[data-theme="light"] .genre-link:hover { color: var(--text); background: rgba(0,0,0,0.04); }
   html[data-theme="light"] .genre-link-count { color: rgba(26, 26, 32, 0.55); }
