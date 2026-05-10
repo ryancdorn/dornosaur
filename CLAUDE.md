@@ -220,7 +220,7 @@ Data source: `src/data/vinyl.json` — auto-refreshed daily from the Discogs API
 ## Pending / Not Built
 
 - **Hobbies page** — currently a bare stub (`<h1>Hobbies</h1>`), needs full design + content
-- **Mobile responsive** — no media queries yet, could break on small screens
+- **Mobile responsive** — minimal pass landed in `Layout.astro` (global `@media (max-width: 640px)` block). Shrinks genre-shelf side padding to 1rem, drops `.book-grid` min to 90px (≈3 cols @ 375px) and `.record-grid` min to 130px (≈2 cols @ 375px), and bumps title/author down a notch. Sticky nav rows, hero stat strip, and the homepage 3-card grid still need attention on narrow viewports.
 
 ## Automation
 
@@ -257,6 +257,7 @@ Configured in `C:\Users\ryanc\.claude\settings.json` for ad-hoc Audible/Discogs 
 
 ## Known Gotchas
 
+- **Astro 6 scoped-style `@media` quirk:** rules placed inside an `@media` block in a page's scoped `<style>` are emitted **without** the `[data-astro-cid-*]` attribute selector, so they lose specificity to the page's non-media scoped rules and don't apply. Workaround: put responsive overrides in `Layout.astro`'s `<style is:global>` block (and add `!important` if overriding a scoped rule), or use `:global(...)` selectors. The current mobile breakpoint lives in Layout.astro for this reason.
 - **Discogs image URLs must preserve internal slashes inside the base64 path segment.** The API returns URLs like `.../czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/...jpeg` — those slashes are load-bearing. Stripping them (e.g., treating them as whitespace artifacts) produces 403s on every request. Always copy the `cover_image` field from the API response verbatim.
 - Node scripts must use `.cjs` extension (project has `"type": "module"` in package.json)
 - GitHub Actions requires `node-version: 22` — Astro 6 needs Node >=22.12.0
