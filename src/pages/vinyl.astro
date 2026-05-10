@@ -90,48 +90,75 @@ const genres = [
 <style>
   .vinyl-page { display: flex; flex-direction: column; min-height: calc(100vh - 62px); }
 
-  /* ── Wood grain ──────────────────────────────────────────── */
-  .wood-header, .wood-footer {
-    background-color: #2E1608;
+  /* ── Wood paneling ───────────────────────────────────────── */
+  .wood-header {
+    background-color: #5C3018;
     background-image:
+      /* Vertical panel grooves — a dark shadow line + faint highlight on the right */
       repeating-linear-gradient(
-        89deg,
-        transparent 0px, transparent 2px,
-        rgba(90,40,5,0.3) 2px, rgba(90,40,5,0.3) 3px
+        90deg,
+        transparent 0px, transparent 154px,
+        rgba(15,5,1,0.9)  154px, rgba(10,3,0,1)    156px,
+        rgba(15,5,1,0.9)  158px, rgba(90,55,20,0.3) 160px,
+        rgba(90,55,20,0.1) 162px, transparent        164px,
+        transparent 318px
       ),
+      /* Panel center highlight — lighter in the middle, darker near the groove */
       repeating-linear-gradient(
-        91deg,
-        transparent 0px, transparent 12px,
-        rgba(10,5,0,0.15) 12px, rgba(10,5,0,0.15) 13px
+        90deg,
+        rgba(255,255,255,0.055) 0px,   rgba(255,255,255,0.03) 60px,
+        rgba(255,255,255,0.01) 110px,  rgba(0,0,0,0.04)       150px,
+        rgba(0,0,0,0.0)        164px,
+        rgba(255,255,255,0.055) 164px, rgba(255,255,255,0.03) 224px,
+        rgba(255,255,255,0.01) 274px,  rgba(0,0,0,0.04)       314px,
+        rgba(0,0,0,0.0)        328px
       ),
+      /* Horizontal wood grain — fine lines at a very slight angle */
       repeating-linear-gradient(
-        88.5deg,
-        transparent 0px, transparent 50px,
-        rgba(110,55,12,0.07) 50px, rgba(110,55,12,0.07) 80px
+        180.6deg,
+        transparent 0px, transparent 5px,
+        rgba(0,0,0,0.032) 5px,          rgba(0,0,0,0.032) 6px,
+        transparent 6px,  transparent 12px,
+        rgba(255,255,255,0.014) 12px,   rgba(255,255,255,0.014) 13px,
+        transparent 13px, transparent 20px,
+        rgba(0,0,0,0.018) 20px,         rgba(0,0,0,0.018) 21px
       ),
-      linear-gradient(
-        180deg,
-        #3D2208 0%,  #2E1608 15%,
-        #4A2A10 30%, #2E1608 45%,
-        #553018 58%, #2E1608 72%,
-        #3F2010 85%, #2E1608 100%
-      );
+      /* Broader grain sweeps */
+      repeating-linear-gradient(
+        179.2deg,
+        transparent 0px,         transparent 38px,
+        rgba(0,0,0,0.04) 38px,   rgba(0,0,0,0.04) 42px,
+        transparent 42px,        transparent 90px,
+        rgba(255,255,255,0.02) 90px, rgba(255,255,255,0.02) 95px
+      ),
+      /* Overall warmth variation top-to-bottom */
+      linear-gradient(180deg, #6A3C22 0%, #5C3018 30%, #673820 60%, #5C3018 100%);
+
+    padding: 5rem 0 4rem;
+    position: relative;
+    box-shadow: 0 6px 40px rgba(0,0,0,0.7);
   }
 
-  /* ── Wood header ─────────────────────────────────────────── */
-  .wood-header {
-    border-bottom: 4px solid #7A5018;
-    box-shadow: 0 4px 30px rgba(0,0,0,0.7);
-    padding: 4rem 0 3.5rem;
-    position: relative;
+  /* Top molding rail */
+  .wood-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 14px;
+    background: linear-gradient(180deg,
+      #A87035 0%, #8B5C28 30%, #6A4018 65%, #3E2008 100%);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.6);
   }
+
+  /* Bottom molding rail */
   .wood-header::after {
     content: '';
     position: absolute;
-    bottom: -8px; left: 0; right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #5A3810, #9A6828, #5A3810, #9A6828, #5A3810);
-    opacity: 0.55;
+    bottom: 0; left: 0; right: 0;
+    height: 14px;
+    background: linear-gradient(180deg,
+      #3E2008 0%, #6A4018 35%, #8B5C28 70%, #A87035 100%);
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.6) inset;
   }
 
   .header-inner {
@@ -145,7 +172,7 @@ const genres = [
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #C4924A;
+    color: rgba(220,185,130,0.7);
     margin-bottom: 1rem;
   }
 
@@ -154,15 +181,15 @@ const genres = [
     font-size: clamp(3.5rem, 7vw, 6rem);
     font-weight: 700;
     font-style: italic;
-    color: #F5D98E;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.7), 0 0 60px rgba(180,120,30,0.15);
+    color: #F0E0C8;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8), 0 1px 2px rgba(0,0,0,0.9);
     margin-bottom: 0.75rem;
     letter-spacing: -0.02em;
     line-height: 1;
   }
 
   .sub {
-    color: #A07840;
+    color: rgba(200,160,100,0.65);
     font-family: 'Lora', serif;
     font-style: italic;
     font-size: 1rem;
@@ -176,7 +203,8 @@ const genres = [
     font-size: 2rem;
     font-weight: 700;
     font-family: 'Playfair Display', serif;
-    color: #F5D98E;
+    color: #F0E0C8;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.7);
     letter-spacing: -0.03em;
     line-height: 1;
   }
@@ -184,9 +212,9 @@ const genres = [
     font-size: 0.7rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #7A5828;
+    color: rgba(200,160,100,0.55);
   }
-  .stat-div { width: 1px; height: 2.5rem; background: rgba(122,88,40,0.4); }
+  .stat-div { width: 1px; height: 2.5rem; background: rgba(180,130,70,0.25); }
 
   /* ── Genre sections ──────────────────────────────────────── */
   .gs { border-top: 1px solid rgba(255,255,255,0.05); }
@@ -328,6 +356,21 @@ const genres = [
   /* ── Footer wood panel ───────────────────────────────────── */
   .wood-footer {
     height: 60px;
-    border-top: 4px solid #5A3810;
+    background-color: #5C3018;
+    background-image:
+      repeating-linear-gradient(
+        90deg,
+        transparent 0px, transparent 154px,
+        rgba(10,3,0,1) 156px, rgba(90,55,20,0.25) 160px,
+        transparent 164px, transparent 318px
+      ),
+      repeating-linear-gradient(
+        180.6deg,
+        transparent 0px, transparent 5px,
+        rgba(0,0,0,0.03) 5px, rgba(0,0,0,0.03) 6px
+      ),
+      linear-gradient(180deg, #6A3C22 0%, #5C3018 100%);
+    border-top: 14px solid transparent;
+    border-image: linear-gradient(180deg, #3E2008 0%, #6A4018 35%, #8B5C28 70%, #A87035 100%) 1;
   }
 </style>
