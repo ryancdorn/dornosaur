@@ -93,7 +93,7 @@ function groupBySeries(genreBooks: any[]) {
         <div class="stat-div"></div>
         <div class="stat">
           <span class="stat-num">{totalUnread}</span>
-          <span class="stat-label">Unlistened</span>
+          <span class="stat-label">Queued</span>
         </div>
         <div class="stat-div"></div>
         <div class="stat">
@@ -151,7 +151,7 @@ function groupBySeries(genreBooks: any[]) {
                 </button>}
               {unreadCount > 0 &&
                 <button type="button" class="pill unread is-active" data-status="unread" aria-pressed="true">
-                  ○ {unreadCount} unlistened
+                  ○ {unreadCount} queued
                 </button>}
               {unpurchasedCount > 0 &&
                 <button type="button" class="pill unpurchased" data-status="unpurchased" aria-pressed="false">
@@ -642,6 +642,10 @@ function groupBySeries(genreBooks: any[]) {
     border-color: rgba(0,0,0,0.10);
     text-decoration-color: rgba(0,0,0,0.45);
   }
+  html[data-theme="light"] .gs .pill.is-active.read        { background: rgba(46,131,76,0.10);  color: #2E834C; border-color: rgba(46,131,76,0.45); }
+  html[data-theme="light"] .gs .pill.is-active.reading     { background: rgba(180,120,16,0.10); color: #B47810; border-color: rgba(180,120,16,0.45); }
+  html[data-theme="light"] .gs .pill.is-active.unread      { background: rgba(60,98,140,0.10);  color: #3C628C; border-color: rgba(60,98,140,0.45); }
+  html[data-theme="light"] .gs .pill.is-active.unpurchased { background: rgba(107,63,176,0.10); color: #6B3FB0; border-color: rgba(107,63,176,0.45); }
 
   html[data-theme="light"] .gs .cover-wrap { box-shadow: 0 4px 12px rgba(0,0,0,0.10); }
   html[data-theme="light"] .gs .cover-wrap:hover { box-shadow: 0 12px 28px rgba(0,0,0,0.16); }
