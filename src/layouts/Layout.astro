@@ -18,7 +18,10 @@ const { title, fullWidth = false } = Astro.props;
   </head>
   <body>
     <header>
-      <a href="/" class="wordmark">dornosaur</a>
+      <div class="brand">
+        <a href="/" class="wordmark">dornosaur</a>
+        <span class="tagline">Joss this is how you make a website</span>
+      </div>
       <nav>
         <a href="/books">Books</a>
         <a href="/vinyl">Vinyl</a>
@@ -85,6 +88,8 @@ const { title, fullWidth = false } = Astro.props;
     z-index: 100;
   }
 
+  .brand { display: flex; align-items: baseline; gap: 1rem; }
+
   .wordmark {
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
@@ -93,8 +98,17 @@ const { title, fullWidth = false } = Astro.props;
     color: var(--accent);
     letter-spacing: -0.01em;
     transition: opacity 0.15s;
+    white-space: nowrap;
   }
   .wordmark:hover { text-decoration: none; opacity: 0.75; }
+
+  .tagline {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
 
   nav { display: flex; gap: 2.5rem; align-items: center; }
   nav a {
