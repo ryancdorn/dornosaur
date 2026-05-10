@@ -162,11 +162,12 @@ function groupBySeries(genreBooks: any[]) {
 
             {seriesGroups.map(group => (
               <div class="series-group">
-                <div class="series-header">
+                <button type="button" class="series-header" data-toggle-series aria-expanded="true">
+                  <span class="series-chevron" aria-hidden="true">▾</span>
                   <span class="series-name">{group.displayName}</span>
                   <span class="series-rule"></span>
                   <span class="series-count">{group.books.length} {group.books.length === 1 ? 'book' : 'books'}</span>
-                </div>
+                </button>
                 <div class="book-grid">
                   {group.books.map((book: any) => {
                     const eff = effectiveStatus(book);
@@ -382,7 +383,34 @@ function groupBySeries(genreBooks: any[]) {
     align-items: center;
     gap: 0.85rem;
     margin-bottom: 1.25rem;
+    width: 100%;
+    padding: 0.4rem 0;
+    background: transparent;
+    border: 0;
+    text-align: left;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+    transition: opacity 0.15s;
   }
+  .series-header:hover { opacity: 0.85; }
+  .series-header:focus-visible { outline: 1px dashed var(--series-color, #EDEAE5); outline-offset: 4px; border-radius: 2px; }
+  .series-chevron {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 0.9rem;
+    height: 0.9rem;
+    font-size: 0.7rem;
+    color: var(--series-color, rgba(255,255,255,0.45));
+    opacity: 0.6;
+    transition: transform 0.18s ease, opacity 0.15s;
+    flex-shrink: 0;
+  }
+  .series-header:hover .series-chevron { opacity: 1; }
+  .series-group.is-collapsed .series-chevron { transform: rotate(-90deg); }
+  .series-group.is-collapsed .book-grid { display: none; }
+  .series-group.is-collapsed .series-header { margin-bottom: 0; }
   .series-name {
     font-family: 'Playfair Display', serif;
     font-style: italic;
@@ -757,6 +785,16 @@ function groupBySeries(genreBooks: any[]) {
 </style>
 
 <script is:inline>
+  // ── Click a series header to collapse/expand its book grid ──
+  document.querySelectorAll('[data-toggle-series]').forEach((header) => {
+    const group = header.closest('.series-group');
+    if (!group) return;
+    header.addEventListener('click', () => {
+      const collapsed = group.classList.toggle('is-collapsed');
+      header.setAttribute('aria-expanded', String(!collapsed));
+    });
+  });
+
   // ── Back-to-top "Books." link in the genre nav ──
   document.querySelectorAll('[data-scroll-top]').forEach((link) => {
     link.addEventListener('click', (e) => {

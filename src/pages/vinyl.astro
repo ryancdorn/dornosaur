@@ -328,6 +328,78 @@ const genres = [
   .soul .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(120,70,180,0.3); }
 </style>
 
+<!-- Light-theme overrides need a global block: the [data-theme="light"]
+     attribute lives on <html>, which is outside this component's scope. -->
+<style is:global>
+  /* ── LIGHT THEME (vinyl page) ────────────────────────────── */
+  /* `html` prefix + `.gs.<genre>` chain bumps specificity above
+     the dark rules' Astro-scoped attribute selectors. */
+
+  html[data-theme="light"] .genre-nav {
+    background: rgba(255, 252, 244, 0.92);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  html[data-theme="light"] .genre-link { color: rgba(26, 26, 32, 0.6); }
+  html[data-theme="light"] .genre-link:hover { color: var(--text); background: rgba(0,0,0,0.04); }
+  html[data-theme="light"] .genre-link-count { color: rgba(26, 26, 32, 0.55); }
+  html[data-theme="light"] .genre-home::after { background: rgba(0,0,0,0.14); }
+
+  html[data-theme="light"] .genre-link.hiphop { --genre-accent: #8A6D10; }
+  html[data-theme="light"] .genre-link.rock   { --genre-accent: #A02E20; }
+  html[data-theme="light"] .genre-link.soul   { --genre-accent: #6B3FB0; }
+
+  html[data-theme="light"] .gs {
+    background: var(--bg);
+    color: var(--text);
+    border-top: 1px solid var(--border);
+  }
+  html[data-theme="light"] .gs .rartist { color: rgba(26,26,32,0.65); }
+  html[data-theme="light"] .gs .rmeta   { color: rgba(26,26,32,0.55); }
+
+  /* HIPHOP light */
+  html[data-theme="light"] .gs.hiphop .gs-banner {
+    background: linear-gradient(135deg, #F5EDD0 0%, #EDE0B0 100%);
+    border-bottom: 1px solid rgba(138,109,16,0.35);
+  }
+  html[data-theme="light"] .gs.hiphop .gs-eyebrow { color: rgba(138,109,16,0.9); }
+  html[data-theme="light"] .gs.hiphop .gs-title   { color: #8A6D10; text-shadow: none; }
+  html[data-theme="light"] .gs.hiphop .gs-desc    { color: rgba(138,109,16,0.85); }
+  html[data-theme="light"] .gs.hiphop .gs-shelf   { background: #FAF6E8; }
+  html[data-theme="light"] .gs.hiphop .rtitle     { color: #4A3A0A; }
+  html[data-theme="light"] .gs.hiphop .rartist    { color: #8A6D10; }
+  html[data-theme="light"] .gs.hiphop .cover-wrap { box-shadow: 0 8px 24px rgba(180,130,10,0.18), 0 2px 6px rgba(0,0,0,0.10); }
+  html[data-theme="light"] .gs.hiphop .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(180,130,10,0.30); }
+
+  /* ROCK light */
+  html[data-theme="light"] .gs.rock .gs-banner {
+    background: linear-gradient(135deg, #F5DDDB 0%, #EFC8C5 100%);
+    border-bottom: 1px solid rgba(160,46,32,0.35);
+  }
+  html[data-theme="light"] .gs.rock .gs-eyebrow { color: rgba(160,46,32,0.9); }
+  html[data-theme="light"] .gs.rock .gs-title   { color: #A02E20; text-shadow: none; }
+  html[data-theme="light"] .gs.rock .gs-desc    { color: rgba(160,46,32,0.85); }
+  html[data-theme="light"] .gs.rock .gs-shelf   { background: #FCF3F2; }
+  html[data-theme="light"] .gs.rock .rtitle     { color: #5A1A12; }
+  html[data-theme="light"] .gs.rock .rartist    { color: #A02E20; }
+  html[data-theme="light"] .gs.rock .cover-wrap { box-shadow: 0 8px 24px rgba(160,40,30,0.18), 0 2px 6px rgba(0,0,0,0.10); }
+  html[data-theme="light"] .gs.rock .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(160,40,30,0.30); }
+
+  /* SOUL light */
+  html[data-theme="light"] .gs.soul .gs-banner {
+    background: linear-gradient(135deg, #ECE0F0 0%, #DECBED 100%);
+    border-bottom: 1px solid rgba(107,63,176,0.35);
+  }
+  html[data-theme="light"] .gs.soul .gs-eyebrow { color: rgba(107,63,176,0.9); }
+  html[data-theme="light"] .gs.soul .gs-title   { color: #6B3FB0; text-shadow: none; }
+  html[data-theme="light"] .gs.soul .gs-desc    { color: rgba(107,63,176,0.85); }
+  html[data-theme="light"] .gs.soul .gs-shelf   { background: #F8F2FB; }
+  html[data-theme="light"] .gs.soul .rtitle     { color: #3A1F66; }
+  html[data-theme="light"] .gs.soul .rartist    { color: #6B3FB0; }
+  html[data-theme="light"] .gs.soul .cover-wrap { box-shadow: 0 8px 24px rgba(120,70,180,0.18), 0 2px 6px rgba(0,0,0,0.10); }
+  html[data-theme="light"] .gs.soul .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(120,70,180,0.30); }
+</style>
+
 <script is:inline>
   // ── Back-to-top "Vinyl." link in the genre nav ──
   document.querySelectorAll('[data-scroll-top]').forEach((link) => {
