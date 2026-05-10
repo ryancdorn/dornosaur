@@ -13,10 +13,19 @@ const genres = [
   { key: 'other',   label: 'Miscellaneous',         nav: 'Other',   desc: 'Everything else worth reading' },
 ];
 
-const totalOwned     = books.filter(b => b.owned).length;
-const totalRead      = books.filter(b => b.status === 'read').length;
-const totalReading   = books.filter(b => b.status === 'reading').length;
-const totalUnread    = books.length - totalRead - totalReading;
+// Effective status splits the legacy `unread` bucket into "unread" (owned but unstarted)
+// vs "unpurchased" (pulled in from a series catalog, not in the library).
+const effectiveStatus = (b: any) =>
+  b.status === 'unread' && !b.owned ? 'unpurchased' : b.status;
+
+const totalOwned        = books.filter(b => b.owned).length;
+const totalRead         = books.filter(b => b.status === 'read').length;
+const totalReading      = books.filter(b => b.status === 'reading').length;
+const totalUnread       = books.filter(b => b.status === 'unread' && b.owned).length;
+const totalUnpurchased  = books.filter(b => b.status === 'unread' && !b.owned).length;
+
+// Unpurchased starts hidden — the page defaults to "what's actually in my library".
+const DEFAULT_ACTIVE = new Set(['read', 'reading', 'unread']);
 
 // Group books in a genre by series. Standalone books bucket at the end.
 // Within each group, books are ordered by seriesNumber (asc), then owned-first, then title.
@@ -86,6 +95,11 @@ function groupBySeries(genreBooks: any[]) {
           <span class="stat-num">{totalUnread}</span>
           <span class="stat-label">Unread</span>
         </div>
+        <div class="stat-div"></div>
+        <div class="stat">
+          <span class="stat-num unpurchased-num">{totalUnpurchased}</span>
+          <span class="stat-label">Unpurchased</span>
+        </div>
       </div>
     </div>
   </div>
@@ -110,9 +124,10 @@ function groupBySeries(genreBooks: any[]) {
   {genres.map(genre => {
     const genreBooks = books.filter((b: any) => b.genre === genre.key);
     if (genreBooks.length === 0) return null;
-    const readCount    = genreBooks.filter((b: any) => b.status === 'read').length;
-    const readingCount = genreBooks.filter((b: any) => b.status === 'reading').length;
-    const unreadCount  = genreBooks.length - readCount - readingCount;
+    const readCount        = genreBooks.filter((b: any) => b.status === 'read').length;
+    const readingCount     = genreBooks.filter((b: any) => b.status === 'reading').length;
+    const unreadCount      = genreBooks.filter((b: any) => b.status === 'unread' && b.owned).length;
+    const unpurchasedCount = genreBooks.filter((b: any) => b.status === 'unread' && !b.owned).length;
     const seriesGroups = groupBySeries(genreBooks);
     return (
       <section id={genre.key} class:list={['gs', genre.key]}>
@@ -138,6 +153,10 @@ function groupBySeries(genreBooks: any[]) {
                 <button type="button" class="pill unread is-active" data-status="unread" aria-pressed="true">
                   ○ {unreadCount} unread
                 </button>}
+              {unpurchasedCount > 0 &&
+                <button type="button" class="pill unpurchased" data-status="unpurchased" aria-pressed="false">
+                  ＋ {unpurchasedCount} unpurchased
+                </button>}
             </div>
             <p class="gs-empty" hidden>No books match the current filters.</p>
 
@@ -149,18 +168,21 @@ function groupBySeries(genreBooks: any[]) {
                   <span class="series-count">{group.books.length} {group.books.length === 1 ? 'book' : 'books'}</span>
                 </div>
                 <div class="book-grid">
-                  {group.books.map((book: any) => (
-                    <div class:list={['book', book.status]} data-status={book.status}>
-                      <div class="cover-wrap">
-                        <img src={book.cover} alt={book.title} loading="lazy" referrerpolicy="no-referrer" />
-                        <span class:list={['badge', book.status]}>
-                          {book.status === 'read' ? '✓' : book.status === 'reading' ? '◉' : '○'}
-                        </span>
+                  {group.books.map((book: any) => {
+                    const eff = effectiveStatus(book);
+                    const startsHidden = !DEFAULT_ACTIVE.has(eff);
+                    const badge = eff === 'read' ? '✓' : eff === 'reading' ? '◉' : eff === 'unpurchased' ? '＋' : '○';
+                    return (
+                      <div class:list={['book', eff, startsHidden && 'is-hidden']} data-status={eff}>
+                        <div class="cover-wrap">
+                          <img src={book.cover} alt={book.title} loading="lazy" referrerpolicy="no-referrer" />
+                          <span class:list={['badge', eff]}>{badge}</span>
+                        </div>
+                        <p class="btitle">{book.title}</p>
+                        <p class="bauthor">{book.author}</p>
                       </div>
-                      <p class="btitle">{book.title}</p>
-                      <p class="bauthor">{book.author}</p>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             ))}
@@ -191,8 +213,9 @@ function groupBySeries(genreBooks: any[]) {
   }
   [data-theme="light"] .page-marks { opacity: 0.06; }
 
-  .read-num    { color: #5DBB7A; }
-  .reading-num { color: #E0A030; }
+  .read-num        { color: #5DBB7A; }
+  .reading-num     { color: #E0A030; }
+  .unpurchased-num { color: #B48CDC; }
 
   /* ── Sticky genre nav ─────────────────────────────────────── */
   .genre-nav {
@@ -334,9 +357,10 @@ function groupBySeries(genreBooks: any[]) {
     text-decoration-thickness: 1px;
   }
   .pill:not(.is-active):hover { opacity: 0.6; }
-  .pill.is-active.read    { background: rgba(93,187,122,0.16);  color: #6FCB89; border-color: rgba(93,187,122,0.40); }
-  .pill.is-active.reading { background: rgba(224,160,48,0.16);  color: #ECB242; border-color: rgba(224,160,48,0.40); }
-  .pill.is-active.unread  { background: rgba(141,168,200,0.16); color: #9FBDD8; border-color: rgba(141,168,200,0.40); }
+  .pill.is-active.read        { background: rgba(93,187,122,0.16);  color: #6FCB89; border-color: rgba(93,187,122,0.40); }
+  .pill.is-active.reading     { background: rgba(224,160,48,0.16);  color: #ECB242; border-color: rgba(224,160,48,0.40); }
+  .pill.is-active.unread      { background: rgba(141,168,200,0.16); color: #9FBDD8; border-color: rgba(141,168,200,0.40); }
+  .pill.is-active.unpurchased { background: rgba(180,140,220,0.16); color: #C9A8E8; border-color: rgba(180,140,220,0.40); }
 
   /* Empty state when all filters are off */
   .gs-empty {
@@ -410,9 +434,10 @@ function groupBySeries(genreBooks: any[]) {
     font-size: 0.55rem;
     font-weight: 700;
   }
-  .badge.read    { background: rgba(93,187,122,0.95); color: #fff; }
-  .badge.reading { background: rgba(224,160,48,0.95); color: #fff; }
-  .badge.unread  { background: rgba(30,30,40,0.85);   color: #888; }
+  .badge.read        { background: rgba(93,187,122,0.95);  color: #fff; }
+  .badge.reading     { background: rgba(224,160,48,0.95);  color: #fff; }
+  .badge.unread      { background: rgba(30,30,40,0.85);    color: #888; }
+  .badge.unpurchased { background: rgba(180,140,220,0.95); color: #fff; font-size: 0.7rem; line-height: 1; }
 
   .btitle  { font-size: 0.7rem; font-weight: 600; line-height: 1.3; margin: 0; color: var(--btitle-color, #EDEAE5); }
   .bauthor { font-size: 0.64rem; margin: 0; color: rgba(255,255,255,0.6); }
@@ -569,158 +594,162 @@ function groupBySeries(genreBooks: any[]) {
   .other .gs-desc    { color: rgba(196,184,164,0.8); }
   .other .gs-shelf   { background: #0B0B0C; }
   .other .bauthor    { color: #9E988A; }
+</style>
 
-  /* ── LIGHT THEME ─────────────────────────────────────────── */
-  /* Flips genre rooms from dark/immersive to light. Each genre
-     keeps its accent identity, but text inverts and banners use
-     a pastel tint of the accent. */
+<!-- Light-theme overrides need a global block: the [data-theme="light"]
+     attribute lives on <html>, which is outside this component's scope. -->
+<style is:global>
+  /* ── LIGHT THEME (books page) ────────────────────────────── */
+  /* Selectors are prefixed with `html` and genre rules use the
+     doubled `.gs.<genre>` class chain to clear the specificity
+     bump that Astro's scoped attributes add to the dark rules. */
 
-  [data-theme="light"] .genre-nav {
+  html[data-theme="light"] .genre-nav {
     background: rgba(255, 252, 244, 0.92);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
   }
-  [data-theme="light"] .genre-link { color: rgba(26, 26, 32, 0.6); }
-  [data-theme="light"] .genre-link:hover { color: var(--text); background: rgba(0,0,0,0.04); }
-  [data-theme="light"] .genre-link-count { color: rgba(26, 26, 32, 0.55); }
-  [data-theme="light"] .genre-home::after { background: rgba(0,0,0,0.14); }
+  html[data-theme="light"] .genre-link { color: rgba(26, 26, 32, 0.6); }
+  html[data-theme="light"] .genre-link:hover { color: var(--text); background: rgba(0,0,0,0.04); }
+  html[data-theme="light"] .genre-link-count { color: rgba(26, 26, 32, 0.55); }
+  html[data-theme="light"] .genre-home::after { background: rgba(0,0,0,0.14); }
 
-  [data-theme="light"] .genre-link.fantasy { --genre-accent: #4A8A2A; }
-  [data-theme="light"] .genre-link.litrpg  { --genre-accent: #008850; }
-  [data-theme="light"] .genre-link.scifi   { --genre-accent: #1E5FAB; }
-  [data-theme="light"] .genre-link.horror  { --genre-accent: #C0392B; }
-  [data-theme="light"] .genre-link.memoir  { --genre-accent: #A66333; }
-  [data-theme="light"] .genre-link.history { --genre-accent: #8A7220; }
-  [data-theme="light"] .genre-link.ideas   { --genre-accent: #B5631A; }
-  [data-theme="light"] .genre-link.other   { --genre-accent: #6E6552; }
+  html[data-theme="light"] .genre-link.fantasy { --genre-accent: #4A8A2A; }
+  html[data-theme="light"] .genre-link.litrpg  { --genre-accent: #008850; }
+  html[data-theme="light"] .genre-link.scifi   { --genre-accent: #1E5FAB; }
+  html[data-theme="light"] .genre-link.horror  { --genre-accent: #C0392B; }
+  html[data-theme="light"] .genre-link.memoir  { --genre-accent: #A66333; }
+  html[data-theme="light"] .genre-link.history { --genre-accent: #8A7220; }
+  html[data-theme="light"] .genre-link.ideas   { --genre-accent: #B5631A; }
+  html[data-theme="light"] .genre-link.other   { --genre-accent: #6E6552; }
 
-  [data-theme="light"] .gs {
+  html[data-theme="light"] .gs {
     background: var(--bg);
     color: var(--text);
     border-top: 1px solid var(--border);
   }
-  [data-theme="light"] .gs-empty { color: rgba(26,26,32,0.6); }
-  [data-theme="light"] .series-count { color: rgba(26,26,32,0.45); }
-  [data-theme="light"] .bauthor { color: rgba(26,26,32,0.55); }
+  html[data-theme="light"] .gs .gs-empty { color: rgba(26,26,32,0.6); }
+  html[data-theme="light"] .gs .series-count { color: rgba(26,26,32,0.45); }
+  html[data-theme="light"] .gs .bauthor { color: rgba(26,26,32,0.55); }
 
-  [data-theme="light"] .pill {
+  html[data-theme="light"] .gs .pill {
     color: rgba(0,0,0,0.5);
     border-color: rgba(0,0,0,0.14);
   }
-  [data-theme="light"] .pill:hover { color: rgba(0,0,0,0.78); border-color: rgba(0,0,0,0.28); }
-  [data-theme="light"] .pill:not(.is-active) {
+  html[data-theme="light"] .gs .pill:hover { color: rgba(0,0,0,0.78); border-color: rgba(0,0,0,0.28); }
+  html[data-theme="light"] .gs .pill:not(.is-active) {
     color: rgba(0,0,0,0.45);
     border-color: rgba(0,0,0,0.10);
     text-decoration-color: rgba(0,0,0,0.45);
   }
 
-  [data-theme="light"] .cover-wrap { box-shadow: 0 4px 12px rgba(0,0,0,0.10); }
-  [data-theme="light"] .cover-wrap:hover { box-shadow: 0 12px 28px rgba(0,0,0,0.16); }
-  [data-theme="light"] .badge.unread { background: rgba(220,212,200,0.95); color: #5A5A5A; }
+  html[data-theme="light"] .gs .cover-wrap { box-shadow: 0 4px 12px rgba(0,0,0,0.10); }
+  html[data-theme="light"] .gs .cover-wrap:hover { box-shadow: 0 12px 28px rgba(0,0,0,0.16); }
+  html[data-theme="light"] .gs .badge.unread { background: rgba(220,212,200,0.95); color: #5A5A5A; }
 
   /* FANTASY light */
-  [data-theme="light"] .fantasy { --series-color: #4A8A2A; --btitle-color: #2E4A1C; }
-  [data-theme="light"] .fantasy .gs-banner {
+  html[data-theme="light"] .gs.fantasy { --series-color: #4A8A2A; --btitle-color: #2E4A1C; }
+  html[data-theme="light"] .gs.fantasy .gs-banner {
     background: linear-gradient(135deg, #ECF6E0 0%, #DCEDC4 60%, #E5F2D2 100%);
     border-bottom: 1px solid rgba(74,138,42,0.35);
   }
-  [data-theme="light"] .fantasy .gs-eyebrow { color: rgba(74,138,42,0.9); }
-  [data-theme="light"] .fantasy .gs-title   { color: #4A8A2A; text-shadow: none; }
-  [data-theme="light"] .fantasy .gs-desc    { color: rgba(74,138,42,0.85); }
-  [data-theme="light"] .fantasy .gs-shelf   { background: #F5F8ED; }
-  [data-theme="light"] .fantasy .bauthor    { color: #5C7B40; }
+  html[data-theme="light"] .gs.fantasy .gs-eyebrow { color: rgba(74,138,42,0.9); }
+  html[data-theme="light"] .gs.fantasy .gs-title   { color: #4A8A2A; text-shadow: none; }
+  html[data-theme="light"] .gs.fantasy .gs-desc    { color: rgba(74,138,42,0.85); }
+  html[data-theme="light"] .gs.fantasy .gs-shelf   { background: #F5F8ED; }
+  html[data-theme="light"] .gs.fantasy .bauthor    { color: #5C7B40; }
 
   /* LITRPG light */
-  [data-theme="light"] .litrpg { --series-color: #008850; --btitle-color: #1A4030; }
-  [data-theme="light"] .litrpg .gs-banner {
+  html[data-theme="light"] .gs.litrpg { --series-color: #008850; --btitle-color: #1A4030; }
+  html[data-theme="light"] .gs.litrpg .gs-banner {
     background: linear-gradient(135deg, #E0F5EC 0%, #D0EDDA 100%);
     border-bottom: 1px solid rgba(0,136,80,0.35);
   }
-  [data-theme="light"] .litrpg .gs-eyebrow { color: rgba(0,136,80,0.9); }
-  [data-theme="light"] .litrpg .gs-title   { color: #008850; text-shadow: none; }
-  [data-theme="light"] .litrpg .gs-desc    { color: rgba(0,136,80,0.85); }
-  [data-theme="light"] .litrpg .gs-shelf   { background: #F2F8F5; }
-  [data-theme="light"] .litrpg .bauthor    { color: #2E6E48; }
+  html[data-theme="light"] .gs.litrpg .gs-eyebrow { color: rgba(0,136,80,0.9); }
+  html[data-theme="light"] .gs.litrpg .gs-title   { color: #008850; text-shadow: none; }
+  html[data-theme="light"] .gs.litrpg .gs-desc    { color: rgba(0,136,80,0.85); }
+  html[data-theme="light"] .gs.litrpg .gs-shelf   { background: #F2F8F5; }
+  html[data-theme="light"] .gs.litrpg .bauthor    { color: #2E6E48; }
 
   /* SCIFI light */
-  [data-theme="light"] .scifi { --series-color: #1E5FAB; --btitle-color: #1F3A5C; }
-  [data-theme="light"] .scifi .gs-banner {
+  html[data-theme="light"] .gs.scifi { --series-color: #1E5FAB; --btitle-color: #1F3A5C; }
+  html[data-theme="light"] .gs.scifi .gs-banner {
     background: radial-gradient(ellipse at 20% 50%, #E0EDF8 0%, #D0E4F4 100%);
     border-bottom: 1px solid rgba(30,95,171,0.35);
   }
-  [data-theme="light"] .scifi .gs-banner::before {
+  html[data-theme="light"] .gs.scifi .gs-banner::before {
     background-image: radial-gradient(circle, rgba(30,95,171,0.10) 1px, transparent 1px);
   }
-  [data-theme="light"] .scifi .gs-eyebrow { color: rgba(30,95,171,0.9); }
-  [data-theme="light"] .scifi .gs-title   { color: #1E5FAB; }
-  [data-theme="light"] .scifi .gs-desc    { color: rgba(30,95,171,0.85); }
-  [data-theme="light"] .scifi .gs-shelf   {
+  html[data-theme="light"] .gs.scifi .gs-eyebrow { color: rgba(30,95,171,0.9); }
+  html[data-theme="light"] .gs.scifi .gs-title   { color: #1E5FAB; }
+  html[data-theme="light"] .gs.scifi .gs-desc    { color: rgba(30,95,171,0.85); }
+  html[data-theme="light"] .gs.scifi .gs-shelf   {
     background: radial-gradient(ellipse at 50% 0%, #EFF5FB 0%, #E5EDF7 100%);
   }
-  [data-theme="light"] .scifi .gs-shelf::before {
+  html[data-theme="light"] .gs.scifi .gs-shelf::before {
     background-image: radial-gradient(circle, rgba(30,95,171,0.07) 1px, transparent 1px);
   }
-  [data-theme="light"] .scifi .bauthor    { color: #4D7AAA; }
+  html[data-theme="light"] .gs.scifi .bauthor    { color: #4D7AAA; }
 
   /* HORROR light */
-  [data-theme="light"] .horror { --series-color: #C0392B; --btitle-color: #5A2020; }
-  [data-theme="light"] .horror .gs-banner {
+  html[data-theme="light"] .gs.horror { --series-color: #C0392B; --btitle-color: #5A2020; }
+  html[data-theme="light"] .gs.horror .gs-banner {
     background: linear-gradient(180deg, #F8E0E0 0%, #F2D5D5 100%);
     border-bottom: 1px solid rgba(192,57,43,0.35);
   }
-  [data-theme="light"] .horror .gs-eyebrow { color: rgba(192,57,43,0.9); }
-  [data-theme="light"] .horror .gs-title   { color: #C0392B; text-shadow: none; }
-  [data-theme="light"] .horror .gs-desc    { color: rgba(192,57,43,0.85); }
-  [data-theme="light"] .horror .gs-shelf   { background: #FCF4F4; }
-  [data-theme="light"] .horror .bauthor    { color: #8A4848; }
+  html[data-theme="light"] .gs.horror .gs-eyebrow { color: rgba(192,57,43,0.9); }
+  html[data-theme="light"] .gs.horror .gs-title   { color: #C0392B; text-shadow: none; }
+  html[data-theme="light"] .gs.horror .gs-desc    { color: rgba(192,57,43,0.85); }
+  html[data-theme="light"] .gs.horror .gs-shelf   { background: #FCF4F4; }
+  html[data-theme="light"] .gs.horror .bauthor    { color: #8A4848; }
 
   /* MEMOIR light */
-  [data-theme="light"] .memoir { --series-color: #A66333; --btitle-color: #4A2D18; }
-  [data-theme="light"] .memoir .gs-banner {
+  html[data-theme="light"] .gs.memoir { --series-color: #A66333; --btitle-color: #4A2D18; }
+  html[data-theme="light"] .gs.memoir .gs-banner {
     background: linear-gradient(135deg, #F4E8D8 0%, #ECDDC8 100%);
     border-bottom: 1px solid rgba(166,99,51,0.35);
   }
-  [data-theme="light"] .memoir .gs-eyebrow { color: rgba(166,99,51,0.9); }
-  [data-theme="light"] .memoir .gs-title   { color: #A66333; }
-  [data-theme="light"] .memoir .gs-desc    { color: rgba(166,99,51,0.85); }
-  [data-theme="light"] .memoir .gs-shelf   { background: #FAF4EC; }
-  [data-theme="light"] .memoir .bauthor    { color: #8A5A38; }
+  html[data-theme="light"] .gs.memoir .gs-eyebrow { color: rgba(166,99,51,0.9); }
+  html[data-theme="light"] .gs.memoir .gs-title   { color: #A66333; }
+  html[data-theme="light"] .gs.memoir .gs-desc    { color: rgba(166,99,51,0.85); }
+  html[data-theme="light"] .gs.memoir .gs-shelf   { background: #FAF4EC; }
+  html[data-theme="light"] .gs.memoir .bauthor    { color: #8A5A38; }
 
   /* HISTORY light */
-  [data-theme="light"] .history { --series-color: #8A7220; --btitle-color: #4A3D14; }
-  [data-theme="light"] .history .gs-banner {
+  html[data-theme="light"] .gs.history { --series-color: #8A7220; --btitle-color: #4A3D14; }
+  html[data-theme="light"] .gs.history .gs-banner {
     background: linear-gradient(135deg, #F2EBD0 0%, #ECE0B8 100%);
     border-bottom: 1px solid rgba(138,114,32,0.35);
   }
-  [data-theme="light"] .history .gs-eyebrow { color: rgba(138,114,32,0.9); }
-  [data-theme="light"] .history .gs-title   { color: #8A7220; }
-  [data-theme="light"] .history .gs-desc    { color: rgba(138,114,32,0.85); }
-  [data-theme="light"] .history .gs-shelf   { background: #FAF7E8; }
-  [data-theme="light"] .history .bauthor    { color: #756225; }
+  html[data-theme="light"] .gs.history .gs-eyebrow { color: rgba(138,114,32,0.9); }
+  html[data-theme="light"] .gs.history .gs-title   { color: #8A7220; }
+  html[data-theme="light"] .gs.history .gs-desc    { color: rgba(138,114,32,0.85); }
+  html[data-theme="light"] .gs.history .gs-shelf   { background: #FAF7E8; }
+  html[data-theme="light"] .gs.history .bauthor    { color: #756225; }
 
   /* IDEAS light */
-  [data-theme="light"] .ideas { --series-color: #B5631A; --btitle-color: #4F2A0C; }
-  [data-theme="light"] .ideas .gs-banner {
+  html[data-theme="light"] .gs.ideas { --series-color: #B5631A; --btitle-color: #4F2A0C; }
+  html[data-theme="light"] .gs.ideas .gs-banner {
     background: linear-gradient(135deg, #F8E4D0 0%, #F3D5B8 100%);
     border-bottom: 1px solid rgba(181,99,26,0.35);
   }
-  [data-theme="light"] .ideas .gs-eyebrow { color: rgba(181,99,26,0.9); }
-  [data-theme="light"] .ideas .gs-title   { color: #B5631A; }
-  [data-theme="light"] .ideas .gs-desc    { color: rgba(181,99,26,0.85); }
-  [data-theme="light"] .ideas .gs-shelf   { background: #FCF1E4; }
-  [data-theme="light"] .ideas .bauthor    { color: #9A5818; }
+  html[data-theme="light"] .gs.ideas .gs-eyebrow { color: rgba(181,99,26,0.9); }
+  html[data-theme="light"] .gs.ideas .gs-title   { color: #B5631A; }
+  html[data-theme="light"] .gs.ideas .gs-desc    { color: rgba(181,99,26,0.85); }
+  html[data-theme="light"] .gs.ideas .gs-shelf   { background: #FCF1E4; }
+  html[data-theme="light"] .gs.ideas .bauthor    { color: #9A5818; }
 
   /* OTHER light */
-  [data-theme="light"] .other { --series-color: #6E6552; --btitle-color: #45402F; }
-  [data-theme="light"] .other .gs-banner {
+  html[data-theme="light"] .gs.other { --series-color: #6E6552; --btitle-color: #45402F; }
+  html[data-theme="light"] .gs.other .gs-banner {
     background: linear-gradient(135deg, #EFEAE0 0%, #E5DFD0 100%);
     border-bottom: 1px solid rgba(110,101,82,0.35);
   }
-  [data-theme="light"] .other .gs-eyebrow { color: rgba(110,101,82,0.9); }
-  [data-theme="light"] .other .gs-title   { color: #6E6552; }
-  [data-theme="light"] .other .gs-desc    { color: rgba(110,101,82,0.85); }
-  [data-theme="light"] .other .gs-shelf   { background: #F8F4ED; }
-  [data-theme="light"] .other .bauthor    { color: #756B58; }
+  html[data-theme="light"] .gs.other .gs-eyebrow { color: rgba(110,101,82,0.9); }
+  html[data-theme="light"] .gs.other .gs-title   { color: #6E6552; }
+  html[data-theme="light"] .gs.other .gs-desc    { color: rgba(110,101,82,0.85); }
+  html[data-theme="light"] .gs.other .gs-shelf   { background: #F8F4ED; }
+  html[data-theme="light"] .gs.other .bauthor    { color: #756B58; }
 </style>
 
 <script is:inline>
@@ -732,13 +761,16 @@ function groupBySeries(genreBooks: any[]) {
     });
   });
 
-  // ── Per-genre status filters (Read / Reading / Unread pills) ──
+  // ── Per-genre status filters (Read / Reading / Unread / Unpurchased pills) ──
   document.querySelectorAll('.gs').forEach((section) => {
     const pills = section.querySelectorAll('.pill');
     const books = section.querySelectorAll('.book');
     const groups = section.querySelectorAll('.series-group');
     const empty = section.querySelector('.gs-empty');
-    const active = new Set(Array.from(pills).map(p => p.dataset.status));
+    // Initialize active set from is-active class so the JSX-declared default (Unpurchased OFF) sticks.
+    const active = new Set(
+      Array.from(pills).filter((p) => p.classList.contains('is-active')).map((p) => p.dataset.status),
+    );
 
     function render() {
       books.forEach((book) => {
@@ -766,6 +798,9 @@ function groupBySeries(genreBooks: any[]) {
         render();
       });
     });
+
+    // Initial render — collapse series groups that are empty under the default filter.
+    render();
   });
 
   // ── Highlight active genre in the nav while scrolling ──

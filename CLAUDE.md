@@ -165,9 +165,13 @@ The nav uses **short labels** from a `nav` field on each genre (e.g. `Fantasy` i
 The first item in the nav is a **`.genre-home`** link (`Books.` on books, `Vinyl.` on vinyl) — italic Playfair Display in `var(--brand)` with a thin vertical separator after it, deliberately styled differently from the Inter-caps genre chips because clicking it scrolls to the top of the page rather than jumping to a section. A `data-scroll-top` attribute drives a tiny click handler that calls `window.scrollTo({top:0, behavior:'smooth'})` and prevents default so the URL hash stays clean.
 
 ### Status filter pills (per-genre)
-The Read / Reading / Unread pills at the top of each genre's shelf are interactive `<button>` toggles, not just labels. All start `.is-active` (everything visible). Clicking toggles a pill on/off — books with that status get `.is-hidden`, and any series group whose books are now all hidden also gets `.is-hidden` (handled in JS by counting `.book:not(.is-hidden)` per group). A `.gs-empty` paragraph appears when all three filters are off.
+The Read / Reading / Unread / **Unpurchased** pills at the top of each genre's shelf are interactive `<button>` toggles. The first three start `.is-active` (everything in your library is visible). **Unpurchased starts inactive** — the page defaults to "what's actually in my library", and series fill-in books are revealed only when the user opts in. Clicking toggles a pill — books with that status get `.is-hidden`, and any series group whose books are now all hidden also gets `.is-hidden` (handled in JS by counting `.book:not(.is-hidden)` per group). A `.gs-empty` paragraph appears when all filters are off.
 
-Active state colors map to status badges: read = green `#6FCB89`, reading = amber `#ECB242`, unread = slate-blue `#9FBDD8` (a distinct hue, not gray, so off vs on is unambiguous). Inactive = `opacity: 0.32` + line-through. Pills are independent per section — there is no global filter state shared across genres.
+The `effectiveStatus()` helper in books.astro splits the underlying `unread` bucket into two display statuses: `unread` (owned but unstarted) vs `unpurchased` (`owned: false`). The `data-status` attribute on each `.book` card uses the effective status, so the filter logic stays a simple "is this status in the active set" check.
+
+Active state colors map to status badges: read = green `#6FCB89`, reading = amber `#ECB242`, unread = slate-blue `#9FBDD8`, unpurchased = soft purple `#C9A8E8` (visually distinct so each pill reads on its own). Inactive = `opacity: 0.32` + line-through. The unpurchased badge on covers is `＋` (a fullwidth plus, conveying "add to library"). Pills are independent per section — there is no global filter state shared across genres.
+
+The hero stats now show 5 numbers: **Library** (owned count) · **Read** · **In progress** · **Unread** (owned-unstarted) · **Unpurchased** (unowned). The four right-side stats sum to the total page books shown.
 
 ## Vinyl Page
 
