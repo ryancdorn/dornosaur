@@ -3,9 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import records from '../data/vinyl.json';
 
 const genres = [
-  { key: 'hiphop', label: 'Hip Hop',    desc: 'The culture, the craft, the classics' },
-  { key: 'rock',   label: 'Rock',       desc: 'Guitar gods, prog epics, and everything loud' },
-  { key: 'soul',   label: 'Pop & Soul', desc: 'Groove, feeling, and the floor at 2am' },
+  { key: 'hiphop',   label: 'Hip Hop',    desc: 'The culture, the craft, the classics' },
+  { key: 'rock',     label: 'Rock',       desc: 'Guitar gods, prog epics, and everything loud' },
+  { key: 'hardrock', label: 'Hard Rock',  desc: "Crunch, distortion, and the riff that won't let go" },
+  { key: 'soul',     label: 'Pop & Soul', desc: 'Groove, feeling, and the floor at 2am' },
 ];
 ---
 
@@ -30,6 +31,11 @@ const genres = [
         <div class="stat">
           <span class="stat-num">{records.filter((r: any) => r.genre === 'rock').length}</span>
           <span class="stat-label">Rock</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat">
+          <span class="stat-num">{records.filter((r: any) => r.genre === 'hardrock').length}</span>
+          <span class="stat-label">Hard Rock</span>
         </div>
         <div class="stat-div"></div>
         <div class="stat">
@@ -196,9 +202,10 @@ const genres = [
   }
   .genre-home:hover { color: var(--brand); background: transparent; opacity: 0.8; border-bottom-color: transparent; }
 
-  .genre-link.hiphop { --genre-accent: #D4A820; }
-  .genre-link.rock   { --genre-accent: #C84838; }
-  .genre-link.soul   { --genre-accent: #A878DC; }
+  .genre-link.hiphop   { --genre-accent: #D4A820; }
+  .genre-link.rock     { --genre-accent: #C84838; }
+  .genre-link.hardrock { --genre-accent: #4A9EDC; }
+  .genre-link.soul     { --genre-accent: #A878DC; }
 
   /* ── Genre sections (always dark/immersive) ──────────────── */
   .gs {
@@ -314,6 +321,19 @@ const genres = [
   .rock .cover-wrap { box-shadow: 0 8px 24px rgba(160,40,30,0.14), 0 2px 6px rgba(0,0,0,0.5); }
   .rock .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(160,40,30,0.3); }
 
+  .hardrock .gs-banner {
+    background: linear-gradient(135deg, #060A10 0%, #0A1320 100%);
+    border-bottom: 1px solid rgba(74,158,220,0.25);
+  }
+  .hardrock .gs-eyebrow { color: rgba(74,158,220,0.9); }
+  .hardrock .gs-title   { color: #4A9EDC; text-shadow: 0 0 60px rgba(74,158,220,0.22); }
+  .hardrock .gs-desc    { color: rgba(74,158,220,0.8); }
+  .hardrock .gs-shelf   { background: #05080C; }
+  .hardrock .rtitle     { color: #A8C8E4; }
+  .hardrock .rartist    { color: #7088A4; }
+  .hardrock .cover-wrap { box-shadow: 0 8px 24px rgba(40,100,170,0.14), 0 2px 6px rgba(0,0,0,0.5); }
+  .hardrock .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(40,100,170,0.3); }
+
   .soul .gs-banner {
     background: linear-gradient(135deg, #08060B 0%, #100A18 100%);
     border-bottom: 1px solid rgba(168,120,220,0.25);
@@ -345,9 +365,10 @@ const genres = [
   html[data-theme="light"] .genre-link-count { color: rgba(26, 26, 32, 0.55); }
   html[data-theme="light"] .genre-home::after { background: rgba(0,0,0,0.14); }
 
-  html[data-theme="light"] .genre-link.hiphop { --genre-accent: #8A6D10; }
-  html[data-theme="light"] .genre-link.rock   { --genre-accent: #A02E20; }
-  html[data-theme="light"] .genre-link.soul   { --genre-accent: #6B3FB0; }
+  html[data-theme="light"] .genre-link.hiphop   { --genre-accent: #8A6D10; }
+  html[data-theme="light"] .genre-link.rock     { --genre-accent: #A02E20; }
+  html[data-theme="light"] .genre-link.hardrock { --genre-accent: #1E6FA8; }
+  html[data-theme="light"] .genre-link.soul     { --genre-accent: #6B3FB0; }
 
   html[data-theme="light"] .gs {
     background: var(--bg);
@@ -384,6 +405,20 @@ const genres = [
   html[data-theme="light"] .gs.rock .rartist    { color: #A02E20; }
   html[data-theme="light"] .gs.rock .cover-wrap { box-shadow: 0 8px 24px rgba(160,40,30,0.18), 0 2px 6px rgba(0,0,0,0.10); }
   html[data-theme="light"] .gs.rock .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(160,40,30,0.30); }
+
+  /* HARDROCK light */
+  html[data-theme="light"] .gs.hardrock .gs-banner {
+    background: linear-gradient(135deg, #DDEAF5 0%, #C2D8EE 100%);
+    border-bottom: 1px solid rgba(30,111,168,0.35);
+  }
+  html[data-theme="light"] .gs.hardrock .gs-eyebrow { color: rgba(30,111,168,0.9); }
+  html[data-theme="light"] .gs.hardrock .gs-title   { color: #1E6FA8; text-shadow: none; }
+  html[data-theme="light"] .gs.hardrock .gs-desc    { color: rgba(30,111,168,0.85); }
+  html[data-theme="light"] .gs.hardrock .gs-shelf   { background: #F2F7FC; }
+  html[data-theme="light"] .gs.hardrock .rtitle     { color: #0F3A5E; }
+  html[data-theme="light"] .gs.hardrock .rartist    { color: #1E6FA8; }
+  html[data-theme="light"] .gs.hardrock .cover-wrap { box-shadow: 0 8px 24px rgba(30,100,170,0.18), 0 2px 6px rgba(0,0,0,0.10); }
+  html[data-theme="light"] .gs.hardrock .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(30,100,170,0.30); }
 
   /* SOUL light */
   html[data-theme="light"] .gs.soul .gs-banner {

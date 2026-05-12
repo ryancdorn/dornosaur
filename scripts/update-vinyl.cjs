@@ -103,7 +103,7 @@ async function main() {
   }
 
   // Sort: genre group, then artist, then year
-  const genreOrder = { hiphop: 0, rock: 1, soul: 2 };
+  const genreOrder = { hiphop: 0, rock: 1, hardrock: 1.5, soul: 2 };
   out.sort((a, b) => {
     const g = (genreOrder[a.genre] ?? 99) - (genreOrder[b.genre] ?? 99);
     if (g !== 0) return g;
