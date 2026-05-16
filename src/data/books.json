@@ -126,7 +126,7 @@
     "narrator": "Michael Kramer",
     "series": "The Mistborn Saga",
     "seriesNumber": 1,
-    "cover": "https://m.media-amazon.com/images/I/51MaJgNXGsL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/514AZpCQ4ML._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -2789,13 +2789,13 @@
     "owned": true
   },
   {
-    "asin": "B00GUTGVEE",
+    "asin": "1473555159",
     "title": "House of Chains",
     "author": "Steven Erikson",
     "narrator": "Michael Page",
     "series": "Malazan Book of the Fallen Series",
     "seriesNumber": 4,
-    "cover": "https://m.media-amazon.com/images/I/51Rh2bzphIL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51wVy++E3WL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -5052,6 +5052,17 @@
     "owned": false
   },
   {
+    "asin": "B0FKVQTQJK",
+    "title": "London Falling",
+    "author": "Patrick Radden Keefe",
+    "narrator": "Patrick Radden Keefe",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/51pmL38SrRL._SL500_.jpg",
+    "status": "reading",
+    "genre": "other",
+    "owned": true
+  },
+  {
     "asin": "B002VA8RNE",
     "title": "Tinkers",
     "author": "Paul Harding",
@@ -5806,13 +5817,13 @@
     "owned": false
   },
   {
-    "asin": "B0D457P6VX",
+    "asin": "B0DFZ3LPDJ",
     "title": "The Triumph of Venus",
     "author": "Travis Starnes",
-    "narrator": "",
+    "narrator": "Kevin Kemp",
     "series": "Imperium",
     "seriesNumber": 6,
-    "cover": "",
+    "cover": "https://m.media-amazon.com/images/I/51R2gFlfvoL._SL500_.jpg",
     "status": "unread",
     "genre": "other",
     "owned": false
