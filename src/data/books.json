@@ -1242,6 +1242,18 @@
     "owned": false
   },
   {
+    "asin": "B016N9U1XW",
+    "title": "The Silmarillion",
+    "author": "J. R. R. Tolkien",
+    "narrator": "Martin Shaw",
+    "series": "The Lord of the Rings",
+    "seriesNumber": 0,
+    "cover": "https://m.media-amazon.com/images/I/51fL6o4DxBL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy",
+    "owned": false
+  },
+  {
     "asin": "B0030EJV3U",
     "title": "The Hobbit",
     "author": "J. R. R. Tolkien",
@@ -1273,18 +1285,6 @@
     "series": "The Lord of the Rings",
     "seriesNumber": 2,
     "cover": "https://m.media-amazon.com/images/I/51EgIMxu00L._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy",
-    "owned": false
-  },
-  {
-    "asin": "B0C5MPMQYX",
-    "title": "The Silmarillion",
-    "author": "J. R. R. Tolkien, Christopher Tolkien - editor",
-    "narrator": "Andy Serkis",
-    "series": "The Lord of the Rings",
-    "seriesNumber": 0,
-    "cover": "https://m.media-amazon.com/images/I/5167YEsQ6YL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
