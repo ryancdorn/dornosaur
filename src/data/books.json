@@ -1744,8 +1744,32 @@
     "owned": false
   },
   {
-    "asin": "B002V01HQI",
+    "asin": "B002VAENUK",
+    "title": "Lyra's Oxford: His Dark Materials",
+    "author": "Philip Pullman",
+    "narrator": "Philip Pullman, Joanna Wyatt, Anton Lesser, Richard Pearce, Douglas Blackwell, Daniel Flynn, Nicolette McKenzie, Garrick Hagon, Liza Ross",
+    "series": "His Dark Materials",
+    "seriesNumber": 0,
+    "cover": "https://m.media-amazon.com/images/I/51qJ7Xd5wxL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy",
+    "owned": false
+  },
+  {
+    "asin": "B0032NA9NK",
     "title": "Once Upon a Time in the North",
+    "author": "Philip Pullman",
+    "narrator": "Full Cast, Philip Pullman",
+    "series": "His Dark Materials",
+    "seriesNumber": 0,
+    "cover": "https://m.media-amazon.com/images/I/510SqAfFEIL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy",
+    "owned": false
+  },
+  {
+    "asin": "B002V01HQI",
+    "title": "Once Upon a Time in the North: His Dark Materials",
     "author": "Philip Pullman",
     "narrator": "Philip Pullman, Nigel Whitmey, Sean Barrett, John Chancer, Andrew Branch, Tim Bentinck, Hayward Morse, Teresa Gallagher, Paul Panting, Jane Collingwood, Garrick Hagon, Liza Ross, Jo Wyatt",
     "series": "His Dark Materials",
