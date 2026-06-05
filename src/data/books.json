@@ -1109,18 +1109,6 @@
     "owned": true
   },
   {
-    "asin": "B016N9U1XW",
-    "title": "The Silmarillion",
-    "author": "J. R. R. Tolkien",
-    "narrator": "Martin Shaw",
-    "series": "The Lord of the Rings",
-    "seriesNumber": 0,
-    "cover": "https://m.media-amazon.com/images/I/51fL6o4DxBL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy",
-    "owned": false
-  },
-  {
     "asin": "B0030EJV3U",
     "title": "The Hobbit",
     "author": "J. R. R. Tolkien",
@@ -1152,6 +1140,18 @@
     "series": "The Lord of the Rings",
     "seriesNumber": 2,
     "cover": "https://m.media-amazon.com/images/I/51EgIMxu00L._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy",
+    "owned": false
+  },
+  {
+    "asin": "B0C5MPMQYX",
+    "title": "The Silmarillion",
+    "author": "J. R. R. Tolkien, Christopher Tolkien - editor",
+    "narrator": "Andy Serkis",
+    "series": "The Lord of the Rings",
+    "seriesNumber": 0,
+    "cover": "https://m.media-amazon.com/images/I/5167YEsQ6YL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -1344,18 +1344,6 @@
     "series": "The Faithful and the Fallen",
     "seriesNumber": 2,
     "cover": "https://m.media-amazon.com/images/I/513n-RqEyJL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy",
-    "owned": false
-  },
-  {
-    "asin": "B00XLSW9YI",
-    "title": "Ruin",
-    "author": "John Gwynne",
-    "narrator": "Damian Lynch",
-    "series": "The Faithful and the Fallen",
-    "seriesNumber": 3,
-    "cover": "https://m.media-amazon.com/images/I/51chGb18d2L._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -3781,13 +3769,13 @@
     "owned": false
   },
   {
-    "asin": "B0FG7CK1QQ",
-    "title": "Unbound 12",
+    "asin": "B0H3W4WH77",
+    "title": "Ruin",
     "author": "Nicoli Gonnella",
-    "narrator": "",
+    "narrator": "Travis Baldree",
     "series": "Unbound",
     "seriesNumber": 12,
-    "cover": "",
+    "cover": "https://m.media-amazon.com/images/I/51rzcvUfu7L._SL500_.jpg",
     "status": "unread",
     "genre": "litrpg",
     "owned": false
