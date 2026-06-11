@@ -1109,6 +1109,18 @@
     "owned": true
   },
   {
+    "asin": "B016N9U1XW",
+    "title": "The Silmarillion",
+    "author": "J. R. R. Tolkien",
+    "narrator": "Martin Shaw",
+    "series": "The Lord of the Rings",
+    "seriesNumber": 0,
+    "cover": "https://m.media-amazon.com/images/I/51fL6o4DxBL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy",
+    "owned": false
+  },
+  {
     "asin": "B0030EJV3U",
     "title": "The Hobbit",
     "author": "J. R. R. Tolkien",
@@ -1140,18 +1152,6 @@
     "series": "The Lord of the Rings",
     "seriesNumber": 2,
     "cover": "https://m.media-amazon.com/images/I/51EgIMxu00L._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy",
-    "owned": false
-  },
-  {
-    "asin": "B0C5MPMQYX",
-    "title": "The Silmarillion",
-    "author": "J. R. R. Tolkien, Christopher Tolkien - editor",
-    "narrator": "Andy Serkis",
-    "series": "The Lord of the Rings",
-    "seriesNumber": 0,
-    "cover": "https://m.media-amazon.com/images/I/5167YEsQ6YL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -4546,6 +4546,114 @@
     "status": "reading",
     "genre": "other",
     "owned": true
+  },
+  {
+    "asin": "B076XSGP65",
+    "title": "All Systems Red",
+    "author": "Martha Wells",
+    "narrator": "Kevin R. Free",
+    "series": "Murderbot Diaries",
+    "seriesNumber": 1,
+    "cover": "https://m.media-amazon.com/images/I/41pWTv4OU-L._SL500_.jpg",
+    "status": "reading",
+    "genre": "other",
+    "owned": true
+  },
+  {
+    "asin": "B07BFDDWXN",
+    "title": "Artificial Condition",
+    "author": "Martha Wells",
+    "narrator": "Kevin R. Free",
+    "series": "Murderbot Diaries",
+    "seriesNumber": 2,
+    "cover": "https://m.media-amazon.com/images/I/41puZZ3xoeL._SL500_.jpg",
+    "status": "unread",
+    "genre": "other",
+    "owned": false
+  },
+  {
+    "asin": "B0GZHP65GX",
+    "title": "Rapport: Friendship, Solidarity, Communion, Empathy",
+    "author": "Martha Wells",
+    "narrator": "Kevin R. Free",
+    "series": "Murderbot Diaries",
+    "seriesNumber": 2.5,
+    "cover": "",
+    "status": "unread",
+    "genre": "other",
+    "owned": false
+  },
+  {
+    "asin": "B07D9RHRH5",
+    "title": "Rogue Protocol",
+    "author": "Martha Wells",
+    "narrator": "Kevin R. Free",
+    "series": "Murderbot Diaries",
+    "seriesNumber": 3,
+    "cover": "https://m.media-amazon.com/images/I/51BQYIpCGoL._SL500_.jpg",
+    "status": "unread",
+    "genre": "other",
+    "owned": false
+  },
+  {
+    "asin": "B07FF9TJ2K",
+    "title": "Exit Strategy",
+    "author": "Martha Wells",
+    "narrator": "Kevin R. Free",
+    "series": "Murderbot Diaries",
+    "seriesNumber": 4,
+    "cover": "https://m.media-amazon.com/images/I/51ou6ytaM7L._SL500_.jpg",
+    "status": "unread",
+    "genre": "other",
+    "owned": false
+  },
+  {
+    "asin": "1980021716",
+    "title": "Network Effect",
+    "author": "Martha Wells",
+    "narrator": "Kevin R. Free",
+    "series": "Murderbot Diaries",
+    "seriesNumber": 5,
+    "cover": "https://m.media-amazon.com/images/I/51O0P-GJ2ZL._SL500_.jpg",
+    "status": "unread",
+    "genre": "other",
+    "owned": false
+  },
+  {
+    "asin": "1980080631",
+    "title": "Fugitive Telemetry",
+    "author": "Martha Wells",
+    "narrator": "Kevin R. Free",
+    "series": "Murderbot Diaries",
+    "seriesNumber": 6,
+    "cover": "https://m.media-amazon.com/images/I/51DugaJO10L._SL500_.jpg",
+    "status": "unread",
+    "genre": "other",
+    "owned": false
+  },
+  {
+    "asin": "B0C5N9FNB4",
+    "title": "System Collapse",
+    "author": "Martha Wells",
+    "narrator": "Kevin R. Free",
+    "series": "Murderbot Diaries",
+    "seriesNumber": 7,
+    "cover": "https://m.media-amazon.com/images/I/51C32iNr5YL._SL500_.jpg",
+    "status": "unread",
+    "genre": "other",
+    "owned": false
+  },
+  {
+    "asin": "B0GJ6MQLKJ",
+    "title": "Platform Decay",
+    "author": "Martha Wells",
+    "narrator": "Kevin R. Free",
+    "series": "Murderbot Diaries",
+    "seriesNumber": 8,
+    "cover": "https://m.media-amazon.com/images/I/41GgXuhAAwL._SL500_.jpg",
+    "status": "unread",
+    "genre": "other",
+    "owned": false
   },
   {
     "asin": "B0FBJ2WFHK",
