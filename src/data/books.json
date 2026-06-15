@@ -1109,18 +1109,6 @@
     "owned": true
   },
   {
-    "asin": "B016N9U1XW",
-    "title": "The Silmarillion",
-    "author": "J. R. R. Tolkien",
-    "narrator": "Martin Shaw",
-    "series": "The Lord of the Rings",
-    "seriesNumber": 0,
-    "cover": "https://m.media-amazon.com/images/I/51fL6o4DxBL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy",
-    "owned": false
-  },
-  {
     "asin": "B0030EJV3U",
     "title": "The Hobbit",
     "author": "J. R. R. Tolkien",
@@ -1152,6 +1140,18 @@
     "series": "The Lord of the Rings",
     "seriesNumber": 2,
     "cover": "https://m.media-amazon.com/images/I/51EgIMxu00L._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy",
+    "owned": false
+  },
+  {
+    "asin": "B0C5MPMQYX",
+    "title": "The Silmarillion",
+    "author": "J. R. R. Tolkien, Christopher Tolkien - editor",
+    "narrator": "Andy Serkis",
+    "series": "The Lord of the Rings",
+    "seriesNumber": 0,
+    "cover": "https://m.media-amazon.com/images/I/5167YEsQ6YL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -3907,7 +3907,7 @@
     "narrator": "Travis Baldree",
     "series": "Cradle",
     "seriesNumber": 1,
-    "cover": "https://m.media-amazon.com/images/I/517BQpIbdcL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51HF3TAyKBL._SL500_.jpg",
     "status": "reading",
     "genre": "litrpg",
     "owned": true
@@ -3919,7 +3919,7 @@
     "narrator": "Travis Baldree",
     "series": "Cradle",
     "seriesNumber": 2,
-    "cover": "https://m.media-amazon.com/images/I/515mXs+-DPL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51bOa-sSM0L._SL500_.jpg",
     "status": "reading",
     "genre": "litrpg",
     "owned": true
@@ -3931,7 +3931,7 @@
     "narrator": "Travis Baldree",
     "series": "Cradle",
     "seriesNumber": 3,
-    "cover": "https://m.media-amazon.com/images/I/518uCBISHyL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51THgr6OECL._SL500_.jpg",
     "status": "unread",
     "genre": "litrpg",
     "owned": true
@@ -3943,7 +3943,7 @@
     "narrator": "Travis Baldree",
     "series": "Cradle",
     "seriesNumber": 4,
-    "cover": "https://m.media-amazon.com/images/I/51Lhs041m5L._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51+j4aSXbvL._SL500_.jpg",
     "status": "reading",
     "genre": "litrpg",
     "owned": true
@@ -3955,7 +3955,7 @@
     "narrator": "Travis Baldree",
     "series": "Cradle",
     "seriesNumber": 5,
-    "cover": "https://m.media-amazon.com/images/I/61NBnW0IfSL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51cpl1NbYpL._SL500_.jpg",
     "status": "unread",
     "genre": "litrpg",
     "owned": true
@@ -3967,7 +3967,7 @@
     "narrator": "Travis Baldree",
     "series": "Cradle",
     "seriesNumber": 6,
-    "cover": "https://m.media-amazon.com/images/I/51d1tLSnW-L._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51gvVAB4zqL._SL500_.jpg",
     "status": "reading",
     "genre": "litrpg",
     "owned": true
@@ -3979,7 +3979,7 @@
     "narrator": "Travis Baldree",
     "series": "Cradle",
     "seriesNumber": 7,
-    "cover": "https://m.media-amazon.com/images/I/618X15+VvAL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51DlFxGllGL._SL500_.jpg",
     "status": "unread",
     "genre": "litrpg",
     "owned": true
@@ -3991,7 +3991,7 @@
     "narrator": "Travis Baldree",
     "series": "Cradle",
     "seriesNumber": 8,
-    "cover": "https://m.media-amazon.com/images/I/61eYWnuh0yL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51axq7i-kbL._SL500_.jpg",
     "status": "unread",
     "genre": "litrpg",
     "owned": true
@@ -4003,7 +4003,7 @@
     "narrator": "Travis Baldree",
     "series": "Cradle",
     "seriesNumber": 9,
-    "cover": "https://m.media-amazon.com/images/I/515RG4b2SSL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51RUn4XcJLL._SL500_.jpg",
     "status": "unread",
     "genre": "litrpg",
     "owned": false
@@ -4015,7 +4015,7 @@
     "narrator": "Travis Baldree",
     "series": "Cradle",
     "seriesNumber": 10,
-    "cover": "https://m.media-amazon.com/images/I/51AW6mZSVML._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51VyoXeQdtL._SL500_.jpg",
     "status": "reading",
     "genre": "litrpg",
     "owned": true
@@ -4027,7 +4027,7 @@
     "narrator": "Travis Baldree",
     "series": "Cradle",
     "seriesNumber": 11,
-    "cover": "https://m.media-amazon.com/images/I/51Q-p1d8yeL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51NB4F281GL._SL500_.jpg",
     "status": "reading",
     "genre": "litrpg",
     "owned": true
@@ -4039,7 +4039,7 @@
     "narrator": "Travis Baldree",
     "series": "Cradle",
     "seriesNumber": 12,
-    "cover": "https://m.media-amazon.com/images/I/51B6o7XqIOL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51iLwIVWH5L._SL500_.jpg",
     "status": "unread",
     "genre": "litrpg",
     "owned": true
