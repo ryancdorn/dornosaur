@@ -1109,18 +1109,6 @@
     "owned": true
   },
   {
-    "asin": "B016N9U1XW",
-    "title": "The Silmarillion",
-    "author": "J. R. R. Tolkien",
-    "narrator": "Martin Shaw",
-    "series": "The Lord of the Rings",
-    "seriesNumber": 0,
-    "cover": "https://m.media-amazon.com/images/I/51fL6o4DxBL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy",
-    "owned": false
-  },
-  {
     "asin": "B0030EJV3U",
     "title": "The Hobbit",
     "author": "J. R. R. Tolkien",
@@ -1152,6 +1140,18 @@
     "series": "The Lord of the Rings",
     "seriesNumber": 2,
     "cover": "https://m.media-amazon.com/images/I/51EgIMxu00L._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy",
+    "owned": false
+  },
+  {
+    "asin": "B0C5MPMQYX",
+    "title": "The Silmarillion",
+    "author": "J. R. R. Tolkien, Christopher Tolkien - editor",
+    "narrator": "Andy Serkis",
+    "series": "The Lord of the Rings",
+    "seriesNumber": 0,
+    "cover": "https://m.media-amazon.com/images/I/5167YEsQ6YL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -2866,7 +2866,7 @@
     "narrator": "John Lee",
     "series": "Spellmonger",
     "seriesNumber": 6,
-    "cover": "https://m.media-amazon.com/images/I/51TMtpr4MvL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51hoTq+gcSL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": true
@@ -6118,7 +6118,7 @@
     "narrator": "R.C. Bray",
     "series": "Expeditionary Force",
     "seriesNumber": 6,
-    "cover": "https://m.media-amazon.com/images/I/51Eh6vpp3VL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51tofw6RFrL._SL500_.jpg",
     "status": "unread",
     "genre": "scifi",
     "owned": false
