@@ -4723,7 +4723,7 @@
     "series": "Murderbot Diaries",
     "seriesNumber": 1,
     "cover": "https://m.media-amazon.com/images/I/41pWTv4OU-L._SL500_.jpg",
-    "status": "reading",
+    "status": "unread",
     "genre": "other",
     "owned": true
   },
