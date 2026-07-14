@@ -1109,6 +1109,18 @@
     "owned": true
   },
   {
+    "asin": "B016N9U1XW",
+    "title": "The Silmarillion",
+    "author": "J. R. R. Tolkien",
+    "narrator": "Martin Shaw",
+    "series": "The Lord of the Rings",
+    "seriesNumber": 0,
+    "cover": "https://m.media-amazon.com/images/I/51fL6o4DxBL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy",
+    "owned": false
+  },
+  {
     "asin": "B0030EJV3U",
     "title": "The Hobbit",
     "author": "J. R. R. Tolkien",
@@ -1140,18 +1152,6 @@
     "series": "The Lord of the Rings",
     "seriesNumber": 2,
     "cover": "https://m.media-amazon.com/images/I/51EgIMxu00L._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy",
-    "owned": false
-  },
-  {
-    "asin": "B0C5MPMQYX",
-    "title": "The Silmarillion",
-    "author": "J. R. R. Tolkien, Christopher Tolkien - editor",
-    "narrator": "Andy Serkis",
-    "series": "The Lord of the Rings",
-    "seriesNumber": 0,
-    "cover": "https://m.media-amazon.com/images/I/5167YEsQ6YL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -2668,13 +2668,13 @@
     "owned": true
   },
   {
-    "asin": "1473555159",
+    "asin": "B00GUTGVEE",
     "title": "House of Chains",
     "author": "Steven Erikson",
     "narrator": "Michael Page",
     "series": "Malazan Book of the Fallen Series",
     "seriesNumber": 4,
-    "cover": "https://m.media-amazon.com/images/I/51wVy++E3WL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51Rh2bzphIL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -6079,13 +6079,13 @@
     "owned": false
   },
   {
-    "asin": "B0D457P6VX",
+    "asin": "B0DFZ3LPDJ",
     "title": "The Triumph of Venus",
     "author": "Travis Starnes",
-    "narrator": "",
+    "narrator": "Kevin Kemp",
     "series": "Imperium",
     "seriesNumber": 6,
-    "cover": "",
+    "cover": "https://m.media-amazon.com/images/I/51R2gFlfvoL._SL500_.jpg",
     "status": "unread",
     "genre": "other",
     "owned": false
@@ -6418,7 +6418,7 @@
     "narrator": "Ray Porter",
     "series": "Bobiverse",
     "seriesNumber": 1,
-    "cover": "https://m.media-amazon.com/images/I/51rt2pFIW7L._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51yMirAE25L._SL500_.jpg",
     "status": "unread",
     "genre": "scifi",
     "owned": true
@@ -6430,7 +6430,7 @@
     "narrator": "Ray Porter",
     "series": "Bobiverse",
     "seriesNumber": 2,
-    "cover": "https://m.media-amazon.com/images/I/51xcxG5pAuL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/516OMBlJD7L._SL500_.jpg",
     "status": "reading",
     "genre": "scifi",
     "owned": true
@@ -6442,7 +6442,7 @@
     "narrator": "Ray Porter",
     "series": "Bobiverse",
     "seriesNumber": 3,
-    "cover": "https://m.media-amazon.com/images/I/51Q6a-I2n6L._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51pdrrgwa+L._SL500_.jpg",
     "status": "unread",
     "genre": "scifi",
     "owned": false
@@ -6454,7 +6454,7 @@
     "narrator": "Ray Porter",
     "series": "Bobiverse",
     "seriesNumber": 4,
-    "cover": "https://m.media-amazon.com/images/I/514MNgIFiSL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51-tilFI-eL._SL500_.jpg",
     "status": "unread",
     "genre": "scifi",
     "owned": false
@@ -6466,7 +6466,7 @@
     "narrator": "Ray Porter",
     "series": "Bobiverse",
     "seriesNumber": 5,
-    "cover": "https://m.media-amazon.com/images/I/51fkyQGgmzL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51Lrwt49zdL._SL500_.jpg",
     "status": "unread",
     "genre": "scifi",
     "owned": false
