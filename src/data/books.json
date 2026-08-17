@@ -1630,7 +1630,7 @@
     "author": "Neil Gaiman",
     "narrator": "Neil Gaiman",
     "series": "",
-    "cover": "https://m.media-amazon.com/images/I/61D9CcNEoVL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/61CrEYL26KL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": true
@@ -2302,7 +2302,7 @@
     "narrator": "Rachel Atkins",
     "series": "Realms of the Elderlings",
     "seriesNumber": 0,
-    "cover": "https://m.media-amazon.com/images/I/51Xw3BpqSrL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/61nx8ZJNfoL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -2668,13 +2668,13 @@
     "owned": true
   },
   {
-    "asin": "B00GUTGVEE",
+    "asin": "1473555159",
     "title": "House of Chains",
     "author": "Steven Erikson",
     "narrator": "Michael Page",
     "series": "Malazan Book of the Fallen Series",
     "seriesNumber": 4,
-    "cover": "https://m.media-amazon.com/images/I/51Rh2bzphIL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51wVy++E3WL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
