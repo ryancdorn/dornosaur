@@ -695,13 +695,13 @@
     "owned": false
   },
   {
-    "asin": "B002V8OEW4",
+    "asin": "B08XSS7W27",
     "title": "Prince Caspian",
     "author": "C. S. Lewis",
-    "narrator": "Lynn Redgrave",
+    "narrator": "Adriel Brandt",
     "series": "The Chronicles of Narnia (Publication Order)",
     "seriesNumber": 2,
-    "cover": "https://m.media-amazon.com/images/I/41U9d1P-99L._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/6119dwaEuLL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -4273,16 +4273,16 @@
     "owned": true
   },
   {
-    "asin": "B0G8G2J32K",
+    "asin": "B0H1NGTHHS",
     "title": "The Primal Hunter 14",
-    "author": "Zogarth .",
-    "narrator": "",
+    "author": "Zogarth",
+    "narrator": "Travis Baldree",
     "series": "The Primal Hunter",
     "seriesNumber": 14,
-    "cover": "",
-    "status": "unread",
+    "cover": "https://m.media-amazon.com/images/I/51cfid7m8gL._SL500_.jpg",
+    "status": "reading",
     "genre": "litrpg",
-    "owned": false
+    "owned": true
   },
   {
     "asin": "B0G8G4VQLJ",
@@ -4591,7 +4591,7 @@
     "series": "The Silo Saga",
     "seriesNumber": 1,
     "cover": "https://m.media-amazon.com/images/I/51wvy7jratL._SL500_.jpg",
-    "status": "read",
+    "status": "unread",
     "genre": "other",
     "owned": true
   },
@@ -6151,13 +6151,13 @@
     "owned": false
   },
   {
-    "asin": "B0DFZ3LPDJ",
+    "asin": "B0D457P6VX",
     "title": "The Triumph of Venus",
     "author": "Travis Starnes",
-    "narrator": "Kevin Kemp",
+    "narrator": "",
     "series": "Imperium",
     "seriesNumber": 6,
-    "cover": "https://m.media-amazon.com/images/I/51R2gFlfvoL._SL500_.jpg",
+    "cover": "",
     "status": "unread",
     "genre": "other",
     "owned": false
