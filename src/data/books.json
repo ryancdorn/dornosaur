@@ -996,7 +996,7 @@
     "narrator": "Andrew Kishino",
     "series": "The Green Bone Saga",
     "seriesNumber": 1,
-    "cover": "https://m.media-amazon.com/images/I/614lDW3OVnL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51dPmRU-YoL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": true
@@ -1008,7 +1008,7 @@
     "narrator": "Andrew Kishino",
     "series": "The Green Bone Saga",
     "seriesNumber": 2,
-    "cover": "https://m.media-amazon.com/images/I/5156BueVjgL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51-urGM1iyL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": true
@@ -1020,7 +1020,7 @@
     "narrator": "Andrew Kishino",
     "series": "The Green Bone Saga",
     "seriesNumber": 3,
-    "cover": "https://m.media-amazon.com/images/I/51fciAoeVTS._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51iQnx-s8wL._SL500_.jpg",
     "status": "reading",
     "genre": "fantasy",
     "owned": true
@@ -1109,18 +1109,6 @@
     "owned": true
   },
   {
-    "asin": "B016N9U1XW",
-    "title": "The Silmarillion",
-    "author": "J. R. R. Tolkien",
-    "narrator": "Martin Shaw",
-    "series": "The Lord of the Rings",
-    "seriesNumber": 0,
-    "cover": "https://m.media-amazon.com/images/I/51fL6o4DxBL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy",
-    "owned": false
-  },
-  {
     "asin": "B0030EJV3U",
     "title": "The Hobbit",
     "author": "J. R. R. Tolkien",
@@ -1152,6 +1140,18 @@
     "series": "The Lord of the Rings",
     "seriesNumber": 2,
     "cover": "https://m.media-amazon.com/images/I/51EgIMxu00L._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy",
+    "owned": false
+  },
+  {
+    "asin": "B0C5MPMQYX",
+    "title": "The Silmarillion",
+    "author": "J. R. R. Tolkien, Christopher Tolkien - editor",
+    "narrator": "Andy Serkis",
+    "series": "The Lord of the Rings",
+    "seriesNumber": 0,
+    "cover": "https://m.media-amazon.com/images/I/5167YEsQ6YL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -4491,17 +4491,6 @@
     "owned": false
   },
   {
-    "asin": "B0GBXCFXM5",
-    "title": "KILL TONY",
-    "author": "DEATHSQUAD.TV & Studio71",
-    "narrator": "",
-    "series": "",
-    "cover": "https://m.media-amazon.com/images/I/31VGaoNtpIL._SL500_.jpg",
-    "status": "reading",
-    "genre": "other",
-    "owned": true
-  },
-  {
     "asin": "B0CK3FMCH3",
     "title": "Moon People",
     "author": "Dixon Troyer",
@@ -4559,6 +4548,17 @@
     "status": "unread",
     "genre": "other",
     "owned": false
+  },
+  {
+    "asin": "B0GBXCFXM5",
+    "title": "KILL TONY",
+    "author": "Golden Pony Productions",
+    "narrator": "",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/31VGaoNtpIL._SL500_.jpg",
+    "status": "reading",
+    "genre": "other",
+    "owned": true
   },
   {
     "asin": "B088GT6BWV",
@@ -6479,6 +6479,18 @@
     "series": "Expeditionary Force",
     "seriesNumber": 19,
     "cover": "https://m.media-amazon.com/images/I/51nNOcGqOtL._SL500_.jpg",
+    "status": "unread",
+    "genre": "scifi",
+    "owned": false
+  },
+  {
+    "asin": "B0HG4R9JT6",
+    "title": "Last Ride",
+    "author": "Craig Alanson",
+    "narrator": "R.C. Bray",
+    "series": "Expeditionary Force",
+    "seriesNumber": 20,
+    "cover": "https://m.media-amazon.com/images/I/41B4aTzidlL._SL500_.jpg",
     "status": "unread",
     "genre": "scifi",
     "owned": false
