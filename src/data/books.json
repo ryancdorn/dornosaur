@@ -695,13 +695,13 @@
     "owned": false
   },
   {
-    "asin": "B002V8OEW4",
+    "asin": "B08XSS7W27",
     "title": "Prince Caspian",
     "author": "C. S. Lewis",
-    "narrator": "Lynn Redgrave",
+    "narrator": "Adriel Brandt",
     "series": "The Chronicles of Narnia (Publication Order)",
     "seriesNumber": 2,
-    "cover": "https://m.media-amazon.com/images/I/41U9d1P-99L._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/6119dwaEuLL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -2668,13 +2668,13 @@
     "owned": true
   },
   {
-    "asin": "B00GUTGVEE",
+    "asin": "1473555159",
     "title": "House of Chains",
     "author": "Steven Erikson",
     "narrator": "Michael Page",
     "series": "Malazan Book of the Fallen Series",
     "seriesNumber": 4,
-    "cover": "https://m.media-amazon.com/images/I/51Rh2bzphIL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51wVy++E3WL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -6717,6 +6717,18 @@
     "series": "Old Man’s War",
     "seriesNumber": 4,
     "cover": "https://m.media-amazon.com/images/I/51kcFTbx7lL._SL500_.jpg",
+    "status": "unread",
+    "genre": "scifi",
+    "owned": false
+  },
+  {
+    "asin": "B0HJYFM67B",
+    "title": "Zoe's Tale: Old Man's War Book 4",
+    "author": "John Scalzi",
+    "narrator": "",
+    "series": "Old Man’s War",
+    "seriesNumber": 4,
+    "cover": "https://m.media-amazon.com/images/I/51138GBTQJL._SL500_.jpg",
     "status": "unread",
     "genre": "scifi",
     "owned": false
