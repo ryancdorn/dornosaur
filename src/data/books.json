@@ -1020,7 +1020,7 @@
     "narrator": "Andrew Kishino",
     "series": "The Green Bone Saga",
     "seriesNumber": 3,
-    "cover": "https://m.media-amazon.com/images/I/51iQnx-s8wL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51WSUeLzlNL._SL500_.jpg",
     "status": "reading",
     "genre": "fantasy",
     "owned": true
@@ -1109,6 +1109,18 @@
     "owned": true
   },
   {
+    "asin": "B016N9U1XW",
+    "title": "The Silmarillion",
+    "author": "J. R. R. Tolkien",
+    "narrator": "Martin Shaw",
+    "series": "The Lord of the Rings",
+    "seriesNumber": 0,
+    "cover": "https://m.media-amazon.com/images/I/51fL6o4DxBL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy",
+    "owned": false
+  },
+  {
     "asin": "B0030EJV3U",
     "title": "The Hobbit",
     "author": "J. R. R. Tolkien",
@@ -1140,18 +1152,6 @@
     "series": "The Lord of the Rings",
     "seriesNumber": 2,
     "cover": "https://m.media-amazon.com/images/I/51EgIMxu00L._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy",
-    "owned": false
-  },
-  {
-    "asin": "B0C5MPMQYX",
-    "title": "The Silmarillion",
-    "author": "J. R. R. Tolkien, Christopher Tolkien - editor",
-    "narrator": "Andy Serkis",
-    "series": "The Lord of the Rings",
-    "seriesNumber": 0,
-    "cover": "https://m.media-amazon.com/images/I/5167YEsQ6YL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -1571,7 +1571,7 @@
     "narrator": "Robin Miles",
     "series": "The Broken Earth",
     "seriesNumber": 2,
-    "cover": "https://m.media-amazon.com/images/I/61TYlXtEa8L._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/61wOyuWpqNL._SL500_.jpg",
     "status": "read",
     "genre": "fantasy",
     "owned": true
@@ -6490,7 +6490,7 @@
     "narrator": "R.C. Bray",
     "series": "Expeditionary Force",
     "seriesNumber": 20,
-    "cover": "https://m.media-amazon.com/images/I/41B4aTzidlL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51Y0ZBze5NL._SL500_.jpg",
     "status": "unread",
     "genre": "scifi",
     "owned": false
