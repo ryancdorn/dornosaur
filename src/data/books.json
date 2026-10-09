@@ -1864,6 +1864,18 @@
     "owned": false
   },
   {
+    "asin": "B002V1NOW2",
+    "title": "Northern Lights: His Dark Materials Trilogy, Book 1",
+    "author": "Philip Pullman",
+    "narrator": "Philip Pullman, full cast",
+    "series": "His Dark Materials",
+    "seriesNumber": 1,
+    "cover": "https://m.media-amazon.com/images/I/51M7FEMMFBL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy",
+    "owned": false
+  },
+  {
     "asin": "B002UZHP1U",
     "title": "His Dark Materials: The Subtle Knife (Book 2)",
     "author": "Philip Pullman",
@@ -1900,6 +1912,30 @@
     "owned": false
   },
   {
+    "asin": "B002V8KQK8",
+    "title": "The Subtle Knife: His Dark Materials Trilogy, Book 2",
+    "author": "Philip Pullman",
+    "narrator": "Philip Pullman, cast",
+    "series": "His Dark Materials",
+    "seriesNumber": 2,
+    "cover": "https://m.media-amazon.com/images/I/51vWoZ5KlOL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy",
+    "owned": false
+  },
+  {
+    "asin": "B002V5BA06",
+    "title": "The Amber Spyglass",
+    "author": "Philip Pullman",
+    "narrator": "Philip Pullman, Full Cast",
+    "series": "His Dark Materials",
+    "seriesNumber": 3,
+    "cover": "https://m.media-amazon.com/images/I/51xT1DYUXlL._SL500_.jpg",
+    "status": "read",
+    "genre": "fantasy",
+    "owned": true
+  },
+  {
     "asin": "B0D9C76FJG",
     "title": "His Dark Materials: The Amber Spyglass (Book 3)",
     "author": "Philip Pullman",
@@ -1924,47 +1960,11 @@
     "owned": false
   },
   {
-    "asin": "B002V1NOW2",
-    "title": "Northern Lights: His Dark Materials Trilogy, Book 1",
-    "author": "Philip Pullman",
-    "narrator": "Philip Pullman, full cast",
-    "series": "His Dark Materialsik",
-    "seriesNumber": 1,
-    "cover": "https://m.media-amazon.com/images/I/51M7FEMMFBL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy",
-    "owned": false
-  },
-  {
-    "asin": "B002V8KQK8",
-    "title": "The Subtle Knife: His Dark Materials Trilogy, Book 2",
-    "author": "Philip Pullman",
-    "narrator": "Philip Pullman, cast",
-    "series": "His Dark Materialsik",
-    "seriesNumber": 2,
-    "cover": "https://m.media-amazon.com/images/I/51vWoZ5KlOL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy",
-    "owned": false
-  },
-  {
-    "asin": "B002V5BA06",
-    "title": "The Amber Spyglass",
-    "author": "Philip Pullman",
-    "narrator": "Philip Pullman, Full Cast",
-    "series": "His Dark Materialsik",
-    "seriesNumber": 3,
-    "cover": "https://m.media-amazon.com/images/I/51xT1DYUXlL._SL500_.jpg",
-    "status": "read",
-    "genre": "fantasy",
-    "owned": true
-  },
-  {
     "asin": "B002V0PZUW",
     "title": "The Amber Spyglass: His Dark Materials Trilogy, Book 3",
     "author": "Philip Pullman",
     "narrator": "Philip Pullman, cast",
-    "series": "His Dark Materialsik",
+    "series": "His Dark Materials",
     "seriesNumber": 3,
     "cover": "https://m.media-amazon.com/images/I/61+KSdptu8L._SL500_.jpg",
     "status": "unread",
@@ -1988,7 +1988,7 @@
     "title": "The Imagination Chamber",
     "author": "Phillip Pullman",
     "narrator": "Phillip Pullman",
-    "series": "His Dark Materialsik",
+    "series": "His Dark Materials",
     "seriesNumber": 0,
     "cover": "https://m.media-amazon.com/images/I/51cqsigJ1EL._SL500_.jpg",
     "status": "unread",
@@ -2668,13 +2668,13 @@
     "owned": true
   },
   {
-    "asin": "1473555159",
+    "asin": "B00GUTGVEE",
     "title": "House of Chains",
     "author": "Steven Erikson",
     "narrator": "Michael Page",
     "series": "Malazan Book of the Fallen Series",
     "seriesNumber": 4,
-    "cover": "https://m.media-amazon.com/images/I/51wVy++E3WL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51Rh2bzphIL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -4112,6 +4112,18 @@
     "series": "The Last Horizon",
     "seriesNumber": 4,
     "cover": "https://m.media-amazon.com/images/I/51nvE6eI06L._SL500_.jpg",
+    "status": "unread",
+    "genre": "litrpg",
+    "owned": false
+  },
+  {
+    "asin": "B0HM9NVGXJ",
+    "title": "The Commander",
+    "author": "Will Wight",
+    "narrator": "Travis Baldree",
+    "series": "The Last Horizon",
+    "seriesNumber": 5,
+    "cover": "https://m.media-amazon.com/images/I/41B-ka9lG5L._SL500_.jpg",
     "status": "unread",
     "genre": "litrpg",
     "owned": false
