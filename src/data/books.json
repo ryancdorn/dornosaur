@@ -1109,6 +1109,18 @@
     "owned": true
   },
   {
+    "asin": "B016N9U1XW",
+    "title": "The Silmarillion",
+    "author": "J. R. R. Tolkien",
+    "narrator": "Martin Shaw",
+    "series": "The Lord of the Rings",
+    "seriesNumber": 0,
+    "cover": "https://m.media-amazon.com/images/I/51fL6o4DxBL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy",
+    "owned": false
+  },
+  {
     "asin": "B0030EJV3U",
     "title": "The Hobbit",
     "author": "J. R. R. Tolkien",
@@ -1140,18 +1152,6 @@
     "series": "The Lord of the Rings",
     "seriesNumber": 2,
     "cover": "https://m.media-amazon.com/images/I/51EgIMxu00L._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy",
-    "owned": false
-  },
-  {
-    "asin": "B0C5MPMQYX",
-    "title": "The Silmarillion",
-    "author": "J. R. R. Tolkien, Christopher Tolkien - editor",
-    "narrator": "Andy Serkis",
-    "series": "The Lord of the Rings",
-    "seriesNumber": 0,
-    "cover": "https://m.media-amazon.com/images/I/5167YEsQ6YL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -6250,7 +6250,7 @@
     "narrator": "R.C. Bray",
     "series": "Expeditionary Force",
     "seriesNumber": 1,
-    "cover": "https://m.media-amazon.com/images/I/51nRl-t+qdL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51NDcPX7W8L._SL500_.jpg",
     "status": "reading",
     "genre": "scifi",
     "owned": true
@@ -6262,7 +6262,7 @@
     "narrator": "R.C. Bray",
     "series": "Expeditionary Force",
     "seriesNumber": 2,
-    "cover": "https://m.media-amazon.com/images/I/51PeF-Q1VxL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51WFgAB5+gL._SL500_.jpg",
     "status": "reading",
     "genre": "scifi",
     "owned": true
@@ -6274,7 +6274,7 @@
     "narrator": "R.C. Bray",
     "series": "Expeditionary Force",
     "seriesNumber": 3,
-    "cover": "https://m.media-amazon.com/images/I/51ZZZwit0GL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51bIJnxRD6L._SL500_.jpg",
     "status": "reading",
     "genre": "scifi",
     "owned": true
@@ -6286,7 +6286,7 @@
     "narrator": "R.C. Bray",
     "series": "Expeditionary Force",
     "seriesNumber": 3.5,
-    "cover": "https://m.media-amazon.com/images/I/51cRkeV3oyL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51r-jhH+tyL._SL500_.jpg",
     "status": "unread",
     "genre": "scifi",
     "owned": false
@@ -6298,7 +6298,7 @@
     "narrator": "R.C. Bray",
     "series": "Expeditionary Force",
     "seriesNumber": 4,
-    "cover": "https://m.media-amazon.com/images/I/51RSwSmUGfL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51GA5TR4yiL._SL500_.jpg",
     "status": "unread",
     "genre": "scifi",
     "owned": false
@@ -6310,7 +6310,7 @@
     "narrator": "R.C. Bray",
     "series": "Expeditionary Force",
     "seriesNumber": 5,
-    "cover": "https://m.media-amazon.com/images/I/513LpBaF2BL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/512YigydSIL._SL500_.jpg",
     "status": "unread",
     "genre": "scifi",
     "owned": false
@@ -6322,7 +6322,7 @@
     "narrator": "R.C. Bray",
     "series": "Expeditionary Force",
     "seriesNumber": 6,
-    "cover": "https://m.media-amazon.com/images/I/51Eopq0RB7L._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51tofw6RFrL._SL500_.jpg",
     "status": "unread",
     "genre": "scifi",
     "owned": false
