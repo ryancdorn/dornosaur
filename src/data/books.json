@@ -1109,6 +1109,18 @@
     "owned": true
   },
   {
+    "asin": "B016N9U1XW",
+    "title": "The Silmarillion",
+    "author": "J. R. R. Tolkien",
+    "narrator": "Martin Shaw",
+    "series": "The Lord of the Rings",
+    "seriesNumber": 0,
+    "cover": "https://m.media-amazon.com/images/I/51fL6o4DxBL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy",
+    "owned": false
+  },
+  {
     "asin": "B0030EJV3U",
     "title": "The Hobbit",
     "author": "J. R. R. Tolkien",
@@ -1140,18 +1152,6 @@
     "series": "The Lord of the Rings",
     "seriesNumber": 2,
     "cover": "https://m.media-amazon.com/images/I/51EgIMxu00L._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy",
-    "owned": false
-  },
-  {
-    "asin": "B0C5MPMQYX",
-    "title": "The Silmarillion",
-    "author": "J. R. R. Tolkien, Christopher Tolkien - editor",
-    "narrator": "Andy Serkis",
-    "series": "The Lord of the Rings",
-    "seriesNumber": 0,
-    "cover": "https://m.media-amazon.com/images/I/5167YEsQ6YL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -4501,6 +4501,54 @@
     "status": "unread",
     "genre": "other",
     "owned": false
+  },
+  {
+    "asin": "1789546958",
+    "title": "The Redemption of Time",
+    "author": "Baoshu",
+    "narrator": "Bruno Roubicek",
+    "series": "The Remembrance of Earth's Past",
+    "seriesNumber": 4,
+    "cover": "https://m.media-amazon.com/images/I/51aG21PlUHL._SL500_.jpg",
+    "status": "unread",
+    "genre": "other",
+    "owned": false
+  },
+  {
+    "asin": "B01LWV2PWR",
+    "title": "The Dark Forest",
+    "author": "Cixin Liu",
+    "narrator": "Bruno Roubicek",
+    "series": "The Remembrance of Earth's Past",
+    "seriesNumber": 2,
+    "cover": "https://m.media-amazon.com/images/I/51ikAzyoR7S._SL500_.jpg",
+    "status": "unread",
+    "genre": "other",
+    "owned": false
+  },
+  {
+    "asin": "1528848330",
+    "title": "Death's End",
+    "author": "Cixin Liu",
+    "narrator": "Bruno Roubicek",
+    "series": "The Remembrance of Earth's Past",
+    "seriesNumber": 3,
+    "cover": "https://m.media-amazon.com/images/I/51V2Qj78cgL._SL500_.jpg",
+    "status": "unread",
+    "genre": "other",
+    "owned": false
+  },
+  {
+    "asin": "B00P0277C2",
+    "title": "The Three-Body Problem",
+    "author": "Cixin Liu, Ken Liu - translator",
+    "narrator": "Luke Daniels",
+    "series": "The Remembrance of Earth's Past",
+    "seriesNumber": 1,
+    "cover": "https://m.media-amazon.com/images/I/518UKlc1WKL._SL500_.jpg",
+    "status": "reading",
+    "genre": "other",
+    "owned": true
   },
   {
     "asin": "B0CK3FMCH3",
