@@ -695,13 +695,13 @@
     "owned": false
   },
   {
-    "asin": "B002V8OEW4",
+    "asin": "B08XSS7W27",
     "title": "Prince Caspian",
     "author": "C. S. Lewis",
-    "narrator": "Lynn Redgrave",
+    "narrator": "Adriel Brandt",
     "series": "The Chronicles of Narnia (Publication Order)",
     "seriesNumber": 2,
-    "cover": "https://m.media-amazon.com/images/I/51MS0rap01L._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/6119dwaEuLL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -1133,30 +1133,6 @@
     "owned": false
   },
   {
-    "asin": "B0099RKRTY",
-    "title": "The Fellowship of the Ring",
-    "author": "J. R. R. Tolkien",
-    "narrator": "Rob Inglis",
-    "series": "The Lord of the Rings",
-    "seriesNumber": 1,
-    "cover": "https://m.media-amazon.com/images/I/51eVNlqfveL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy",
-    "owned": true
-  },
-  {
-    "asin": "1705047580",
-    "title": "The Two Towers",
-    "author": "J. R. R. Tolkien",
-    "narrator": "Andy Serkis",
-    "series": "The Lord of the Rings",
-    "seriesNumber": 2,
-    "cover": "https://m.media-amazon.com/images/I/51EgIMxu00L._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy",
-    "owned": false
-  },
-  {
     "asin": "B0036KVAZ0",
     "title": "The Lord of the Rings",
     "author": "J. R.R. Tolkien",
@@ -1272,6 +1248,30 @@
     "series": "Harry Potter (Full-Cast Editions)",
     "seriesNumber": 7,
     "cover": "https://m.media-amazon.com/images/I/51JFEMoRTmL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy",
+    "owned": false
+  },
+  {
+    "asin": "B0099RKRTY",
+    "title": "The Fellowship of the Ring",
+    "author": "J.R.R. Tolkien",
+    "narrator": "Rob Inglis",
+    "series": "The Lord of the Rings",
+    "seriesNumber": 1,
+    "cover": "https://m.media-amazon.com/images/I/51eVNlqfveL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy",
+    "owned": true
+  },
+  {
+    "asin": "1705047580",
+    "title": "The Two Towers",
+    "author": "J.R.R. Tolkien",
+    "narrator": "Andy Serkis",
+    "series": "The Lord of the Rings",
+    "seriesNumber": 2,
+    "cover": "https://m.media-amazon.com/images/I/51EgIMxu00L._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -2668,13 +2668,13 @@
     "owned": true
   },
   {
-    "asin": "B00GUTGVEE",
+    "asin": "1473555159",
     "title": "House of Chains",
     "author": "Steven Erikson",
     "narrator": "Michael Page",
     "series": "Malazan Book of the Fallen Series",
     "seriesNumber": 4,
-    "cover": "https://m.media-amazon.com/images/I/51Rh2bzphIL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51wVy++E3WL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -5447,7 +5447,7 @@
     "asin": "B0HPGLZLR8",
     "title": "The Vampire Counts",
     "author": "Ryan Rimmel",
-    "narrator": "",
+    "narrator": "Robb Moriera",
     "series": "Adventures of Squire Yorick",
     "seriesNumber": 3,
     "cover": "https://m.media-amazon.com/images/I/51uFDzTqYqL._SL500_.jpg",
