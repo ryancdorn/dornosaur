@@ -695,13 +695,13 @@
     "owned": false
   },
   {
-    "asin": "B08XSS7W27",
+    "asin": "B002V8OEW4",
     "title": "Prince Caspian",
     "author": "C. S. Lewis",
-    "narrator": "Adriel Brandt",
+    "narrator": "Lynn Redgrave",
     "series": "The Chronicles of Narnia (Publication Order)",
     "seriesNumber": 2,
-    "cover": "https://m.media-amazon.com/images/I/6119dwaEuLL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51MS0rap01L._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -1109,18 +1109,6 @@
     "owned": true
   },
   {
-    "asin": "B016N9U1XW",
-    "title": "The Silmarillion",
-    "author": "J. R. R. Tolkien",
-    "narrator": "Martin Shaw",
-    "series": "The Lord of the Rings",
-    "seriesNumber": 0,
-    "cover": "https://m.media-amazon.com/images/I/51fL6o4DxBL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy",
-    "owned": false
-  },
-  {
     "asin": "B0030EJV3U",
     "title": "The Hobbit",
     "author": "J. R. R. Tolkien",
@@ -1128,6 +1116,18 @@
     "series": "The Lord of the Rings",
     "seriesNumber": 0.5,
     "cover": "https://m.media-amazon.com/images/I/61-hOsUyOZL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy",
+    "owned": false
+  },
+  {
+    "asin": "B0C5MPMQYX",
+    "title": "The Silmarillion",
+    "author": "J. R. R. Tolkien, Christopher Tolkien — Editor",
+    "narrator": "Andy Serkis",
+    "series": "The Lord of the Rings",
+    "seriesNumber": 0,
+    "cover": "https://m.media-amazon.com/images/I/5167YEsQ6YL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
