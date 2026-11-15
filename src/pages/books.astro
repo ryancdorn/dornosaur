@@ -27,6 +27,34 @@ const totalUnpurchased  = books.filter(b => b.status === 'unread' && !b.owned).l
 // Unpurchased starts hidden — the page defaults to "what's actually in my library".
 const DEFAULT_ACTIVE = new Set(['read', 'reading', 'unread']);
 
+// "Currently listening": top N books with status=reading, sorted by lastListened desc.
+// Books without a timestamp sort to the bottom but still show (graceful on pre-refresh data).
+const NOW_LIMIT = 4;
+const nowListening = books
+  .filter((b: any) => b.status === 'reading')
+  .sort((a: any, b: any) => {
+    const at = a.lastListened ? Date.parse(a.lastListened) : -Infinity;
+    const bt = b.lastListened ? Date.parse(b.lastListened) : -Infinity;
+    if (bt !== at) return bt - at;
+    return a.title.localeCompare(b.title);
+  })
+  .slice(0, NOW_LIMIT);
+
+function relListened(iso: string | undefined): string | null {
+  if (!iso) return null;
+  const then = Date.parse(iso);
+  if (Number.isNaN(then)) return null;
+  const days = Math.floor((Date.now() - then) / 86400000);
+  if (days <= 0) return 'Today';
+  if (days === 1) return 'Yesterday';
+  if (days < 7) return `${days} days ago`;
+  if (days < 14) return 'Last week';
+  if (days < 30) return `${Math.floor(days / 7)} weeks ago`;
+  if (days < 60) return 'Last month';
+  if (days < 365) return `${Math.floor(days / 30)} months ago`;
+  return 'Over a year ago';
+}
+
 // Group books in a genre by series. Standalone books bucket at the end.
 // Within each group, books are ordered by seriesNumber (asc), then owned-first, then title.
 function groupBySeries(genreBooks: any[]) {
@@ -103,6 +131,41 @@ function groupBySeries(genreBooks: any[]) {
       </div>
     </div>
   </div>
+
+  {nowListening.length > 0 && (
+    <section class="now-listening" aria-label="Currently listening">
+      <div class="now-glow" aria-hidden="true"></div>
+      <div class="now-inner">
+        <div class="now-head">
+          <p class="now-eyebrow">Currently listening</p>
+          <p class="now-subhead">Most recent sessions from Audible</p>
+        </div>
+        <div class="now-grid">
+          {nowListening.map((book: any) => {
+            const when = relListened(book.lastListened);
+            return (
+              <a class="now-card" href={`#${book.genre}`} aria-label={`Jump to ${book.genre} section`}>
+                <div class="now-cover">
+                  <img src={book.cover} alt={book.title} loading="eager" referrerpolicy="no-referrer" />
+                  <span class="now-pulse" aria-hidden="true"></span>
+                </div>
+                <div class="now-meta">
+                  <p class="now-title">{book.title}</p>
+                  <p class="now-author">{book.author}</p>
+                  {book.series && book.series.trim() !== '' && (
+                    <p class="now-series">
+                      {book.series}{(book.seriesNumber && book.seriesNumber > 0) ? ` · #${book.seriesNumber}` : ''}
+                    </p>
+                  )}
+                  {when && <p class="now-when">{when}</p>}
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
 
   <div class="sticky-shelf">
     <nav class="genre-nav" aria-label="Jump to genre">
@@ -216,6 +279,144 @@ function groupBySeries(genreBooks: any[]) {
   .read-num        { color: #5DBB7A; }
   .reading-num     { color: #E0A030; }
   .unpurchased-num { color: #B48CDC; }
+
+  /* ── Currently listening: a spotlight band above the sticky shelf ── */
+  .now-listening {
+    position: relative;
+    background: #0A0A10;
+    border-top: 1px solid #1A1A20;
+    border-bottom: 1px solid #1A1A20;
+    overflow: hidden;
+  }
+  .now-glow {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 700px 260px at 15% 50%, rgba(232, 116, 60, 0.14), transparent 60%),
+      radial-gradient(ellipse 500px 220px at 85% 40%, rgba(224, 160, 48, 0.08), transparent 65%);
+    pointer-events: none;
+  }
+  .now-inner {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2.25rem 2.5rem 2.5rem;
+  }
+  .now-head {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .now-eyebrow {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: #EDEAE5;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .now-subhead {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #7A7A8E;
+    margin: 0;
+  }
+  .now-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  .now-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.85rem;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    text-decoration: none !important;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  }
+  .now-card:hover {
+    background: rgba(255, 255, 255, 0.045);
+    border-color: rgba(232, 116, 60, 0.3);
+    transform: translateY(-2px);
+  }
+  .now-cover {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  }
+  .now-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .now-pulse {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ECB242;
+    box-shadow: 0 0 0 0 rgba(236, 178, 66, 0.6);
+    animation: now-pulse 2.2s ease-out infinite;
+  }
+  @keyframes now-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(236, 178, 66, 0.55); }
+    70%  { box-shadow: 0 0 0 10px rgba(236, 178, 66, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(236, 178, 66, 0); }
+  }
+  .now-meta { display: flex; flex-direction: column; gap: 0.2rem; }
+  .now-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.02rem;
+    line-height: 1.25;
+    color: #EDEAE5;
+    margin: 0;
+  }
+  .now-author {
+    font-family: 'Lora', serif;
+    font-size: 0.82rem;
+    color: #9D9DAE;
+    margin: 0;
+  }
+  .now-series {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6A6075;
+    margin: 0.2rem 0 0;
+  }
+  .now-when {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #ECB242;
+    margin: 0.3rem 0 0;
+  }
+  @media (max-width: 840px) {
+    .now-inner { padding: 1.75rem 1.25rem 2rem; }
+    .now-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .now-eyebrow { font-size: 1.35rem; }
+  }
+  @media (max-width: 420px) {
+    .now-grid { grid-template-columns: 1fr; }
+  }
 
   /* ── Sticky shelf: wraps the genre nav (matches vinyl) and filter bar below ── */
   .sticky-shelf {

@@ -151,6 +151,46 @@ async function fetchAllInProgress(api) {
   return Array.isArray(resp.items) ? resp.items : [];
 }
 
+// audible-mcp's default library fetcher omits listening_status, so we make a
+// supplemental pass to collect per-ASIN "last listened" timestamps for the
+// "Currently listening" section on the site. One API call per 100 books/day.
+function extractLastListened(item) {
+  const ls = item?.listening_status || {};
+  const candidate =
+    ls.date_last_listened ||
+    ls.last_listened_date ||
+    ls.date_updated ||
+    item?.last_updated ||
+    null;
+  if (!candidate) return null;
+  const d = new Date(candidate);
+  return Number.isNaN(d.getTime()) ? null : d.toISOString();
+}
+
+async function fetchListeningRecency(api) {
+  const recency = new Map();
+  const perPage = 100;
+  for (let page = 1; page <= 50; page += 1) {
+    const resp = await api.client.request('/1.0/library', {
+      query: {
+        num_results: perPage,
+        page,
+        response_groups: 'listening_status,last_updated',
+      },
+    });
+    if (!resp.ok) break;
+    const data = JSON.parse(resp.bodyText);
+    const pageItems = Array.isArray(data.items) ? data.items : [];
+    for (const item of pageItems) {
+      if (!item?.asin) continue;
+      const ts = extractLastListened(item);
+      if (ts) recency.set(item.asin, ts);
+    }
+    if (pageItems.length < perPage) break;
+  }
+  return recency;
+}
+
 async function main() {
   if (!fs.existsSync(AUTH_FILE)) {
     console.error(`Auth file not found: ${AUTH_FILE}`);
@@ -167,6 +207,10 @@ async function main() {
   console.log('Fetching in-progress titles...');
   const inProgress = await fetchAllInProgress(api);
   console.log(`  ${inProgress.length} in progress`);
+
+  console.log('Fetching listening recency...');
+  const recencyByAsin = await fetchListeningRecency(api);
+  console.log(`  ${recencyByAsin.size} items with timestamps`);
 
   const statusMap = new Map();
   for (const item of inProgress) {
@@ -211,6 +255,8 @@ async function main() {
       owned: true,
     };
     draft.genre = getGenre(draft);
+    const lastListened = item.asin ? recencyByAsin.get(item.asin) : null;
+    if (lastListened && status === 'reading') draft.lastListened = lastListened;
     return draft;
   });
 
