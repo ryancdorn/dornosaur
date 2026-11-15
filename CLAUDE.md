@@ -235,6 +235,8 @@ Both data files refresh daily without manual intervention:
 - Vinyl: `gh workflow run update-vinyl.yml -R ryancdorn/dornosaur`
 - Books: `Start-ScheduledTask -TaskName 'DornosaurBooksRefresh'` (or run `node scripts/update-books-fresh.mjs` directly for dry-run)
 
+**Deploy chaining:** the vinyl workflow commits via `GITHUB_TOKEN`, which by default doesn't trigger other workflows (GitHub's loop-prevention). `deploy.yml` has a `workflow_run` trigger on `Update vinyl from Discogs` so the site redeploys after a successful refresh. The books task pushes with the user's own git creds, so its commits trigger deploy normally.
+
 **Logs:**
 - Vinyl: GitHub Actions run history
 - Books: `scripts/logs/update-books-YYYY-MM-DD.log` (gitignored)

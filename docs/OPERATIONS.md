@@ -22,6 +22,13 @@ Force a rebuild without a code change:
 gh workflow run deploy.yml -R ryancdorn/dornosaur
 ```
 
+### How the daily refreshes reach the live site
+
+- **Books** (Windows scheduled task): pushes with your personal git credentials → GitHub sees it as a normal push → deploy workflow fires automatically. ✅
+- **Vinyl** (GitHub Actions): pushes with the workflow's `GITHUB_TOKEN`. By default, GitHub blocks `GITHUB_TOKEN`-authored pushes from triggering other workflows (loop prevention). We work around this with a `workflow_run` trigger in `deploy.yml` that fires after `Update vinyl from Discogs` completes, gated on success. ✅
+
+If you ever add a third source that commits from within a workflow, add it to the `workflow_run.workflows` list in `deploy.yml` or deploys won't fire.
+
 ---
 
 ## Books (Audible)
