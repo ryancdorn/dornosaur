@@ -1,45 +1,9 @@
 [
   {
-    "artist": "Gorillaz",
-    "title": "Demon Days",
-    "suspect": true,
-    "note": "spine visible on side display; album not confirmed — could be Plastic Beach or self-titled"
-  },
-  {
     "artist": "Gustavo Santaolalla",
     "title": "The Last of Us Part II (Original Soundtrack)",
     "suspect": true,
     "note": "spine reads 'The Last Goodbye — Autumn'; may be a different release/pressing"
-  },
-  {
-    "artist": "Metallica",
-    "title": "Metallica (The Black Album)",
-    "suspect": true,
-    "note": "spine visible on main shelf; album not confirmed — could be Master of Puppets or another"
-  },
-  {
-    "artist": "The Sound of Music",
-    "title": "The Sound of Music (Original Soundtrack)",
-    "suspect": true,
-    "note": "artist should be the composer/cast — correct before adding"
-  },
-  {
-    "artist": "Sublime",
-    "title": "Sublime (2024 EP)",
-    "suspect": true,
-    "note": "post-reunion Jakob Nowell lineup release; confirm exact title + year"
-  },
-  {
-    "artist": "Tangerine Dream",
-    "title": "Phaedra",
-    "suspect": true,
-    "note": "spine partially read as '50 Years of Phaedra at the Barbican'; could be the live reissue or the 1974 original"
-  },
-  {
-    "artist": "Van Halen",
-    "title": "1984",
-    "suspect": true,
-    "note": "spine visible on main shelf; album not confirmed — could be self-titled or another"
   },
   {
     "artist": "ZZ Top",
