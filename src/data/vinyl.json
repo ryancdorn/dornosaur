@@ -44,6 +44,17 @@
     "pressing": null
   },
   {
+    "title": "Demon Days",
+    "artist": "Gorillaz",
+    "year": 2005,
+    "pressYear": 2017,
+    "cover": "https://i.discogs.com/B5nGWBco_adfy6NETO2ghjJOPmS8zDddhO4FMeTWf7A/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwMDA4/NDk3LTE0OTMxMzIx/MDEtOTQ5OS5wbmc.jpeg",
+    "genre": "hiphop",
+    "label": "Warner Bros. Records",
+    "format": "2×LP",
+    "pressing": null
+  },
+  {
     "title": "Best Day Ever",
     "artist": "Mac Miller",
     "year": 2011,
@@ -198,6 +209,17 @@
     "pressing": null
   },
   {
+    "title": "Night Visions",
+    "artist": "Imagine Dragons",
+    "year": 2012,
+    "pressYear": 2014,
+    "cover": "https://i.discogs.com/aJf_mACxEtqPnIHycRML4yFYm-3-HAKwO-nJ51Kw9to/rs:fit/g:sm/q:90/h:584/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU1Mzcx/OTEtMTc4NjMwMTcw/Ny00NzA3LmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "KIDinaKORNER",
+    "format": "LP",
+    "pressing": null
+  },
+  {
     "title": "Experience Hendrix - The Best Of Jimi Hendrix ‎",
     "artist": "Jimi Hendrix",
     "year": 1997,
@@ -295,6 +317,17 @@
     "label": "Geffen Records",
     "format": "2×LP",
     "pressing": "25th Anniversary"
+  },
+  {
+    "title": "Metallica",
+    "artist": "Metallica",
+    "year": 1991,
+    "pressYear": 2021,
+    "cover": "https://i.discogs.com/DELZdy_ovDEk0evE4M4bi5KT3kNTha8C-NGLC5XrWO8/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMTU5/MTg4LTE3NzUyNDg0/NzEtMzk5OC5qcGVn.jpeg",
+    "genre": "rock",
+    "label": "Blackened",
+    "format": "2×LP",
+    "pressing": null
   },
   {
     "title": "(What's The Story) Morning Glory?",
@@ -451,6 +484,17 @@
     "pressing": null
   },
   {
+    "title": "Until The Sun Explodes",
+    "artist": "Sublime",
+    "year": 2026,
+    "pressYear": 2026,
+    "cover": "https://i.discogs.com/VMDcuKlx463U6-NhaYGZURelINujFs1Hkk3DAMG53N8/rs:fit/g:sm/q:90/h:600/w:598/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3NTA0/MjI0LTE3ODAzMTg5/OTktOTY2NC5wbmc.jpeg",
+    "genre": "rock",
+    "label": "Atlantic",
+    "format": "2×LP",
+    "pressing": null
+  },
+  {
     "title": "At Fillmore East",
     "artist": "The Allman Brothers Band",
     "year": 1971,
@@ -492,6 +536,17 @@
     "genre": "rock",
     "label": "Warner Records",
     "format": "2×LP",
+    "pressing": null
+  },
+  {
+    "title": "Van Halen",
+    "artist": "Van Halen",
+    "year": 1978,
+    "pressYear": null,
+    "cover": "https://i.discogs.com/0mfD2Jp6cq5j4dmW-eIXFsk5axzVnUx2kCU8hKJs9Xk/rs:fit/g:sm/q:90/h:600/w:598/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4MDQ3/Ny0xMjU4MzMzNjg1/LmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "Warner Bros. Records",
+    "format": "LP",
     "pressing": null
   },
   {
@@ -539,6 +594,17 @@
     "pressing": "Pitman — Gatefold"
   },
   {
+    "title": "Enter",
+    "artist": "Cybotron",
+    "year": 1983,
+    "pressYear": 1983,
+    "cover": "https://i.discogs.com/9RrL7Qy-svWWn8QDrmYw9uZv-izDgqs61qcHswLwfBA/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMDc2/MjgtMTI5NjY2Nzcy/My5qcGVn.jpeg",
+    "genre": "electronic",
+    "label": "Fantasy",
+    "format": "LP",
+    "pressing": null
+  },
+  {
     "title": "TRON: Legacy (Vinyl Edition Motion Picture Soundtrack)",
     "artist": "Daft Punk",
     "year": 2010,
@@ -558,17 +624,6 @@
     "genre": "electronic",
     "label": "Philips",
     "format": "LP",
-    "pressing": null
-  },
-  {
-    "title": "Velocity : Design : Comfort",
-    "artist": "Sweet Trip",
-    "year": 2003,
-    "pressYear": 2021,
-    "cover": "https://i.discogs.com/27BrxX8y8kjwBx-Tc3JY104L5PpSJskb_VrqZbm5Ngs/rs:fit/g:sm/q:90/h:590/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIxMzE1/ODIwLTE2MzkyNjE0/NTAtNjI0NC5qcGVn.jpeg",
-    "genre": "electronic",
-    "label": "Darla Records",
-    "format": "2×LP",
     "pressing": null
   },
   {
@@ -627,6 +682,39 @@
     "pressing": null
   },
   {
+    "title": "Velocity : Design : Comfort",
+    "artist": "Sweet Trip",
+    "year": 2003,
+    "pressYear": 2021,
+    "cover": "https://i.discogs.com/27BrxX8y8kjwBx-Tc3JY104L5PpSJskb_VrqZbm5Ngs/rs:fit/g:sm/q:90/h:590/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIxMzE1/ODIwLTE2MzkyNjE0/NTAtNjI0NC5qcGVn.jpeg",
+    "genre": "electronic",
+    "label": "Darla Records",
+    "format": "2×LP",
+    "pressing": null
+  },
+  {
+    "title": "50 Years Of Phaedra - At The Barbican",
+    "artist": "Tangerine Dream",
+    "year": 2026,
+    "pressYear": 2026,
+    "cover": "https://i.discogs.com/D_1Cm0jb3zo2ZMx8Il3-j2JD9AX_H5WdDLNBAk8hLcw/rs:fit/g:sm/q:90/h:589/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM2MzU5/MDcxLTE3Njk4MDUz/NTgtNDMxNC5qcGVn.jpeg",
+    "genre": "electronic",
+    "label": "Kscope",
+    "format": "3×LP",
+    "pressing": null
+  },
+  {
+    "title": "Anjuna25 Anniversary Box Set",
+    "artist": "Various",
+    "year": 2025,
+    "pressYear": 2025,
+    "cover": "https://i.discogs.com/H270yFTIPu8J9IpSKUc7MzhkBKtobjn750P-PxJNZ7s/rs:fit/g:sm/q:90/h:600/w:575/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM1NTM1/NTIzLTE3NjIxOTQz/MzYtMjAwNS5qcGVn.jpeg",
+    "genre": "electronic",
+    "label": "Anjunabeats",
+    "format": "LP",
+    "pressing": null
+  },
+  {
     "title": "Autumn",
     "artist": "George Winston",
     "year": 1980,
@@ -656,6 +744,17 @@
     "cover": "https://i.discogs.com/1H0DtK-KYMjxn0we0Gm7R-UEuz47R_s6Dc6i0ALy5dg/rs:fit/g:sm/q:90/h:292/w:280/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI5MzAy/MjAtMTMwNzgzNzI2/OS5qcGVn.jpeg",
     "genre": "jazz",
     "label": "Prestige",
+    "format": "LP",
+    "pressing": null
+  },
+  {
+    "title": "The Sound Of Music (An Original Soundtrack Recording)",
+    "artist": "Rodgers & Hammerstein",
+    "year": 1965,
+    "pressYear": 1965,
+    "cover": "https://i.discogs.com/tdBra_63lLhq8A9lJj3nZXQTdfcFtCgXCpswfeOaGIE/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE3NjUw/NTEtMTMxNzU4OTM0/Ny5qcGVn.jpeg",
+    "genre": "jazz",
+    "label": "RCA Victor Red Seal",
     "format": "LP",
     "pressing": null
   }
