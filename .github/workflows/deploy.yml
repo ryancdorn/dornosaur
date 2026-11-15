@@ -4,6 +4,12 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # GITHUB_TOKEN-authored pushes don't trigger other workflows, so chain
+  # the deploy after update-vinyl so Discogs refreshes reach the site.
+  workflow_run:
+    workflows: ['Update vinyl from Discogs']
+    types: [completed]
+    branches: [main]
 
 permissions:
   contents: read
@@ -17,6 +23,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Skip when triggered by a FAILED upstream workflow_run; always run otherwise
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
