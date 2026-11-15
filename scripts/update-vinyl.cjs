@@ -68,7 +68,8 @@ function inferGenre(release) {
   if (all.includes('hip hop') || all.includes('rap')) return 'hiphop';
   if (genres.includes('rock') || all.includes('metal')) return 'rock';
   if (genres.includes('electronic')) return 'electronic';
-  if (genres.some((g) => ['jazz', 'stage & screen', 'classical', 'new age'].includes(g))) return 'jazz';
+  if (genres.includes('jazz')) return 'jazz';
+  if (genres.some((g) => ['classical', 'new age', 'stage & screen'].includes(g))) return 'classical';
   if (all.includes('rock')) return 'rock';
   if (all.includes('funk') || all.includes('soul') || all.includes('r&b') || all.includes('pop')) return 'soul';
   return 'rock';
@@ -126,7 +127,7 @@ async function main() {
   }
 
   // Sort: genre group, then artist, then year
-  const genreOrder = { hiphop: 0, rock: 1, hardrock: 1.5, soul: 2, electronic: 3, jazz: 4 };
+  const genreOrder = { hiphop: 0, rock: 1, hardrock: 1.5, soul: 2, electronic: 3, jazz: 4, classical: 5 };
   out.sort((a, b) => {
     const g = (genreOrder[a.genre] ?? 99) - (genreOrder[b.genre] ?? 99);
     if (g !== 0) return g;

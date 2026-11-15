@@ -196,15 +196,15 @@ Data source: `src/data/vinyl.json` — auto-refreshed daily from the Discogs API
   "year": 1977,           // original release year
   "pressYear": 2014,      // pressing/reissue year
   "cover": "https://...", // Discogs CDN — NOTE: no spaces in base64 path segment
-  "genre": "hiphop|rock|hardrock|soul|electronic|jazz",
+  "genre": "hiphop|rock|hardrock|soul|electronic|jazz|classical",
   "label": "...",
   "format": "LP|2×LP",
   "pressing": "..."       // nullable — special pressing notes
 }
 ```
 
-### Current collection (60 records)
-Hip Hop 7 · Rock 39 · Hard Rock 1 · Pop & Soul 2 · Electronic 8 · Jazz & Soundtracks 3. 43 of these were added on 2026-11-15 from a shelf-photo audit via `scripts/add-pending-to-discogs.mjs`; 8 suspect identifications remain in `pending-vinyl.json`.
+### Current collection (69 records)
+Rock 43 · Electronic 12 · Hip Hop 8 · Classical & Piano 3 · Pop & Soul 2 · Jazz 1 · Hard Rock 0 (section hides when empty). 52 were added on 2026-11-15 from a shelf-photo audit via `scripts/add-pending-to-discogs.mjs`; 2 suspect identifications remain in `pending-vinyl.json`.
 
 ### Vinyl page design
 - **Header**: Pure typographic — italic Playfair "Vinyl." with a decorative CSS-only vinyl-groove ring pattern in the right margin. No photo. Stat strip below.
@@ -214,8 +214,9 @@ Hip Hop 7 · Rock 39 · Hard Rock 1 · Pop & Soul 2 · Electronic 8 · Jazz & So
   - Hard Rock → blue accent (`#4A9EDC`)
   - Pop & Soul → purple accent (`#A878DC`)
   - Electronic → cyan accent (`#3DD6C8`)
-  - Jazz & Soundtracks → sage accent (`#8DBF7A`)
-- `inferGenre()` in `update-vinyl.cjs` only sets the genre for records new to `vinyl.json`: Discogs genre Hip Hop → hiphop, Rock → rock, Electronic → electronic, Jazz / Stage & Screen / Classical / New Age → jazz, Funk/Soul/Pop → soul. `hardrock` is manual-only.
+  - Jazz → sage accent (`#8DBF7A`)
+  - Classical & Piano → ivory accent (`#D8C49A`)
+- `inferGenre()` in `update-vinyl.cjs` only sets the genre for records new to `vinyl.json`: Discogs genre Hip Hop → hiphop, Rock → rock, Electronic → electronic, Jazz → jazz, Classical / New Age / Stage & Screen → classical, Funk/Soul/Pop → soul. `hardrock` is manual-only.
 - Record cards: 180px min, format badge appears on hover
 - **Sticky genre nav**: Same pattern as the books page (sticky bar at `top: 62px`, accent-colored per-genre highlight via `IntersectionObserver`, `scroll-margin-top: 110px` on each `<section id={genre.key}>`). Vinyl has no filter pills — just the jump-to-genre nav.
 

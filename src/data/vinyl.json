@@ -242,17 +242,6 @@
     "pressing": null
   },
   {
-    "title": "Mixed Emotions",
-    "artist": "Kaleo",
-    "year": 2025,
-    "pressYear": 2025,
-    "cover": "https://i.discogs.com/It4VyT5bYiDmsZeTwVjiRS-rYg357lD47qXyZREy73s/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzOTM0/NzQzLTE3NDY4NzY4/NzYtMzIxNi5qcGVn.jpeg",
-    "genre": "rock",
-    "label": "Atlantic",
-    "format": "LP",
-    "pressing": null
-  },
-  {
     "title": "Led Zeppelin",
     "artist": "Led Zeppelin",
     "year": 1969,
@@ -566,7 +555,7 @@
     "year": 2002,
     "pressYear": 2017,
     "cover": "https://i.discogs.com/y824j0sG_ng5VWalHjw6p_QvIGCqTOf1rUbv81wh6WU/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwNzIy/MTY5LTE3NTg3NzUz/NzEtNjQ5NC5qcGVn.jpeg",
-    "genre": "hardrock",
+    "genre": "rock",
     "label": "Epic",
     "format": "2×LP",
     "pressing": null
@@ -592,6 +581,17 @@
     "label": "Epic",
     "format": "LP",
     "pressing": "Pitman — Gatefold"
+  },
+  {
+    "title": "Mixed Emotions",
+    "artist": "Kaleo",
+    "year": 2025,
+    "pressYear": 2025,
+    "cover": "https://i.discogs.com/It4VyT5bYiDmsZeTwVjiRS-rYg357lD47qXyZREy73s/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzOTM0/NzQzLTE3NDY4NzY4/NzYtMzIxNi5qcGVn.jpeg",
+    "genre": "electronic",
+    "label": "Atlantic",
+    "format": "LP",
+    "pressing": null
   },
   {
     "title": "Enter",
@@ -715,28 +715,6 @@
     "pressing": null
   },
   {
-    "title": "Autumn",
-    "artist": "George Winston",
-    "year": 1980,
-    "pressYear": null,
-    "cover": "https://i.discogs.com/fZk6wlpxZcd8wKcrsNcEl11qFWwU6W_PbaTnrH-aLsE/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4NDM2/NjgtMTU3OTA2NzEx/Ny04MTMxLmpwZWc.jpeg",
-    "genre": "jazz",
-    "label": "Windham Hill Records",
-    "format": "LP",
-    "pressing": null
-  },
-  {
-    "title": "The Classics",
-    "artist": "Hans Zimmer",
-    "year": 2017,
-    "pressYear": 2017,
-    "cover": "https://i.discogs.com/IwK_zfZjWCZUL1j2JpCbBaKyzu0WGU-WXyu3EXoWdos/rs:fit/g:sm/q:90/h:593/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTk4NzU0/NDctMTQ4Nzc4MTY2/Ni0xMzQ3LmpwZWc.jpeg",
-    "genre": "jazz",
-    "label": "Sony Classical",
-    "format": "2×LP",
-    "pressing": null
-  },
-  {
     "title": "Greatest Hits",
     "artist": "Miles Davis",
     "year": 1967,
@@ -748,12 +726,34 @@
     "pressing": null
   },
   {
+    "title": "Autumn",
+    "artist": "George Winston",
+    "year": 1980,
+    "pressYear": null,
+    "cover": "https://i.discogs.com/fZk6wlpxZcd8wKcrsNcEl11qFWwU6W_PbaTnrH-aLsE/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4NDM2/NjgtMTU3OTA2NzEx/Ny04MTMxLmpwZWc.jpeg",
+    "genre": "classical",
+    "label": "Windham Hill Records",
+    "format": "LP",
+    "pressing": null
+  },
+  {
+    "title": "The Classics",
+    "artist": "Hans Zimmer",
+    "year": 2017,
+    "pressYear": 2017,
+    "cover": "https://i.discogs.com/IwK_zfZjWCZUL1j2JpCbBaKyzu0WGU-WXyu3EXoWdos/rs:fit/g:sm/q:90/h:593/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTk4NzU0/NDctMTQ4Nzc4MTY2/Ni0xMzQ3LmpwZWc.jpeg",
+    "genre": "classical",
+    "label": "Sony Classical",
+    "format": "2×LP",
+    "pressing": null
+  },
+  {
     "title": "The Sound Of Music (An Original Soundtrack Recording)",
     "artist": "Rodgers & Hammerstein",
     "year": 1965,
     "pressYear": 1965,
     "cover": "https://i.discogs.com/tdBra_63lLhq8A9lJj3nZXQTdfcFtCgXCpswfeOaGIE/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE3NjUw/NTEtMTMxNzU4OTM0/Ny5qcGVn.jpeg",
-    "genre": "jazz",
+    "genre": "classical",
     "label": "RCA Victor Red Seal",
     "format": "LP",
     "pressing": null

@@ -8,7 +8,8 @@ const genres = [
   { key: 'hardrock', label: 'Hard Rock',  desc: "Crunch, distortion, and the riff that won't let go" },
   { key: 'soul',       label: 'Pop & Soul',         desc: 'Groove, feeling, and the floor at 2am' },
   { key: 'electronic', label: 'Electronic',         desc: 'Synths, sequencers, and machines that dream' },
-  { key: 'jazz',       label: 'Jazz & Soundtracks', desc: 'Late-night horns, quiet piano, and the score behind the scene' },
+  { key: 'jazz',       label: 'Jazz',               desc: 'Late-night horns, brushed snares, and blue notes' },
+  { key: 'classical',  label: 'Classical & Piano',  desc: 'Strings, scores, and the quiet of a single piano' },
 ];
 ---
 
@@ -61,7 +62,7 @@ const genres = [
       <section id={genre.key} class:list={['gs', genre.key]}>
         <div class="gs-banner">
           <div class="gs-banner-inner">
-            <p class="gs-eyebrow">{genre.key.toUpperCase()} · {genreRecords.length} RECORDS</p>
+            <p class="gs-eyebrow">{genre.key.toUpperCase()} · {genreRecords.length} {genreRecords.length === 1 ? 'RECORD' : 'RECORDS'}</p>
             <h2 class="gs-title">{genre.label}</h2>
             <p class="gs-desc">{genre.desc}</p>
           </div>
@@ -199,6 +200,7 @@ const genres = [
   .genre-link.soul     { --genre-accent: #A878DC; }
   .genre-link.electronic { --genre-accent: #3DD6C8; }
   .genre-link.jazz     { --genre-accent: #8DBF7A; }
+  .genre-link.classical { --genre-accent: #D8C49A; }
 
   /* ── Genre sections (always dark/immersive) ──────────────── */
   .gs {
@@ -365,6 +367,19 @@ const genres = [
   .jazz .rartist    { color: #88A87A; }
   .jazz .cover-wrap { box-shadow: 0 8px 24px rgba(80,140,60,0.14), 0 2px 6px rgba(0,0,0,0.5); }
   .jazz .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(80,140,60,0.3); }
+
+  .classical .gs-banner {
+    background: linear-gradient(135deg, #0B0905 0%, #15110A 100%);
+    border-bottom: 1px solid rgba(216,196,154,0.25);
+  }
+  .classical .gs-eyebrow { color: rgba(216,196,154,0.9); }
+  .classical .gs-title   { color: #D8C49A; text-shadow: 0 0 60px rgba(216,196,154,0.2); }
+  .classical .gs-desc    { color: rgba(216,196,154,0.8); }
+  .classical .gs-shelf   { background: #090806; }
+  .classical .rtitle     { color: #E8DCC0; }
+  .classical .rartist    { color: #B4A27C; }
+  .classical .cover-wrap { box-shadow: 0 8px 24px rgba(170,140,80,0.14), 0 2px 6px rgba(0,0,0,0.5); }
+  .classical .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(170,140,80,0.3); }
 </style>
 
 <!-- Light-theme overrides need a global block: the [data-theme="light"]
@@ -390,6 +405,7 @@ const genres = [
   html[data-theme="light"] .genre-link.soul     { --genre-accent: #6B3FB0; }
   html[data-theme="light"] .genre-link.electronic { --genre-accent: #0E7F76; }
   html[data-theme="light"] .genre-link.jazz     { --genre-accent: #4A7A3A; }
+  html[data-theme="light"] .genre-link.classical { --genre-accent: #7A6234; }
 
   html[data-theme="light"] .gs {
     background: var(--bg);
@@ -482,6 +498,20 @@ const genres = [
   html[data-theme="light"] .gs.jazz .rartist    { color: #4A7A3A; }
   html[data-theme="light"] .gs.jazz .cover-wrap { box-shadow: 0 8px 24px rgba(70,120,50,0.18), 0 2px 6px rgba(0,0,0,0.10); }
   html[data-theme="light"] .gs.jazz .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(70,120,50,0.30); }
+
+  /* CLASSICAL light */
+  html[data-theme="light"] .gs.classical .gs-banner {
+    background: linear-gradient(135deg, #F2ECDD 0%, #E6DCC4 100%);
+    border-bottom: 1px solid rgba(122,98,52,0.35);
+  }
+  html[data-theme="light"] .gs.classical .gs-eyebrow { color: rgba(122,98,52,0.9); }
+  html[data-theme="light"] .gs.classical .gs-title   { color: #7A6234; text-shadow: none; }
+  html[data-theme="light"] .gs.classical .gs-desc    { color: rgba(122,98,52,0.85); }
+  html[data-theme="light"] .gs.classical .gs-shelf   { background: #FAF7F0; }
+  html[data-theme="light"] .gs.classical .rtitle     { color: #3A2E14; }
+  html[data-theme="light"] .gs.classical .rartist    { color: #7A6234; }
+  html[data-theme="light"] .gs.classical .cover-wrap { box-shadow: 0 8px 24px rgba(140,110,60,0.18), 0 2px 6px rgba(0,0,0,0.10); }
+  html[data-theme="light"] .gs.classical .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(140,110,60,0.30); }
 </style>
 
 <script is:inline>
