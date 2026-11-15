@@ -40,6 +40,19 @@ async function fetchCollection() {
   return releases;
 }
 
+// Discogs catalogues every physical medium — vinyl, CD, cassette, 8-track, file, etc.
+// This site only cares about vinyl, so we reject everything else at ingest time.
+const VINYL_NAMES = new Set(['vinyl', 'lp', '7"', '10"', '12"', 'ep']);
+function isVinyl(formats) {
+  if (!Array.isArray(formats) || formats.length === 0) return false;
+  return formats.some((f) => {
+    const name = String(f.name || '').toLowerCase();
+    if (VINYL_NAMES.has(name)) return true;
+    const descs = Array.isArray(f.descriptions) ? f.descriptions.map((d) => String(d).toLowerCase()) : [];
+    return descs.some((d) => VINYL_NAMES.has(d));
+  });
+}
+
 function pickFormat(formats) {
   if (!Array.isArray(formats) || formats.length === 0) return 'LP';
   const f = formats[0];
@@ -71,8 +84,15 @@ async function main() {
   console.log(`Got ${collection.length} releases. Fetching master years...`);
 
   const out = [];
+  let skipped = 0;
   for (const item of collection) {
     const bi = item.basic_information;
+    if (!isVinyl(bi.formats)) {
+      skipped += 1;
+      const fmtNames = (bi.formats || []).map((f) => f.name).join('/') || 'unknown';
+      console.log(`  skip (non-vinyl: ${fmtNames}): ${(bi.artists || [])[0]?.name || '?'} — ${bi.title}`);
+      continue;
+    }
     const artist = (bi.artists || []).map((a) => a.name.replace(/\s*\(\d+\)$/, '')).join(', ') || 'Unknown';
     const title = bi.title;
     const pressYear = bi.year || null;
@@ -116,7 +136,7 @@ async function main() {
   const after = JSON.stringify(out, null, 2);
   fs.writeFileSync(VINYL_PATH, after + '\n');
 
-  console.log(`\nWrote ${out.length} records to vinyl.json`);
+  console.log(`\nWrote ${out.length} records to vinyl.json (skipped ${skipped} non-vinyl)`);
   console.log('By genre:', Object.fromEntries(
     [...new Set(out.map((r) => r.genre))].map((g) => [g, out.filter((r) => r.genre === g).length])
   ));

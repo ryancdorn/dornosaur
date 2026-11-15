@@ -80,6 +80,19 @@ Other fields (`cover`, `label`, `format`, `year`, `pressYear`) are always overwr
 2. Add a `genreOrder` entry in the same file for sort position.
 3. Add the genre block + accent color in `src/pages/vinyl.astro`.
 
+### Non-vinyl items in the Discogs collection
+The refresh script filters to vinyl-only formats (`Vinyl`, `LP`, `7"`, `10"`, `12"`, `EP`). Anything else in the collection (CDs, cassettes, digital, etc.) is silently skipped and logged. See `isVinyl()` in `scripts/update-vinyl.cjs`. Adding a new vinyl variant? Add its lowercased format name to `VINYL_NAMES` in that file.
+
+### Audit shelf against collection
+Compare a photo of your physical shelf to `vinyl.json` to find gaps:
+```bash
+npm run audit:shelf -- path/to/shelf.jpg
+```
+The script asks you to run a vision pass (drop the image in Claude chat and ask for "every visible album as JSON array of {artist, title}"), then paste the result. It reports:
+- ✓ in collection and visible
+- ❌ on shelf but not in collection (missing from Discogs)
+- ⚠ in collection but not visible (stored elsewhere, or Discogs has extras)
+
 ---
 
 ## Site content
