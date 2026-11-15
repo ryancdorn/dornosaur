@@ -196,24 +196,26 @@ Data source: `src/data/vinyl.json` — auto-refreshed daily from the Discogs API
   "year": 1977,           // original release year
   "pressYear": 2014,      // pressing/reissue year
   "cover": "https://...", // Discogs CDN — NOTE: no spaces in base64 path segment
-  "genre": "hiphop|rock|soul",
+  "genre": "hiphop|rock|hardrock|soul|electronic|jazz",
   "label": "...",
   "format": "LP|2×LP",
   "pressing": "..."       // nullable — special pressing notes
 }
 ```
 
-### Current collection (16 records)
-- **Hip Hop** (4): Dr. Dre — The Chronic; Eminem — Slim Shady LP, Marshall Mathers LP, Eminem Show
-- **Rock** (11): Fleetwood Mac (×2), Led Zeppelin (×3), Meat Loaf (×2), Pink Floyd (×3), Steely Dan
-- **Pop & Soul** (1): Michael Jackson — Thriller
+### Current collection (60 records)
+Hip Hop 7 · Rock 39 · Hard Rock 1 · Pop & Soul 2 · Electronic 8 · Jazz & Soundtracks 3. 43 of these were added on 2026-11-15 from a shelf-photo audit via `scripts/add-pending-to-discogs.mjs`; 8 suspect identifications remain in `pending-vinyl.json`.
 
 ### Vinyl page design
 - **Header**: Pure typographic — italic Playfair "Vinyl." with a decorative CSS-only vinyl-groove ring pattern in the right margin. No photo. Stat strip below.
 - **Genre sections**: Same banner + shelf pattern as books, themed per genre:
   - Hip Hop → gold accent (`#D4A820`)
   - Rock → red accent (`#C84838`)
+  - Hard Rock → blue accent (`#4A9EDC`)
   - Pop & Soul → purple accent (`#A878DC`)
+  - Electronic → cyan accent (`#3DD6C8`)
+  - Jazz & Soundtracks → sage accent (`#8DBF7A`)
+- `inferGenre()` in `update-vinyl.cjs` only sets the genre for records new to `vinyl.json`: Discogs genre Hip Hop → hiphop, Rock → rock, Electronic → electronic, Jazz / Stage & Screen / Classical / New Age → jazz, Funk/Soul/Pop → soul. `hardrock` is manual-only.
 - Record cards: 180px min, format badge appears on hover
 - **Sticky genre nav**: Same pattern as the books page (sticky bar at `top: 62px`, accent-colored per-genre highlight via `IntersectionObserver`, `scroll-margin-top: 110px` on each `<section id={genre.key}>`). Vinyl has no filter pills — just the jump-to-genre nav.
 

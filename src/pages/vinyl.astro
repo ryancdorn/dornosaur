@@ -6,7 +6,9 @@ const genres = [
   { key: 'hiphop',   label: 'Hip Hop',    desc: 'The culture, the craft, the classics' },
   { key: 'rock',     label: 'Rock',       desc: 'Guitar gods, prog epics, and everything loud' },
   { key: 'hardrock', label: 'Hard Rock',  desc: "Crunch, distortion, and the riff that won't let go" },
-  { key: 'soul',     label: 'Pop & Soul', desc: 'Groove, feeling, and the floor at 2am' },
+  { key: 'soul',       label: 'Pop & Soul',         desc: 'Groove, feeling, and the floor at 2am' },
+  { key: 'electronic', label: 'Electronic',         desc: 'Synths, sequencers, and machines that dream' },
+  { key: 'jazz',       label: 'Jazz & Soundtracks', desc: 'Late-night horns, quiet piano, and the score behind the scene' },
 ];
 ---
 
@@ -22,26 +24,15 @@ const genres = [
           <span class="stat-num">{records.length}</span>
           <span class="stat-label">Records</span>
         </div>
-        <div class="stat-div"></div>
-        <div class="stat">
-          <span class="stat-num">{records.filter((r: any) => r.genre === 'hiphop').length}</span>
-          <span class="stat-label">Hip Hop</span>
-        </div>
-        <div class="stat-div"></div>
-        <div class="stat">
-          <span class="stat-num">{records.filter((r: any) => r.genre === 'rock').length}</span>
-          <span class="stat-label">Rock</span>
-        </div>
-        <div class="stat-div"></div>
-        <div class="stat">
-          <span class="stat-num">{records.filter((r: any) => r.genre === 'hardrock').length}</span>
-          <span class="stat-label">Hard Rock</span>
-        </div>
-        <div class="stat-div"></div>
-        <div class="stat">
-          <span class="stat-num">{records.filter((r: any) => r.genre === 'soul').length}</span>
-          <span class="stat-label">Pop & Soul</span>
-        </div>
+        {genres.filter(g => records.some((r: any) => r.genre === g.key)).map(g => (
+          <Fragment>
+            <div class="stat-div"></div>
+            <div class="stat">
+              <span class="stat-num">{records.filter((r: any) => r.genre === g.key).length}</span>
+              <span class="stat-label">{g.label}</span>
+            </div>
+          </Fragment>
+        ))}
       </div>
     </div>
   </div>
@@ -206,6 +197,8 @@ const genres = [
   .genre-link.rock     { --genre-accent: #C84838; }
   .genre-link.hardrock { --genre-accent: #4A9EDC; }
   .genre-link.soul     { --genre-accent: #A878DC; }
+  .genre-link.electronic { --genre-accent: #3DD6C8; }
+  .genre-link.jazz     { --genre-accent: #8DBF7A; }
 
   /* ── Genre sections (always dark/immersive) ──────────────── */
   .gs {
@@ -346,6 +339,32 @@ const genres = [
   .soul .rartist    { color: #A78AC8; }
   .soul .cover-wrap { box-shadow: 0 8px 24px rgba(120,70,180,0.14), 0 2px 6px rgba(0,0,0,0.5); }
   .soul .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(120,70,180,0.3); }
+
+  .electronic .gs-banner {
+    background: linear-gradient(135deg, #040B0B 0%, #071514 100%);
+    border-bottom: 1px solid rgba(61,214,200,0.25);
+  }
+  .electronic .gs-eyebrow { color: rgba(61,214,200,0.9); }
+  .electronic .gs-title   { color: #3DD6C8; text-shadow: 0 0 60px rgba(61,214,200,0.2); }
+  .electronic .gs-desc    { color: rgba(61,214,200,0.8); }
+  .electronic .gs-shelf   { background: #040908; }
+  .electronic .rtitle     { color: #A8E4DE; }
+  .electronic .rartist    { color: #6AA8A2; }
+  .electronic .cover-wrap { box-shadow: 0 8px 24px rgba(20,160,150,0.14), 0 2px 6px rgba(0,0,0,0.5); }
+  .electronic .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(20,160,150,0.3); }
+
+  .jazz .gs-banner {
+    background: linear-gradient(135deg, #060A05 0%, #0C140A 100%);
+    border-bottom: 1px solid rgba(141,191,122,0.25);
+  }
+  .jazz .gs-eyebrow { color: rgba(141,191,122,0.9); }
+  .jazz .gs-title   { color: #8DBF7A; text-shadow: 0 0 60px rgba(141,191,122,0.2); }
+  .jazz .gs-desc    { color: rgba(141,191,122,0.8); }
+  .jazz .gs-shelf   { background: #060805; }
+  .jazz .rtitle     { color: #C4DCB8; }
+  .jazz .rartist    { color: #88A87A; }
+  .jazz .cover-wrap { box-shadow: 0 8px 24px rgba(80,140,60,0.14), 0 2px 6px rgba(0,0,0,0.5); }
+  .jazz .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(80,140,60,0.3); }
 </style>
 
 <!-- Light-theme overrides need a global block: the [data-theme="light"]
@@ -369,6 +388,8 @@ const genres = [
   html[data-theme="light"] .genre-link.rock     { --genre-accent: #A02E20; }
   html[data-theme="light"] .genre-link.hardrock { --genre-accent: #1E6FA8; }
   html[data-theme="light"] .genre-link.soul     { --genre-accent: #6B3FB0; }
+  html[data-theme="light"] .genre-link.electronic { --genre-accent: #0E7F76; }
+  html[data-theme="light"] .genre-link.jazz     { --genre-accent: #4A7A3A; }
 
   html[data-theme="light"] .gs {
     background: var(--bg);
@@ -433,6 +454,34 @@ const genres = [
   html[data-theme="light"] .gs.soul .rartist    { color: #6B3FB0; }
   html[data-theme="light"] .gs.soul .cover-wrap { box-shadow: 0 8px 24px rgba(120,70,180,0.18), 0 2px 6px rgba(0,0,0,0.10); }
   html[data-theme="light"] .gs.soul .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(120,70,180,0.30); }
+
+  /* ELECTRONIC light */
+  html[data-theme="light"] .gs.electronic .gs-banner {
+    background: linear-gradient(135deg, #DDF0EE 0%, #C6E6E2 100%);
+    border-bottom: 1px solid rgba(14,127,118,0.35);
+  }
+  html[data-theme="light"] .gs.electronic .gs-eyebrow { color: rgba(14,127,118,0.9); }
+  html[data-theme="light"] .gs.electronic .gs-title   { color: #0E7F76; text-shadow: none; }
+  html[data-theme="light"] .gs.electronic .gs-desc    { color: rgba(14,127,118,0.85); }
+  html[data-theme="light"] .gs.electronic .gs-shelf   { background: #F0F9F8; }
+  html[data-theme="light"] .gs.electronic .rtitle     { color: #063A36; }
+  html[data-theme="light"] .gs.electronic .rartist    { color: #0E7F76; }
+  html[data-theme="light"] .gs.electronic .cover-wrap { box-shadow: 0 8px 24px rgba(20,140,130,0.18), 0 2px 6px rgba(0,0,0,0.10); }
+  html[data-theme="light"] .gs.electronic .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(20,140,130,0.30); }
+
+  /* JAZZ light */
+  html[data-theme="light"] .gs.jazz .gs-banner {
+    background: linear-gradient(135deg, #E6EFE0 0%, #D4E4CA 100%);
+    border-bottom: 1px solid rgba(74,122,58,0.35);
+  }
+  html[data-theme="light"] .gs.jazz .gs-eyebrow { color: rgba(74,122,58,0.9); }
+  html[data-theme="light"] .gs.jazz .gs-title   { color: #4A7A3A; text-shadow: none; }
+  html[data-theme="light"] .gs.jazz .gs-desc    { color: rgba(74,122,58,0.85); }
+  html[data-theme="light"] .gs.jazz .gs-shelf   { background: #F4F8F0; }
+  html[data-theme="light"] .gs.jazz .rtitle     { color: #22381A; }
+  html[data-theme="light"] .gs.jazz .rartist    { color: #4A7A3A; }
+  html[data-theme="light"] .gs.jazz .cover-wrap { box-shadow: 0 8px 24px rgba(70,120,50,0.18), 0 2px 6px rgba(0,0,0,0.10); }
+  html[data-theme="light"] .gs.jazz .record-card:hover .cover-wrap { box-shadow: 0 20px 40px rgba(70,120,50,0.30); }
 </style>
 
 <script is:inline>
