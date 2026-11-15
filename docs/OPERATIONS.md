@@ -88,10 +88,20 @@ Compare a photo of your physical shelf to `vinyl.json` to find gaps:
 ```bash
 npm run audit:shelf -- path/to/shelf.jpg
 ```
-The script asks you to run a vision pass (drop the image in Claude chat and ask for "every visible album as JSON array of {artist, title}"), then paste the result. It reports:
+The script asks you to run a vision pass (drop the image in Claude chat and ask for "every visible album as JSON array of {artist, title, suspect?}"), then paste the result. It reports:
 - ✓ in collection and visible
 - ❌ on shelf but not in collection (missing from Discogs)
 - ⚠ in collection but not visible (stored elsewhere, or Discogs has extras)
+
+**Pending queue (`pending-vinyl.json`):**
+Add `--pending` to merge the "missing from Discogs" entries into `pending-vinyl.json` at the repo root. This is a durable work-queue that survives across sessions.
+```bash
+npm run audit:shelf -- path/to/shelf.jpg --pending
+```
+- Each entry: `{artist, title, suspect, note?}`. `suspect: true` means the spine was hard to read or we guessed — validate before adding to Discogs. Suspect flags persist across runs.
+- Entries you've since added to Discogs are auto-removed on the next audit run (they graduate into `vinyl.json` via the daily refresh).
+- Entries from prior audits survive if a later photo doesn't cover their shelf — they're only dropped once they appear in Discogs.
+- Workflow: work through `pending-vinyl.json` → add to [Dornosaur Discogs collection](https://www.discogs.com/user/Dornosaur/collection) → `gh workflow run update-vinyl.yml -R ryancdorn/dornosaur` → next audit drops them from the pending file.
 
 ---
 

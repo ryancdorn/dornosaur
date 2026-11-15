@@ -1,0 +1,267 @@
+[
+  {
+    "artist": "ABBA",
+    "title": "Gold: Greatest Hits",
+    "suspect": false
+  },
+  {
+    "artist": "The Allman Brothers Band",
+    "title": "At Fillmore East",
+    "suspect": false
+  },
+  {
+    "artist": "The Beatles",
+    "title": "Abbey Road",
+    "suspect": false
+  },
+  {
+    "artist": "Billy Joel",
+    "title": "Greatest Hits Volume I & Volume II",
+    "suspect": false
+  },
+  {
+    "artist": "Bob Dylan",
+    "title": "The Essential Bob Dylan",
+    "suspect": false
+  },
+  {
+    "artist": "Boston",
+    "title": "Boston",
+    "suspect": false
+  },
+  {
+    "artist": "Creedence Clearwater Revival",
+    "title": "Chronicle",
+    "suspect": false
+  },
+  {
+    "artist": "Daft Punk",
+    "title": "TRON: Legacy (Original Motion Picture Soundtrack)",
+    "suspect": false
+  },
+  {
+    "artist": "David Bowie",
+    "title": "Heroes",
+    "suspect": false
+  },
+  {
+    "artist": "David Bowie",
+    "title": "Scary Monsters",
+    "suspect": false
+  },
+  {
+    "artist": "David Bowie",
+    "title": "The Rise and Fall of Ziggy Stardust and the Spiders from Mars",
+    "suspect": false
+  },
+  {
+    "artist": "Fleetwood Mac",
+    "title": "Greatest Hits",
+    "suspect": false,
+    "note": "distinct from the self-titled and Rumours already in collection"
+  },
+  {
+    "artist": "George Winston",
+    "title": "Autumn",
+    "suspect": false
+  },
+  {
+    "artist": "Gorillaz",
+    "title": "Demon Days",
+    "suspect": true,
+    "note": "spine visible on side display; album not confirmed — could be Plastic Beach or self-titled"
+  },
+  {
+    "artist": "Gustavo Santaolalla",
+    "title": "The Last of Us Part II (Original Soundtrack)",
+    "suspect": true,
+    "note": "spine reads 'The Last Goodbye — Autumn'; may be a different release/pressing"
+  },
+  {
+    "artist": "Hans Zimmer",
+    "title": "The Classics",
+    "suspect": false
+  },
+  {
+    "artist": "Heart",
+    "title": "Dreamboat Annie",
+    "suspect": false
+  },
+  {
+    "artist": "Jimi Hendrix",
+    "title": "Experience Hendrix: The Best of Jimi Hendrix",
+    "suspect": false
+  },
+  {
+    "artist": "John Denver",
+    "title": "Greatest Hits",
+    "suspect": false
+  },
+  {
+    "artist": "KALEO",
+    "title": "Mixed Emotions",
+    "suspect": false
+  },
+  {
+    "artist": "Kraftwerk",
+    "title": "Autobahn",
+    "suspect": false
+  },
+  {
+    "artist": "Kraftwerk",
+    "title": "Computer World",
+    "suspect": false
+  },
+  {
+    "artist": "Kraftwerk",
+    "title": "The Man-Machine",
+    "suspect": false
+  },
+  {
+    "artist": "Lynyrd Skynyrd",
+    "title": "Skynyrd's Innyrds: Their Greatest Hits",
+    "suspect": false
+  },
+  {
+    "artist": "Mac Miller",
+    "title": "Best Day Ever",
+    "suspect": false
+  },
+  {
+    "artist": "Mac Miller",
+    "title": "Blue Slide Park",
+    "suspect": false
+  },
+  {
+    "artist": "Mac Miller",
+    "title": "GO:OD AM",
+    "suspect": false
+  },
+  {
+    "artist": "Metallica",
+    "title": "Metallica (The Black Album)",
+    "suspect": true,
+    "note": "spine visible on main shelf; album not confirmed — could be Master of Puppets or another"
+  },
+  {
+    "artist": "Miles Davis",
+    "title": "Greatest Hits",
+    "suspect": false
+  },
+  {
+    "artist": "Oasis",
+    "title": "(What's the Story) Morning Glory?",
+    "suspect": false
+  },
+  {
+    "artist": "ODESZA",
+    "title": "A Moment Apart",
+    "suspect": false
+  },
+  {
+    "artist": "ODESZA",
+    "title": "In Return",
+    "suspect": false
+  },
+  {
+    "artist": "ODESZA",
+    "title": "Summer's Gone",
+    "suspect": false
+  },
+  {
+    "artist": "Paul Simon",
+    "title": "Graceland",
+    "suspect": false
+  },
+  {
+    "artist": "Paul Simon",
+    "title": "Still Crazy After All These Years",
+    "suspect": false
+  },
+  {
+    "artist": "Pink Floyd",
+    "title": "Wish You Were Here",
+    "suspect": false
+  },
+  {
+    "artist": "The Police",
+    "title": "Greatest Hits",
+    "suspect": false
+  },
+  {
+    "artist": "Queen",
+    "title": "Bohemian Rhapsody (Original Soundtrack)",
+    "suspect": false
+  },
+  {
+    "artist": "Radiohead",
+    "title": "OK Computer",
+    "suspect": false
+  },
+  {
+    "artist": "Simon & Garfunkel",
+    "title": "Greatest Hits",
+    "suspect": false
+  },
+  {
+    "artist": "The Sound of Music",
+    "title": "The Sound of Music (Original Soundtrack)",
+    "suspect": true,
+    "note": "artist should be the composer/cast — correct before adding"
+  },
+  {
+    "artist": "Steely Dan",
+    "title": "Aja",
+    "suspect": false
+  },
+  {
+    "artist": "Steely Dan",
+    "title": "Gaucho",
+    "suspect": false
+  },
+  {
+    "artist": "Steely Dan",
+    "title": "Pretzel Logic",
+    "suspect": false
+  },
+  {
+    "artist": "Sublime",
+    "title": "Sublime (2024 EP)",
+    "suspect": true,
+    "note": "post-reunion Jakob Nowell lineup release; confirm exact title + year"
+  },
+  {
+    "artist": "Sweet Trip",
+    "title": "Velocity : Design : Comfort",
+    "suspect": false
+  },
+  {
+    "artist": "Tangerine Dream",
+    "title": "Phaedra",
+    "suspect": true,
+    "note": "spine partially read as '50 Years of Phaedra at the Barbican'; could be the live reissue or the 1974 original"
+  },
+  {
+    "artist": "Tom Petty",
+    "title": "Wildflowers & All the Rest",
+    "suspect": false
+  },
+  {
+    "artist": "Van Halen",
+    "title": "1984",
+    "suspect": true,
+    "note": "spine visible on main shelf; album not confirmed — could be self-titled or another"
+  },
+  {
+    "artist": "ZZ Top",
+    "title": "Eliminator",
+    "suspect": false,
+    "note": "visible on wall display"
+  },
+  {
+    "artist": "ZZ Top",
+    "title": "Tres Hombres",
+    "suspect": true,
+    "note": "separate spine on main shelf (not the Eliminator on the wall) — album not confirmed"
+  }
+]

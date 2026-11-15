@@ -3,19 +3,24 @@
  * audit-shelf.mjs — compare a photo of your record shelf against vinyl.json.
  *
  * Usage:
- *   node scripts/audit-shelf.mjs <path-to-image> [--json]
+ *   node scripts/audit-shelf.mjs <path-to-image> [--json | --pending]
  *
  * This script asks you (the human) to run a vision pass on the photo and
  * paste the extracted album list — it does NOT call a vision API itself,
  * so there are no API keys or external services involved. The easiest
  * way to produce the list: open the image in Claude Code or claude.ai
- * and ask "list every album visible, as JSON array of {artist, title}",
- * then paste the result when prompted.
+ * and ask "list every album visible, as JSON array of {artist, title,
+ * suspect?}" (suspect=true when the spine is hard to read), then paste.
  *
  * It then cross-references against src/data/vinyl.json and reports:
  *   ✓  in collection
  *   ❌ visible on shelf but NOT in collection (likely missing from Discogs)
  *   ⚠  in collection but NOT visible in the photo (maybe stored elsewhere)
+ *
+ * --pending: merge the "missing from Discogs" entries into
+ *   pending-vinyl.json at the project root — a durable queue you can
+ *   work through across sessions. Existing entries that have since been
+ *   added to Discogs are auto-removed. Suspect flags are preserved.
  */
 
 import fs from 'node:fs';
@@ -25,6 +30,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const VINYL_PATH = path.join(__dirname, '..', 'src', 'data', 'vinyl.json');
+const PENDING_PATH = path.join(__dirname, '..', 'pending-vinyl.json');
 
 function norm(s) {
   return String(s || '')
@@ -65,9 +71,10 @@ async function main() {
   const args = process.argv.slice(2);
   const imagePath = args.find((a) => !a.startsWith('--'));
   const jsonOut = args.includes('--json');
+  const pending = args.includes('--pending');
 
   if (!imagePath) {
-    console.error('Usage: node scripts/audit-shelf.mjs <path-to-image> [--json]');
+    console.error('Usage: node scripts/audit-shelf.mjs <path-to-image> [--json | --pending]');
     process.exit(1);
   }
   if (!fs.existsSync(imagePath)) {
@@ -110,6 +117,43 @@ async function main() {
 
   if (jsonOut) {
     console.log(JSON.stringify({ found, missingFromCollection, missingFromShelf }, null, 2));
+    return;
+  }
+
+  if (pending) {
+    // Merge into pending-vinyl.json: add new missing-from-Discogs entries,
+    // drop entries that have since been added to Discogs, preserve suspect flags.
+    let existing = [];
+    if (fs.existsSync(PENDING_PATH)) {
+      try { existing = JSON.parse(fs.readFileSync(PENDING_PATH, 'utf8')); } catch {}
+    }
+    const existingByKey = new Map(existing.map((e) => [key(e.artist, e.title), e]));
+    const merged = [];
+    // New or still-pending
+    for (const v of missingFromCollection) {
+      const k = key(v.artist, v.title);
+      const prior = existingByKey.get(k);
+      merged.push({
+        artist: v.artist,
+        title: v.title,
+        suspect: v.suspect === true || prior?.suspect === true,
+        addedFromPhoto: prior?.addedFromPhoto || imagePath,
+        note: prior?.note,
+      });
+    }
+    // Preserve existing entries that weren't in this photo (shelf wasn't fully pictured)
+    for (const [k, e] of existingByKey) {
+      if (!missingFromCollection.some((v) => key(v.artist, v.title) === k) &&
+          !inCollection.has(k)) {
+        merged.push(e);
+      }
+    }
+    merged.sort((a, b) => (a.artist + a.title).localeCompare(b.artist + b.title));
+    fs.writeFileSync(PENDING_PATH, JSON.stringify(merged, null, 2) + '\n');
+    const suspectCount = merged.filter((e) => e.suspect).length;
+    console.log(`\nWrote ${merged.length} entries to pending-vinyl.json (${suspectCount} marked suspect).`);
+    console.log('Work through this file at discogs.com/user/Dornosaur/collection, then');
+    console.log("trigger: gh workflow run update-vinyl.yml -R ryancdorn/dornosaur");
     return;
   }
 
