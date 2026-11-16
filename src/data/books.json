@@ -1109,18 +1109,6 @@
     "owned": true
   },
   {
-    "asin": "B016N9U1XW",
-    "title": "The Silmarillion",
-    "author": "J. R. R. Tolkien",
-    "narrator": "Martin Shaw",
-    "series": "The Lord of the Rings",
-    "seriesNumber": 0,
-    "cover": "https://m.media-amazon.com/images/I/51fL6o4DxBL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy",
-    "owned": false
-  },
-  {
     "asin": "B0030EJV3U",
     "title": "The Hobbit",
     "author": "J. R. R. Tolkien",
@@ -1128,6 +1116,18 @@
     "series": "The Lord of the Rings",
     "seriesNumber": 0.5,
     "cover": "https://m.media-amazon.com/images/I/61-hOsUyOZL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy",
+    "owned": false
+  },
+  {
+    "asin": "B0C5MPMQYX",
+    "title": "The Silmarillion",
+    "author": "J. R. R. Tolkien, Christopher Tolkien — Editor",
+    "narrator": "Andy Serkis",
+    "series": "The Lord of the Rings",
+    "seriesNumber": 0,
+    "cover": "https://m.media-amazon.com/images/I/5167YEsQ6YL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -4610,17 +4610,6 @@
     "owned": false
   },
   {
-    "asin": "B0GBXCFXM5",
-    "title": "KILL TONY",
-    "author": "Golden Pony Productions",
-    "narrator": "",
-    "series": "",
-    "cover": "https://m.media-amazon.com/images/I/31VGaoNtpIL._SL500_.jpg",
-    "status": "reading",
-    "genre": "other",
-    "owned": true
-  },
-  {
     "asin": "B088GT6BWV",
     "title": "Hoh Rainforest",
     "author": "Gordon Hempton, Audible Sleep",
@@ -6053,6 +6042,17 @@
     "status": "unread",
     "genre": "other",
     "owned": false
+  },
+  {
+    "asin": "B0GBXCFXM5",
+    "title": "KILL TONY",
+    "author": "Tony Hinchcliffe",
+    "narrator": "",
+    "series": "",
+    "cover": "https://m.media-amazon.com/images/I/314O859Ve8L._SL500_.jpg",
+    "status": "reading",
+    "genre": "other",
+    "owned": true
   },
   {
     "asin": "B0DVBMNB9H",
