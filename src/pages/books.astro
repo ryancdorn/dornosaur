@@ -138,7 +138,6 @@ function groupBySeries(genreBooks: any[]) {
       <div class="now-inner">
         <div class="now-head">
           <p class="now-eyebrow">Currently listening</p>
-          <p class="now-subhead">Most recent sessions from Audible</p>
         </div>
         <div class="now-grid">
           {nowListening.map((book: any) => {
@@ -148,6 +147,7 @@ function groupBySeries(genreBooks: any[]) {
                 <div class="now-cover">
                   <img src={book.cover} alt={book.title} loading="eager" referrerpolicy="no-referrer" />
                   <span class="now-pulse" aria-hidden="true"></span>
+                  {when && <span class="now-when-ribbon">{when}</span>}
                 </div>
                 <div class="now-meta">
                   <p class="now-title">{book.title}</p>
@@ -157,7 +157,6 @@ function groupBySeries(genreBooks: any[]) {
                       {book.series}{(book.seriesNumber && book.seriesNumber > 0) ? ` · #${book.seriesNumber}` : ''}
                     </p>
                   )}
-                  {when && <p class="now-when">{when}</p>}
                 </div>
               </a>
             );
@@ -318,12 +317,22 @@ function groupBySeries(genreBooks: any[]) {
     margin: 0;
     letter-spacing: -0.01em;
   }
-  .now-subhead {
-    font-family: 'Lora', serif;
-    font-style: italic;
-    font-size: 0.85rem;
-    color: #7A7A8E;
-    margin: 0;
+  .now-when-ribbon {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    padding: 0.32rem 0.7rem 0.32rem 0.6rem;
+    background: rgba(10, 10, 14, 0.82);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-left: 2px solid #ECB242;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #ECB242;
+    pointer-events: none;
   }
   .now-grid {
     display: grid;
@@ -399,15 +408,6 @@ function groupBySeries(genreBooks: any[]) {
     text-transform: uppercase;
     color: #6A6075;
     margin: 0.2rem 0 0;
-  }
-  .now-when {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #ECB242;
-    margin: 0.3rem 0 0;
   }
   @media (max-width: 840px) {
     .now-inner { padding: 1.75rem 1.25rem 2rem; }
