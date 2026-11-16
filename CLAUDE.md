@@ -199,7 +199,8 @@ Data source: `src/data/vinyl.json` — auto-refreshed daily from the Discogs API
   "genre": "hiphop|rock|hardrock|soul|electronic|jazz|classical",
   "label": "...",
   "format": "LP|2×LP",
-  "pressing": "..."       // nullable — special pressing notes
+  "pressing": "...",      // nullable — special pressing notes
+  "dateAdded": "2026-11-15T12:05:51-08:00" // Discogs collection date_added; drives "Recently added"
 }
 ```
 
@@ -217,6 +218,7 @@ Rock 43 · Electronic 12 · Hip Hop 8 · Classical & Piano 3 · Pop & Soul 2 · 
   - Jazz → sage accent (`#8DBF7A`)
   - Classical & Piano → ivory accent (`#D8C49A`)
 - `inferGenre()` in `update-vinyl.cjs` only sets the genre for records new to `vinyl.json`: Discogs genre Hip Hop → hiphop, Rock → rock, Electronic → electronic, Jazz → jazz, Classical / New Age / Stage & Screen → classical, Funk/Soul/Pop → soul. `hardrock` is manual-only.
+- **Recently added band**: between the hero and the sticky genre nav, the 4 newest records by `dateAdded` (mirrors the books page's "Currently listening" band). Ribbon on the cover ("Added today", "3 days ago"…) and the genre line use the record's genre accent; each card jumps to its genre section. Hidden if no record has `dateAdded`. Mobile: 2 columns (rules in the page's `<style is:global>` block per the scoped-`@media` gotcha).
 - Record cards: 180px min, format badge appears on hover
 - **Sticky genre nav**: Same pattern as the books page (sticky bar at `top: 62px`, accent-colored per-genre highlight via `IntersectionObserver`, `scroll-margin-top: 110px` on each `<section id={genre.key}>`). Vinyl has no filter pills — just the jump-to-genre nav.
 

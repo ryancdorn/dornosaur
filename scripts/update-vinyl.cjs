@@ -123,6 +123,7 @@ async function main() {
       label: (bi.labels && bi.labels[0]?.name) || existing?.label || '',
       format: pickFormat(bi.formats),
       pressing: existing?.pressing ?? null,
+      dateAdded: item.date_added || existing?.dateAdded || null,
     });
   }
 

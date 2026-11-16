@@ -11,6 +11,32 @@ const genres = [
   { key: 'jazz',       label: 'Jazz',               desc: 'Late-night horns, brushed snares, and blue notes' },
   { key: 'classical',  label: 'Classical & Piano',  desc: 'Strings, scores, and the quiet of a single piano' },
 ];
+
+const accents: Record<string, string> = {
+  hiphop: '#D4A820', rock: '#C84838', hardrock: '#4A9EDC', soul: '#A878DC',
+  electronic: '#3DD6C8', jazz: '#8DBF7A', classical: '#D8C49A',
+};
+const genreLabel = (key: string) => genres.find(g => g.key === key)?.label ?? key;
+
+// "Recently added": newest records by Discogs date_added (dateAdded in vinyl.json).
+// Hidden until the refresh has written dateAdded.
+const RECENT_LIMIT = 4;
+const recentlyAdded = records
+  .filter((r: any) => r.dateAdded && !Number.isNaN(Date.parse(r.dateAdded)))
+  .sort((a: any, b: any) => Date.parse(b.dateAdded) - Date.parse(a.dateAdded) || a.title.localeCompare(b.title))
+  .slice(0, RECENT_LIMIT);
+
+function relAdded(iso: string): string {
+  const days = Math.floor((Date.now() - Date.parse(iso)) / 86400000);
+  if (days <= 0) return 'Added today';
+  if (days === 1) return 'Added yesterday';
+  if (days < 7) return `${days} days ago`;
+  if (days < 14) return 'Last week';
+  if (days < 30) return `${Math.floor(days / 7)} weeks ago`;
+  if (days < 60) return 'Last month';
+  if (days < 365) return `${Math.floor(days / 30)} months ago`;
+  return 'Over a year ago';
+}
 ---
 
 <Layout title="Vinyl" fullWidth={true} pageTint="vinyl">
@@ -37,6 +63,31 @@ const genres = [
       </div>
     </div>
   </div>
+
+  {recentlyAdded.length > 0 && (
+    <section class="recent" aria-label="Recently added">
+      <div class="recent-glow" aria-hidden="true"></div>
+      <div class="recent-inner">
+        <p class="recent-eyebrow">Recently added</p>
+        <div class="recent-grid">
+          {recentlyAdded.map((record: any) => (
+            <a class="recent-card" href={`#${record.genre}`} aria-label={`Jump to ${genreLabel(record.genre)} section`}
+               style={`--accent: ${accents[record.genre] ?? '#E8743C'}`}>
+              <div class="recent-cover">
+                <img src={record.cover} alt={`${record.title} by ${record.artist}`} loading="eager" referrerpolicy="no-referrer" />
+                <span class="recent-ribbon">{relAdded(record.dateAdded)}</span>
+              </div>
+              <div class="recent-meta">
+                <p class="recent-title">{record.title}</p>
+                <p class="recent-artist">{record.artist}</p>
+                <p class="recent-genre">{genreLabel(record.genre)}{record.year ? ` · ${record.year}` : ''}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <nav class="genre-nav" aria-label="Jump to genre">
     <div class="genre-nav-inner">
@@ -120,6 +171,107 @@ const genres = [
     z-index: 0;
   }
   [data-theme="light"] .grooves { opacity: 0.06; }
+
+
+  /* ── Recently added: spotlight band above the sticky genre nav (mirrors books' Currently listening) ── */
+  .recent {
+    position: relative;
+    background: #0A0A10;
+    border-top: 1px solid #1A1A20;
+    border-bottom: 1px solid #1A1A20;
+    overflow: hidden;
+  }
+  .recent-glow {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 700px 260px at 15% 50%, rgba(200, 72, 90, 0.14), transparent 60%),
+      radial-gradient(ellipse 500px 220px at 85% 40%, rgba(232, 116, 60, 0.08), transparent 65%);
+    pointer-events: none;
+  }
+  .recent-inner {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2.25rem 2.5rem 2.5rem;
+  }
+  .recent-eyebrow {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: #EDEAE5;
+    margin: 0 0 1.5rem;
+    letter-spacing: -0.01em;
+  }
+  .recent-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  .recent-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.85rem;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    text-decoration: none !important;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  }
+  .recent-card:hover {
+    background: rgba(255, 255, 255, 0.045);
+    border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+    transform: translateY(-2px);
+  }
+  .recent-cover {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    background: #16161D;
+  }
+  .recent-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .recent-ribbon {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    padding: 0.32rem 0.7rem 0.32rem 0.6rem;
+    background: rgba(10, 10, 14, 0.82);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-left: 2px solid var(--accent);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    pointer-events: none;
+  }
+  .recent-meta { display: flex; flex-direction: column; gap: 0.2rem; }
+  .recent-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.02rem;
+    line-height: 1.25;
+    color: #EDEAE5;
+    margin: 0;
+  }
+  .recent-artist { font-family: 'Lora', serif; font-size: 0.82rem; color: #9D9DAE; margin: 0; }
+  .recent-genre {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0.85;
+    margin: 0.2rem 0 0;
+  }
 
   /* ── Sticky genre nav ─────────────────────────────────────── */
   .genre-nav {
@@ -385,6 +537,17 @@ const genres = [
 <!-- Light-theme overrides need a global block: the [data-theme="light"]
      attribute lives on <html>, which is outside this component's scope. -->
 <style is:global>
+  @media (max-width: 840px) {
+    .recent-inner { padding: 1.75rem 1.25rem 2rem !important; }
+    .recent-grid  { grid-template-columns: repeat(2, 1fr) !important; gap: 1rem !important; }
+    .recent-eyebrow { font-size: 1.35rem !important; }
+  }
+  @media (max-width: 420px) {
+    .recent-card { padding: 0.6rem !important; gap: 0.55rem !important; }
+    .recent-title { font-size: 0.92rem !important; }
+    .recent-ribbon { font-size: 0.56rem !important; padding: 0.25rem 0.5rem !important; }
+  }
+
   /* ── LIGHT THEME (vinyl page) ────────────────────────────── */
   /* `html` prefix + `.gs.<genre>` chain bumps specificity above
      the dark rules' Astro-scoped attribute selectors. */

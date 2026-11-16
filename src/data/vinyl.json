@@ -8,7 +8,8 @@
     "genre": "hiphop",
     "label": "Interscope Records",
     "format": "2×LP",
-    "pressing": "Hub Cap Gray"
+    "pressing": "Hub Cap Gray",
+    "dateAdded": "2026-05-10T01:54:00-07:00"
   },
   {
     "title": "The Slim Shady LP",
@@ -19,7 +20,8 @@
     "genre": "hiphop",
     "label": "Interscope Records",
     "format": "2×LP",
-    "pressing": "Original"
+    "pressing": "Original",
+    "dateAdded": "2026-05-10T02:03:13-07:00"
   },
   {
     "title": "The Marshall Mathers LP",
@@ -30,7 +32,8 @@
     "genre": "hiphop",
     "label": "Interscope Records",
     "format": "LP",
-    "pressing": "25th Anniversary — Red & Gold Marble"
+    "pressing": "25th Anniversary — Red & Gold Marble",
+    "dateAdded": "2026-05-10T02:03:15-07:00"
   },
   {
     "title": "The Eminem Show",
@@ -41,7 +44,8 @@
     "genre": "hiphop",
     "label": "Aftermath Entertainment",
     "format": "2×LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-05-10T02:03:57-07:00"
   },
   {
     "title": "Demon Days",
@@ -52,7 +56,8 @@
     "genre": "hiphop",
     "label": "Warner Bros. Records",
     "format": "2×LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-11-15T12:05:09-08:00"
   },
   {
     "title": "Best Day Ever",
@@ -63,7 +68,8 @@
     "genre": "hiphop",
     "label": "Rostrum Records",
     "format": "LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:17:00-08:00"
   },
   {
     "title": "Blue Slide Park",
@@ -74,7 +80,8 @@
     "genre": "hiphop",
     "label": "Rostrum Records",
     "format": "2×LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:17:06-08:00"
   },
   {
     "title": "GO:OD AM",
@@ -85,469 +92,8 @@
     "genre": "hiphop",
     "label": "Warner Records",
     "format": "2×LP",
-    "pressing": null
-  },
-  {
-    "title": "Greatest Hits Volume I & Volume II",
-    "artist": "Billy Joel",
-    "year": 1985,
-    "pressYear": 1985,
-    "cover": "https://i.discogs.com/JjwYWHU6D3snuXZl0IE8fNFBLJz0jcncaloMQHpUGCw/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMjY0/MzUtMTM1MjQ4ODc0/MC01NDg4LmpwZWc.jpeg",
-    "genre": "rock",
-    "label": "Columbia",
-    "format": "2×LP",
-    "pressing": null
-  },
-  {
-    "title": "The Essential Bob Dylan",
-    "artist": "Bob Dylan",
-    "year": 2000,
-    "pressYear": 2016,
-    "cover": "https://i.discogs.com/jcDoF__0Ww55KywOomNJrluDKeq2QziZuXCZK0cTLhk/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg2Mzg4/OTMtMTQ2NTY3OTQ3/NC05Mjg1LmpwZWc.jpeg",
-    "genre": "rock",
-    "label": "Columbia",
-    "format": "2×LP",
-    "pressing": null
-  },
-  {
-    "title": "Boston",
-    "artist": "Boston",
-    "year": 1976,
-    "pressYear": 1976,
-    "cover": "https://i.discogs.com/pIwwEjBilzFqWOwyXotNzov6JU2dQRLH5Qj2f1yH41I/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTUwMjYy/MS0xMzI2OTg3Mjgz/LmpwZWc.jpeg",
-    "genre": "rock",
-    "label": "Epic",
-    "format": "LP",
-    "pressing": null
-  },
-  {
-    "title": "Chronicle",
-    "artist": "Creedence Clearwater Revival",
-    "year": 1976,
-    "pressYear": null,
-    "cover": "https://i.discogs.com/Otq3D79am63Xwc9TI_8tsnKCQwSxgoJjIZDdFPQFQ_Y/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI0ODQ1/Nzk4LTE2NjU5NTA2/NDEtOTEyMy5qcGVn.jpeg",
-    "genre": "rock",
-    "label": "Fantasy",
-    "format": "2×LP",
-    "pressing": null
-  },
-  {
-    "title": "The Rise And Fall Of Ziggy Stardust And The Spiders From Mars",
-    "artist": "David Bowie",
-    "year": 1972,
-    "pressYear": 1972,
-    "cover": "https://i.discogs.com/4TUq8_ePEkq6DVl5_RwvnRN-FT8itJ8q6PlWEAdgbOg/rs:fit/g:sm/q:90/h:600/w:590/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTYxODk1/Mi0xNzcwMTMyMTkw/LTgyMTMuanBlZw.jpeg",
-    "genre": "rock",
-    "label": "RCA Victor",
-    "format": "LP",
-    "pressing": null
-  },
-  {
-    "title": "\"Heroes\"",
-    "artist": "David Bowie",
-    "year": 1977,
-    "pressYear": 1977,
-    "cover": "https://i.discogs.com/CR5bSa22ssiYYrDRQimGHuQL3ewg_mzwE5NsXpcqLm4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMjYx/MjMtMTY1MzU1NDM5/OC0zNzY3LmpwZWc.jpeg",
-    "genre": "rock",
-    "label": "RCA Victor",
-    "format": "LP",
-    "pressing": null
-  },
-  {
-    "title": "Scary Monsters",
-    "artist": "David Bowie",
-    "year": 1980,
-    "pressYear": 1980,
-    "cover": "https://i.discogs.com/4Ftk3qhyaCMlMD24alyKx9pcqzcZh7Bi_BJmbs7LtEk/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQyMzA1/Ni0xNDc5NjM4MTMx/LTgwNTkuanBlZw.jpeg",
-    "genre": "rock",
-    "label": "RCA",
-    "format": "LP",
-    "pressing": null
-  },
-  {
-    "title": "Fleetwood Mac",
-    "artist": "Fleetwood Mac",
-    "year": 1975,
-    "pressYear": 1975,
-    "cover": "https://i.discogs.com/nKXySpQ9qb46-Xy-jVPfsvVi3MnE1ESC2YcQR854Uwk/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU5NTkw/MjItMTc1OTE4OTc4/OC05ODE1LmpwZWc.jpeg",
-    "genre": "rock",
-    "label": "Reprise Records",
-    "format": "LP",
-    "pressing": "Monarch"
-  },
-  {
-    "title": "Rumours",
-    "artist": "Fleetwood Mac",
-    "year": 1977,
-    "pressYear": 1977,
-    "cover": "https://i.discogs.com/EbgbpBZ3YsQLEfn3df7mBxwRYyVMeOa44NxOoA50v68/rs:fit/g:sm/q:90/h:600/w:597/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMzQ4/MjcwLTE3NDc3ODk3/NDctNzAyNi5qcGVn.jpeg",
-    "genre": "rock",
-    "label": "Warner Bros. Records",
-    "format": "LP",
-    "pressing": "Jacksonville — Textured Sleeve"
-  },
-  {
-    "title": "Greatest Hits",
-    "artist": "Fleetwood Mac",
-    "year": 1988,
-    "pressYear": 2020,
-    "cover": "https://i.discogs.com/vmWiwIM_iJjUlBoOt55QcFi0uTVYgors9MkMaiz0CCc/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE1ODg2/Nzk5LTE2MTA0MTg3/NjAtMzY5Ni5qcGVn.jpeg",
-    "genre": "rock",
-    "label": "Warner Records",
-    "format": "LP",
-    "pressing": null
-  },
-  {
-    "title": "Dreamboat Annie",
-    "artist": "Heart",
-    "year": 1975,
-    "pressYear": 1975,
-    "cover": "https://i.discogs.com/5-GpPny8f_-3hZmTvrRP1lzTniXKXyxpc_YrsOytiYE/rs:fit/g:sm/q:90/h:600/w:598/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY1NTE0/NTMtMTU0NDUxNTI0/MC02ODg0LmpwZWc.jpeg",
-    "genre": "rock",
-    "label": "Mushroom Records (5)",
-    "format": "LP",
-    "pressing": null
-  },
-  {
-    "title": "Night Visions",
-    "artist": "Imagine Dragons",
-    "year": 2012,
-    "pressYear": 2014,
-    "cover": "https://i.discogs.com/aJf_mACxEtqPnIHycRML4yFYm-3-HAKwO-nJ51Kw9to/rs:fit/g:sm/q:90/h:584/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU1Mzcx/OTEtMTc4NjMwMTcw/Ny00NzA3LmpwZWc.jpeg",
-    "genre": "rock",
-    "label": "KIDinaKORNER",
-    "format": "LP",
-    "pressing": null
-  },
-  {
-    "title": "Experience Hendrix - The Best Of Jimi Hendrix ‎",
-    "artist": "Jimi Hendrix",
-    "year": 1997,
-    "pressYear": 2017,
-    "cover": "https://i.discogs.com/-7uwMCaHP6gd3jR5MrAxNMMfPhQM-7nK2amZQ7pRAQc/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwODE4/MDA0LTE1MDQ4NzUw/NjEtMTI2MC5qcGVn.jpeg",
-    "genre": "rock",
-    "label": "Experience Hendrix",
-    "format": "2×LP",
-    "pressing": null
-  },
-  {
-    "title": "Greatest Hits",
-    "artist": "John Denver",
-    "year": 1991,
-    "pressYear": 1991,
-    "cover": "https://i.discogs.com/03EBQStz6bTVf9k3oTUKbG_tV-OsRtsw8nwIhHqRfBE/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0MzMz/Mzk3LTE1NzI0MjMz/MDAtMzQ5MS5qcGVn.jpeg",
-    "genre": "rock",
-    "label": "Kumseong Records",
-    "format": "LP",
-    "pressing": null
-  },
-  {
-    "title": "Led Zeppelin",
-    "artist": "Led Zeppelin",
-    "year": 1969,
-    "pressYear": 2014,
-    "cover": "https://i.discogs.com/Of8HCWVr61BW_PZHMQK6A95VpQ-gqM3skESX5GlTYWQ/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU3MzQ0/MTktMTQwOTIxMjIy/MS0yODM0LmpwZWc.jpeg",
-    "genre": "rock",
-    "label": "Atlantic",
-    "format": "LP",
-    "pressing": "180g Remaster"
-  },
-  {
-    "title": "Led Zeppelin II",
-    "artist": "Led Zeppelin",
-    "year": 1969,
-    "pressYear": 2020,
-    "cover": "https://i.discogs.com/jkKBZm4Ag9YWIkloipLdRe6OcnyU_9Y8UkWOgWk4w84/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NTAy/NzUyLTE2NzgxODgy/NjQtNDUzMC5qcGVn.jpeg",
-    "genre": "rock",
-    "label": "Atlantic",
-    "format": "LP",
-    "pressing": "180g Remaster — Gatefold"
-  },
-  {
-    "title": "Led Zeppelin III",
-    "artist": "Led Zeppelin",
-    "year": 1970,
-    "pressYear": 2014,
-    "cover": "https://i.discogs.com/ixc3hDx9J5CxhDsUFqsyj6NoU2VfHltohj1JLvrinQI/rs:fit/g:sm/q:90/h:588/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU3NDMz/MjQtMTQwMTY0NTA1/OS04MjM1LmpwZWc.jpeg",
-    "genre": "rock",
-    "label": "Atlantic",
-    "format": "LP",
-    "pressing": "180g Deluxe — Tri-fold Sleeve"
-  },
-  {
-    "title": "Skynyrd's Innyrds / Their Greatest Hits",
-    "artist": "Lynyrd Skynyrd",
-    "year": 1989,
-    "pressYear": 2018,
-    "cover": "https://i.discogs.com/aJ3ak5DosOG7NFSk62kAv1NY3RphNyWv8aIji2LQ7U8/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyODk1/MDE0LTE1NDQwMjg4/NjItNDMxMi5qcGVn.jpeg",
-    "genre": "rock",
-    "label": "Geffen Records",
-    "format": "LP",
-    "pressing": null
-  },
-  {
-    "title": "Bat Out Of Hell",
-    "artist": "Meat Loaf",
-    "year": 1977,
-    "pressYear": 1977,
-    "cover": "https://i.discogs.com/Y556GVnqvNn4lVdrrS3NYQ_sdw6ZV8Fi_J_zeoliqEg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ1Mjkx/OTUtMTM2Nzc5MTAz/NC00MDk0LmpwZWc.jpeg",
-    "genre": "rock",
-    "label": "Epic",
-    "format": "LP",
-    "pressing": "Terre Haute"
-  },
-  {
-    "title": "Bat Out Of Hell II: Back Into Hell",
-    "artist": "Meat Loaf",
-    "year": 1993,
-    "pressYear": 2019,
-    "cover": "https://i.discogs.com/8WI2yEe7slXsesEfLztkUyAh-s_7zNGdgmUKPTrqyX8/rs:fit/g:sm/q:90/h:576/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMTk3/MzM5LTE1NDk3Njc4/NzQtMTYzOC5qcGVn.jpeg",
-    "genre": "rock",
-    "label": "Geffen Records",
-    "format": "2×LP",
-    "pressing": "25th Anniversary"
-  },
-  {
-    "title": "Metallica",
-    "artist": "Metallica",
-    "year": 1991,
-    "pressYear": 2021,
-    "cover": "https://i.discogs.com/DELZdy_ovDEk0evE4M4bi5KT3kNTha8C-NGLC5XrWO8/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMTU5/MTg4LTE3NzUyNDg0/NzEtMzk5OC5qcGVn.jpeg",
-    "genre": "rock",
-    "label": "Blackened",
-    "format": "2×LP",
-    "pressing": null
-  },
-  {
-    "title": "(What's The Story) Morning Glory?",
-    "artist": "Oasis",
-    "year": 1995,
-    "pressYear": 2014,
-    "cover": "https://i.discogs.com/aVA62gG7KcEE6lO4TobdpQ_ykCXd3OgtDHvCjclVzI4/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTYxMjc4/NzEtMTQ5NDg2NzQz/OC0yNzAxLmpwZWc.jpeg",
-    "genre": "rock",
-    "label": "Big Brother",
-    "format": "2×LP",
-    "pressing": null
-  },
-  {
-    "title": "Still Crazy After All These Years",
-    "artist": "Paul Simon",
-    "year": 1975,
-    "pressYear": 1975,
-    "cover": "https://i.discogs.com/x3lcxK8zqEyrX8vwvNFoorhZei_hxg9vA4SQIWSy1Es/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTkyNjg3/Ny0xNjgxNjQ2ODgw/LTc5MjUuanBlZw.jpeg",
-    "genre": "rock",
-    "label": "Columbia",
-    "format": "LP",
-    "pressing": null
-  },
-  {
-    "title": "Graceland",
-    "artist": "Paul Simon",
-    "year": 1986,
-    "pressYear": 1986,
-    "cover": "https://i.discogs.com/dBMttcxGFOlwnc3lzOJLCOZIBkgx7RXUeF2tTPHYJOI/rs:fit/g:sm/q:90/h:593/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc5NTI3/OC0xMTU5NTY3OTQ1/LmpwZWc.jpeg",
-    "genre": "rock",
-    "label": "Warner Bros. Records",
-    "format": "LP",
-    "pressing": null
-  },
-  {
-    "title": "Meddle",
-    "artist": "Pink Floyd",
-    "year": 1971,
-    "pressYear": 1983,
-    "cover": "https://i.discogs.com/rY9Lel70WNlLe9X7Y0QNWXtZqwR09j_dC4SsMOrf1YM/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg4NTQx/MzQtMTQ3MDE1ODY5/OC03NzQ0LmpwZWc.jpeg",
-    "genre": "rock",
-    "label": "Capitol Records",
-    "format": "LP",
-    "pressing": "Winchester — Gatefold"
-  },
-  {
-    "title": "Wish You Were Here",
-    "artist": "Pink Floyd",
-    "year": 1975,
-    "pressYear": 1975,
-    "cover": "https://i.discogs.com/YMUBiIscutL11EdQfQddkB8K9NhOgGYByxG9B7EFVrM/rs:fit/g:sm/q:90/h:600/w:597/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3NTc1/Ni0xMzk5NzM1MjQy/LTIxNDkuanBlZw.jpeg",
-    "genre": "rock",
-    "label": "Harvest",
-    "format": "LP",
-    "pressing": null
-  },
-  {
-    "title": "Animals",
-    "artist": "Pink Floyd",
-    "year": 1977,
-    "pressYear": 1977,
-    "cover": "https://i.discogs.com/EOZLu5uyWFHSsVAHrIv9wyrC5frF704hgodGq0H8L-w/rs:fit/g:sm/q:90/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY4MDM2/NzQtMTQyNjk2MjMy/Mi05NjQwLmpwZWc.jpeg",
-    "genre": "rock",
-    "label": "Columbia",
-    "format": "LP",
-    "pressing": "Terre Haute — Gatefold"
-  },
-  {
-    "title": "The Wall",
-    "artist": "Pink Floyd",
-    "year": 1979,
-    "pressYear": null,
-    "cover": "https://i.discogs.com/haCD40EjIgSIpj3b-r4QTN3lLAMWqXZcLno0zzTSkak/rs:fit/g:sm/q:90/h:600/w:588/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4NDkx/ODg0LTE2MTk4OTkx/MDMtMjM4NC5qcGVn.jpeg",
-    "genre": "rock",
-    "label": "Columbia",
-    "format": "2×LP",
-    "pressing": null
-  },
-  {
-    "title": "Bohemian Rhapsody (The Original Soundtrack)",
-    "artist": "Queen",
-    "year": 2018,
-    "pressYear": 2019,
-    "cover": "https://i.discogs.com/Hp5yXt7SnlP3VX73UY8tEN3P9z2HD4CMpH6VGNIdjow/rs:fit/g:sm/q:90/h:595/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMTgw/NjIyLTE3NTA3NTU0/MzgtNjcxNy5qcGVn.jpeg",
-    "genre": "rock",
-    "label": "Virgin EMI Records",
-    "format": "2×LP",
-    "pressing": null
-  },
-  {
-    "title": "OK Computer",
-    "artist": "Radiohead",
-    "year": 1997,
-    "pressYear": 2016,
-    "cover": "https://i.discogs.com/PAsuueZ1LPG63-f-3pBCfyj2JPzo7VNT_D9-pzp3Gzc/rs:fit/g:sm/q:90/h:600/w:598/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg2NjQz/ODQtMTY5NzQ3NDg3/Ny0zMTYxLmpwZWc.jpeg",
-    "genre": "rock",
-    "label": "XL Recordings",
-    "format": "2×LP",
-    "pressing": null
-  },
-  {
-    "title": "Greatest Hits",
-    "artist": "Simon & Garfunkel",
-    "year": 1972,
-    "pressYear": 1972,
-    "cover": "https://i.discogs.com/pFekzEgO5jsP-Uo7qcj2x-72gOUcFGLr-ise8UMdlgI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI0NTk5/MjUtMTU4MjU0OTM1/NS04MDExLmpwZWc.jpeg",
-    "genre": "rock",
-    "label": "CBS",
-    "format": "LP",
-    "pressing": null
-  },
-  {
-    "title": "Can't Buy A Thrill",
-    "artist": "Steely Dan",
-    "year": 1972,
-    "pressYear": 1972,
-    "cover": "https://i.discogs.com/cZu3gp5yt2P-0b9XeOxHV-AIW0hXwkZyXCajMKQLwIg/rs:fit/g:sm/q:90/h:600/w:596/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0OTY5/MjMwLTE1ODQ4ODY5/MjctNjY0Mi5qcGVn.jpeg",
-    "genre": "rock",
-    "label": "ABC Records",
-    "format": "LP",
-    "pressing": "Gatefold"
-  },
-  {
-    "title": "Pretzel Logic",
-    "artist": "Steely Dan",
-    "year": 1974,
-    "pressYear": 1980,
-    "cover": "https://i.discogs.com/6GjWIw9xW2Xb0S42-tlSzCC2cyHyFJVpnfdQJuc_U1g/rs:fit/g:sm/q:90/h:593/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE3MjQy/NDgtMTI0MDk1NTkw/OC5qcGVn.jpeg",
-    "genre": "rock",
-    "label": "MCA Records",
-    "format": "LP",
-    "pressing": null
-  },
-  {
-    "title": "Aja",
-    "artist": "Steely Dan",
-    "year": 1977,
-    "pressYear": 1977,
-    "cover": "https://i.discogs.com/dOfM5d04XnE1dHG4TQC68_CKCvGTXMnz_mXAyc_HthI/rs:fit/g:sm/q:90/h:581/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQzMzU5/My0xNzc3MjUwNzI0/LTE3MjEuanBlZw.jpeg",
-    "genre": "rock",
-    "label": "ABC Records",
-    "format": "LP",
-    "pressing": null
-  },
-  {
-    "title": "Gaucho",
-    "artist": "Steely Dan",
-    "year": 1980,
-    "pressYear": 1980,
-    "cover": "https://i.discogs.com/lG7jMBQ23Uos-VCDL1ylqPMdkcDxORU6_XIZZlTIz3M/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzMTMw/MTctMTMyNTI4Mzg2/OC5qcGVn.jpeg",
-    "genre": "rock",
-    "label": "MCA Records",
-    "format": "LP",
-    "pressing": null
-  },
-  {
-    "title": "Until The Sun Explodes",
-    "artist": "Sublime",
-    "year": 2026,
-    "pressYear": 2026,
-    "cover": "https://i.discogs.com/VMDcuKlx463U6-NhaYGZURelINujFs1Hkk3DAMG53N8/rs:fit/g:sm/q:90/h:600/w:598/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3NTA0/MjI0LTE3ODAzMTg5/OTktOTY2NC5wbmc.jpeg",
-    "genre": "rock",
-    "label": "Atlantic",
-    "format": "2×LP",
-    "pressing": null
-  },
-  {
-    "title": "At Fillmore East",
-    "artist": "The Allman Brothers Band",
-    "year": 1971,
-    "pressYear": 2016,
-    "cover": "https://i.discogs.com/cWD567AB6PrHr7XQLwpsjK5M-s6UtM1R7mpVVrAi7SA/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg4MDQ2/NjktMTQ2OTEyNDc0/MC05NTUzLmpwZWc.jpeg",
-    "genre": "rock",
-    "label": "Mercury",
-    "format": "2×LP",
-    "pressing": null
-  },
-  {
-    "title": "Abbey Road",
-    "artist": "The Beatles",
-    "year": 1969,
-    "pressYear": 1969,
-    "cover": "https://i.discogs.com/L15UfEmAYqOSlLnRqql1okxaIoG9xcdmGIGkMJ599UY/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU2NDIz/ODgtMTQyMTc0MjMx/My03MzI4LmpwZWc.jpeg",
-    "genre": "rock",
-    "label": "Apple Records",
-    "format": "LP",
-    "pressing": null
-  },
-  {
-    "title": "Greatest Hits",
-    "artist": "The Police",
-    "year": 1992,
-    "pressYear": 2022,
-    "cover": "https://i.discogs.com/ZYn1nPk70F9gYUrEoNm-jYvoyWJWCOlclJ2iRYJ3lLE/rs:fit/g:sm/q:90/h:590/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIyODQw/ODMyLTE2NjYxNjc0/MTQtNjU5OS5qcGVn.jpeg",
-    "genre": "rock",
-    "label": "Polydor",
-    "format": "2×LP",
-    "pressing": null
-  },
-  {
-    "title": "Wildflowers & All The Rest",
-    "artist": "Tom Petty",
-    "year": 1994,
-    "pressYear": 2020,
-    "cover": "https://i.discogs.com/C31h7OaYTEa3JpqCz01IHWhxxQb2yqpVdO5cPazYGuM/rs:fit/g:sm/q:90/h:600/w:596/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MDM4/NDkwLTE2MDQ4MDI1/ODYtNTAxOS5qcGVn.jpeg",
-    "genre": "rock",
-    "label": "Warner Records",
-    "format": "2×LP",
-    "pressing": null
-  },
-  {
-    "title": "Van Halen",
-    "artist": "Van Halen",
-    "year": 1978,
-    "pressYear": null,
-    "cover": "https://i.discogs.com/0mfD2Jp6cq5j4dmW-eIXFsk5axzVnUx2kCU8hKJs9Xk/rs:fit/g:sm/q:90/h:600/w:598/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4MDQ3/Ny0xMjU4MzMzNjg1/LmpwZWc.jpeg",
-    "genre": "rock",
-    "label": "Warner Bros. Records",
-    "format": "LP",
-    "pressing": null
-  },
-  {
-    "title": "Eliminator",
-    "artist": "ZZ Top",
-    "year": 1983,
-    "pressYear": 1983,
-    "cover": "https://i.discogs.com/G97lciR_13OtiULAG_3mzUzauQ5HRQIb6m_M6biZ4r0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4MjUw/ODUtMTM3NjY3NTA3/NS01MzI1LmpwZWc.jpeg",
-    "genre": "rock",
-    "label": "Warner Bros. Records",
-    "format": "LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:17:12-08:00"
   },
   {
     "title": "Audioslave",
@@ -558,7 +104,512 @@
     "genre": "rock",
     "label": "Epic",
     "format": "2×LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-05-11T22:04:52-07:00"
+  },
+  {
+    "title": "Greatest Hits Volume I & Volume II",
+    "artist": "Billy Joel",
+    "year": 1985,
+    "pressYear": 1985,
+    "cover": "https://i.discogs.com/JjwYWHU6D3snuXZl0IE8fNFBLJz0jcncaloMQHpUGCw/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMjY0/MzUtMTM1MjQ4ODc0/MC01NDg4LmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "Columbia",
+    "format": "2×LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:15:06-08:00"
+  },
+  {
+    "title": "The Essential Bob Dylan",
+    "artist": "Bob Dylan",
+    "year": 2000,
+    "pressYear": 2016,
+    "cover": "https://i.discogs.com/jcDoF__0Ww55KywOomNJrluDKeq2QziZuXCZK0cTLhk/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg2Mzg4/OTMtMTQ2NTY3OTQ3/NC05Mjg1LmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "Columbia",
+    "format": "2×LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:15:12-08:00"
+  },
+  {
+    "title": "Boston",
+    "artist": "Boston",
+    "year": 1976,
+    "pressYear": 1976,
+    "cover": "https://i.discogs.com/pIwwEjBilzFqWOwyXotNzov6JU2dQRLH5Qj2f1yH41I/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTUwMjYy/MS0xMzI2OTg3Mjgz/LmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "Epic",
+    "format": "LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:15:18-08:00"
+  },
+  {
+    "title": "Chronicle",
+    "artist": "Creedence Clearwater Revival",
+    "year": 1976,
+    "pressYear": null,
+    "cover": "https://i.discogs.com/Otq3D79am63Xwc9TI_8tsnKCQwSxgoJjIZDdFPQFQ_Y/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI0ODQ1/Nzk4LTE2NjU5NTA2/NDEtOTEyMy5qcGVn.jpeg",
+    "genre": "rock",
+    "label": "Fantasy",
+    "format": "2×LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:15:24-08:00"
+  },
+  {
+    "title": "The Rise And Fall Of Ziggy Stardust And The Spiders From Mars",
+    "artist": "David Bowie",
+    "year": 1972,
+    "pressYear": 1972,
+    "cover": "https://i.discogs.com/4TUq8_ePEkq6DVl5_RwvnRN-FT8itJ8q6PlWEAdgbOg/rs:fit/g:sm/q:90/h:600/w:590/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTYxODk1/Mi0xNzcwMTMyMTkw/LTgyMTMuanBlZw.jpeg",
+    "genre": "rock",
+    "label": "RCA Victor",
+    "format": "LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:15:50-08:00"
+  },
+  {
+    "title": "\"Heroes\"",
+    "artist": "David Bowie",
+    "year": 1977,
+    "pressYear": 1977,
+    "cover": "https://i.discogs.com/CR5bSa22ssiYYrDRQimGHuQL3ewg_mzwE5NsXpcqLm4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMjYx/MjMtMTY1MzU1NDM5/OC0zNzY3LmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "RCA Victor",
+    "format": "LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:15:38-08:00"
+  },
+  {
+    "title": "Scary Monsters",
+    "artist": "David Bowie",
+    "year": 1980,
+    "pressYear": 1980,
+    "cover": "https://i.discogs.com/4Ftk3qhyaCMlMD24alyKx9pcqzcZh7Bi_BJmbs7LtEk/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQyMzA1/Ni0xNDc5NjM4MTMx/LTgwNTkuanBlZw.jpeg",
+    "genre": "rock",
+    "label": "RCA",
+    "format": "LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:15:44-08:00"
+  },
+  {
+    "title": "Fleetwood Mac",
+    "artist": "Fleetwood Mac",
+    "year": 1975,
+    "pressYear": 1975,
+    "cover": "https://i.discogs.com/nKXySpQ9qb46-Xy-jVPfsvVi3MnE1ESC2YcQR854Uwk/rs:fit/g:sm/q:90/h:594/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU5NTkw/MjItMTc1OTE4OTc4/OC05ODE1LmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "Reprise Records",
+    "format": "LP",
+    "pressing": "Monarch",
+    "dateAdded": "2026-05-10T01:55:15-07:00"
+  },
+  {
+    "title": "Rumours",
+    "artist": "Fleetwood Mac",
+    "year": 1977,
+    "pressYear": 1977,
+    "cover": "https://i.discogs.com/EbgbpBZ3YsQLEfn3df7mBxwRYyVMeOa44NxOoA50v68/rs:fit/g:sm/q:90/h:600/w:597/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMzQ4/MjcwLTE3NDc3ODk3/NDctNzAyNi5qcGVn.jpeg",
+    "genre": "rock",
+    "label": "Warner Bros. Records",
+    "format": "LP",
+    "pressing": "Jacksonville — Textured Sleeve",
+    "dateAdded": "2026-05-10T02:04:04-07:00"
+  },
+  {
+    "title": "Greatest Hits",
+    "artist": "Fleetwood Mac",
+    "year": 1988,
+    "pressYear": 2020,
+    "cover": "https://i.discogs.com/vmWiwIM_iJjUlBoOt55QcFi0uTVYgors9MkMaiz0CCc/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE1ODg2/Nzk5LTE2MTA0MTg3/NjAtMzY5Ni5qcGVn.jpeg",
+    "genre": "rock",
+    "label": "Warner Records",
+    "format": "LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:15:56-08:00"
+  },
+  {
+    "title": "Dreamboat Annie",
+    "artist": "Heart",
+    "year": 1975,
+    "pressYear": 1975,
+    "cover": "https://i.discogs.com/5-GpPny8f_-3hZmTvrRP1lzTniXKXyxpc_YrsOytiYE/rs:fit/g:sm/q:90/h:600/w:598/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY1NTE0/NTMtMTU0NDUxNTI0/MC02ODg0LmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "Mushroom Records (5)",
+    "format": "LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:16:13-08:00"
+  },
+  {
+    "title": "Night Visions",
+    "artist": "Imagine Dragons",
+    "year": 2012,
+    "pressYear": 2014,
+    "cover": "https://i.discogs.com/aJf_mACxEtqPnIHycRML4yFYm-3-HAKwO-nJ51Kw9to/rs:fit/g:sm/q:90/h:584/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU1Mzcx/OTEtMTc4NjMwMTcw/Ny00NzA3LmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "KIDinaKORNER",
+    "format": "LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T12:05:15-08:00"
+  },
+  {
+    "title": "Experience Hendrix - The Best Of Jimi Hendrix ‎",
+    "artist": "Jimi Hendrix",
+    "year": 1997,
+    "pressYear": 2017,
+    "cover": "https://i.discogs.com/-7uwMCaHP6gd3jR5MrAxNMMfPhQM-7nK2amZQ7pRAQc/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwODE4/MDA0LTE1MDQ4NzUw/NjEtMTI2MC5qcGVn.jpeg",
+    "genre": "rock",
+    "label": "Experience Hendrix",
+    "format": "2×LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:16:19-08:00"
+  },
+  {
+    "title": "Greatest Hits",
+    "artist": "John Denver",
+    "year": 1991,
+    "pressYear": 1991,
+    "cover": "https://i.discogs.com/03EBQStz6bTVf9k3oTUKbG_tV-OsRtsw8nwIhHqRfBE/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0MzMz/Mzk3LTE1NzI0MjMz/MDAtMzQ5MS5qcGVn.jpeg",
+    "genre": "rock",
+    "label": "Kumseong Records",
+    "format": "LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:16:25-08:00"
+  },
+  {
+    "title": "Led Zeppelin",
+    "artist": "Led Zeppelin",
+    "year": 1969,
+    "pressYear": 2014,
+    "cover": "https://i.discogs.com/Of8HCWVr61BW_PZHMQK6A95VpQ-gqM3skESX5GlTYWQ/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU3MzQ0/MTktMTQwOTIxMjIy/MS0yODM0LmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "Atlantic",
+    "format": "LP",
+    "pressing": "180g Remaster",
+    "dateAdded": "2026-05-10T02:07:24-07:00"
+  },
+  {
+    "title": "Led Zeppelin II",
+    "artist": "Led Zeppelin",
+    "year": 1969,
+    "pressYear": 2020,
+    "cover": "https://i.discogs.com/jkKBZm4Ag9YWIkloipLdRe6OcnyU_9Y8UkWOgWk4w84/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NTAy/NzUyLTE2NzgxODgy/NjQtNDUzMC5qcGVn.jpeg",
+    "genre": "rock",
+    "label": "Atlantic",
+    "format": "LP",
+    "pressing": "180g Remaster — Gatefold",
+    "dateAdded": "2026-05-10T02:07:26-07:00"
+  },
+  {
+    "title": "Led Zeppelin III",
+    "artist": "Led Zeppelin",
+    "year": 1970,
+    "pressYear": 2014,
+    "cover": "https://i.discogs.com/ixc3hDx9J5CxhDsUFqsyj6NoU2VfHltohj1JLvrinQI/rs:fit/g:sm/q:90/h:588/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU3NDMz/MjQtMTQwMTY0NTA1/OS04MjM1LmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "Atlantic",
+    "format": "LP",
+    "pressing": "180g Deluxe — Tri-fold Sleeve",
+    "dateAdded": "2026-05-10T02:07:31-07:00"
+  },
+  {
+    "title": "Skynyrd's Innyrds / Their Greatest Hits",
+    "artist": "Lynyrd Skynyrd",
+    "year": 1989,
+    "pressYear": 2018,
+    "cover": "https://i.discogs.com/aJ3ak5DosOG7NFSk62kAv1NY3RphNyWv8aIji2LQ7U8/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyODk1/MDE0LTE1NDQwMjg4/NjItNDMxMi5qcGVn.jpeg",
+    "genre": "rock",
+    "label": "Geffen Records",
+    "format": "LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:16:54-08:00"
+  },
+  {
+    "title": "Bat Out Of Hell",
+    "artist": "Meat Loaf",
+    "year": 1977,
+    "pressYear": 1977,
+    "cover": "https://i.discogs.com/Y556GVnqvNn4lVdrrS3NYQ_sdw6ZV8Fi_J_zeoliqEg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ1Mjkx/OTUtMTM2Nzc5MTAz/NC00MDk0LmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "Epic",
+    "format": "LP",
+    "pressing": "Terre Haute",
+    "dateAdded": "2026-05-10T01:56:28-07:00"
+  },
+  {
+    "title": "Bat Out Of Hell II: Back Into Hell",
+    "artist": "Meat Loaf",
+    "year": 1993,
+    "pressYear": 2019,
+    "cover": "https://i.discogs.com/8WI2yEe7slXsesEfLztkUyAh-s_7zNGdgmUKPTrqyX8/rs:fit/g:sm/q:90/h:576/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMTk3/MzM5LTE1NDk3Njc4/NzQtMTYzOC5qcGVn.jpeg",
+    "genre": "rock",
+    "label": "Geffen Records",
+    "format": "2×LP",
+    "pressing": "25th Anniversary",
+    "dateAdded": "2026-05-10T02:00:10-07:00"
+  },
+  {
+    "title": "Metallica",
+    "artist": "Metallica",
+    "year": 1991,
+    "pressYear": 2021,
+    "cover": "https://i.discogs.com/DELZdy_ovDEk0evE4M4bi5KT3kNTha8C-NGLC5XrWO8/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMTU5/MTg4LTE3NzUyNDg0/NzEtMzk5OC5qcGVn.jpeg",
+    "genre": "rock",
+    "label": "Blackened",
+    "format": "2×LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T12:05:22-08:00"
+  },
+  {
+    "title": "(What's The Story) Morning Glory?",
+    "artist": "Oasis",
+    "year": 1995,
+    "pressYear": 2014,
+    "cover": "https://i.discogs.com/aVA62gG7KcEE6lO4TobdpQ_ykCXd3OgtDHvCjclVzI4/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTYxMjc4/NzEtMTQ5NDg2NzQz/OC0yNzAxLmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "Big Brother",
+    "format": "2×LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:17:24-08:00"
+  },
+  {
+    "title": "Still Crazy After All These Years",
+    "artist": "Paul Simon",
+    "year": 1975,
+    "pressYear": 1975,
+    "cover": "https://i.discogs.com/x3lcxK8zqEyrX8vwvNFoorhZei_hxg9vA4SQIWSy1Es/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTkyNjg3/Ny0xNjgxNjQ2ODgw/LTc5MjUuanBlZw.jpeg",
+    "genre": "rock",
+    "label": "Columbia",
+    "format": "LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:17:52-08:00"
+  },
+  {
+    "title": "Graceland",
+    "artist": "Paul Simon",
+    "year": 1986,
+    "pressYear": 1986,
+    "cover": "https://i.discogs.com/dBMttcxGFOlwnc3lzOJLCOZIBkgx7RXUeF2tTPHYJOI/rs:fit/g:sm/q:90/h:593/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc5NTI3/OC0xMTU5NTY3OTQ1/LmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "Warner Bros. Records",
+    "format": "LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:17:47-08:00"
+  },
+  {
+    "title": "Meddle",
+    "artist": "Pink Floyd",
+    "year": 1971,
+    "pressYear": 1983,
+    "cover": "https://i.discogs.com/rY9Lel70WNlLe9X7Y0QNWXtZqwR09j_dC4SsMOrf1YM/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg4NTQx/MzQtMTQ3MDE1ODY5/OC03NzQ0LmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "Capitol Records",
+    "format": "LP",
+    "pressing": "Winchester — Gatefold",
+    "dateAdded": "2026-05-10T02:00:17-07:00"
+  },
+  {
+    "title": "Wish You Were Here",
+    "artist": "Pink Floyd",
+    "year": 1975,
+    "pressYear": 1975,
+    "cover": "https://i.discogs.com/YMUBiIscutL11EdQfQddkB8K9NhOgGYByxG9B7EFVrM/rs:fit/g:sm/q:90/h:600/w:597/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3NTc1/Ni0xMzk5NzM1MjQy/LTIxNDkuanBlZw.jpeg",
+    "genre": "rock",
+    "label": "Harvest",
+    "format": "LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:17:58-08:00"
+  },
+  {
+    "title": "Animals",
+    "artist": "Pink Floyd",
+    "year": 1977,
+    "pressYear": 1977,
+    "cover": "https://i.discogs.com/EOZLu5uyWFHSsVAHrIv9wyrC5frF704hgodGq0H8L-w/rs:fit/g:sm/q:90/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY4MDM2/NzQtMTQyNjk2MjMy/Mi05NjQwLmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "Columbia",
+    "format": "LP",
+    "pressing": "Terre Haute — Gatefold",
+    "dateAdded": "2026-05-10T02:00:12-07:00"
+  },
+  {
+    "title": "The Wall",
+    "artist": "Pink Floyd",
+    "year": 1979,
+    "pressYear": null,
+    "cover": "https://i.discogs.com/haCD40EjIgSIpj3b-r4QTN3lLAMWqXZcLno0zzTSkak/rs:fit/g:sm/q:90/h:600/w:588/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4NDkx/ODg0LTE2MTk4OTkx/MDMtMjM4NC5qcGVn.jpeg",
+    "genre": "rock",
+    "label": "Columbia",
+    "format": "2×LP",
+    "pressing": null,
+    "dateAdded": "2026-05-10T01:53:58-07:00"
+  },
+  {
+    "title": "Bohemian Rhapsody (The Original Soundtrack)",
+    "artist": "Queen",
+    "year": 2018,
+    "pressYear": 2019,
+    "cover": "https://i.discogs.com/Hp5yXt7SnlP3VX73UY8tEN3P9z2HD4CMpH6VGNIdjow/rs:fit/g:sm/q:90/h:595/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEzMTgw/NjIyLTE3NTA3NTU0/MzgtNjcxNy5qcGVn.jpeg",
+    "genre": "rock",
+    "label": "Virgin EMI Records",
+    "format": "2×LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:18:10-08:00"
+  },
+  {
+    "title": "OK Computer",
+    "artist": "Radiohead",
+    "year": 1997,
+    "pressYear": 2016,
+    "cover": "https://i.discogs.com/PAsuueZ1LPG63-f-3pBCfyj2JPzo7VNT_D9-pzp3Gzc/rs:fit/g:sm/q:90/h:600/w:598/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg2NjQz/ODQtMTY5NzQ3NDg3/Ny0zMTYxLmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "XL Recordings",
+    "format": "2×LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:18:15-08:00"
+  },
+  {
+    "title": "Greatest Hits",
+    "artist": "Simon & Garfunkel",
+    "year": 1972,
+    "pressYear": 1972,
+    "cover": "https://i.discogs.com/pFekzEgO5jsP-Uo7qcj2x-72gOUcFGLr-ise8UMdlgI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI0NTk5/MjUtMTU4MjU0OTM1/NS04MDExLmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "CBS",
+    "format": "LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:18:22-08:00"
+  },
+  {
+    "title": "Can't Buy A Thrill",
+    "artist": "Steely Dan",
+    "year": 1972,
+    "pressYear": 1972,
+    "cover": "https://i.discogs.com/cZu3gp5yt2P-0b9XeOxHV-AIW0hXwkZyXCajMKQLwIg/rs:fit/g:sm/q:90/h:600/w:596/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0OTY5/MjMwLTE1ODQ4ODY5/MjctNjY0Mi5qcGVn.jpeg",
+    "genre": "rock",
+    "label": "ABC Records",
+    "format": "LP",
+    "pressing": "Gatefold",
+    "dateAdded": "2026-05-10T01:55:08-07:00"
+  },
+  {
+    "title": "Pretzel Logic",
+    "artist": "Steely Dan",
+    "year": 1974,
+    "pressYear": 1980,
+    "cover": "https://i.discogs.com/6GjWIw9xW2Xb0S42-tlSzCC2cyHyFJVpnfdQJuc_U1g/rs:fit/g:sm/q:90/h:593/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE3MjQy/NDgtMTI0MDk1NTkw/OC5qcGVn.jpeg",
+    "genre": "rock",
+    "label": "MCA Records",
+    "format": "LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:18:39-08:00"
+  },
+  {
+    "title": "Aja",
+    "artist": "Steely Dan",
+    "year": 1977,
+    "pressYear": 1977,
+    "cover": "https://i.discogs.com/dOfM5d04XnE1dHG4TQC68_CKCvGTXMnz_mXAyc_HthI/rs:fit/g:sm/q:90/h:581/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQzMzU5/My0xNzc3MjUwNzI0/LTE3MjEuanBlZw.jpeg",
+    "genre": "rock",
+    "label": "ABC Records",
+    "format": "LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:18:27-08:00"
+  },
+  {
+    "title": "Gaucho",
+    "artist": "Steely Dan",
+    "year": 1980,
+    "pressYear": 1980,
+    "cover": "https://i.discogs.com/lG7jMBQ23Uos-VCDL1ylqPMdkcDxORU6_XIZZlTIz3M/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzMTMw/MTctMTMyNTI4Mzg2/OC5qcGVn.jpeg",
+    "genre": "rock",
+    "label": "MCA Records",
+    "format": "LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:18:33-08:00"
+  },
+  {
+    "title": "Until The Sun Explodes",
+    "artist": "Sublime",
+    "year": 2026,
+    "pressYear": 2026,
+    "cover": "https://i.discogs.com/VMDcuKlx463U6-NhaYGZURelINujFs1Hkk3DAMG53N8/rs:fit/g:sm/q:90/h:600/w:598/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM3NTA0/MjI0LTE3ODAzMTg5/OTktOTY2NC5wbmc.jpeg",
+    "genre": "rock",
+    "label": "Atlantic",
+    "format": "2×LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T12:05:34-08:00"
+  },
+  {
+    "title": "At Fillmore East",
+    "artist": "The Allman Brothers Band",
+    "year": 1971,
+    "pressYear": 2016,
+    "cover": "https://i.discogs.com/cWD567AB6PrHr7XQLwpsjK5M-s6UtM1R7mpVVrAi7SA/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTg4MDQ2/NjktMTQ2OTEyNDc0/MC05NTUzLmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "Mercury",
+    "format": "2×LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:14:55-08:00"
+  },
+  {
+    "title": "Abbey Road",
+    "artist": "The Beatles",
+    "year": 1969,
+    "pressYear": 1969,
+    "cover": "https://i.discogs.com/L15UfEmAYqOSlLnRqql1okxaIoG9xcdmGIGkMJ599UY/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTU2NDIz/ODgtMTQyMTc0MjMx/My03MzI4LmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "Apple Records",
+    "format": "LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:15:00-08:00"
+  },
+  {
+    "title": "Greatest Hits",
+    "artist": "The Police",
+    "year": 1992,
+    "pressYear": 2022,
+    "cover": "https://i.discogs.com/ZYn1nPk70F9gYUrEoNm-jYvoyWJWCOlclJ2iRYJ3lLE/rs:fit/g:sm/q:90/h:590/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIyODQw/ODMyLTE2NjYxNjc0/MTQtNjU5OS5qcGVn.jpeg",
+    "genre": "rock",
+    "label": "Polydor",
+    "format": "2×LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:18:04-08:00"
+  },
+  {
+    "title": "Wildflowers & All The Rest",
+    "artist": "Tom Petty",
+    "year": 1994,
+    "pressYear": 2020,
+    "cover": "https://i.discogs.com/C31h7OaYTEa3JpqCz01IHWhxxQb2yqpVdO5cPazYGuM/rs:fit/g:sm/q:90/h:600/w:596/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE2MDM4/NDkwLTE2MDQ4MDI1/ODYtNTAxOS5qcGVn.jpeg",
+    "genre": "rock",
+    "label": "Warner Records",
+    "format": "2×LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:18:51-08:00"
+  },
+  {
+    "title": "Van Halen",
+    "artist": "Van Halen",
+    "year": 1978,
+    "pressYear": null,
+    "cover": "https://i.discogs.com/0mfD2Jp6cq5j4dmW-eIXFsk5axzVnUx2kCU8hKJs9Xk/rs:fit/g:sm/q:90/h:600/w:598/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM4MDQ3/Ny0xMjU4MzMzNjg1/LmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "Warner Bros. Records",
+    "format": "LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T12:05:45-08:00"
+  },
+  {
+    "title": "Eliminator",
+    "artist": "ZZ Top",
+    "year": 1983,
+    "pressYear": 1983,
+    "cover": "https://i.discogs.com/G97lciR_13OtiULAG_3mzUzauQ5HRQIb6m_M6biZ4r0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ4MjUw/ODUtMTM3NjY3NTA3/NS01MzI1LmpwZWc.jpeg",
+    "genre": "rock",
+    "label": "Warner Bros. Records",
+    "format": "LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:18:57-08:00"
   },
   {
     "title": "Gold (Greatest Hits)",
@@ -569,7 +620,8 @@
     "genre": "soul",
     "label": "Polydor",
     "format": "2×LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:14:49-08:00"
   },
   {
     "title": "Thriller",
@@ -580,18 +632,8 @@
     "genre": "soul",
     "label": "Epic",
     "format": "LP",
-    "pressing": "Pitman — Gatefold"
-  },
-  {
-    "title": "Mixed Emotions",
-    "artist": "Kaleo",
-    "year": 2025,
-    "pressYear": 2025,
-    "cover": "https://i.discogs.com/It4VyT5bYiDmsZeTwVjiRS-rYg357lD47qXyZREy73s/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzOTM0/NzQzLTE3NDY4NzY4/NzYtMzIxNi5qcGVn.jpeg",
-    "genre": "electronic",
-    "label": "Atlantic",
-    "format": "LP",
-    "pressing": null
+    "pressing": "Pitman — Gatefold",
+    "dateAdded": "2026-05-10T01:54:04-07:00"
   },
   {
     "title": "Enter",
@@ -602,7 +644,8 @@
     "genre": "electronic",
     "label": "Fantasy",
     "format": "LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-11-15T12:05:03-08:00"
   },
   {
     "title": "TRON: Legacy (Vinyl Edition Motion Picture Soundtrack)",
@@ -613,7 +656,20 @@
     "genre": "electronic",
     "label": "Walt Disney Records",
     "format": "2×LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:15:33-08:00"
+  },
+  {
+    "title": "Mixed Emotions",
+    "artist": "Kaleo",
+    "year": 2025,
+    "pressYear": 2025,
+    "cover": "https://i.discogs.com/It4VyT5bYiDmsZeTwVjiRS-rYg357lD47qXyZREy73s/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMzOTM0/NzQzLTE3NDY4NzY4/NzYtMzIxNi5qcGVn.jpeg",
+    "genre": "electronic",
+    "label": "Atlantic",
+    "format": "LP",
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:16:31-08:00"
   },
   {
     "title": "Autobahn",
@@ -624,7 +680,8 @@
     "genre": "electronic",
     "label": "Philips",
     "format": "LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:16:37-08:00"
   },
   {
     "title": "The Man•Machine",
@@ -635,7 +692,8 @@
     "genre": "electronic",
     "label": "Kling Klang",
     "format": "LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:16:48-08:00"
   },
   {
     "title": "Computer World",
@@ -646,7 +704,8 @@
     "genre": "electronic",
     "label": "EMI",
     "format": "LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:16:43-08:00"
   },
   {
     "title": "Summer's Gone",
@@ -657,7 +716,8 @@
     "genre": "electronic",
     "label": "Foreign Family Collective",
     "format": "LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:17:41-08:00"
   },
   {
     "title": "In Return",
@@ -668,7 +728,8 @@
     "genre": "electronic",
     "label": "Counter Records",
     "format": "2×LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:17:35-08:00"
   },
   {
     "title": "A Moment Apart",
@@ -679,7 +740,8 @@
     "genre": "electronic",
     "label": "Counter Records",
     "format": "2×LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:17:29-08:00"
   },
   {
     "title": "Velocity : Design : Comfort",
@@ -690,7 +752,8 @@
     "genre": "electronic",
     "label": "Darla Records",
     "format": "2×LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:18:45-08:00"
   },
   {
     "title": "50 Years Of Phaedra - At The Barbican",
@@ -701,7 +764,8 @@
     "genre": "electronic",
     "label": "Kscope",
     "format": "3×LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-11-15T12:05:40-08:00"
   },
   {
     "title": "Anjuna25 Anniversary Box Set",
@@ -712,7 +776,8 @@
     "genre": "electronic",
     "label": "Anjunabeats",
     "format": "LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-11-15T12:05:51-08:00"
   },
   {
     "title": "Greatest Hits",
@@ -723,7 +788,8 @@
     "genre": "jazz",
     "label": "Prestige",
     "format": "LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:17:18-08:00"
   },
   {
     "title": "Autumn",
@@ -734,7 +800,8 @@
     "genre": "classical",
     "label": "Windham Hill Records",
     "format": "LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:16:02-08:00"
   },
   {
     "title": "The Classics",
@@ -745,7 +812,8 @@
     "genre": "classical",
     "label": "Sony Classical",
     "format": "2×LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-11-15T11:16:07-08:00"
   },
   {
     "title": "The Sound Of Music (An Original Soundtrack Recording)",
@@ -756,6 +824,7 @@
     "genre": "classical",
     "label": "RCA Victor Red Seal",
     "format": "LP",
-    "pressing": null
+    "pressing": null,
+    "dateAdded": "2026-11-15T12:05:28-08:00"
   }
 ]
