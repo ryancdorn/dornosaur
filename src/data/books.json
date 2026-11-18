@@ -862,7 +862,7 @@
     "asin": "B002VA3NP6",
     "title": "The Chronicles Of Narnia: Prince Caspian",
     "author": "C.S. Lewis",
-    "narrator": "Full Cast, Maurice Denham, Sylvester McCoy, Richard Griffiths, Tom Wilkinson, Peter England, Ellie Beavan, Richard Puddifoot, Tom Puccin, Susie Hay",
+    "narrator": "Maurice Denham, Susie Hay, Tom Puccin, Richard Puddifoot, Ellie Beavan, Peter England, Tom Wilkinson, Richard Griffiths, Sylvester McCoy, Full Cast",
     "series": "The Chronicles of Narnia (Publication Order)",
     "seriesNumber": 2,
     "cover": "https://m.media-amazon.com/images/I/51f55M5BoXL._SL500_.jpg",
@@ -1608,18 +1608,6 @@
     "series": "The Broken Earth",
     "seriesNumber": 3,
     "cover": "https://m.media-amazon.com/images/I/51xFs1dsbbL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy",
-    "owned": false
-  },
-  {
-    "asin": "B0H62P5J33",
-    "title": "Such Familiar Magic",
-    "author": "Natasha Ngan",
-    "narrator": "",
-    "series": "The Lord of the Rings",
-    "seriesNumber": 0,
-    "cover": "https://m.media-amazon.com/images/I/51SLSAm9PIL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -2668,13 +2656,13 @@
     "owned": true
   },
   {
-    "asin": "B00GUTGVEE",
+    "asin": "1473555159",
     "title": "House of Chains",
     "author": "Steven Erikson",
     "narrator": "Michael Page",
     "series": "Malazan Book of the Fallen Series",
     "seriesNumber": 4,
-    "cover": "https://m.media-amazon.com/images/I/51Rh2bzphIL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51wVy++E3WL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
