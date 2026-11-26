@@ -990,22 +990,10 @@
     "owned": false
   },
   {
-    "asin": "B09GL39LTP",
-    "title": "Jade Legacy",
-    "author": "Fonda Lee",
-    "narrator": "Andrew Kishino",
-    "series": "The Green Bone Saga",
-    "seriesNumber": 3,
-    "cover": "https://m.media-amazon.com/images/I/51WSUeLzlNL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy",
-    "owned": true
-  },
-  {
     "asin": "B0771W7K2Z",
     "title": "Jade City",
-    "author": "Fonda Lee 85856235",
-    "narrator": "Andrew Kishino 85910939",
+    "author": "Fonda Lee",
+    "narrator": "Andrew Kishino",
     "series": "The Green Bone Saga",
     "seriesNumber": 1,
     "cover": "https://m.media-amazon.com/images/I/51dPmRU-YoL._SL500_.jpg",
@@ -1016,12 +1004,24 @@
   {
     "asin": "1549126768",
     "title": "Jade War",
-    "author": "Fonda Lee 85856235",
-    "narrator": "Andrew Kishino 85910939",
+    "author": "Fonda Lee",
+    "narrator": "Andrew Kishino",
     "series": "The Green Bone Saga",
     "seriesNumber": 2,
     "cover": "https://m.media-amazon.com/images/I/51-urGM1iyL._SL500_.jpg",
     "status": "unread",
+    "genre": "fantasy",
+    "owned": true
+  },
+  {
+    "asin": "B09GL39LTP",
+    "title": "Jade Legacy",
+    "author": "Fonda Lee",
+    "narrator": "Andrew Kishino",
+    "series": "The Green Bone Saga",
+    "seriesNumber": 3,
+    "cover": "https://m.media-amazon.com/images/I/51WSUeLzlNL._SL500_.jpg",
+    "status": "reading",
     "genre": "fantasy",
     "owned": true
   },
@@ -1109,18 +1109,6 @@
     "owned": true
   },
   {
-    "asin": "B016N9U1XW",
-    "title": "The Silmarillion",
-    "author": "J. R. R. Tolkien",
-    "narrator": "Martin Shaw",
-    "series": "The Lord of the Rings",
-    "seriesNumber": 0,
-    "cover": "https://m.media-amazon.com/images/I/51fL6o4DxBL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy",
-    "owned": false
-  },
-  {
     "asin": "B0030EJV3U",
     "title": "The Hobbit",
     "author": "J. R. R. Tolkien",
@@ -1128,6 +1116,18 @@
     "series": "The Lord of the Rings",
     "seriesNumber": 0.5,
     "cover": "https://m.media-amazon.com/images/I/61-hOsUyOZL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy",
+    "owned": false
+  },
+  {
+    "asin": "B0C5MPMQYX",
+    "title": "The Silmarillion",
+    "author": "J. R. R. Tolkien, Christopher Tolkien — Editor",
+    "narrator": "Andy Serkis",
+    "series": "The Lord of the Rings",
+    "seriesNumber": 0,
+    "cover": "https://m.media-amazon.com/images/I/5167YEsQ6YL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -1279,8 +1279,8 @@
   {
     "asin": "B014LL6R5U",
     "title": "The Blade Itself",
-    "author": "Joe Abercrombie 85039271",
-    "narrator": "Steven Pacey 85201302",
+    "author": "Joe Abercrombie",
+    "narrator": "Steven Pacey",
     "series": "The First Law Trilogy",
     "seriesNumber": 1,
     "cover": "https://m.media-amazon.com/images/I/61Wl40L+SXL._SL500_.jpg",
@@ -1291,8 +1291,8 @@
   {
     "asin": "B014LL69TO",
     "title": "Before They Are Hanged",
-    "author": "Joe Abercrombie 85039271",
-    "narrator": "Steven Pacey 85201302",
+    "author": "Joe Abercrombie",
+    "narrator": "Steven Pacey",
     "series": "The First Law Trilogy",
     "seriesNumber": 2,
     "cover": "https://m.media-amazon.com/images/I/61pbE8bm42L._SL500_.jpg",
@@ -1303,12 +1303,24 @@
   {
     "asin": "B014LL6Y4O",
     "title": "Last Argument of Kings",
-    "author": "Joe Abercrombie 85039271",
-    "narrator": "Steven Pacey 85201302",
+    "author": "Joe Abercrombie",
+    "narrator": "Steven Pacey",
     "series": "The First Law Trilogy",
     "seriesNumber": 3,
     "cover": "https://m.media-amazon.com/images/I/61ZENIIEhfL._SL500_.jpg",
     "status": "unread",
+    "genre": "fantasy",
+    "owned": true
+  },
+  {
+    "asin": "1549102133",
+    "title": "Malice",
+    "author": "John Gwynne",
+    "narrator": "Damian Lynch",
+    "series": "The Faithful and the Fallen",
+    "seriesNumber": 1,
+    "cover": "https://m.media-amazon.com/images/I/51h9yhyr1RL._SL500_.jpg",
+    "status": "reading",
     "genre": "fantasy",
     "owned": true
   },
@@ -1320,6 +1332,18 @@
     "series": "The Faithful and the Fallen",
     "seriesNumber": 1,
     "cover": "https://m.media-amazon.com/images/I/51rJda2dNSL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy",
+    "owned": false
+  },
+  {
+    "asin": "1549102141",
+    "title": "Valor",
+    "author": "John Gwynne",
+    "narrator": "Damian Lynch",
+    "series": "The Faithful and the Fallen",
+    "seriesNumber": 2,
+    "cover": "https://m.media-amazon.com/images/I/51gt+3e7uiL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -1344,30 +1368,6 @@
     "series": "The Faithful and the Fallen",
     "seriesNumber": 4,
     "cover": "https://m.media-amazon.com/images/I/51xnfsIXhBL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy",
-    "owned": false
-  },
-  {
-    "asin": "1549102133",
-    "title": "Malice",
-    "author": "John Gwynne 85204505",
-    "narrator": "Damian Lynch 85921874",
-    "series": "The Faithful and the Fallen",
-    "seriesNumber": 1,
-    "cover": "https://m.media-amazon.com/images/I/51h9yhyr1RL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy",
-    "owned": true
-  },
-  {
-    "asin": "1549102141",
-    "title": "Valor",
-    "author": "John Gwynne 85204505",
-    "narrator": "Damian Lynch 85921874",
-    "series": "The Faithful and the Fallen",
-    "seriesNumber": 2,
-    "cover": "https://m.media-amazon.com/images/I/51gt+3e7uiL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -1541,6 +1541,18 @@
     "owned": false
   },
   {
+    "asin": "B012HQ7IPY",
+    "title": "The Fifth Season",
+    "author": "N. K. Jemisin",
+    "narrator": "Robin Miles",
+    "series": "The Broken Earth",
+    "seriesNumber": 1,
+    "cover": "https://m.media-amazon.com/images/I/61ghIRKXuSL._SL500_.jpg",
+    "status": "unread",
+    "genre": "fantasy",
+    "owned": true
+  },
+  {
     "asin": "1549102567",
     "title": "The Fifth Season: Booktrack Edition",
     "author": "N. K. Jemisin",
@@ -1577,6 +1589,18 @@
     "owned": false
   },
   {
+    "asin": "B07288JYYG",
+    "title": "The Stone Sky",
+    "author": "N. K. Jemisin",
+    "narrator": "Robin Miles",
+    "series": "The Broken Earth",
+    "seriesNumber": 3,
+    "cover": "https://m.media-amazon.com/images/I/61vjGN8NSeL._SL500_.jpg",
+    "status": "reading",
+    "genre": "fantasy",
+    "owned": true
+  },
+  {
     "asin": "1549128310",
     "title": "The Stone Sky: Booktrack Edition",
     "author": "N. K. Jemisin",
@@ -1587,30 +1611,6 @@
     "status": "unread",
     "genre": "fantasy",
     "owned": false
-  },
-  {
-    "asin": "B012HQ7IPY",
-    "title": "The Fifth Season",
-    "author": "N. K. Jemisin 84593762",
-    "narrator": "Robin Miles 84593652",
-    "series": "The Broken Earth",
-    "seriesNumber": 1,
-    "cover": "https://m.media-amazon.com/images/I/61ghIRKXuSL._SL500_.jpg",
-    "status": "unread",
-    "genre": "fantasy",
-    "owned": true
-  },
-  {
-    "asin": "B07288JYYG",
-    "title": "The Stone Sky",
-    "author": "N. K. Jemisin 84593762",
-    "narrator": "Robin Miles 84593652",
-    "series": "The Broken Earth",
-    "seriesNumber": 3,
-    "cover": "https://m.media-amazon.com/images/I/61vjGN8NSeL._SL500_.jpg",
-    "status": "reading",
-    "genre": "fantasy",
-    "owned": true
   },
   {
     "asin": "B01LWUJKQ7",
@@ -3191,8 +3191,8 @@
   {
     "asin": "B0189O3RF8",
     "title": "The Wilderness",
-    "author": "McKay Coppins 85207937",
-    "narrator": "John Glouchevitch 85353411",
+    "author": "McKay Coppins",
+    "narrator": "John Glouchevitch",
     "series": "",
     "cover": "https://m.media-amazon.com/images/I/51DcpVIe8GL._SL500_.jpg",
     "status": "unread",
