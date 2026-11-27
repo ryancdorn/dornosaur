@@ -695,13 +695,13 @@
     "owned": false
   },
   {
-    "asin": "B08XSS7W27",
+    "asin": "B002V8OEW4",
     "title": "Prince Caspian",
     "author": "C. S. Lewis",
-    "narrator": "Adriel Brandt",
+    "narrator": "Lynn Redgrave",
     "series": "The Chronicles of Narnia (Publication Order)",
     "seriesNumber": 2,
-    "cover": "https://m.media-amazon.com/images/I/6119dwaEuLL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51MS0rap01L._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -2656,13 +2656,13 @@
     "owned": true
   },
   {
-    "asin": "B00GUTGVEE",
+    "asin": "1473555159",
     "title": "House of Chains",
     "author": "Steven Erikson",
     "narrator": "Michael Page",
     "series": "Malazan Book of the Fallen Series",
     "seriesNumber": 4,
-    "cover": "https://m.media-amazon.com/images/I/51Rh2bzphIL._SL500_.jpg",
+    "cover": "https://m.media-amazon.com/images/I/51wVy++E3WL._SL500_.jpg",
     "status": "unread",
     "genre": "fantasy",
     "owned": false
@@ -6234,13 +6234,13 @@
     "owned": false
   },
   {
-    "asin": "B0D457P6VX",
+    "asin": "B0DFZ3LPDJ",
     "title": "The Triumph of Venus",
     "author": "Travis Starnes",
-    "narrator": "",
+    "narrator": "Kevin Kemp",
     "series": "Imperium",
     "seriesNumber": 6,
-    "cover": "",
+    "cover": "https://m.media-amazon.com/images/I/51R2gFlfvoL._SL500_.jpg",
     "status": "unread",
     "genre": "other",
     "owned": false
